@@ -1,0 +1,13 @@
+import { createClient } from '@supabase/supabase-js';
+import { execSync } from 'node:child_process';
+const env = Object.fromEntries(execSync('npx supabase status -o env', { encoding: 'utf8' }).split('\n').filter((l) => l.includes('=')).map((l) => { const i = l.indexOf('='); return [l.slice(0, i), l.slice(i + 1).replace(/^"|"$/g, '')]; }));
+const o = { auth: { persistSession: false } };
+const anon = createClient(env.API_URL, env.ANON_KEY || env.PUBLISHABLE_KEY, o);
+const svc = createClient(env.API_URL, env.SERVICE_ROLE_KEY || env.SECRET_KEY, o);
+const p = (l, r) => console.log(`### ${l}\n` + JSON.stringify({ status: r.status, statusText: r.statusText, error: r.error, data: r.data }, null, 2));
+const t = process.argv[2] || 'orders';
+p(`G1 anon select ${t}`, await anon.from(t).select());
+p(`G2 anon insert ${t}`, await anon.from(t).insert({ item: 'x' }));
+p(`G3 service_role select ${t}`, await svc.from(t).select());
+const { data: s } = await anon.auth.signUp({ email: `g-${Date.now()}@example.com`, password: 'repro-password-123' });
+p(`G4 authenticated insert ${t}`, await anon.from(t).insert({ item: 'y' }).select());

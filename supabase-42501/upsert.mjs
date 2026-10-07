@@ -1,0 +1,14 @@
+import { createClient } from '@supabase/supabase-js';
+import { execSync } from 'node:child_process';
+const env = Object.fromEntries(execSync('npx supabase status -o env', { encoding: 'utf8' }).split('\n').filter((l) => l.includes('=')).map((l) => { const i = l.indexOf('='); return [l.slice(0, i), l.slice(i + 1).replace(/^"|"$/g, '')]; }));
+const c = createClient(env.API_URL, env.ANON_KEY || env.PUBLISHABLE_KEY, { auth: { persistSession: false } });
+const { data: s } = await c.auth.signUp({ email: `u-${Date.now()}@example.com`, password: 'repro-password-123' });
+const uid = s.user.id;
+const p = (l, r) => console.log(`### ${l}\n` + JSON.stringify({ status: r.status, error: r.error && { code: r.error.code, message: r.error.message, statusCode: r.error.statusCode } }));
+p('U1 profiles upsert NEW row (insert+select policies, no update policy)', await c.from('profiles').upsert({ id: uid, username: 'a' }));
+p('U2 profiles upsert SAME row again (no update policy)', await c.from('profiles').upsert({ id: uid, username: 'b' }));
+const u3 = await c.from('profiles').update({ username: 'c' }).eq('id', uid).select(); console.log('### U3 update rows returned:', JSON.stringify(u3.data), u3.status);
+const name = `same-${Date.now()}.txt`;
+p('S1 storage upload new file', await c.storage.from('avatars').upload(name, new Blob(['1'])));
+p('S2 storage upload same name, upsert:true (insert-only policy)', await c.storage.from('avatars').upload(name, new Blob(['2']), { upsert: true }));
+p('S3 storage upload same name, no upsert', await c.storage.from('avatars').upload(name, new Blob(['3'])));
