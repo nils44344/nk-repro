@@ -1,5 +1,56 @@
 {
   "bun-error-cannot-find-module": {
+    "Linux": {
+      "post": "bun-error-cannot-find-module",
+      "os": "Linux",
+      "date": "2026-10-08",
+      "versions": {
+        "bun": "1.4.2"
+      },
+      "checks": [
+        {
+          "name": "Undeclared workspace package: \"Cannot find module\" on a fresh install",
+          "ok": true,
+          "evidence": "error: Cannot find module '@mono/ui' from '/tmp/nk-ws-VaTpKb/apps/web/index.ts' Bun v1.4.2 (Linux x64)"
+        },
+        {
+          "name": "Fix: bun add @mono/ui@workspace:* makes it load",
+          "ok": true,
+          "evidence": "bun add v1.4.2 (744846f84) installed @mono/ui@workspace:packages/ui [2.00ms] done button Saved lockfile"
+        },
+        {
+          "name": "bun test ignores Jest moduleNameMapper",
+          "ok": true,
+          "evidence": "bun test v1.4.2 (744846f84) ::group::tests/alias.test.ts: # Unhandled error between tests ------------------------------- error: Cannot find module '~/lib/math' from '/tmp/nk-test-CunVjN/tests/alias.test.ts' ------------------------------- 0 pass 1 fail 1 error Ran 1 test across 1 file. [3.00ms]"
+        },
+        {
+          "name": "Fix: tsconfig paths makes bun test pass",
+          "ok": true,
+          "evidence": "bun test v1.4.2 (744846f84) ::group::tests/alias.test.ts: (pass) sum [0.05ms] ::endgroup:: 1 pass 0 fail 1 expect() calls Ran 1 test across 1 file. [4.00ms]"
+        },
+        {
+          "name": "No node_modules anywhere: Bun auto-installs React and the JSX runs",
+          "ok": true,
+          "evidence": "<h1>hi</h1>"
+        },
+        {
+          "name": "Project with node_modules, no React: \"Cannot find module react/jsx-dev-runtime\"",
+          "ok": true,
+          "evidence": "error: Cannot find module 'react/jsx-dev-runtime' from '/tmp/nk-jsx-proj-O83bMh/index.tsx' Bun v1.4.2 (Linux x64)"
+        },
+        {
+          "name": "Linux: bun --bun run runs scripts in Bun",
+          "ok": true,
+          "evidence": "object $ node -e \"console.log(typeof Bun)\""
+        },
+        {
+          "name": "Linux: wrong-case import fails (ENOENT reading ... utils.ts)",
+          "ok": true,
+          "evidence": "error: ENOENT reading \"/tmp/nk-case-SPJpFt/utils.ts\" Bun v1.4.2 (Linux x64)"
+        }
+      ],
+      "allHold": true
+    },
     "Windows": {
       "post": "bun-error-cannot-find-module",
       "os": "Windows",
@@ -48,6 +99,38 @@
     }
   },
   "nextjs-16-3-vulnerabilities-which-version-is-patched": {
+    "Linux": {
+      "post": "nextjs-16-3-vulnerabilities-which-version-is-patched",
+      "os": "Linux",
+      "date": "2026-10-08",
+      "versions": {
+        "next (latest tag)": "16.4.0",
+        "newest 16.3.x": "16.3.8"
+      },
+      "checks": [
+        {
+          "name": "16.3.7 is still flagged by npm audit (the post counted 6 advisories)",
+          "ok": true,
+          "evidence": "16.3.7: 6 advisories"
+        },
+        {
+          "name": "16.3.8 is not flagged by npm audit",
+          "ok": true,
+          "evidence": "16.3.8: 0 advisories"
+        },
+        {
+          "name": "`npm i next@16.3` still resolves to 16.3.8 (no newer 16.3 patch)",
+          "ok": true,
+          "evidence": "newest 16.3.x: 16.3.8"
+        },
+        {
+          "name": "next@latest (16.4.0) is not flagged by npm audit",
+          "ok": true,
+          "evidence": "16.4.0: 0 advisories"
+        }
+      ],
+      "allHold": true
+    },
     "Windows": {
       "post": "nextjs-16-3-vulnerabilities-which-version-is-patched",
       "os": "Windows",
@@ -82,6 +165,38 @@
     }
   },
   "prisma-generate-no-command-registered-prisma-8": {
+    "Linux": {
+      "post": "prisma-generate-no-command-registered-prisma-8",
+      "os": "Linux",
+      "date": "2026-10-08",
+      "versions": {
+        "prisma (latest tag)": "8.0.0-rc.21",
+        "@prisma/client (latest tag)": "7.10.0"
+      },
+      "checks": [
+        {
+          "name": "npm \"latest\" for prisma is still a Prisma 8 release candidate",
+          "ok": true,
+          "evidence": "8.0.0-rc.21"
+        },
+        {
+          "name": "npm \"latest\" for @prisma/client is still 7.x",
+          "ok": true,
+          "evidence": "7.10.0"
+        },
+        {
+          "name": "Unpinned `npx -y prisma generate` fails: No command registered for `generate`",
+          "ok": true,
+          "evidence": "{\"kind\":\"result\",\"envelope\":{\"ok\":false,\"commandId\":\"\",\"error\":{\"code\":\"CLI.UNKNOWN_COMMAND\",\"severity\":\"error\",\"summary\":\"No command registered for `generate`\",\"nextActions\":[{\"kind\":\"run-command\",\"label\":\"List every command\",\"command\":\"prisma --help\"}]},\"diagnostics\":[],\"nextActions\":[{\"kind\":\"run"
+        },
+        {
+          "name": "Fix: `npx -y prisma@7 generate` generates the client",
+          "ok": true,
+          "evidence": "✔ Generated Prisma Client (7.10.0) to ./src/generated/prisma in 14ms Prisma schema loaded from prisma/schema.prisma."
+        }
+      ],
+      "allHold": true
+    },
     "Windows": {
       "post": "prisma-generate-no-command-registered-prisma-8",
       "os": "Windows",
