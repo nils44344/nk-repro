@@ -1,7 +1,7 @@
 // Shared helpers for the nightly re-checks. Each check reproduces one claim a post makes and says whether it
 // still holds on today's versions. A flipped check is news: either the bug was fixed or something new broke.
 import { execSync, spawnSync } from 'node:child_process';
-import { mkdtempSync, mkdirSync, writeFileSync, readFileSync, existsSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, writeFileSync, realpathSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 
@@ -15,7 +15,8 @@ export function sh(cmd, cwd, env = {}) {
 }
 
 export function tmp(name) {
-  return mkdtempSync(join(tmpdir(), `nk-${name}-`));
+  // realpath: GitHub's Windows runner hands out 8.3 short paths (RUNNER~1), which Bun's workspace lookup can't use.
+  return realpathSync.native(mkdtempSync(join(tmpdir(), `nk-${name}-`)));
 }
 
 /** Write a tree of files: { 'a/b.json': {...} | 'text' } */

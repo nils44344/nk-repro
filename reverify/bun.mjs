@@ -1,4 +1,8 @@
 // Re-checks https://nilaykabariya.blog/fixes/bun-error-cannot-find-module on the newest Bun (and on both OSes).
+import { execSync } from 'node:child_process';
+import { copyFileSync, existsSync, mkdirSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import { sh, tmp, files, version, check, record, isWin } from './lib.mjs';
 
 const POST = 'bun-error-cannot-find-module';
@@ -46,13 +50,27 @@ const checks = [];
   checks.push(check('Project with node_modules, no React: "Cannot find module react/jsx-dev-runtime"', () => run(p, 'bun run index.tsx'), (o) => /react\/jsx-dev-runtime/.test(o)));
 }
 
-// 4. --bun on package.json scripts. The post says it works on Linux and is ignored on Windows.
+// 4. --bun on package.json scripts. Bun puts a stand-in node.exe in %TEMP%/bun-node-<revision>, hard-linked to bun.exe.
+// Hard links can't cross drives, so on Windows it only works when bun.exe is on the same drive as %TEMP%.
 {
   const d = tmp('flag');
   files(d, { 'package.json': { name: 'f', scripts: { n: 'node -e "console.log(typeof Bun)"' } } });
-  const out = () => run(d, 'bun --bun run n');
-  if (isWin) checks.push(check('Windows: bun --bun run still runs scripts in Node (bug present)', out, (o) => /\bundefined\b/.test(o)));
-  else checks.push(check('Linux: bun --bun run runs scripts in Bun', out, (o) => /\bobject\b/.test(o)));
+  if (!isWin) checks.push(check('Linux: bun --bun run runs scripts in Bun', () => run(d, 'bun --bun run n'), (o) => /\bobject\b/.test(o)));
+  else {
+    // The same bun.exe, copied once onto TEMP's drive and once onto another drive (GitHub's runner has D:, TEMP on C:).
+    const bunExe = execSync('where bun', { encoding: 'utf8' }).split(/\r?\n/).find((p) => p.trim().endsWith('.exe')).trim();
+    const tempDrive = tmpdir().slice(0, 2).toUpperCase();
+    const same = join(tmp('bun-same-drive'), 'bun.exe');
+    copyFileSync(bunExe, same);
+    checks.push(check(`Windows, Bun on the same drive as TEMP (${tempDrive}): bun --bun run runs scripts in Bun`, () => run(d, `"${same}" --bun run n`), (o) => /\bobject\b/.test(o)));
+    const other = ['D:', 'C:', 'E:'].find((x) => x !== tempDrive && existsSync(x + '/'));
+    if (other) {
+      const dir = join(other + '/', 'nk-bun-other-drive');
+      mkdirSync(dir, { recursive: true });
+      copyFileSync(bunExe, join(dir, 'bun.exe'));
+      checks.push(check(`Windows, Bun on another drive (${other}) than TEMP (${tempDrive}): bun --bun run silently stays on Node`, () => run(d, `"${join(dir, 'bun.exe')}" --bun run n`), (o) => /\bundefined\b/.test(o)));
+    }
+  }
 }
 
 // 5. Linux only: a wrong-case relative import fails with ENOENT (Windows is case-insensitive).
