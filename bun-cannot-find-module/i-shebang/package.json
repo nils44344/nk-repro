@@ -1,0 +1,1 @@
+{"name":"i","scripts":{"dev":"mytool","dev2":"bun --bun mytool","dev3":"bunx --bun mytool"},"dependencies":{"mytool":"file:./tools/mytool"}}

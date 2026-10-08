@@ -11,6 +11,7 @@ The exact code behind the fixes on [nilaykabariya.blog](https://nilaykabariya.bl
 | [`prisma6-noinit`](prisma6-noinit), [`prisma-init`](prisma-init) | [Prisma P1001: Can't reach database server](https://nilaykabariya.blog/database/prisma-p1001-cant-reach-database-server) | P1001 from the CLI and at runtime (`rt.cjs`, `rt7b.ts`) |
 | [`next-security`](next-security) | [Next.js 16.3 vulnerabilities: which version is patched?](https://nilaykabariya.blog/tested/nextjs-16-3-vulnerabilities-which-version-is-patched) | `npm audit` and `next build` at 16.3.0, 16.3.7, 16.3.8 and 16.4.0 (`check.sh <version>`), plus what `npm audit fix` and `next upgrade` install |
 | [`gemini-429`](gemini-429) | [Gemini API 429 RESOURCE_EXHAUSTED](https://nilaykabariya.blog/ai/gemini-api-429-resource-exhausted) and [Gemini 2.5 Flash "no longer available to new users"](https://nilaykabariya.blog/ai/gemini-2-5-flash-no-longer-available-to-new-users) | Free-tier limits hit on purpose, the retry helper, and every retired model name |
+| [`bun-cannot-find-module`](bun-cannot-find-module) | [Bun "error: Cannot find module": every cause, tested](https://nilaykabariya.blog/fixes/bun-error-cannot-find-module) | Workspaces on the isolated linker, `bun test` aliases, the JSX runtime, `bun:sqlite` outside Bun (and `--bun` on Windows), wrong-case imports on Linux |
 
 ## Running it
 

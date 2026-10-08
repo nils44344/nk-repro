@@ -1,0 +1,6 @@
+{
+  "name": "c",
+  "dependencies": {
+    "react": "^19.3.0"
+  }
+}

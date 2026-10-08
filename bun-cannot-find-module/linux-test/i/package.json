@@ -1,0 +1,1 @@
+{"name":"i","scripts":{"dev":"mytool","n":"node -e \"console.log(typeof Bun)\"","direct":"node node_modules/mytool/bin/cli.js"},"dependencies":{"mytool":"file:./tools/mytool"}}

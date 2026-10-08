@@ -1,0 +1,1 @@
+{"name":"f-test","private":true,"jest":{"moduleNameMapper":{"^~/(.*)$":"<rootDir>/src/$1"}}}

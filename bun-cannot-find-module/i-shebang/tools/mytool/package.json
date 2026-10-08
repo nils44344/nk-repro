@@ -1,0 +1,1 @@
+{"name":"mytool","version":"1.0.0","bin":{"mytool":"bin/cli.js"}}

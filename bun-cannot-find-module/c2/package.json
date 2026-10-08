@@ -1,0 +1,6 @@
+{
+  "name": "c2",
+  "dependencies": {
+    "preact": "^11.0.0"
+  }
+}
