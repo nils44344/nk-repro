@@ -24,20 +24,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: { node-version: 24 }
+        with:
+          node-version: 24
       - uses: oven-sh/setup-bun@v2
-        with: { bun-version: latest }
+        with:
+          bun-version: latest
       - run: node reverify/bun.mjs
       - if: always()
         uses: actions/upload-artifact@v4
-        with: { name: status-bun-${{ matrix.os }}, path: status/*--*.json }
+        with:
+          name: status-bun-${{ matrix.os }}
+          path: status/*--*.json
 
   npm:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: { node-version: 24 }
+        with:
+          node-version: 24
       - id: prisma
         continue-on-error: true
         run: node reverify/prisma.mjs
@@ -46,7 +51,9 @@ jobs:
         run: node reverify/next.mjs
       - if: always()
         uses: actions/upload-artifact@v4
-        with: { name: status-npm, path: status/*--*.json }
+        with:
+          name: status-npm
+          path: status/*--*.json
       - if: steps.prisma.outcome == 'failure' || steps.next.outcome == 'failure'
         run: exit 1
 
@@ -57,7 +64,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
-        with: { pattern: status-*, path: status, merge-multiple: true }
+        with:
+          pattern: status-*
+          path: status
+          merge-multiple: true
       - run: node reverify/build-status.mjs
       - run: |
           git config user.name "nk-reverify"
