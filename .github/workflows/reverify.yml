@@ -1,0 +1,67 @@
+# Nightly: re-run each post's claims on the newest versions. status/status.json feeds the "re-verified" line on
+# nilaykabariya.blog. A check that flips fails the run, so GitHub emails the owner: a fix shipped or something broke.
+name: reverify
+
+on:
+  schedule:
+    - cron: '30 2 * * *' # 08:00 IST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reverify
+  cancel-in-progress: false
+
+jobs:
+  bun:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24 }
+      - uses: oven-sh/setup-bun@v2
+        with: { bun-version: latest }
+      - run: node reverify/bun.mjs
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with: { name: status-bun-${{ matrix.os }}, path: status/*--*.json }
+
+  npm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24 }
+      - id: prisma
+        continue-on-error: true
+        run: node reverify/prisma.mjs
+      - id: next
+        continue-on-error: true
+        run: node reverify/next.mjs
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with: { name: status-npm, path: status/*--*.json }
+      - if: steps.prisma.outcome == 'failure' || steps.next.outcome == 'failure'
+        run: exit 1
+
+  publish:
+    needs: [bun, npm]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { pattern: status-*, path: status, merge-multiple: true }
+      - run: node reverify/build-status.mjs
+      - run: |
+          git config user.name "nk-reverify"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add status
+          git diff --cached --quiet || git commit -m "reverify: $(date -u +%F)"
+          git push

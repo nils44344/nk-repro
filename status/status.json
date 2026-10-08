@@ -1,0 +1,118 @@
+{
+  "bun-error-cannot-find-module": {
+    "Windows": {
+      "post": "bun-error-cannot-find-module",
+      "os": "Windows",
+      "date": "2026-10-08",
+      "versions": {
+        "bun": "1.4.2"
+      },
+      "checks": [
+        {
+          "name": "Undeclared workspace package: \"Cannot find module\" on a fresh install",
+          "ok": true,
+          "evidence": "error: Cannot find module '@mono/ui' from 'C:\\Users\\NIR\\AppData\\Local\\Temp\\nk-ws-BA7qe0\\apps\\web\\index.ts' Bun v1.4.2 (Windows x64)"
+        },
+        {
+          "name": "Fix: bun add @mono/ui@workspace:* makes it load",
+          "ok": true,
+          "evidence": "bun add v1.4.2 (744846f84) installed @mono/ui@workspace:packages/ui [149.00ms] done button Saved lockfile"
+        },
+        {
+          "name": "bun test ignores Jest moduleNameMapper",
+          "ok": true,
+          "evidence": "bun test v1.4.2 (744846f84) tests\\alias.test.ts: # Unhandled error between tests ------------------------------- error: Cannot find module '~/lib/math' from 'C:\\Users\\NIR\\AppData\\Local\\Temp\\nk-test-pH1G2y\\tests\\alias.test.ts' ------------------------------- 0 pass 1 fail 1 error Ran 1 test across 1 "
+        },
+        {
+          "name": "Fix: tsconfig paths makes bun test pass",
+          "ok": true,
+          "evidence": "bun test v1.4.2 (744846f84) 1 pass 0 fail 1 expect() calls Ran 1 test across 1 file. [118.00ms]"
+        },
+        {
+          "name": "No node_modules anywhere: Bun auto-installs React and the JSX runs",
+          "ok": true,
+          "evidence": "<h1>hi</h1>"
+        },
+        {
+          "name": "Project with node_modules, no React: \"Cannot find module react/jsx-dev-runtime\"",
+          "ok": true,
+          "evidence": "error: Cannot find module 'react/jsx-dev-runtime' from 'C:\\Users\\NIR\\AppData\\Local\\Temp\\nk-jsx-proj-rtXNUa\\index.tsx' Bun v1.4.2 (Windows x64)"
+        },
+        {
+          "name": "Windows: bun --bun run still runs scripts in Node (bug present)",
+          "ok": true,
+          "evidence": "undefined $ node -e \"console.log(typeof Bun)\""
+        }
+      ],
+      "allHold": true
+    }
+  },
+  "nextjs-16-3-vulnerabilities-which-version-is-patched": {
+    "Windows": {
+      "post": "nextjs-16-3-vulnerabilities-which-version-is-patched",
+      "os": "Windows",
+      "date": "2026-10-08",
+      "versions": {
+        "next (latest tag)": "16.4.0",
+        "newest 16.3.x": "16.3.8"
+      },
+      "checks": [
+        {
+          "name": "16.3.7 is still flagged by npm audit (the post counted 6 advisories)",
+          "ok": true,
+          "evidence": "16.3.7: 6 advisories"
+        },
+        {
+          "name": "16.3.8 is not flagged by npm audit",
+          "ok": true,
+          "evidence": "16.3.8: 0 advisories"
+        },
+        {
+          "name": "`npm i next@16.3` still resolves to 16.3.8 (no newer 16.3 patch)",
+          "ok": true,
+          "evidence": "newest 16.3.x: 16.3.8"
+        },
+        {
+          "name": "next@latest (16.4.0) is not flagged by npm audit",
+          "ok": true,
+          "evidence": "16.4.0: 0 advisories"
+        }
+      ],
+      "allHold": true
+    }
+  },
+  "prisma-generate-no-command-registered-prisma-8": {
+    "Windows": {
+      "post": "prisma-generate-no-command-registered-prisma-8",
+      "os": "Windows",
+      "date": "2026-10-08",
+      "versions": {
+        "prisma (latest tag)": "8.0.0-rc.21",
+        "@prisma/client (latest tag)": "7.10.0"
+      },
+      "checks": [
+        {
+          "name": "npm \"latest\" for prisma is still a Prisma 8 release candidate",
+          "ok": true,
+          "evidence": "8.0.0-rc.21"
+        },
+        {
+          "name": "npm \"latest\" for @prisma/client is still 7.x",
+          "ok": true,
+          "evidence": "7.10.0"
+        },
+        {
+          "name": "Unpinned `npx -y prisma generate` fails: No command registered for `generate`",
+          "ok": true,
+          "evidence": "{\"kind\":\"result\",\"envelope\":{\"ok\":false,\"commandId\":\"\",\"error\":{\"code\":\"CLI.UNKNOWN_COMMAND\",\"severity\":\"error\",\"summary\":\"No command registered for `generate`\",\"nextActions\":[{\"kind\":\"run-command\",\"label\":\"List every command\",\"command\":\"prisma --help\"}]},\"diagnostics\":[],\"nextActions\":[{\"kind\":\"run"
+        },
+        {
+          "name": "Fix: `npx -y prisma@7 generate` generates the client",
+          "ok": true,
+          "evidence": "✔ Generated Prisma Client (7.10.0) to .\\src\\generated\\prisma in 48ms Prisma schema loaded from prisma\\schema.prisma."
+        }
+      ],
+      "allHold": true
+    }
+  }
+}

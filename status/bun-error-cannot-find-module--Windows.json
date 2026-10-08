@@ -1,0 +1,46 @@
+{
+  "post": "bun-error-cannot-find-module",
+  "os": "Windows",
+  "date": "2026-10-08",
+  "versions": {
+    "bun": "1.4.2"
+  },
+  "checks": [
+    {
+      "name": "Undeclared workspace package: \"Cannot find module\" on a fresh install",
+      "ok": true,
+      "evidence": "error: Cannot find module '@mono/ui' from 'C:\\Users\\NIR\\AppData\\Local\\Temp\\nk-ws-BA7qe0\\apps\\web\\index.ts' Bun v1.4.2 (Windows x64)"
+    },
+    {
+      "name": "Fix: bun add @mono/ui@workspace:* makes it load",
+      "ok": true,
+      "evidence": "bun add v1.4.2 (744846f84) installed @mono/ui@workspace:packages/ui [149.00ms] done button Saved lockfile"
+    },
+    {
+      "name": "bun test ignores Jest moduleNameMapper",
+      "ok": true,
+      "evidence": "bun test v1.4.2 (744846f84) tests\\alias.test.ts: # Unhandled error between tests ------------------------------- error: Cannot find module '~/lib/math' from 'C:\\Users\\NIR\\AppData\\Local\\Temp\\nk-test-pH1G2y\\tests\\alias.test.ts' ------------------------------- 0 pass 1 fail 1 error Ran 1 test across 1 "
+    },
+    {
+      "name": "Fix: tsconfig paths makes bun test pass",
+      "ok": true,
+      "evidence": "bun test v1.4.2 (744846f84) 1 pass 0 fail 1 expect() calls Ran 1 test across 1 file. [118.00ms]"
+    },
+    {
+      "name": "No node_modules anywhere: Bun auto-installs React and the JSX runs",
+      "ok": true,
+      "evidence": "<h1>hi</h1>"
+    },
+    {
+      "name": "Project with node_modules, no React: \"Cannot find module react/jsx-dev-runtime\"",
+      "ok": true,
+      "evidence": "error: Cannot find module 'react/jsx-dev-runtime' from 'C:\\Users\\NIR\\AppData\\Local\\Temp\\nk-jsx-proj-rtXNUa\\index.tsx' Bun v1.4.2 (Windows x64)"
+    },
+    {
+      "name": "Windows: bun --bun run still runs scripts in Node (bug present)",
+      "ok": true,
+      "evidence": "undefined $ node -e \"console.log(typeof Bun)\""
+    }
+  ],
+  "allHold": true
+}

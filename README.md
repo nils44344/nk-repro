@@ -13,6 +13,10 @@ The exact code behind the fixes on [nilaykabariya.blog](https://nilaykabariya.bl
 | [`gemini-429`](gemini-429) | [Gemini API 429 RESOURCE_EXHAUSTED](https://nilaykabariya.blog/ai/gemini-api-429-resource-exhausted) and [Gemini 2.5 Flash "no longer available to new users"](https://nilaykabariya.blog/ai/gemini-2-5-flash-no-longer-available-to-new-users) | Free-tier limits hit on purpose, the retry helper, and every retired model name |
 | [`bun-cannot-find-module`](bun-cannot-find-module) | [Bun "error: Cannot find module": every cause, tested](https://nilaykabariya.blog/fixes/bun-error-cannot-find-module) | Workspaces on the isolated linker, `bun test` aliases, the JSX runtime, `bun:sqlite` outside Bun (and `--bun` on Windows), wrong-case imports on Linux |
 
+## Re-verified nightly
+
+[`reverify`](reverify) re-runs the key claim of each post every night on the newest versions (Bun on Windows and Linux; Prisma and Next.js on Linux). Results land in [`status/status.json`](status/status.json). A run fails when a claim stops holding, which means a fix shipped or something new broke.
+
 ## Running it
 
 - Node 24. Run `npm install` in a folder first.
