@@ -1,0 +1,105 @@
+{
+  "react-router": {
+    "name": "React Router",
+    "os": "Linux",
+    "date": "2026-10-09",
+    "node": "v24.21.0",
+    "scaffold": {
+      "ok": true,
+      "secs": 43.4,
+      "err": "",
+      "timedOut": false
+    },
+    "install": {
+      "ok": true,
+      "ran": false
+    },
+    "version": "8.4.0",
+    "deprecatedWarnings": 0,
+    "size": {
+      "mb": 110.3,
+      "files": 5269
+    },
+    "build": {
+      "ok": true,
+      "secs": 3.5,
+      "err": ""
+    },
+    "dev": {
+      "ok": false,
+      "status": 0,
+      "url": "http://localhost:5173/",
+      "err": "server printed a URL but never answered",
+      "secs": 124.3,
+      "tail": " | [restart] Relaunching with --conditions=development |   ➜  Local:   http://localhost:5173/ |   ➜  Network: use --host to expose"
+    }
+  },
+  "nuxt": {
+    "name": "Nuxt",
+    "os": "Linux",
+    "date": "2026-10-09",
+    "node": "v24.21.0",
+    "scaffold": {
+      "ok": true,
+      "secs": 107.4,
+      "err": "",
+      "timedOut": false
+    },
+    "install": {
+      "ok": true,
+      "ran": false
+    },
+    "version": "4.6.0",
+    "deprecatedWarnings": 0,
+    "size": {
+      "mb": 181.9,
+      "files": 14530
+    },
+    "build": {
+      "ok": true,
+      "secs": 10,
+      "err": ""
+    },
+    "dev": {
+      "ok": true,
+      "status": 200,
+      "url": "http://localhost:3000/",
+      "secs": 8.1,
+      "tail": "[success] [nitro] Nuxt Nitro server built in 2280ms | ◆ Ready in 4.24s  → http://localhost:3000/ |   config 220ms · modules 288ms · app 525ms · types 331ms · bundle 338ms · server 2.54s | [info] dependency optimized: @vue/devtools-core"
+    }
+  },
+  "docusaurus": {
+    "name": "Docusaurus",
+    "os": "Linux",
+    "date": "2026-10-09",
+    "node": "v24.21.0",
+    "scaffold": {
+      "ok": true,
+      "secs": 327.7,
+      "err": "",
+      "timedOut": false
+    },
+    "install": {
+      "ok": true,
+      "ran": false
+    },
+    "version": "3.10.2",
+    "deprecatedWarnings": 0,
+    "size": {
+      "mb": 272.4,
+      "files": 31585
+    },
+    "build": {
+      "ok": true,
+      "secs": 42.9,
+      "err": ""
+    },
+    "dev": {
+      "ok": true,
+      "status": 200,
+      "url": "http://[::1]:3000/",
+      "secs": 31.7,
+      "tail": " | [INFO] Starting the development server... | [SUCCESS] Docusaurus website is running at: http://localhost:3000/ | client (Rspack 1.7.12) compiled successfully"
+    }
+  }
+}

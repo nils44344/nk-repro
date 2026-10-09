@@ -1,0 +1,542 @@
+{
+  "next": {
+    "name": "Next.js",
+    "os": "Windows",
+    "date": "2026-10-09",
+    "node": "v24.14.0",
+    "scaffold": {
+      "ok": true,
+      "secs": 50.5,
+      "err": "",
+      "timedOut": false
+    },
+    "install": {
+      "ok": true,
+      "ran": false
+    },
+    "version": "16.4.0",
+    "deprecatedWarnings": 0,
+    "size": {
+      "mb": 390.4,
+      "files": 11069
+    },
+    "build": {
+      "ok": true,
+      "secs": 15.6,
+      "err": ""
+    },
+    "dev": {
+      "ok": true,
+      "status": 200,
+      "url": "http://localhost:3000/",
+      "secs": 12.9,
+      "tail": "- Cache Components enabled | - Partial Prefetching enabled |  | ○ Compiling / ..."
+    }
+  },
+  "vite-react": {
+    "name": "Vite + React",
+    "os": "Windows",
+    "date": "2026-10-09",
+    "node": "v24.14.0",
+    "scaffold": {
+      "ok": true,
+      "secs": 2,
+      "err": "",
+      "timedOut": false
+    },
+    "install": {
+      "ok": true,
+      "secs": 15.2,
+      "err": "",
+      "ran": true
+    },
+    "version": "8.3.4",
+    "deprecatedWarnings": 0,
+    "size": {
+      "mb": 88.2,
+      "files": 693
+    },
+    "build": {
+      "ok": true,
+      "secs": 3.6,
+      "err": ""
+    },
+    "dev": {
+      "ok": true,
+      "status": 200,
+      "url": "http://localhost:5173/",
+      "secs": 1.8,
+      "tail": "  VITE v8.3.4  ready in 629 ms |  |   ➜  Local:   http://localhost:5173/ |   ➜  Network: use --host to expose"
+    }
+  },
+  "vue": {
+    "name": "Vue (create-vue)",
+    "os": "Windows",
+    "date": "2026-10-09",
+    "node": "v24.14.0",
+    "scaffold": {
+      "ok": true,
+      "secs": 3.4,
+      "err": "",
+      "timedOut": false
+    },
+    "install": {
+      "ok": true,
+      "secs": 25.2,
+      "err": "",
+      "ran": true
+    },
+    "version": "3.5.43",
+    "deprecatedWarnings": 0,
+    "size": {
+      "mb": 98.8,
+      "files": 3673
+    },
+    "build": {
+      "ok": true,
+      "secs": 5.7,
+      "err": ""
+    },
+    "dev": {
+      "ok": true,
+      "status": 200,
+      "url": "http://localhost:5173/",
+      "secs": 3.2,
+      "tail": "  ➜  Local:   http://localhost:5173/ |   ➜  Network: use --host to expose |   ➜  Vue DevTools: Open http://localhost:5173/__devtools__/ as a separate window |   ➜  Vue DevTools: Press Alt(⌥)+Shift(⇧)+D in App to toggle the Vue DevTools"
+    }
+  },
+  "astro": {
+    "name": "Astro",
+    "os": "Windows",
+    "date": "2026-10-09",
+    "node": "v24.14.0",
+    "scaffold": {
+      "ok": true,
+      "secs": 55.7,
+      "err": "",
+      "timedOut": false
+    },
+    "install": {
+      "ok": true,
+      "ran": false
+    },
+    "version": "7.3.8",
+    "deprecatedWarnings": 0,
+    "size": {
+      "mb": 133.1,
+      "files": 9439
+    },
+    "build": {
+      "ok": true,
+      "secs": 6.2,
+      "err": ""
+    },
+    "dev": {
+      "ok": true,
+      "status": 200,
+      "url": "http://localhost:4321/",
+      "secs": 5.3,
+      "tail": "{\"message\":\"Re-optimizing dependencies because vite config has changed\",\"label\":\"vite\",\"level\":\"info\"} | {\"message\":\" astro  v7.3.8 ready in 760 ms\\n┃ Local    http://localhost:4321/\\n┃ Network  use --host to expose\",\"label\":\"SKIP_FORMAT\",\"level\":\"info\"} | {\"message\":\"watching for file changes...\",\"label\":null,\"level\":\"info\"} | {\"message\":\"[200] / 29ms\",\"label\":null,\"level\":\"info\"}"
+    }
+  },
+  "sveltekit": {
+    "name": "SvelteKit",
+    "os": "Windows",
+    "date": "2026-10-09",
+    "node": "v24.14.0",
+    "scaffold": {
+      "ok": true,
+      "secs": 16.3,
+      "err": "",
+      "timedOut": false
+    },
+    "install": {
+      "ok": true,
+      "ran": false
+    },
+    "version": "3.0.1",
+    "deprecatedWarnings": 0,
+    "size": {
+      "mb": 72.7,
+      "files": 1796
+    },
+    "build": {
+      "ok": true,
+      "secs": 8.2,
+      "err": ""
+    },
+    "dev": {
+      "ok": true,
+      "status": 200,
+      "url": "http://localhost:5173/",
+      "secs": 3.7,
+      "tail": " |   ➜  Local:   http://localhost:5173/ |   ➜  Network: use --host to expose | 200 GET /"
+    }
+  },
+  "nuxt": {
+    "name": "Nuxt",
+    "os": "Windows",
+    "date": "2026-10-09",
+    "node": "v24.14.0",
+    "scaffold": {
+      "ok": true,
+      "secs": 83.9,
+      "err": "",
+      "timedOut": false
+    },
+    "install": {
+      "ok": true,
+      "ran": false
+    },
+    "version": "4.6.0",
+    "deprecatedWarnings": 0,
+    "size": {
+      "mb": 173.2,
+      "files": 14695
+    },
+    "build": {
+      "ok": true,
+      "secs": 24.3,
+      "err": ""
+    },
+    "dev": {
+      "ok": false,
+      "status": 500,
+      "url": "http://localhost:3000/",
+      "secs": 12.6,
+      "tail": " |   ✖ Error (500): Either manifest or precomputed data must be provided |    |     … 10 dependency frames"
+    }
+  },
+  "angular": {
+    "name": "Angular",
+    "os": "Windows",
+    "date": "2026-10-09",
+    "node": "v24.21.0 (portable node@24; the runner itself was 24.14.0)",
+    "scaffold": {
+      "ok": true,
+      "secs": 65.9,
+      "err": "",
+      "timedOut": false
+    },
+    "install": {
+      "ok": true,
+      "ran": false
+    },
+    "version": "22.2.2",
+    "deprecatedWarnings": 0,
+    "size": {
+      "mb": 245.5,
+      "files": 18144
+    },
+    "build": {
+      "ok": true,
+      "secs": 10.8,
+      "err": ""
+    },
+    "dev": {
+      "ok": true,
+      "status": 200,
+      "url": "http://localhost:4200/",
+      "secs": 10.5,
+      "tail": " | Watch mode enabled. Watching for file changes... | NOTE: Raw file sizes do not reflect development server per-request transformations. |   ➜  Local:   http://localhost:4200/"
+    }
+  },
+  "react-router": {
+    "name": "React Router",
+    "os": "Windows",
+    "date": "2026-10-09",
+    "node": "v24.14.0",
+    "scaffold": {
+      "ok": false,
+      "secs": 12.4,
+      "err": "▲  Oh no! Failed to install dependencies.",
+      "timedOut": false
+    },
+    "install": {
+      "ok": true,
+      "secs": 27.3,
+      "err": "",
+      "ran": true
+    },
+    "version": "8.4.0",
+    "deprecatedWarnings": 0,
+    "size": {
+      "mb": 111.2,
+      "files": 5320
+    },
+    "build": {
+      "ok": true,
+      "secs": 4.1,
+      "err": ""
+    },
+    "dev": {
+      "ok": true,
+      "status": 200,
+      "url": "http://localhost:5173/",
+      "secs": 4.6,
+      "tail": "[restart] Relaunching with --conditions=development |   ➜  Local:   http://localhost:5173/ |   ➜  Network: use --host to expose | 3:00:46 pm [vite] (ssr) connected."
+    }
+  },
+  "nest": {
+    "name": "NestJS",
+    "os": "Windows",
+    "date": "2026-10-09",
+    "node": "v24.14.0",
+    "scaffold": {
+      "ok": true,
+      "secs": 54.3,
+      "err": "",
+      "timedOut": false
+    },
+    "install": {
+      "ok": true,
+      "ran": false
+    },
+    "version": "12.1.2",
+    "deprecatedWarnings": 0,
+    "size": {
+      "mb": 148.1,
+      "files": 10551
+    },
+    "build": {
+      "ok": true,
+      "secs": 6,
+      "err": ""
+    },
+    "dev": {
+      "ok": true,
+      "status": 200,
+      "url": "http://localhost:3000/",
+      "secs": 16,
+      "tail": "[Nest] 20344  - 09/10/2026, 3:02:02 pm     LOG [RouterExplorer] Mapped {/, GET} route +9ms | [Nest] 20344  - 09/10/2026, 3:02:02 pm     LOG [NestApplication] Nest application successfully started +4ms |  | http://localhost:3000/"
+    }
+  },
+  "expo": {
+    "name": "Expo",
+    "os": "Windows",
+    "date": "2026-10-09",
+    "node": "v24.14.0",
+    "scaffold": {
+      "ok": true,
+      "secs": 99,
+      "err": "",
+      "timedOut": false
+    },
+    "install": {
+      "ok": true,
+      "ran": false
+    },
+    "version": "57.0.27",
+    "deprecatedWarnings": 1,
+    "size": {
+      "mb": 496.1,
+      "files": 35147
+    },
+    "dev": {
+      "ok": true,
+      "status": 200,
+      "url": "http://localhost:8081/",
+      "secs": 40.3,
+      "tail": "λ Bundled 29761ms node_modules\\expo\\node_modules\\@expo\\cli\\node_modules\\@expo\\router-server\\node\\render.js (1333 modules) | Web Bundled 30485ms node_modules\\expo-router\\entry.js (1298 modules) | λ Bundled 47ms node_modules\\expo\\node_modules\\@expo\\cli\\node_modules\\@expo\\router-server\\node\\render.js (1 module) | Web Bundled 464ms node_modules\\expo-router\\entry.js (1 module)"
+    }
+  },
+  "cloudflare": {
+    "name": "Cloudflare (C3)",
+    "os": "Windows",
+    "date": "2026-10-09",
+    "node": "v24.14.0",
+    "scaffold": {
+      "ok": true,
+      "secs": 42.8,
+      "err": "",
+      "timedOut": false
+    },
+    "install": {
+      "ok": true,
+      "ran": false
+    },
+    "version": "4.149.0",
+    "deprecatedWarnings": 0,
+    "size": {
+      "mb": 256.2,
+      "files": 3435
+    },
+    "dev": {
+      "ok": true,
+      "status": 200,
+      "url": "http://localhost:8787/",
+      "secs": 4.2,
+      "tail": "  POST http://127.0.0.1:8787/cdn-cgi/local/explorer/api/local/observability/clear - clear all captured traces and logs | If the routes above don't cover what you need, fetch the full OpenAPI schema (large - use only as a last resort): |   GET http://127.0.0.1:8787/cdn-cgi/local/explorer/api - OpenAPI schema | [wrangler:info] Ready on http://127.0.0.1:8787"
+    }
+  },
+  "hono": {
+    "name": "Hono",
+    "os": "Windows",
+    "date": "2026-10-09",
+    "node": "v24.14.0",
+    "scaffold": {
+      "ok": true,
+      "secs": 9.8,
+      "err": "",
+      "timedOut": false
+    },
+    "install": {
+      "ok": true,
+      "ran": false
+    },
+    "version": "4.13.13",
+    "deprecatedWarnings": 0,
+    "size": {
+      "mb": 47.2,
+      "files": 1322
+    },
+    "build": {
+      "ok": true,
+      "secs": 0.9,
+      "err": ""
+    },
+    "dev": {
+      "ok": true,
+      "status": 200,
+      "url": "http://localhost:3000/",
+      "secs": 1.4,
+      "tail": "> dev | > tsx watch src/index.ts |  | Server is running on http://localhost:3000"
+    }
+  },
+  "qwik": {
+    "name": "Qwik",
+    "os": "Windows",
+    "date": "2026-10-09",
+    "node": "v24.14.0",
+    "scaffold": {
+      "ok": true,
+      "secs": 50.7,
+      "err": "",
+      "timedOut": false
+    },
+    "install": {
+      "ok": true,
+      "ran": false
+    },
+    "version": "1.20.2",
+    "deprecatedWarnings": 0,
+    "size": {
+      "mb": 172.9,
+      "files": 15610
+    },
+    "build": {
+      "ok": true,
+      "secs": 17.7,
+      "err": ""
+    },
+    "dev": {
+      "ok": true,
+      "status": 200,
+      "url": "http://localhost:5173/",
+      "secs": 3.2,
+      "tail": "  VITE v7.3.1   ssr   ready in 1531 ms |  |   ➜  Local:   http://localhost:5173/ |   ➜  Network: use --host to expose"
+    }
+  },
+  "docusaurus": {
+    "name": "Docusaurus",
+    "os": "Windows",
+    "date": "2026-10-09",
+    "node": "v24.14.0",
+    "scaffold": {
+      "ok": true,
+      "secs": 113.5,
+      "err": "",
+      "timedOut": false
+    },
+    "install": {
+      "ok": true,
+      "ran": false
+    },
+    "version": "3.10.2",
+    "deprecatedWarnings": 0,
+    "size": {
+      "mb": 286,
+      "files": 31749
+    },
+    "build": {
+      "ok": false,
+      "secs": 19,
+      "err": "[ERROR] Error: Unable to build website for locale en."
+    },
+    "dev": {
+      "ok": true,
+      "status": 200,
+      "url": "http://localhost:3000/",
+      "secs": 12.8,
+      "tail": " | [INFO] Starting the development server... | [SUCCESS] Docusaurus website is running at: http://localhost:3000/ | client (Rspack 1.7.12) compiled successfully"
+    }
+  },
+  "electron": {
+    "name": "Electron Forge",
+    "os": "Windows",
+    "date": "2026-10-09",
+    "node": "v24.14.0",
+    "scaffold": {
+      "ok": true,
+      "secs": 78.1,
+      "err": "",
+      "timedOut": false
+    },
+    "install": {
+      "ok": true,
+      "ran": false
+    },
+    "version": "44.7.0",
+    "deprecatedWarnings": 0,
+    "size": {
+      "mb": 174.4,
+      "files": 10028
+    }
+  },
+  "t3": {
+    "name": "create-t3-app",
+    "os": "Windows",
+    "date": "2026-10-09",
+    "node": "v24.14.0",
+    "scaffold": {
+      "ok": true,
+      "secs": 46,
+      "err": "",
+      "timedOut": false
+    },
+    "install": {
+      "ok": true,
+      "ran": false
+    },
+    "version": "15.5.27",
+    "deprecatedWarnings": 0,
+    "size": {
+      "mb": 388.3,
+      "files": 11580
+    },
+    "build": {
+      "ok": true,
+      "secs": 35.9,
+      "err": ""
+    },
+    "dev": {
+      "ok": true,
+      "status": 200,
+      "url": "http://localhost:3000/",
+      "secs": 10.2,
+      "tail": " |  | [TRPC] post.hello took 317ms to execute | [TRPC] post.getLatest took 159ms to execute"
+    }
+  },
+  "angular-node24.14": {
+    "name": "Angular",
+    "os": "Windows",
+    "date": "2026-10-09",
+    "node": "v24.14.0",
+    "scaffold": {
+      "ok": false,
+      "secs": 16.3,
+      "err": "The Angular CLI requires a minimum Node.js version of v22.22.3 or v24.15.0 or v26.0.0. |  | Please update your Node.js version or visit https://nodejs.org/ for additional instructions.",
+      "timedOut": false
+    }
+  }
+}

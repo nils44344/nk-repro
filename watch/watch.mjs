@@ -25,6 +25,13 @@ const NPM = {
   '@google/genai': { tags: ['latest'], alert: 'major', posts: ['/ai/gemini-api-429-resource-exhausted', '/ai/gemini-2-5-flash-no-longer-available-to-new-users'] },
   wrangler: { tags: ['latest'], alert: 'major', posts: ['/deploy'] },
   '@anthropic-ai/claude-code': { tags: ['latest'], alert: 'minor', posts: ['/agents'] },
+  // Starters with an open Windows problem in the starters report: any release may be the fix.
+  nuxt: { tags: ['latest'], alert: 'all', posts: ['/tested/framework-starters-on-windows-tested'] },
+  '@docusaurus/core': { tags: ['latest'], alert: 'all', posts: ['/tested/framework-starters-on-windows-tested'] },
+  '@swc/core': { tags: ['latest'], alert: 'all', posts: ['/tested/framework-starters-on-windows-tested'] },
+  'create-react-router': { tags: ['latest'], alert: 'all', posts: ['/tested/framework-starters-on-windows-tested'] },
+  '@angular/cli': { tags: ['latest'], alert: 'minor', posts: ['/tested/framework-starters-on-windows-tested'] },
+  'create-cloudflare': { tags: ['latest'], alert: 'minor', posts: ['/tested/framework-starters-on-windows-tested'] },
 };
 // Node.js: the newest Current release (alert on a new major) and the active LTS line (alert on a new codename: LTS day).
 const NODE_POSTS = ['/topics/node', '/tested/bun-vs-node-24-startup-typescript-tests'];

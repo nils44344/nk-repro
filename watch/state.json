@@ -16,5 +16,11 @@
   "npm:supabase@latest": "2.120.0",
   "npm:@prisma/client@latest": "7.10.0",
   "node:current": "v26.11.1",
-  "node:lts": "v24.21.0 (Krypton)"
+  "node:lts": "v24.21.0 (Krypton)",
+  "npm:@angular/cli@latest": "22.2.2",
+  "npm:nuxt@latest": "4.6.0",
+  "npm:@swc/core@latest": "1.16.13",
+  "npm:create-react-router@latest": "8.4.0",
+  "npm:@docusaurus/core@latest": "3.10.2",
+  "npm:create-cloudflare@latest": "2.73.4"
 }
