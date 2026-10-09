@@ -1,7 +1,7 @@
 {
   "post": "nextjs-16-3-vulnerabilities-which-version-is-patched",
   "os": "Linux",
-  "date": "2026-10-08",
+  "date": "2026-10-09",
   "versions": {
     "next (latest tag)": "16.4.0",
     "newest 16.3.x": "16.3.8"

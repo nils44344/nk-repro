@@ -107,7 +107,7 @@
     "Linux": {
       "post": "nextjs-16-3-vulnerabilities-which-version-is-patched",
       "os": "Linux",
-      "date": "2026-10-08",
+      "date": "2026-10-09",
       "versions": {
         "next (latest tag)": "16.4.0",
         "newest 16.3.x": "16.3.8"
@@ -141,16 +141,16 @@
     "Linux": {
       "post": "prisma-generate-no-command-registered-prisma-8",
       "os": "Linux",
-      "date": "2026-10-08",
+      "date": "2026-10-09",
       "versions": {
-        "prisma (latest tag)": "8.0.0-rc.21",
+        "prisma (latest tag)": "8.0.0-rc.22",
         "@prisma/client (latest tag)": "7.10.0"
       },
       "checks": [
         {
           "name": "npm \"latest\" for prisma is still a Prisma 8 release candidate",
           "ok": true,
-          "evidence": "8.0.0-rc.21"
+          "evidence": "8.0.0-rc.22"
         },
         {
           "name": "npm \"latest\" for @prisma/client is still 7.x",
@@ -165,7 +165,7 @@
         {
           "name": "Fix: `npx -y prisma@7 generate` generates the client",
           "ok": true,
-          "evidence": "✔ Generated Prisma Client (7.10.0) to ./src/generated/prisma in 14ms Prisma schema loaded from prisma/schema.prisma."
+          "evidence": "✔ Generated Prisma Client (7.10.0) to ./src/generated/prisma in 31ms Prisma schema loaded from prisma/schema.prisma."
         }
       ],
       "allHold": true
