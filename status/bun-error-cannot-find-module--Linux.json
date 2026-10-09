@@ -1,7 +1,7 @@
 {
   "post": "bun-error-cannot-find-module",
   "os": "Linux",
-  "date": "2026-10-08",
+  "date": "2026-10-09",
   "versions": {
     "bun": "1.4.2"
   },
@@ -9,17 +9,17 @@
     {
       "name": "Undeclared workspace package: \"Cannot find module\" on a fresh install",
       "ok": true,
-      "evidence": "error: Cannot find module '@mono/ui' from '/tmp/nk-ws-bbeyje/apps/web/index.ts' Bun v1.4.2 (Linux x64)"
+      "evidence": "error: Cannot find module '@mono/ui' from '/tmp/nk-ws-pRGyrv/apps/web/index.ts' Bun v1.4.2 (Linux x64)"
     },
     {
       "name": "Fix: bun add @mono/ui@workspace:* makes it load",
       "ok": true,
-      "evidence": "bun add v1.4.2 (744846f84) installed @mono/ui@workspace:packages/ui [2.00ms] done button Saved lockfile"
+      "evidence": "bun add v1.4.2 (744846f84) installed @mono/ui@workspace:packages/ui [3.00ms] done button Saved lockfile"
     },
     {
       "name": "bun test ignores Jest moduleNameMapper",
       "ok": true,
-      "evidence": "bun test v1.4.2 (744846f84) ::group::tests/alias.test.ts: # Unhandled error between tests ------------------------------- error: Cannot find module '~/lib/math' from '/tmp/nk-test-3nv9Bk/tests/alias.test.ts' ------------------------------- 0 pass 1 fail 1 error Ran 1 test across 1 file. [3.00ms]"
+      "evidence": "bun test v1.4.2 (744846f84) ::group::tests/alias.test.ts: # Unhandled error between tests ------------------------------- error: Cannot find module '~/lib/math' from '/tmp/nk-test-pZBKuv/tests/alias.test.ts' ------------------------------- 0 pass 1 fail 1 error Ran 1 test across 1 file. [3.00ms]"
     },
     {
       "name": "Fix: tsconfig paths makes bun test pass",
@@ -34,7 +34,7 @@
     {
       "name": "Project with node_modules, no React: \"Cannot find module react/jsx-dev-runtime\"",
       "ok": true,
-      "evidence": "error: Cannot find module 'react/jsx-dev-runtime' from '/tmp/nk-jsx-proj-MLZ6LY/index.tsx' Bun v1.4.2 (Linux x64)"
+      "evidence": "error: Cannot find module 'react/jsx-dev-runtime' from '/tmp/nk-jsx-proj-MHM4LL/index.tsx' Bun v1.4.2 (Linux x64)"
     },
     {
       "name": "Linux: bun --bun run runs scripts in Bun",
@@ -44,7 +44,7 @@
     {
       "name": "Linux: wrong-case import fails (ENOENT reading ... utils.ts)",
       "ok": true,
-      "evidence": "error: ENOENT reading \"/tmp/nk-case-T2FHsj/utils.ts\" Bun v1.4.2 (Linux x64)"
+      "evidence": "error: ENOENT reading \"/tmp/nk-case-NYyCPe/utils.ts\" Bun v1.4.2 (Linux x64)"
     }
   ],
   "allHold": true
