@@ -35,7 +35,7 @@ jobs:
         with:
           name: status-bun-${{ matrix.os }}
           # Only this job's own results: the checkout also holds older copies of the other jobs' files.
-          path: status/bun-error-cannot-find-module--*.json
+          path: status/bun-error-cannot-find-module--${{ runner.os }}.json
 
   npm:
     runs-on: ubuntu-latest
