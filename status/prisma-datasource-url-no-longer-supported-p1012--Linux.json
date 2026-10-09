@@ -1,0 +1,41 @@
+{
+  "post": "prisma-datasource-url-no-longer-supported-p1012",
+  "os": "Linux",
+  "date": "2026-10-09",
+  "versions": {
+    "prisma (7.x)": "7.10.0"
+  },
+  "checks": [
+    {
+      "name": "`url` in the schema: P1012 \"no longer supported in schema files\"",
+      "ok": true,
+      "evidence": "Prisma schema loaded from prisma/schema.prisma. Error: Prisma schema validation - (get-config wasm) Error code: P1012 error: The datasource property `url` is no longer supported in schema files. Move connection URLs for Migrate to `prisma.config.ts` and pass either `adapter` for a direct database co"
+    },
+    {
+      "name": "`url` kept alongside prisma.config.ts: still P1012",
+      "ok": true,
+      "evidence": "Loaded Prisma config from prisma.config.ts. Prisma schema loaded from prisma/schema.prisma. Error: Prisma schema validation - (get-config wasm) Error code: P1012 error: The datasource property `url` is no longer supported in schema files. Move connection URLs for Migrate to `prisma.config.ts` and pa"
+    },
+    {
+      "name": "`directUrl` in the schema: P1012 \"The datasource property directUrl is no longer supported\"",
+      "ok": true,
+      "evidence": "Prisma schema loaded from prisma/schema.prisma. Error: Prisma schema validation - (get-config wasm) Error code: P1012 error: The datasource property `directUrl` is no longer supported in schema files. Move connection URLs to `prisma.config.ts`. See https://pris.ly/d/config-datasource --> prisma/sche"
+    },
+    {
+      "name": "No URL and no config: migrate dev says datasource.url is required",
+      "ok": true,
+      "evidence": "Prisma schema loaded from prisma/schema.prisma. Error: The datasource.url property is required in your Prisma config file when using prisma migrate dev."
+    },
+    {
+      "name": "Config without dotenv: \"Cannot resolve environment variable: DATABASE_URL\"",
+      "ok": true,
+      "evidence": "Failed to load config file \"/tmp/nk-p1012-LMwKn0\" as a TypeScript/JavaScript module. Error: PrismaConfigEnvError: Cannot resolve environment variable: DATABASE_URL."
+    },
+    {
+      "name": "Fix: config with dotenv validates",
+      "ok": true,
+      "evidence": "The schema at prisma/schema.prisma is valid 🚀 Loaded Prisma config from prisma.config.ts. Prisma schema loaded from prisma/schema.prisma."
+    }
+  ],
+  "allHold": true
+}
