@@ -1,0 +1,20 @@
+{
+  "npm:typescript@latest": "7.0.2",
+  "npm:prisma@latest": "8.0.0-rc.22",
+  "npm:vite@latest": "8.3.4",
+  "npm:vite@beta": "8.3.0-beta.1",
+  "npm:bun@latest": "1.4.2",
+  "npm:openai@latest": "7.31.0",
+  "npm:npm@latest": "12.2.0",
+  "npm:@anthropic-ai/sdk@latest": "0.132.1",
+  "npm:tailwindcss@latest": "4.3.3",
+  "npm:@google/genai@latest": "2.28.0",
+  "npm:next@latest": "16.4.0",
+  "npm:wrangler@latest": "4.149.0",
+  "npm:@anthropic-ai/claude-code@latest": "2.1.295",
+  "npm:@supabase/supabase-js@latest": "2.117.3",
+  "npm:supabase@latest": "2.120.0",
+  "npm:@prisma/client@latest": "7.10.0",
+  "node:current": "v26.11.1",
+  "node:lts": "v24.21.0 (Krypton)"
+}

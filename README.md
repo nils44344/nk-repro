@@ -17,6 +17,10 @@ The exact code behind the fixes on [nilaykabariya.blog](https://nilaykabariya.bl
 
 [`reverify`](reverify) re-runs the key claim of each post every night on the newest versions (Bun on Windows and Linux; Prisma and Next.js on Linux). Results land in [`status/status.json`](status/status.json). A run fails when a claim stops holding, which means a fix shipped or something new broke.
 
+## Release watcher
+
+[`watch`](watch) checks every hour for new versions of the tools these posts cover (npm dist-tags and Node.js releases). A release that matters opens an issue in this repo listing the affected posts, and a new Prisma, Next.js or Bun version re-runs the checks above straight away. Versions seen so far: [`watch/state.json`](watch/state.json).
+
 ## Running it
 
 - Node 24. Run `npm install` in a folder first.

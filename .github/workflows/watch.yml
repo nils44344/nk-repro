@@ -1,0 +1,56 @@
+# Hourly release watcher. GitHub's own schedule is unreliable on this account, so cron-job.org dispatches this
+# workflow every hour (the schedule below stays as a backup). It also starts the nightly re-check (reverify.yml)
+# once a day, and immediately when a package with re-checked posts (prisma, next, bun) ships a new version.
+name: watch
+
+on:
+  schedule:
+    - cron: '7 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  actions: write
+
+concurrency:
+  group: watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - id: w
+        run: node watch/watch.mjs
+      - name: Commit state
+        run: |
+          git config user.name "nk-watch"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add watch/state.json
+          git diff --cached --quiet || (git commit -m "watch: $(date -u +%FT%H:%MZ)" && git pull --rebase -q && git push)
+      - name: Open an issue (emails the owner)
+        if: steps.w.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: ${{ steps.w.outputs.title }}
+        run: |
+          {
+            echo "@${{ github.repository_owner }} new releases of tools the blog covers:"
+            echo
+            cat watch/last-changes.md
+            echo
+            echo "Re-test the affected posts, and write the tested post if this is a breaking release."
+          } > body.md
+          gh issue create --title "Release: $TITLE" --body-file body.md
+      - name: Start the re-check (daily at 02 UTC, or now if a re-checked package moved)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "$(date -u +%H)" = "02" ] || grep -qE '`(prisma|@prisma/client|next|bun)`' watch/last-changes.md; then
+            gh workflow run reverify.yml
+          fi
