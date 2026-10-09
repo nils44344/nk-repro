@@ -25,7 +25,7 @@
     {
       "name": "Fix: `npx -y prisma@7 generate` generates the client",
       "ok": true,
-      "evidence": "✔ Generated Prisma Client (7.10.0) to ./src/generated/prisma in 30ms Prisma schema loaded from prisma/schema.prisma."
+      "evidence": "✔ Generated Prisma Client (7.10.0) to ./src/generated/prisma in 31ms Prisma schema loaded from prisma/schema.prisma."
     }
   ],
   "allHold": true

@@ -9,22 +9,22 @@
     {
       "name": "Undeclared workspace package: \"Cannot find module\" on a fresh install",
       "ok": true,
-      "evidence": "error: Cannot find module '@mono/ui' from 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\nk-ws-yZ2iV6\\apps\\web\\index.ts' Bun v1.4.2 (Windows x64)"
+      "evidence": "error: Cannot find module '@mono/ui' from 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\nk-ws-k2oeOF\\apps\\web\\index.ts' Bun v1.4.2 (Windows x64)"
     },
     {
       "name": "Fix: bun add @mono/ui@workspace:* makes it load",
       "ok": true,
-      "evidence": "bun add v1.4.2 (744846f84) installed @mono/ui@workspace:packages/ui [8.00ms] done button Saved lockfile"
+      "evidence": "bun add v1.4.2 (744846f84) installed @mono/ui@workspace:packages/ui [11.00ms] done button Saved lockfile"
     },
     {
       "name": "bun test ignores Jest moduleNameMapper",
       "ok": true,
-      "evidence": "bun test v1.4.2 (744846f84) ::group::tests\\alias.test.ts: # Unhandled error between tests ------------------------------- error: Cannot find module '~/lib/math' from 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\nk-test-85c8mN\\tests\\alias.test.ts' ------------------------------- 0 pass 1 fail 1 error Ran"
+      "evidence": "bun test v1.4.2 (744846f84) ::group::tests\\alias.test.ts: # Unhandled error between tests ------------------------------- error: Cannot find module '~/lib/math' from 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\nk-test-QaLsMT\\tests\\alias.test.ts' ------------------------------- 0 pass 1 fail 1 error Ran"
     },
     {
       "name": "Fix: tsconfig paths makes bun test pass",
       "ok": true,
-      "evidence": "bun test v1.4.2 (744846f84) ::group::tests\\alias.test.ts: (pass) sum [0.09ms] ::endgroup:: 1 pass 0 fail 1 expect() calls Ran 1 test across 1 file. [7.00ms]"
+      "evidence": "bun test v1.4.2 (744846f84) ::group::tests\\alias.test.ts: (pass) sum [0.15ms] ::endgroup:: 1 pass 0 fail 1 expect() calls Ran 1 test across 1 file. [10.00ms]"
     },
     {
       "name": "No node_modules anywhere: Bun auto-installs React and the JSX runs",
@@ -34,7 +34,7 @@
     {
       "name": "Project with node_modules, no React: \"Cannot find module react/jsx-dev-runtime\"",
       "ok": true,
-      "evidence": "error: Cannot find module 'react/jsx-dev-runtime' from 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\nk-jsx-proj-SInUjp\\index.tsx' Bun v1.4.2 (Windows x64)"
+      "evidence": "error: Cannot find module 'react/jsx-dev-runtime' from 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\nk-jsx-proj-Y7KCgb\\index.tsx' Bun v1.4.2 (Windows x64)"
     },
     {
       "name": "Windows, Bun on the same drive as TEMP (C:): bun --bun run runs scripts in Bun",
