@@ -34,7 +34,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: status-bun-${{ matrix.os }}
-          path: status/*--*.json
+          # Only this job's own results: the checkout also holds older copies of the other jobs' files.
+          path: status/bun-error-cannot-find-module--*.json
 
   npm:
     runs-on: ubuntu-latest
@@ -53,7 +54,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: status-npm
-          path: status/*--*.json
+          path: |
+            status/prisma-generate-no-command-registered-prisma-8--*.json
+            status/nextjs-16-3-vulnerabilities-which-version-is-patched--*.json
       - if: steps.prisma.outcome == 'failure' || steps.next.outcome == 'failure'
         run: exit 1
 
