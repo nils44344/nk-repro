@@ -3,7 +3,7 @@
   "npm:prisma@latest": "8.0.0-rc.22",
   "npm:vite@latest": "8.3.4",
   "npm:vite@beta": "8.3.0-beta.1",
-  "npm:bun@latest": "1.4.2",
+  "npm:bun@latest": "1.4.3",
   "npm:openai@latest": "7.32.0",
   "npm:npm@latest": "12.2.0",
   "npm:@anthropic-ai/sdk@latest": "0.133.0",
@@ -22,5 +22,6 @@
   "npm:@swc/core@latest": "1.16.13",
   "npm:create-react-router@latest": "8.4.0",
   "npm:@docusaurus/core@latest": "3.10.2",
-  "npm:create-cloudflare@latest": "2.73.4"
+  "npm:create-cloudflare@latest": "2.73.4",
+  "npm:drizzle-orm@latest": "0.45.4"
 }
