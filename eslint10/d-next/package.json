@@ -1,0 +1,1 @@
+{"name":"d","private":true,"type":"module","devDependencies":{"eslint":"^10.12.0","eslint-config-next":"^16.4.0"},"dependencies":{"next":"^16.4.0","react":"^19.3.0","react-dom":"^19.3.0"}}

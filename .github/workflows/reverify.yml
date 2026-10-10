@@ -56,6 +56,9 @@ jobs:
       - id: drizzle
         continue-on-error: true
         run: node reverify/drizzle.mjs
+      - id: eslint
+        continue-on-error: true
+        run: node reverify/eslint10.mjs
       - if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -65,7 +68,8 @@ jobs:
             status/nextjs-16-3-vulnerabilities-which-version-is-patched--*.json
             status/prisma-datasource-url-no-longer-supported-p1012--*.json
             status/drizzle-failed-query-error--*.json
-      - if: steps.prisma.outcome == 'failure' || steps.next.outcome == 'failure' || steps.p1012.outcome == 'failure' || steps.drizzle.outcome == 'failure'
+            status/eslint-couldnt-find-an-eslint-config-file--*.json
+      - if: steps.prisma.outcome == 'failure' || steps.next.outcome == 'failure' || steps.p1012.outcome == 'failure' || steps.drizzle.outcome == 'failure' || steps.eslint.outcome == 'failure'
         run: exit 1
 
   publish:
