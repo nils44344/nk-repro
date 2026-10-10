@@ -25,6 +25,7 @@ const NPM = {
   '@google/genai': { tags: ['latest'], alert: 'major', posts: ['/ai/gemini-api-429-resource-exhausted', '/ai/gemini-2-5-flash-no-longer-available-to-new-users'] },
   wrangler: { tags: ['latest'], alert: 'major', posts: ['/deploy'] },
   '@anthropic-ai/claude-code': { tags: ['latest'], alert: 'minor', posts: ['/agents'] },
+  'drizzle-orm': { tags: ['latest'], alert: 'minor', posts: ['/database/drizzle-failed-query-error'] },
   // Starters with an open Windows problem in the starters report: any release may be the fix.
   nuxt: { tags: ['latest'], alert: 'all', posts: ['/tested/framework-starters-on-windows-tested'] },
   '@docusaurus/core': { tags: ['latest'], alert: 'all', posts: ['/tested/framework-starters-on-windows-tested'] },

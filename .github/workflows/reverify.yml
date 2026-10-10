@@ -53,6 +53,9 @@ jobs:
       - id: p1012
         continue-on-error: true
         run: node reverify/prisma-p1012.mjs
+      - id: drizzle
+        continue-on-error: true
+        run: node reverify/drizzle.mjs
       - if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -61,7 +64,8 @@ jobs:
             status/prisma-generate-no-command-registered-prisma-8--*.json
             status/nextjs-16-3-vulnerabilities-which-version-is-patched--*.json
             status/prisma-datasource-url-no-longer-supported-p1012--*.json
-      - if: steps.prisma.outcome == 'failure' || steps.next.outcome == 'failure' || steps.p1012.outcome == 'failure'
+            status/drizzle-failed-query-error--*.json
+      - if: steps.prisma.outcome == 'failure' || steps.next.outcome == 'failure' || steps.p1012.outcome == 'failure' || steps.drizzle.outcome == 'failure'
         run: exit 1
 
   publish:
