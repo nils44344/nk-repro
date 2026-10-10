@@ -176,11 +176,11 @@
   "nuxt": {
     "name": "Nuxt",
     "os": "Windows",
-    "date": "2026-10-09",
+    "date": "2026-10-10",
     "node": "v24.14.0",
     "scaffold": {
       "ok": true,
-      "secs": 83.9,
+      "secs": 117.2,
       "err": "",
       "timedOut": false
     },
@@ -188,23 +188,23 @@
       "ok": true,
       "ran": false
     },
-    "version": "4.6.0",
+    "version": "4.6.1",
     "deprecatedWarnings": 0,
     "size": {
       "mb": 173.2,
-      "files": 14695
+      "files": 14698
     },
     "build": {
       "ok": true,
-      "secs": 24.3,
+      "secs": 19.9,
       "err": ""
     },
     "dev": {
-      "ok": false,
-      "status": 500,
+      "ok": true,
+      "status": 200,
       "url": "http://localhost:3000/",
-      "secs": 12.6,
-      "tail": " |   ✖ Error (500): Either manifest or precomputed data must be provided |    |     … 10 dependency frames"
+      "secs": 11.1,
+      "tail": "● Building server (2.50s · 6.94s) | [success] [nitro] Nuxt Nitro server built in 2972ms | ◆ Ready in 7.75s  → http://localhost:3000/ |   config 494ms · modules 607ms · app 1.74s · types 939ms · bundle 652ms · server 3.32s"
     }
   },
   "angular": {
@@ -537,6 +537,40 @@
       "secs": 16.3,
       "err": "The Angular CLI requires a minimum Node.js version of v22.22.3 or v24.15.0 or v26.0.0. |  | Please update your Node.js version or visit https://nodejs.org/ for additional instructions.",
       "timedOut": false
+    }
+  },
+  "nuxt-4.6.0": {
+    "name": "Nuxt",
+    "os": "Windows",
+    "date": "2026-10-09",
+    "node": "v24.14.0",
+    "scaffold": {
+      "ok": true,
+      "secs": 83.9,
+      "err": "",
+      "timedOut": false
+    },
+    "install": {
+      "ok": true,
+      "ran": false
+    },
+    "version": "4.6.0",
+    "deprecatedWarnings": 0,
+    "size": {
+      "mb": 173.2,
+      "files": 14695
+    },
+    "build": {
+      "ok": true,
+      "secs": 24.3,
+      "err": ""
+    },
+    "dev": {
+      "ok": false,
+      "status": 500,
+      "url": "http://localhost:3000/",
+      "secs": 12.6,
+      "tail": " |   ✖ Error (500): Either manifest or precomputed data must be provided |    |     … 10 dependency frames"
     }
   }
 }
