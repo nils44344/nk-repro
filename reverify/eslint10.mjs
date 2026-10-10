@@ -16,7 +16,7 @@ const reactVer = sh('npm view eslint-plugin-react version').trim();
 const checks = [
   check('.eslintrc only: "couldn\'t find an eslint.config.* file"', () => sh('npx eslint .', d), (o) => /couldn't find an eslint\.config/.test(o)),
   check('ESLINT_USE_FLAT_CONFIG=false is ignored (same error)', () => sh('npx eslint .', d, { ESLINT_USE_FLAT_CONFIG: 'false' }), (o) => /couldn't find an eslint\.config/.test(o)),
-  check(`eslint-plugin-react (${reactVer}) still does not declare ESLint 10`, () => `peer eslint: ${peer}`, () => !/(^|[^d.])10(D|$)/.test(peer)),
+  check(`eslint-plugin-react (${reactVer}) still does not declare ESLint 10`, () => `peer eslint: ${peer}`, () => !/(^|[^\d.])10(\D|$)/.test(peer)),
 ];
 const ok = record(POST, { eslint: version, 'eslint-plugin-react': reactVer }, checks);
 process.exitCode = ok ? 0 : 1;
