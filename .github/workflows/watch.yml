@@ -32,9 +32,10 @@ jobs:
           git config user.name "nk-watch"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add watch/state.json
-          git diff --cached --quiet || (git commit -m "watch: $(date -u +%FT%H:%MZ)" && git pull --rebase -q && git push)
+          git diff --cached --quiet || (git commit -m "watch: $(date -u +%FT%H:%MZ)" && git pull --rebase --autostash -q && git push)
       - name: Open an issue (emails the owner)
-        if: steps.w.outputs.changed == 'true'
+        # always(): an alert must not be lost because saving the state failed (that happened on 2026-10-09).
+        if: always() && steps.w.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           TITLE: ${{ steps.w.outputs.title }}
