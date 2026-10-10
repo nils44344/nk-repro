@@ -1,0 +1,31 @@
+{
+  "post": "drizzle-failed-query-error",
+  "os": "Linux",
+  "date": "2026-10-10",
+  "versions": {
+    "drizzle-orm": "0.45.4"
+  },
+  "checks": [
+    {
+      "name": "Errors are wrapped: DrizzleQueryError with \"Failed query:\" message",
+      "ok": true,
+      "evidence": "{\"wrapped\":true,\"failedQuery\":true,\"code\":null,\"causeCode\":\"23505\",\"rootExport\":true}"
+    },
+    {
+      "name": "e.code is undefined on the wrapper (the 0.44 breaking change)",
+      "ok": true,
+      "evidence": "{\"wrapped\":true,\"failedQuery\":true,\"code\":null,\"causeCode\":\"23505\",\"rootExport\":true}"
+    },
+    {
+      "name": "The Postgres code is on e.cause.code (23505)",
+      "ok": true,
+      "evidence": "{\"wrapped\":true,\"failedQuery\":true,\"code\":null,\"causeCode\":\"23505\",\"rootExport\":true}"
+    },
+    {
+      "name": "DrizzleQueryError is exported from drizzle-orm root (0.45+)",
+      "ok": true,
+      "evidence": "{\"wrapped\":true,\"failedQuery\":true,\"code\":null,\"causeCode\":\"23505\",\"rootExport\":true}"
+    }
+  ],
+  "allHold": true
+}

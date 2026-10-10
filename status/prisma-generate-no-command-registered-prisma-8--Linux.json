@@ -1,7 +1,7 @@
 {
   "post": "prisma-generate-no-command-registered-prisma-8",
   "os": "Linux",
-  "date": "2026-10-09",
+  "date": "2026-10-10",
   "versions": {
     "prisma (latest tag)": "8.0.0-rc.22",
     "@prisma/client (latest tag)": "7.10.0"
@@ -25,7 +25,7 @@
     {
       "name": "Fix: `npx -y prisma@7 generate` generates the client",
       "ok": true,
-      "evidence": "✔ Generated Prisma Client (7.10.0) to ./src/generated/prisma in 31ms Prisma schema loaded from prisma/schema.prisma."
+      "evidence": "✔ Generated Prisma Client (7.10.0) to ./src/generated/prisma in 30ms Prisma schema loaded from prisma/schema.prisma."
     }
   ],
   "allHold": true

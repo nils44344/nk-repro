@@ -1,7 +1,7 @@
 {
   "post": "prisma-datasource-url-no-longer-supported-p1012",
   "os": "Linux",
-  "date": "2026-10-09",
+  "date": "2026-10-10",
   "versions": {
     "prisma (7.x)": "7.10.0"
   },
@@ -29,7 +29,7 @@
     {
       "name": "Config without dotenv: \"Cannot resolve environment variable: DATABASE_URL\"",
       "ok": true,
-      "evidence": "Failed to load config file \"/tmp/nk-p1012-A53LkT\" as a TypeScript/JavaScript module. Error: PrismaConfigEnvError: Cannot resolve environment variable: DATABASE_URL."
+      "evidence": "Failed to load config file \"/tmp/nk-p1012-6N1Mkr\" as a TypeScript/JavaScript module. Error: PrismaConfigEnvError: Cannot resolve environment variable: DATABASE_URL."
     },
     {
       "name": "Fix: config with dotenv validates",
