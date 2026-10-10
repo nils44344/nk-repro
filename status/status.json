@@ -11,22 +11,22 @@
         {
           "name": "Undeclared workspace package: \"Cannot find module\" on a fresh install",
           "ok": true,
-          "evidence": "error: Cannot find module '@mono/ui' from '/tmp/nk-ws-75S1Mx/apps/web/index.ts' Bun v1.4.3 (Linux x64)"
+          "evidence": "error: Cannot find module '@mono/ui' from '/tmp/nk-ws-WYIGz6/apps/web/index.ts' Bun v1.4.3 (Linux x64)"
         },
         {
           "name": "Fix: bun add @mono/ui@workspace:* makes it load",
           "ok": true,
-          "evidence": "bun add v1.4.3 (c6da4a4d3) installed @mono/ui@workspace:packages/ui [1.00ms] done button Saved lockfile"
+          "evidence": "bun add v1.4.3 (c6da4a4d3) installed @mono/ui@workspace:packages/ui [2.00ms] done button Saved lockfile"
         },
         {
           "name": "bun test ignores Jest moduleNameMapper",
           "ok": true,
-          "evidence": "bun test v1.4.3 (c6da4a4d3) ::group::tests/alias.test.ts: # Unhandled error between tests ------------------------------- error: Cannot find module '~/lib/math' from '/tmp/nk-test-oZFpc6/tests/alias.test.ts' ------------------------------- 0 pass 1 fail 1 error Ran 1 test across 1 file. [2.00ms]"
+          "evidence": "bun test v1.4.3 (c6da4a4d3) ::group::tests/alias.test.ts: # Unhandled error between tests ------------------------------- error: Cannot find module '~/lib/math' from '/tmp/nk-test-bCu8pM/tests/alias.test.ts' ------------------------------- 0 pass 1 fail 1 error Ran 1 test across 1 file. [3.00ms]"
         },
         {
           "name": "Fix: tsconfig paths makes bun test pass",
           "ok": true,
-          "evidence": "bun test v1.4.3 (c6da4a4d3) ::group::tests/alias.test.ts: (pass) sum [0.04ms] ::endgroup:: 1 pass 0 fail 1 expect() calls Ran 1 test across 1 file. [2.00ms]"
+          "evidence": "bun test v1.4.3 (c6da4a4d3) ::group::tests/alias.test.ts: (pass) sum [0.05ms] ::endgroup:: 1 pass 0 fail 1 expect() calls Ran 1 test across 1 file. [2.00ms]"
         },
         {
           "name": "No node_modules anywhere: Bun auto-installs React and the JSX runs",
@@ -36,7 +36,7 @@
         {
           "name": "Project with node_modules, no React: \"Cannot find module react/jsx-dev-runtime\"",
           "ok": true,
-          "evidence": "error: Cannot find module 'react/jsx-dev-runtime' from '/tmp/nk-jsx-proj-44U6IN/index.tsx' Bun v1.4.3 (Linux x64)"
+          "evidence": "error: Cannot find module 'react/jsx-dev-runtime' from '/tmp/nk-jsx-proj-9LePUC/index.tsx' Bun v1.4.3 (Linux x64)"
         },
         {
           "name": "Linux: bun --bun run runs scripts in Bun",
@@ -46,7 +46,7 @@
         {
           "name": "Linux: wrong-case import fails (ENOENT reading ... utils.ts)",
           "ok": true,
-          "evidence": "error: ENOENT reading \"/tmp/nk-case-RY1aEf/utils.ts\" Bun v1.4.3 (Linux x64)"
+          "evidence": "error: ENOENT reading \"/tmp/nk-case-wcI2E8/utils.ts\" Bun v1.4.3 (Linux x64)"
         }
       ],
       "allHold": true
@@ -62,22 +62,22 @@
         {
           "name": "Undeclared workspace package: \"Cannot find module\" on a fresh install",
           "ok": true,
-          "evidence": "error: Cannot find module '@mono/ui' from 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\nk-ws-hixmMg\\apps\\web\\index.ts' Bun v1.4.3 (Windows x64)"
+          "evidence": "error: Cannot find module '@mono/ui' from 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\nk-ws-tPEngh\\apps\\web\\index.ts' Bun v1.4.3 (Windows x64)"
         },
         {
           "name": "Fix: bun add @mono/ui@workspace:* makes it load",
           "ok": true,
-          "evidence": "bun add v1.4.3 (c6da4a4d3) installed @mono/ui@workspace:packages/ui [14.00ms] done button Saved lockfile"
+          "evidence": "bun add v1.4.3 (c6da4a4d3) installed @mono/ui@workspace:packages/ui [12.00ms] done button Saved lockfile"
         },
         {
           "name": "bun test ignores Jest moduleNameMapper",
           "ok": true,
-          "evidence": "bun test v1.4.3 (c6da4a4d3) ::group::tests\\alias.test.ts: # Unhandled error between tests ------------------------------- error: Cannot find module '~/lib/math' from 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\nk-test-1YK90U\\tests\\alias.test.ts' ------------------------------- 0 pass 1 fail 1 error Ran"
+          "evidence": "bun test v1.4.3 (c6da4a4d3) ::group::tests\\alias.test.ts: # Unhandled error between tests ------------------------------- error: Cannot find module '~/lib/math' from 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\nk-test-1NcHLf\\tests\\alias.test.ts' ------------------------------- 0 pass 1 fail 1 error Ran"
         },
         {
           "name": "Fix: tsconfig paths makes bun test pass",
           "ok": true,
-          "evidence": "bun test v1.4.3 (c6da4a4d3) ::group::tests\\alias.test.ts: (pass) sum [0.10ms] ::endgroup:: 1 pass 0 fail 1 expect() calls Ran 1 test across 1 file. [10.00ms]"
+          "evidence": "bun test v1.4.3 (c6da4a4d3) ::group::tests\\alias.test.ts: (pass) sum [0.10ms] ::endgroup:: 1 pass 0 fail 1 expect() calls Ran 1 test across 1 file. [9.00ms]"
         },
         {
           "name": "No node_modules anywhere: Bun auto-installs React and the JSX runs",
@@ -87,7 +87,7 @@
         {
           "name": "Project with node_modules, no React: \"Cannot find module react/jsx-dev-runtime\"",
           "ok": true,
-          "evidence": "error: Cannot find module 'react/jsx-dev-runtime' from 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\nk-jsx-proj-g6ykrR\\index.tsx' Bun v1.4.3 (Windows x64)"
+          "evidence": "error: Cannot find module 'react/jsx-dev-runtime' from 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\nk-jsx-proj-pnoEvj\\index.tsx' Bun v1.4.3 (Windows x64)"
         },
         {
           "name": "Windows, Bun on the same drive as TEMP (C:): bun --bun run runs scripts in Bun",
@@ -131,6 +131,35 @@
           "name": "DrizzleQueryError is exported from drizzle-orm root (0.45+)",
           "ok": true,
           "evidence": "{\"wrapped\":true,\"failedQuery\":true,\"code\":null,\"causeCode\":\"23505\",\"rootExport\":true}"
+        }
+      ],
+      "allHold": true
+    }
+  },
+  "eslint-couldnt-find-an-eslint-config-file": {
+    "Linux": {
+      "post": "eslint-couldnt-find-an-eslint-config-file",
+      "os": "Linux",
+      "date": "2026-10-10",
+      "versions": {
+        "eslint": "v10.12.0",
+        "eslint-plugin-react": "7.37.5"
+      },
+      "checks": [
+        {
+          "name": ".eslintrc only: \"couldn't find an eslint.config.* file\"",
+          "ok": true,
+          "evidence": "Oops! Something went wrong! :( ESLint: 10.12.0 ESLint couldn't find an eslint.config.* file. From ESLint v9.0.0, the default configuration file is now eslint.config.*. If you are using a .eslintrc.* file, please follow the migration guide to update your configuration file to the new format: https://"
+        },
+        {
+          "name": "ESLINT_USE_FLAT_CONFIG=false is ignored (same error)",
+          "ok": true,
+          "evidence": "Oops! Something went wrong! :( ESLint: 10.12.0 ESLint couldn't find an eslint.config.* file. From ESLint v9.0.0, the default configuration file is now eslint.config.*. If you are using a .eslintrc.* file, please follow the migration guide to update your configuration file to the new format: https://"
+        },
+        {
+          "name": "eslint-plugin-react (7.37.5) still does not declare ESLint 10",
+          "ok": true,
+          "evidence": "peer eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7"
         }
       ],
       "allHold": true
@@ -202,7 +231,7 @@
         {
           "name": "Config without dotenv: \"Cannot resolve environment variable: DATABASE_URL\"",
           "ok": true,
-          "evidence": "Failed to load config file \"/tmp/nk-p1012-Ie5Q0Z\" as a TypeScript/JavaScript module. Error: PrismaConfigEnvError: Cannot resolve environment variable: DATABASE_URL."
+          "evidence": "Failed to load config file \"/tmp/nk-p1012-rQWE9x\" as a TypeScript/JavaScript module. Error: PrismaConfigEnvError: Cannot resolve environment variable: DATABASE_URL."
         },
         {
           "name": "Fix: config with dotenv validates",
@@ -241,7 +270,7 @@
         {
           "name": "Fix: `npx -y prisma@7 generate` generates the client",
           "ok": true,
-          "evidence": "✔ Generated Prisma Client (7.10.0) to ./src/generated/prisma in 14ms Prisma schema loaded from prisma/schema.prisma."
+          "evidence": "✔ Generated Prisma Client (7.10.0) to ./src/generated/prisma in 24ms Prisma schema loaded from prisma/schema.prisma."
         }
       ],
       "allHold": true

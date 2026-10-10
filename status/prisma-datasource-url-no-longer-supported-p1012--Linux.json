@@ -29,7 +29,7 @@
     {
       "name": "Config without dotenv: \"Cannot resolve environment variable: DATABASE_URL\"",
       "ok": true,
-      "evidence": "Failed to load config file \"/tmp/nk-p1012-Ie5Q0Z\" as a TypeScript/JavaScript module. Error: PrismaConfigEnvError: Cannot resolve environment variable: DATABASE_URL."
+      "evidence": "Failed to load config file \"/tmp/nk-p1012-rQWE9x\" as a TypeScript/JavaScript module. Error: PrismaConfigEnvError: Cannot resolve environment variable: DATABASE_URL."
     },
     {
       "name": "Fix: config with dotenv validates",

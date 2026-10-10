@@ -1,0 +1,27 @@
+{
+  "post": "eslint-couldnt-find-an-eslint-config-file",
+  "os": "Linux",
+  "date": "2026-10-10",
+  "versions": {
+    "eslint": "v10.12.0",
+    "eslint-plugin-react": "7.37.5"
+  },
+  "checks": [
+    {
+      "name": ".eslintrc only: \"couldn't find an eslint.config.* file\"",
+      "ok": true,
+      "evidence": "Oops! Something went wrong! :( ESLint: 10.12.0 ESLint couldn't find an eslint.config.* file. From ESLint v9.0.0, the default configuration file is now eslint.config.*. If you are using a .eslintrc.* file, please follow the migration guide to update your configuration file to the new format: https://"
+    },
+    {
+      "name": "ESLINT_USE_FLAT_CONFIG=false is ignored (same error)",
+      "ok": true,
+      "evidence": "Oops! Something went wrong! :( ESLint: 10.12.0 ESLint couldn't find an eslint.config.* file. From ESLint v9.0.0, the default configuration file is now eslint.config.*. If you are using a .eslintrc.* file, please follow the migration guide to update your configuration file to the new format: https://"
+    },
+    {
+      "name": "eslint-plugin-react (7.37.5) still does not declare ESLint 10",
+      "ok": true,
+      "evidence": "peer eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7"
+    }
+  ],
+  "allHold": true
+}
