@@ -1,0 +1,23 @@
+# Does @swc/core / @swc/html load on a clean Windows profile? (1.16.13 refused: cache folder permission check.)
+name: swc-win
+on: workflow_dispatch
+jobs:
+  load:
+    strategy:
+      fail-fast: false
+      matrix:
+        swc: ['1.15.47', '1.16.13', '1.16.18']
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - shell: pwsh
+        working-directory: swc-win
+        run: |
+          npm init -y | Out-Null
+          npm install --no-audit --no-fund "@swc/core@${{ matrix.swc }}" "@swc/html@${{ matrix.swc }}" 2>&1 | Select-Object -Last 1
+          icacls C:\ | Select-String "Authenticated"
+          icacls "$env:LOCALAPPDATA" | Select-Object -First 4
+          node check.cjs
