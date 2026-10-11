@@ -18,6 +18,9 @@ jobs:
         run: |
           npm init -y | Out-Null
           npm install --no-audit --no-fund "@swc/core@${{ matrix.swc }}" "@swc/html@${{ matrix.swc }}" 2>&1 | Select-Object -Last 1
+          # Make C:\ itself modifiable by Authenticated Users, as on many real Windows installs
+          # (the runner only grants it to subfolders).
+          icacls C:\ /grant "*S-1-5-11:(M)" | Out-Null
           icacls C:\ | Select-String "Authenticated"
           icacls "$env:LOCALAPPDATA" | Select-Object -First 4
           node check.cjs
