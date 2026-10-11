@@ -1,6 +1,9 @@
 # Does @swc/core / @swc/html load on a clean Windows profile? (1.16.13 refused: cache folder permission check.)
 name: swc-win
 on: workflow_dispatch
+permissions:
+  contents: read
+
 jobs:
   load:
     strategy:

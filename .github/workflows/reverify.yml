@@ -7,8 +7,10 @@ on:
     - cron: '30 2 * * *' # 08:00 IST
   workflow_dispatch:
 
+# Read-only by default. The bun and npm jobs install the newest releases of third-party packages, so they must not
+# hold a token that can push; only publish (which installs nothing) gets write.
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: reverify
@@ -23,6 +25,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: 24
@@ -41,6 +45,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: 24
@@ -76,6 +82,8 @@ jobs:
     needs: [bun, npm]
     if: always()
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4

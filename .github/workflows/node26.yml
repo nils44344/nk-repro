@@ -1,6 +1,9 @@
 # Node 24 -> 26 upgrade checks on Linux (the Windows runs are in the blog post).
 name: node26
 on: workflow_dispatch
+permissions:
+  contents: read
+
 jobs:
   checks:
     strategy:
