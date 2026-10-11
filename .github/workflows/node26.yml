@@ -1,0 +1,28 @@
+# Node 24 -> 26 upgrade checks on Linux (the Windows runs are in the blog post).
+name: node26
+on: workflow_dispatch
+jobs:
+  checks:
+    strategy:
+      matrix:
+        node: ['24.21.0', '26.11.1']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - working-directory: node26
+        run: |
+          npm install --no-audit --no-fund
+          node checks.cjs
+          echo "corepack: $(corepack --version 2>&1 || true)"
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - working-directory: node26
+        run: |
+          for t in 24-bookworm-slim 26-bookworm-slim; do echo "== node:$t"; docker run --rm node:$t sh -c 'node -v; yarn --version; corepack --version' || true; done
+          echo "== Dockerfile.broken"; docker build --progress=plain -f Dockerfile.broken . 2>&1 | grep -E "not found|ERROR|exit code" || true
+          echo "== Dockerfile.fixed"; docker build --progress=plain -f Dockerfile.fixed . 2>&1 | grep -E "^#[0-9]+ [0-9.]+ [0-9]+\.[0-9]+\.[0-9]+$|ERROR|DONE" | tail -8

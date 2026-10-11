@@ -1,0 +1,6 @@
+# Install Corepack from npm first, then enable it as before.
+FROM node:26-bookworm-slim
+WORKDIR /app
+RUN npm install -g corepack && corepack enable
+RUN echo '{"name":"a","packageManager":"yarn@1.22.22"}' > package.json && COREPACK_ENABLE_DOWNLOAD_PROMPT=0 yarn --version
+RUN echo '{"name":"a","packageManager":"pnpm@10.34.6"}' > package.json && COREPACK_ENABLE_DOWNLOAD_PROMPT=0 pnpm --version
