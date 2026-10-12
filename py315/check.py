@@ -4,7 +4,9 @@ nilaykabariya.blog. Run with the interpreter under test: python py315/check.py""
 import os, re, shutil, subprocess, sys, tempfile, venv
 
 PKGS = ["pyyaml", "transformers", "sentencepiece", "torch", "tensorflow", "langchain", "jupyterlab", "uuid-utils", "pywinpty"]
-if os.name != "nt":
+if len(sys.argv) > 1:
+    PKGS = sys.argv[1:]  # a fix test: just these, with whatever env the workflow step sets
+elif os.name != "nt":
     PKGS.remove("pywinpty")  # Windows-only package
 
 print(f"Python {sys.version.split()[0]} on {sys.platform}; C compiler: {bool(shutil.which('cl') or shutil.which('gcc'))}; cargo: {bool(shutil.which('cargo'))}")

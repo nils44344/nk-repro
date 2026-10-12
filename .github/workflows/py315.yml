@@ -20,3 +20,8 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - run: python py315/check.py
+      - name: Fix test, PyO3 forward compatibility (langchain needs ormsgpack, built with PyO3)
+        if: matrix.python == '3.15'
+        env:
+          PYO3_USE_ABI3_FORWARD_COMPATIBILITY: '1'
+        run: python py315/check.py ormsgpack langchain
