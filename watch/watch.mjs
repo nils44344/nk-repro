@@ -36,6 +36,17 @@ const NPM = {
   '@angular/cli': { tags: ['latest'], alert: 'minor', posts: ['/tested/framework-starters-on-windows-tested'] },
   'create-cloudflare': { tags: ['latest'], alert: 'minor', posts: ['/tested/framework-starters-on-windows-tested'] },
 };
+// PyPI: the latest version plus whether it has a Windows wheel for the newest Python. Wheels can be added to an
+// existing release (PyYAML 6.0.3 may simply gain cp315 files), so a new wheel alerts even without a new version.
+const PY = 'cp315';
+const PYPI = {
+  pyyaml: ['/tested/python-3-15-windows-packages-tested', '/fixes/microsoft-visual-c-14-0-or-greater-is-required-pip'],
+  torch: ['/tested/python-3-15-windows-packages-tested', '/fixes/no-matching-distribution-found-for-torch'],
+  tensorflow: ['/tested/python-3-15-windows-packages-tested'],
+  ormsgpack: ['/tested/python-3-15-windows-packages-tested'],
+  sentencepiece: ['/tested/python-3-15-windows-packages-tested'],
+  pywinpty: ['/tested/python-3-15-windows-packages-tested'],
+};
 // Node.js: the newest Current release (alert on a new major) and the active LTS line (alert on a new codename: LTS day).
 const NODE_POSTS = ['/topics/node', '/tested/bun-vs-node-24-startup-typescript-tests'];
 
@@ -51,6 +62,13 @@ await Promise.all(Object.entries(NPM).map(async ([pkg, { tags }]) => {
   try {
     const dt = await json(`https://registry.npmjs.org/-/package/${pkg.replace('/', '%2F')}/dist-tags`);
     for (const t of tags) if (dt[t]) now[`npm:${pkg}@${t}`] = dt[t];
+  } catch (e) { console.log(`skip ${pkg}: ${e.message}`); }
+}));
+await Promise.all(Object.keys(PYPI).map(async (pkg) => {
+  try {
+    const j = await json(`https://pypi.org/pypi/${pkg}/json`);
+    const win = j.urls.some((u) => u.filename.includes(`-${PY}-`) && u.filename.includes('win_amd64'));
+    now[`pypi:${pkg}`] = `${j.info.version}${win ? ` +${PY}-win` : ''}`;
   } catch (e) { console.log(`skip ${pkg}: ${e.message}`); }
 }));
 try {
@@ -80,6 +98,9 @@ for (const [key, to] of Object.entries(now)) {
     const level = NPM[pkg].alert === 'all' ? 'patch' : NPM[pkg].alert;
     if (rank[s] < rank[level]) continue;
     changes.push({ name: rest.replace(/@latest$/, ''), from, to, big: s === 'major', posts: NPM[pkg].posts, link: `https://www.npmjs.com/package/${pkg}/v/${to}` });
+  } else if (kind === 'pypi') {
+    // Any change: a new version, or a Python 3.15 Windows wheel appearing.
+    changes.push({ name: `${rest} (PyPI)`, from, to, big: !from.includes(`+${PY}`) && to.includes(`+${PY}`), posts: PYPI[rest], link: `https://pypi.org/project/${rest}/#files` });
   } else {
     // node:lts → a new codename is a new LTS line; node:current → only a new major.
     const big = rest === 'lts' ? from.split(' ')[1] !== to.split(' ')[1] : step(from, to) === 'major';
