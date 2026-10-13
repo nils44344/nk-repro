@@ -25,5 +25,11 @@
   "npm:create-cloudflare@latest": "2.74.0",
   "npm:drizzle-orm@latest": "0.45.4",
   "npm:eslint@latest": "10.12.0",
-  "npm:eslint-plugin-react@latest": "7.37.5"
+  "npm:eslint-plugin-react@latest": "7.37.5",
+  "pypi:pyyaml": "6.0.3",
+  "pypi:torch": "2.14.1",
+  "pypi:ormsgpack": "1.12.2",
+  "pypi:tensorflow": "2.21.0",
+  "pypi:sentencepiece": "0.2.2",
+  "pypi:pywinpty": "3.0.5"
 }
