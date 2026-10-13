@@ -25,3 +25,15 @@ jobs:
         env:
           PYO3_USE_ABI3_FORWARD_COMPATIBILITY: '1'
         run: python py315/check.py ormsgpack langchain
+
+  # "Microsoft Visual C++ 14.0 or greater is required": the same pinned versions on a runner that HAS Build Tools.
+  msvc:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - run: python py315/msvc.py "pyyaml==6.0.1" "msgpack==1.0.7" "regex==2023.12.25"
