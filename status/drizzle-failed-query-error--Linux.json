@@ -1,7 +1,7 @@
 {
   "post": "drizzle-failed-query-error",
   "os": "Linux",
-  "date": "2026-10-13",
+  "date": "2026-10-14",
   "versions": {
     "drizzle-orm": "0.45.4"
   },
