@@ -35,6 +35,7 @@ const NPM = {
   'create-react-router': { tags: ['latest'], alert: 'all', posts: ['/tested/framework-starters-on-windows-tested'] },
   '@angular/cli': { tags: ['latest'], alert: 'minor', posts: ['/tested/framework-starters-on-windows-tested'] },
   'create-cloudflare': { tags: ['latest'], alert: 'minor', posts: ['/tested/framework-starters-on-windows-tested'] },
+  remix: { tags: ['latest'], alert: 'all', posts: ['/tested/framework-starters-on-windows-tested'] },
 };
 // PyPI: the latest version plus whether it has a Windows wheel for the newest Python. Wheels can be added to an
 // existing release (PyYAML 6.0.3 may simply gain cp315 files), so a new wheel alerts even without a new version.
