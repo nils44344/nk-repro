@@ -1,0 +1,20 @@
+# Remix 3 starter on Linux: does the generated `npm run dev` / `npm test` work unchanged? (On Windows it doesn't.)
+name: remix-linux
+on: workflow_dispatch
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.14.0'
+      - run: |
+          npx --yes remix@latest new app
+          cd app && npm install --no-audit --no-fund
+          grep '"dev"' package.json
+          (npm run dev > dev.log 2>&1 &) ; sleep 30
+          echo "dev: HTTP $(curl -s -o /dev/null -w '%{http_code}' http://localhost:44100/)"; tail -3 dev.log
+          npm test > test.log 2>&1; echo "test exit $?"; tail -2 test.log

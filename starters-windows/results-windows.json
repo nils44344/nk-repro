@@ -572,5 +572,70 @@
       "secs": 12.6,
       "tail": " |   ✖ Error (500): Either manifest or precomputed data must be provided |    |     … 10 dependency frames"
     }
+  },
+  "tanstack-start": {
+    "name": "TanStack Start",
+    "os": "Windows",
+    "date": "2026-10-14",
+    "node": "v24.14.0",
+    "scaffold": {
+      "ok": true,
+      "secs": 347.3,
+      "err": "",
+      "timedOut": false
+    },
+    "install": {
+      "ok": true,
+      "ran": false
+    },
+    "version": "1.169.1",
+    "deprecatedWarnings": 0,
+    "size": {
+      "mb": 158,
+      "files": 8392
+    },
+    "build": {
+      "ok": true,
+      "secs": 28.1,
+      "err": ""
+    },
+    "dev": {
+      "ok": true,
+      "status": 200,
+      "url": "http://[::1]:3001/",
+      "secs": 22.7,
+      "tail": "  ➜  Local:   http://localhost:3001/ |   ➜  Network: use --host to expose | 3:14:34 pm [vite] (ssr) connected. | 3:14:36 pm [vite] (client) [optimizer] bundling dependencies..."
+    }
+  },
+  "remix": {
+    "name": "Remix 3",
+    "os": "Windows",
+    "date": "2026-10-14",
+    "node": "v24.14.0",
+    "scaffold": {
+      "ok": true,
+      "secs": 93.8,
+      "err": "",
+      "timedOut": false
+    },
+    "install": {
+      "ok": true,
+      "secs": 33.9,
+      "err": "",
+      "ran": true
+    },
+    "version": "3.0.0",
+    "deprecatedWarnings": 0,
+    "size": {
+      "mb": 81.7,
+      "files": 3937
+    },
+    "dev": {
+      "ok": false,
+      "status": 0,
+      "err": "dev process exited (1) before serving: ",
+      "secs": 6.1,
+      "tail": "> NODE_ENV=development node --watch --import remix/node-tsx server.ts |  | 'NODE_ENV' is not recognized as an internal or external command, | operable program or batch file."
+    }
   }
 }

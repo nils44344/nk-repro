@@ -32,6 +32,8 @@ const STARTERS = [
   { id: 'qwik', name: 'Qwik', cmd: 'npm create qwik@latest empty app -- --installDeps', pkg: '@builder.io/qwik', dev: 'npm run dev' },
   { id: 'docusaurus', name: 'Docusaurus', cmd: 'npx --yes create-docusaurus@latest app classic --typescript --package-manager npm', pkg: '@docusaurus/core', dev: 'npm run start -- --no-open' },
   { id: 'electron', name: 'Electron Forge', cmd: 'npx --yes create-electron-app@latest app --template vite --typescript', pkg: 'electron', dev: null },
+  { id: 'tanstack-start', name: 'TanStack Start', cmd: 'npx --yes @tanstack/cli@latest create app --framework React --package-manager npm --no-toolchain', pkg: '@tanstack/react-start', dev: 'npm run dev' },
+  { id: 'remix', name: 'Remix 3', cmd: 'npx --yes remix@latest new app', pkg: 'remix', dev: 'npm run dev' },
   { id: 't3', name: 'create-t3-app', cmd: 'npx --yes create-t3-app@latest app --CI --tailwind --trpc --appRouter --noGit', pkg: 'next', dev: 'npm run dev' },
 ];
 
