@@ -12,7 +12,7 @@
   "npm:next@latest": "16.4.1",
   "npm:wrangler@latest": "4.151.0",
   "npm:@anthropic-ai/claude-code@latest": "2.1.300",
-  "npm:@supabase/supabase-js@latest": "2.117.3",
+  "npm:@supabase/supabase-js@latest": "2.118.0",
   "npm:supabase@latest": "2.121.0",
   "npm:@prisma/client@latest": "7.10.0",
   "node:current": "v26.12.0",
