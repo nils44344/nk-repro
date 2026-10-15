@@ -11,7 +11,7 @@ openssl x509 -req -in leaf.csr -CA ca.pem -CAkey ca.key -CAcreateserial -out lea
 cat leaf.pem ca.pem > chain.pem
 (node proxy.mjs > proxy.log 2>&1 &); sleep 3
 echo "node $(node -v), npm $(npm -v)"
-CA="$PWD/ca.pem"
+CA="$(cygpath -w "$PWD/ca.pem" 2>/dev/null || echo "$PWD/ca.pem")"  # a Windows path on Windows: Node cannot read /d/... paths
 case_() { local label="$1"; shift
   rm -rf p && mkdir p && cd p && npm init -y >/dev/null && echo "registry=https://localhost:8443/" > .npmrc
   out=$(eval "$@" 2>&1); code=$?
