@@ -4,7 +4,7 @@
   "date": "2026-10-15",
   "versions": {
     "prisma (latest tag)": "8.0.0-rc.23",
-    "@prisma/client (latest tag)": "7.10.0"
+    "@prisma/client (latest tag)": "7.10.1"
   },
   "checks": [
     {
@@ -15,7 +15,7 @@
     {
       "name": "npm \"latest\" for @prisma/client is still 7.x",
       "ok": true,
-      "evidence": "7.10.0"
+      "evidence": "7.10.1"
     },
     {
       "name": "Unpinned `npx -y prisma generate` fails: No command registered for `generate`",
@@ -25,7 +25,7 @@
     {
       "name": "Fix: `npx -y prisma@7 generate` generates the client",
       "ok": true,
-      "evidence": "✔ Generated Prisma Client (7.10.0) to ./src/generated/prisma in 22ms Prisma schema loaded from prisma/schema.prisma."
+      "evidence": "✔ Generated Prisma Client (7.10.1) to ./src/generated/prisma in 31ms Prisma schema loaded from prisma/schema.prisma."
     }
   ],
   "allHold": true
