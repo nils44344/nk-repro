@@ -17,7 +17,7 @@
   "npm:@prisma/client@latest": "7.10.0",
   "node:current": "v26.12.0",
   "node:lts": "v24.22.0 (Krypton)",
-  "npm:@angular/cli@latest": "22.2.2",
+  "npm:@angular/cli@latest": "22.2.3",
   "npm:nuxt@latest": "4.6.1",
   "npm:@swc/core@latest": "1.16.18",
   "npm:create-react-router@latest": "8.4.0",
@@ -31,6 +31,6 @@
   "pypi:ormsgpack": "1.12.2",
   "pypi:tensorflow": "2.21.0",
   "pypi:sentencepiece": "0.2.2",
-  "pypi:pywinpty": "3.0.5",
+  "pypi:pywinpty": "3.1.0 +cp315-win",
   "npm:remix@latest": "3.0.0"
 }
