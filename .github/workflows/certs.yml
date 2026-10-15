@@ -1,0 +1,24 @@
+# npm/Node behind a TLS-inspecting proxy with an untrusted root CA: errors and fixes, on Windows and Linux.
+name: certs
+on: workflow_dispatch
+permissions:
+  contents: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.14.0'
+      - run: bash certs/run.sh

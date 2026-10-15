@@ -1,0 +1,6 @@
+ca.*
+leaf.*
+chain.pem
+ext.cnf
+proxy.log
+p/
