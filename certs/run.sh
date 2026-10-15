@@ -1,6 +1,7 @@
 #!/bin/bash
 # "self-signed certificate in certificate chain": npm and Node behind a TLS-inspecting proxy whose root CA isn't
 # trusted (proxy.mjs on localhost:8443, forwarding to registry.npmjs.org). Each fix only changes the project or env.
+export MSYS_NO_PATHCONV=1 # Git Bash on Windows would rewrite -subj "/CN=..." as a path
 cd "$(dirname "$0")"
 openssl req -x509 -newkey rsa:2048 -nodes -keyout ca.key -out ca.pem -days 30 -subj "/CN=NK Test Corp Root CA" \
   -addext "basicConstraints=critical,CA:TRUE" -addext "keyUsage=critical,keyCertSign,cRLSign" 2>/dev/null

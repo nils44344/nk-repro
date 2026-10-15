@@ -7,7 +7,7 @@ const server = https.createServer(
   { key: readFileSync('leaf.key'), cert: readFileSync('chain.pem') },
   (req, res) => {
     const up = https.request(
-      { host: 'registry.npmjs.org', path: req.url, method: req.method, headers: { ...req.headers, host: 'registry.npmjs.org' } },
+      { host: 'registry.npmjs.org', path: req.url, method: req.method, headers: { ...req.headers, host: 'registry.npmjs.org', 'accept-encoding': 'identity' } },
       (r) => {
         // Rewrite tarball URLs so npm keeps going through this proxy.
         const type = r.headers['content-type'] || '';
