@@ -1,0 +1,26 @@
+# node-gyp vs Python 3.14 (no distutils): which node-gyp versions still import distutils. Windows + Linux.
+name: distutils
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24.14.0'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - run: bash distutils/run.sh
