@@ -24,7 +24,7 @@
   "npm:@docusaurus/core@latest": "3.10.2",
   "npm:create-cloudflare@latest": "2.74.0",
   "npm:drizzle-orm@latest": "0.45.4",
-  "npm:eslint@latest": "10.12.0",
+  "npm:eslint@latest": "10.13.0",
   "npm:eslint-plugin-react@latest": "7.37.5",
   "pypi:pyyaml": "6.0.3",
   "pypi:torch": "2.14.1",
