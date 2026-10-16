@@ -10,7 +10,7 @@
   "npm:tailwindcss@latest": "4.3.3",
   "npm:@google/genai@latest": "2.30.0",
   "npm:next@latest": "16.4.2",
-  "npm:wrangler@latest": "4.151.0",
+  "npm:wrangler@latest": "4.151.1",
   "npm:@anthropic-ai/claude-code@latest": "2.1.301",
   "npm:@supabase/supabase-js@latest": "2.118.0",
   "npm:supabase@latest": "2.121.0",
