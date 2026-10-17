@@ -10,3 +10,12 @@ $env:PATH = "$wa;C:\Windows\System32;C:\Windows"
 python --version 2>&1 | Select-Object -First 2
 "exit $LASTEXITCODE"
 "== py launcher present?"; (Get-Command py -ErrorAction SilentlyContinue).Source
+"== real Python BEFORE WindowsApps on PATH"
+$real = 'C:\hostedtoolcache\windows\Python\3.12.10\x64'
+$env:PATH = "$real;$wa;C:\Windows\System32;C:\Windows"
+python --version 2>&1 | Select-Object -First 1
+"exit $LASTEXITCODE"
+"== real Python AFTER WindowsApps on PATH"
+$env:PATH = "$wa;$real;C:\Windows\System32;C:\Windows"
+python --version 2>&1 | Select-Object -First 1
+"exit $LASTEXITCODE"
