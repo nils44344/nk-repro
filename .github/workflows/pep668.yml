@@ -1,0 +1,13 @@
+# pip "externally-managed-environment" on Ubuntu's own Python (PEP 668): the error and each fix.
+name: pep668
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: bash pep668/run.sh
