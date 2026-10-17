@@ -1,0 +1,13 @@
+# Windows python.exe App execution alias ("Python was not found; run without arguments to install from the Microsoft Store").
+name: pystub
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: pwsh -File pystub/run.ps1
