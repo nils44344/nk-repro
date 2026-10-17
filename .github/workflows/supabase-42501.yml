@@ -1,0 +1,29 @@
+# Re-runs the supabase-42501 cases on two supabase-js versions against a local stack (Docker on Linux).
+name: supabase-42501
+on: workflow_dispatch
+permissions:
+  contents: read
+
+jobs:
+  cases:
+    strategy:
+      fail-fast: false
+      matrix:
+        js: ['2.117.2', '2.118.0']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - working-directory: supabase-42501
+        run: |
+          npm install --no-audit --no-fund
+          npm install --no-audit --no-fund --no-save @supabase/supabase-js@${{ matrix.js }}
+          echo "supabase-js: $(node -p "require('@supabase/supabase-js/package.json').version")"
+          npx supabase start -x studio,imgproxy,edge-runtime,logflare,vector,mailpit
+          for s in test.mjs grants.mjs upsert.mjs; do echo "===== $s"; node $s || true; done | tee out-${{ matrix.js }}.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: out-${{ matrix.js }}
+          path: supabase-42501/out-${{ matrix.js }}.txt
