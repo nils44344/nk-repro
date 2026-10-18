@@ -17,3 +17,16 @@ for DB in pg sqlite; do
   npx prisma generate >/dev/null 2>&1
   npx tsx t.ts 2>&1 | cut -c1-600
 done
+for DB in pg sqlite; do
+  P=$([ $DB = pg ] && echo postgresql || echo sqlite)
+  sed -i "s/provider = \"\(postgresql\|sqlite\)\"/provider = \"$P\"/" prisma/schema.prisma
+  export DB DATABASE_URL=$([ $DB = pg ] && echo 'postgresql://postgres:pw@localhost:5432/postgres' || echo 'file:./dev.db')
+  npx prisma db push --accept-data-loss >/dev/null 2>&1; npx prisma generate >/dev/null 2>&1
+  echo "======== fixes $DB"; npx tsx t2.ts 2>&1 | cut -c1-400
+done
+echo "======== Prisma 6 (no adapter), Postgres: meta"
+mkdir -p ../p6 && cd ../p6 && npm init -y >/dev/null && npm i prisma@6 @prisma/client@6 --silent >/dev/null 2>&1
+mkdir -p prisma && printf 'generator client {\n  provider = "prisma-client-js"\n}\ndatasource db {\n  provider = "postgresql"\n  url = env("DATABASE_URL")\n}\nmodel User {\n  id    Int    @id @default(autoincrement())\n  email String @unique\n}\n' > prisma/schema.prisma
+export DATABASE_URL='postgresql://postgres:pw@localhost:5432/p6'
+npx prisma db push --accept-data-loss >/dev/null 2>&1
+node -e "const {PrismaClient}=require('@prisma/client');const p=new PrismaClient();(async()=>{await p.user.create({data:{email:'a@x.com'}});try{await p.user.create({data:{email:'a@x.com'}})}catch(e){console.log('prisma',require('@prisma/client/package.json').version,e.code,'|',e.message.split('\n').filter(Boolean).slice(-1)[0],'| meta:',JSON.stringify(e.meta))}await p.\$disconnect()})()"
