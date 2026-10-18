@@ -5,6 +5,18 @@ cd "$(dirname "$0")"
 IMG=postgres:18
 ready() { for i in $(seq 1 60); do pg_isready -q -h localhost -p ${1:-5432} && return 0; sleep 1; done; echo "NOT READY"; }
 try() { PGPASSWORD="$2" psql -h localhost -p ${3:-5432} -U "$1" -d postgres -tAc "select 'OK as '||current_user" 2>&1 | head -2; }
+cat > compose.yml <<'Y'
+services:
+  db:
+    image: postgres:18
+    environment:
+      POSTGRES_PASSWORD: ${PW}
+      POSTGRES_USER: ${PGU:-postgres}
+    ports: ["5432:5432"]
+    volumes: ["pgdata:/var/lib/postgresql"]
+volumes:
+  pgdata:
+Y
 export PW=second
 docker compose up -d 2>/dev/null; ready; docker compose down 2>/dev/null
 PGU=admin docker compose up -d 2>/dev/null; ready; C=$(docker compose ps -q db)
@@ -12,6 +24,7 @@ echo "== admin before:"; try admin second
 docker exec $C psql -U postgres -c "CREATE USER admin WITH PASSWORD 'second' SUPERUSER"
 echo "== admin after CREATE USER:"; try admin second
 docker compose down -v >/dev/null 2>&1
+exit 0
 echo "== quoted password, then ALTER"
 printf 'POSTGRES_PASSWORD="secret"\n' > q.env
 docker run -d --name q1 --env-file q.env -p 5433:5432 $IMG >/dev/null; ready 5433
