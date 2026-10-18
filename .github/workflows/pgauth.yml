@@ -10,4 +10,4 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - run: bash pgauth/run.sh
+      - run: bash pgauth/fixes.sh
