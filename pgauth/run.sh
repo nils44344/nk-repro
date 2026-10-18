@@ -21,18 +21,18 @@ services:
 volumes:
   pgdata:
 Y
-PW=first docker compose up -d -q 2>/dev/null; ready; try postgres first
+export PW=first; docker compose up -d 2>/dev/null; ready; try postgres first
 echo "== 2. change password in compose, down + up (volume kept)"
-docker compose down 2>/dev/null; PW=second docker compose up -d 2>/dev/null; ready
+docker compose down 2>/dev/null; export PW=second; docker compose up -d 2>/dev/null; ready
 C=$(docker compose ps -q db)
 echo "-- new password:"; try postgres second
 echo "-- old password:"; try postgres first
 echo "-- server log:"; detail $C 3
 echo "== 3. POSTGRES_USER=admin added later (volume kept)"
-docker compose down 2>/dev/null; PW=second PGU=admin docker compose up -d 2>/dev/null; ready; C=$(docker compose ps -q db)
+docker compose down 2>/dev/null; PGU=admin docker compose up -d 2>/dev/null; ready; C=$(docker compose ps -q db)
 try admin second; detail $C 1
 echo "== fix A: ALTER USER inside the container (local socket, no password)"
-docker compose down 2>/dev/null; PW=second docker compose up -d 2>/dev/null; ready; C=$(docker compose ps -q db)
+docker compose down 2>/dev/null; export PW=second; docker compose up -d 2>/dev/null; ready; C=$(docker compose ps -q db)
 docker exec $C psql -U postgres -c "ALTER USER postgres PASSWORD 'second'"; try postgres second
 echo "== fix B: down -v (deletes the data) then up"
 docker compose down 2>/dev/null; PW=third docker compose down -v 2>&1 | tail -2; PW=third docker compose up -d 2>/dev/null; ready; try postgres third
@@ -81,7 +81,7 @@ cd ..; docker rm -f s1 >/dev/null
 
 echo "== 8. a second Postgres already on 5432 (native service on the host)"
 sudo systemctl start postgresql; sleep 3; sudo -u postgres psql -tAc "select 'native '||version()" | cut -c1-40
-docker run -d --name n1 -e POSTGRES_PASSWORD=dockerpw -p 5432:5432 $IMG 2>&1 | tail -1 | cut -c1-200
+docker run -d --name n1 -e POSTGRES_PASSWORD=dockerpw -p 5432:5432 $IMG 2>&1 | grep -i error | cut -c1-260
 sleep 8; try postgres dockerpw
 PGPASSWORD=dockerpw psql -h localhost -U postgres -d postgres -tAc "select version()" 2>&1 | cut -c1-40
 ss -ltnp 2>/dev/null | grep 5432 | awk '{print $4}' | sort -u
