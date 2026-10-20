@@ -1,7 +1,7 @@
 {
   "post": "prisma-generate-no-command-registered-prisma-8",
   "os": "Linux",
-  "date": "2026-10-19",
+  "date": "2026-10-20",
   "versions": {
     "prisma (latest tag)": "8.0.0-rc.23",
     "@prisma/client (latest tag)": "7.10.1"
