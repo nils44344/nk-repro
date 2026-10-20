@@ -6,7 +6,7 @@
   "npm:bun@latest": "1.4.3",
   "npm:openai@latest": "7.39.0",
   "npm:npm@latest": "12.2.0",
-  "npm:@anthropic-ai/sdk@latest": "0.135.0",
+  "npm:@anthropic-ai/sdk@latest": "0.136.0",
   "npm:tailwindcss@latest": "4.3.3",
   "npm:@google/genai@latest": "2.30.0",
   "npm:next@latest": "16.4.2",
