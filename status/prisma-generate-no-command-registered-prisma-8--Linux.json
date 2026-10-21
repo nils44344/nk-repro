@@ -3,14 +3,14 @@
   "os": "Linux",
   "date": "2026-10-21",
   "versions": {
-    "prisma (latest tag)": "8.0.0-rc.23",
+    "prisma (latest tag)": "8.0.0-rc.24",
     "@prisma/client (latest tag)": "7.10.1"
   },
   "checks": [
     {
       "name": "npm \"latest\" for prisma is still a Prisma 8 release candidate",
       "ok": true,
-      "evidence": "8.0.0-rc.23"
+      "evidence": "8.0.0-rc.24"
     },
     {
       "name": "npm \"latest\" for @prisma/client is still 7.x",
@@ -20,12 +20,12 @@
     {
       "name": "Unpinned `npx -y prisma generate` fails: No command registered for `generate`",
       "ok": true,
-      "evidence": "{\"kind\":\"result\",\"envelope\":{\"ok\":false,\"commandId\":\"\",\"error\":{\"code\":\"CLI.UNKNOWN_COMMAND\",\"severity\":\"error\",\"summary\":\"No command registered for `generate`\",\"nextActions\":[{\"kind\":\"run-command\",\"label\":\"List every command\",\"command\":\"prisma --help\"}]},\"diagnostics\":[],\"nextActions\":[{\"kind\":\"run"
+      "evidence": "✘ [CLI.UNKNOWN_COMMAND] No command registered for `generate` → List every command: prisma --help"
     },
     {
       "name": "Fix: `npx -y prisma@7 generate` generates the client",
       "ok": true,
-      "evidence": "✔ Generated Prisma Client (7.10.1) to ./src/generated/prisma in 14ms Prisma schema loaded from prisma/schema.prisma."
+      "evidence": "✔ Generated Prisma Client (7.10.1) to ./src/generated/prisma in 28ms Prisma schema loaded from prisma/schema.prisma."
     }
   ],
   "allHold": true

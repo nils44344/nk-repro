@@ -29,12 +29,12 @@
     {
       "name": "Config without dotenv: \"Cannot resolve environment variable: DATABASE_URL\"",
       "ok": true,
-      "evidence": "Failed to load config file \"/tmp/nk-p1012-6jjYW0\" as a TypeScript/JavaScript module. Error: PrismaConfigEnvError: Cannot resolve environment variable: DATABASE_URL."
+      "evidence": "Failed to load config file \"/tmp/nk-p1012-RFpvvD\" as a TypeScript/JavaScript module. Error: PrismaConfigEnvError: Cannot resolve environment variable: DATABASE_URL."
     },
     {
       "name": "Fix: config with dotenv validates",
       "ok": true,
-      "evidence": "The schema at prisma/schema.prisma is valid 🚀 Loaded Prisma config from prisma.config.ts. Prisma schema loaded from prisma/schema.prisma. ┌─────────────────────────────────────────────────────────┐ │ Update available 7.10.1 -> 8.0.0-rc.23 │ │ │ │ This is a major update - please follow the guide at "
+      "evidence": "The schema at prisma/schema.prisma is valid 🚀 Loaded Prisma config from prisma.config.ts. Prisma schema loaded from prisma/schema.prisma."
     }
   ],
   "allHold": true
