@@ -13,4 +13,4 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-      - run: sudo chmod 755 "$(dirname "$(dirname "$(command -v node)")")" ; bash eacces/run2.sh
+      - run: sudo chmod 755 "$(dirname "$(dirname "$(command -v node)")")" ; bash eacces/run3.sh
