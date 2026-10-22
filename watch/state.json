@@ -1,6 +1,6 @@
 {
   "npm:typescript@latest": "7.0.2",
-  "npm:prisma@latest": "8.0.0-rc.25",
+  "npm:prisma@latest": "8.0.0-rc.26",
   "npm:vite@latest": "8.3.5",
   "npm:vite@beta": "8.3.0-beta.1",
   "npm:bun@latest": "1.4.4",
