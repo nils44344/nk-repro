@@ -1,6 +1,6 @@
 {
   "npm:typescript@latest": "7.0.2",
-  "npm:prisma@latest": "8.0.0-rc.24",
+  "npm:prisma@latest": "8.0.0-rc.25",
   "npm:vite@latest": "8.3.5",
   "npm:vite@beta": "8.3.0-beta.1",
   "npm:bun@latest": "1.4.3",
@@ -11,7 +11,7 @@
   "npm:@google/genai@latest": "2.30.0",
   "npm:next@latest": "16.4.2",
   "npm:wrangler@latest": "4.151.3",
-  "npm:@anthropic-ai/claude-code@latest": "2.1.307",
+  "npm:@anthropic-ai/claude-code@latest": "2.1.308",
   "npm:@supabase/supabase-js@latest": "2.118.0",
   "npm:supabase@latest": "2.121.0",
   "npm:@prisma/client@latest": "7.10.1",
