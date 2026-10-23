@@ -3,7 +3,7 @@
   "os": "Linux",
   "date": "2026-10-23",
   "versions": {
-    "next (latest tag)": "16.4.2",
+    "next (latest tag)": "16.4.3",
     "newest 16.3.x": "16.3.8"
   },
   "checks": [
@@ -23,9 +23,9 @@
       "evidence": "newest 16.3.x: 16.3.8"
     },
     {
-      "name": "next@latest (16.4.2) is not flagged by npm audit",
+      "name": "next@latest (16.4.3) is not flagged by npm audit",
       "ok": true,
-      "evidence": "16.4.2: 0 advisories"
+      "evidence": "16.4.3: 0 advisories"
     }
   ],
   "allHold": false
