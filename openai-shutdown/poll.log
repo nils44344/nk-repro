@@ -1,0 +1,38 @@
+2026-10-22T20:13:42.434Z gpt-3.5-turbo: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-22T20:13:42.829Z gpt-3.5-turbo-0125: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-22T20:13:43.150Z gpt-4.1-nano: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-22T20:13:43.462Z gpt-4o-2024-05-13: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-22T20:13:43.827Z o1: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-22T20:13:44.124Z o1-pro: 404 model_not_found | 404 The model `o1-pro` does not exist or you do not have access to it.
+2026-10-22T20:13:44.477Z o3-mini: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-22T20:13:44.833Z o4-mini: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-22T20:13:45.185Z gpt-4o: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-22T20:13:45.492Z gpt-4o-mini: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-23T11:28:38.608Z gpt-3.5-turbo: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-23T11:28:39.596Z gpt-3.5-turbo-0125: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-23T11:28:40.207Z gpt-4.1-nano: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-23T11:28:40.545Z gpt-4o-2024-05-13: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-23T11:28:41.155Z o1: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-23T11:28:41.478Z o1-pro: 404 model_not_found | 404 The model `o1-pro` does not exist or you do not have access to it.
+2026-10-23T11:28:42.007Z o3-mini: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-23T11:28:42.360Z o4-mini: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-23T11:28:42.728Z gpt-4o: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-23T11:28:43.076Z gpt-4o-mini: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-23T17:10:05.512Z gpt-3.5-turbo: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-23T17:10:06.610Z gpt-3.5-turbo-0125: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-23T17:10:07.384Z gpt-4.1-nano: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-23T17:10:07.954Z gpt-4o-2024-05-13: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-23T17:10:08.308Z o1: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-23T17:10:08.774Z o1-pro: 404 model_not_found | 404 The model `o1-pro` does not exist or you do not have access to it.
+2026-10-23T17:10:09.383Z o3-mini: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-23T17:10:09.707Z o4-mini: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-23T17:10:10.208Z gpt-4o: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-23T17:10:10.539Z gpt-4o-mini: 429 credit_balance_exhausted | 429 You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.
+2026-10-23T17:25:11.189Z gpt-3.5-turbo: 404 model_not_found | 404 The model `gpt-3.5-turbo` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations
+2026-10-23T17:25:11.583Z gpt-3.5-turbo-0125: 404 model_not_found | 404 The model `gpt-3.5-turbo-0125` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations
+2026-10-23T17:25:11.902Z gpt-4.1-nano: 404 model_not_found | 404 The model `gpt-4.1-nano` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations
+2026-10-23T17:25:12.276Z gpt-4o-2024-05-13: 404 model_not_found | 404 The model `gpt-4o-2024-05-13` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations
+2026-10-23T17:25:12.577Z o1: 404 model_not_found | 404 The model `o1` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations
+2026-10-23T17:25:12.876Z o1-pro: 404 model_not_found | 404 The model `o1-pro` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations
+2026-10-23T17:25:13.141Z o3-mini: 404 model_not_found | 404 The model `o3-mini` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations
+2026-10-23T17:25:13.416Z o4-mini: 404 model_not_found | 404 The model `o4-mini` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations
