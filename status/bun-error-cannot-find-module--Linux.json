@@ -1,7 +1,7 @@
 {
   "post": "bun-error-cannot-find-module",
   "os": "Linux",
-  "date": "2026-10-25",
+  "date": "2026-10-26",
   "versions": {
     "bun": "1.4.4"
   },
@@ -9,7 +9,7 @@
     {
       "name": "Undeclared workspace package: \"Cannot find module\" on a fresh install",
       "ok": true,
-      "evidence": "error: Cannot find module '@mono/ui' from '/tmp/nk-ws-vMahhL/apps/web/index.ts' Bun v1.4.4 (Linux x64)"
+      "evidence": "error: Cannot find module '@mono/ui' from '/tmp/nk-ws-wE3RGl/apps/web/index.ts' Bun v1.4.4 (Linux x64)"
     },
     {
       "name": "Fix: bun add @mono/ui@workspace:* makes it load",
@@ -19,12 +19,12 @@
     {
       "name": "bun test ignores Jest moduleNameMapper",
       "ok": true,
-      "evidence": "bun test v1.4.4 (38afee6c8) ::group::tests/alias.test.ts: # Unhandled error between tests ------------------------------- error: Cannot find module '~/lib/math' from '/tmp/nk-test-99acxY/tests/alias.test.ts' ------------------------------- 0 pass 1 fail 1 error Ran 1 test across 1 file. [2.00ms]"
+      "evidence": "bun test v1.4.4 (38afee6c8) ::group::tests/alias.test.ts: # Unhandled error between tests ------------------------------- error: Cannot find module '~/lib/math' from '/tmp/nk-test-f055ih/tests/alias.test.ts' ------------------------------- 0 pass 1 fail 1 error Ran 1 test across 1 file. [3.00ms]"
     },
     {
       "name": "Fix: tsconfig paths makes bun test pass",
       "ok": true,
-      "evidence": "bun test v1.4.4 (38afee6c8) ::group::tests/alias.test.ts: (pass) sum [0.05ms] ::endgroup:: 1 pass 0 fail 1 expect() calls Ran 1 test across 1 file. [3.00ms]"
+      "evidence": "bun test v1.4.4 (38afee6c8) ::group::tests/alias.test.ts: (pass) sum [0.04ms] ::endgroup:: 1 pass 0 fail 1 expect() calls Ran 1 test across 1 file. [2.00ms]"
     },
     {
       "name": "No node_modules anywhere: Bun auto-installs React and the JSX runs",
@@ -34,7 +34,7 @@
     {
       "name": "Project with node_modules, no React: \"Cannot find module react/jsx-dev-runtime\"",
       "ok": true,
-      "evidence": "error: Cannot find module 'react/jsx-dev-runtime' from '/tmp/nk-jsx-proj-xXE6Tq/index.tsx' Bun v1.4.4 (Linux x64)"
+      "evidence": "error: Cannot find module 'react/jsx-dev-runtime' from '/tmp/nk-jsx-proj-UB530u/index.tsx' Bun v1.4.4 (Linux x64)"
     },
     {
       "name": "Linux: bun --bun run runs scripts in Bun",
@@ -44,7 +44,7 @@
     {
       "name": "Linux: wrong-case import fails (ENOENT reading ... utils.ts)",
       "ok": true,
-      "evidence": "error: ENOENT reading \"/tmp/nk-case-fATZ4Y/utils.ts\" Bun v1.4.4 (Linux x64)"
+      "evidence": "error: ENOENT reading \"/tmp/nk-case-iAgIyv/utils.ts\" Bun v1.4.4 (Linux x64)"
     }
   ],
   "allHold": true
