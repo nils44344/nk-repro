@@ -18,7 +18,7 @@
   "node:current": "v26.12.1",
   "node:lts": "v24.22.1 (Krypton)",
   "npm:@angular/cli@latest": "22.2.4",
-  "npm:nuxt@latest": "4.6.2",
+  "npm:nuxt@latest": "4.6.3",
   "npm:@swc/core@latest": "1.16.20",
   "npm:create-react-router@latest": "8.5.0",
   "npm:@docusaurus/core@latest": "3.10.2",
