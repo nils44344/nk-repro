@@ -11,7 +11,7 @@
         {
           "name": "Undeclared workspace package: \"Cannot find module\" on a fresh install",
           "ok": true,
-          "evidence": "error: Cannot find module '@mono/ui' from '/tmp/nk-ws-muNASH/apps/web/index.ts' Bun v1.4.4 (Linux x64)"
+          "evidence": "error: Cannot find module '@mono/ui' from '/tmp/nk-ws-KU5cv6/apps/web/index.ts' Bun v1.4.4 (Linux x64)"
         },
         {
           "name": "Fix: bun add @mono/ui@workspace:* makes it load",
@@ -21,12 +21,12 @@
         {
           "name": "bun test ignores Jest moduleNameMapper",
           "ok": true,
-          "evidence": "bun test v1.4.4 (38afee6c8) ::group::tests/alias.test.ts: # Unhandled error between tests ------------------------------- error: Cannot find module '~/lib/math' from '/tmp/nk-test-Iz1mxA/tests/alias.test.ts' ------------------------------- 0 pass 1 fail 1 error Ran 1 test across 1 file. [2.00ms]"
+          "evidence": "bun test v1.4.4 (38afee6c8) ::group::tests/alias.test.ts: # Unhandled error between tests ------------------------------- error: Cannot find module '~/lib/math' from '/tmp/nk-test-12rGak/tests/alias.test.ts' ------------------------------- 0 pass 1 fail 1 error Ran 1 test across 1 file. [3.00ms]"
         },
         {
           "name": "Fix: tsconfig paths makes bun test pass",
           "ok": true,
-          "evidence": "bun test v1.4.4 (38afee6c8) ::group::tests/alias.test.ts: (pass) sum [0.05ms] ::endgroup:: 1 pass 0 fail 1 expect() calls Ran 1 test across 1 file. [3.00ms]"
+          "evidence": "bun test v1.4.4 (38afee6c8) ::group::tests/alias.test.ts: (pass) sum [0.06ms] ::endgroup:: 1 pass 0 fail 1 expect() calls Ran 1 test across 1 file. [3.00ms]"
         },
         {
           "name": "No node_modules anywhere: Bun auto-installs React and the JSX runs",
@@ -36,7 +36,7 @@
         {
           "name": "Project with node_modules, no React: \"Cannot find module react/jsx-dev-runtime\"",
           "ok": true,
-          "evidence": "error: Cannot find module 'react/jsx-dev-runtime' from '/tmp/nk-jsx-proj-iMSB09/index.tsx' Bun v1.4.4 (Linux x64)"
+          "evidence": "error: Cannot find module 'react/jsx-dev-runtime' from '/tmp/nk-jsx-proj-F71RiH/index.tsx' Bun v1.4.4 (Linux x64)"
         },
         {
           "name": "Linux: bun --bun run runs scripts in Bun",
@@ -46,7 +46,7 @@
         {
           "name": "Linux: wrong-case import fails (ENOENT reading ... utils.ts)",
           "ok": true,
-          "evidence": "error: ENOENT reading \"/tmp/nk-case-Hw9Ak4/utils.ts\" Bun v1.4.4 (Linux x64)"
+          "evidence": "error: ENOENT reading \"/tmp/nk-case-CThJyJ/utils.ts\" Bun v1.4.4 (Linux x64)"
         }
       ],
       "allHold": true
@@ -62,17 +62,17 @@
         {
           "name": "Undeclared workspace package: \"Cannot find module\" on a fresh install",
           "ok": true,
-          "evidence": "error: Cannot find module '@mono/ui' from 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\nk-ws-VIQvgK\\apps\\web\\index.ts' Bun v1.4.4 (Windows x64)"
+          "evidence": "error: Cannot find module '@mono/ui' from 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\nk-ws-eg2CwX\\apps\\web\\index.ts' Bun v1.4.4 (Windows x64)"
         },
         {
           "name": "Fix: bun add @mono/ui@workspace:* makes it load",
           "ok": true,
-          "evidence": "bun add v1.4.4 (38afee6c8) installed @mono/ui@workspace:packages/ui [25.00ms] done button Saved lockfile"
+          "evidence": "bun add v1.4.4 (38afee6c8) installed @mono/ui@workspace:packages/ui [17.00ms] done button Saved lockfile"
         },
         {
           "name": "bun test ignores Jest moduleNameMapper",
           "ok": true,
-          "evidence": "bun test v1.4.4 (38afee6c8) ::group::tests\\alias.test.ts: # Unhandled error between tests ------------------------------- error: Cannot find module '~/lib/math' from 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\nk-test-I1okYp\\tests\\alias.test.ts' ------------------------------- 0 pass 1 fail 1 error Ran"
+          "evidence": "bun test v1.4.4 (38afee6c8) ::group::tests\\alias.test.ts: # Unhandled error between tests ------------------------------- error: Cannot find module '~/lib/math' from 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\nk-test-EeDgBT\\tests\\alias.test.ts' ------------------------------- 0 pass 1 fail 1 error Ran"
         },
         {
           "name": "Fix: tsconfig paths makes bun test pass",
@@ -87,7 +87,7 @@
         {
           "name": "Project with node_modules, no React: \"Cannot find module react/jsx-dev-runtime\"",
           "ok": true,
-          "evidence": "error: Cannot find module 'react/jsx-dev-runtime' from 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\nk-jsx-proj-MK6HJ3\\index.tsx' Bun v1.4.4 (Windows x64)"
+          "evidence": "error: Cannot find module 'react/jsx-dev-runtime' from 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\nk-jsx-proj-fV3xbo\\index.tsx' Bun v1.4.4 (Windows x64)"
         },
         {
           "name": "Windows, Bun on the same drive as TEMP (C:): bun --bun run runs scripts in Bun",
@@ -231,7 +231,7 @@
         {
           "name": "Config without dotenv: \"Cannot resolve environment variable: DATABASE_URL\"",
           "ok": true,
-          "evidence": "Failed to load config file \"/tmp/nk-p1012-WqKP0z\" as a TypeScript/JavaScript module. Error: PrismaConfigEnvError: Cannot resolve environment variable: DATABASE_URL."
+          "evidence": "Failed to load config file \"/tmp/nk-p1012-nTWeS6\" as a TypeScript/JavaScript module. Error: PrismaConfigEnvError: Cannot resolve environment variable: DATABASE_URL."
         },
         {
           "name": "Fix: config with dotenv validates",
@@ -248,14 +248,14 @@
       "os": "Linux",
       "date": "2026-10-27",
       "versions": {
-        "prisma (latest tag)": "8.0.0-rc.27",
+        "prisma (latest tag)": "8.0.0-rc.28",
         "@prisma/client (latest tag)": "7.10.1"
       },
       "checks": [
         {
           "name": "npm \"latest\" for prisma is still a Prisma 8 release candidate",
           "ok": true,
-          "evidence": "8.0.0-rc.27"
+          "evidence": "8.0.0-rc.28"
         },
         {
           "name": "npm \"latest\" for @prisma/client is still 7.x",
@@ -270,7 +270,7 @@
         {
           "name": "Fix: `npx -y prisma@7 generate` generates the client",
           "ok": true,
-          "evidence": "✔ Generated Prisma Client (7.10.1) to ./src/generated/prisma in 27ms Prisma schema loaded from prisma/schema.prisma."
+          "evidence": "✔ Generated Prisma Client (7.10.1) to ./src/generated/prisma in 33ms Prisma schema loaded from prisma/schema.prisma."
         }
       ],
       "allHold": true

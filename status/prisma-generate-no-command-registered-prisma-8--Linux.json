@@ -3,14 +3,14 @@
   "os": "Linux",
   "date": "2026-10-27",
   "versions": {
-    "prisma (latest tag)": "8.0.0-rc.27",
+    "prisma (latest tag)": "8.0.0-rc.28",
     "@prisma/client (latest tag)": "7.10.1"
   },
   "checks": [
     {
       "name": "npm \"latest\" for prisma is still a Prisma 8 release candidate",
       "ok": true,
-      "evidence": "8.0.0-rc.27"
+      "evidence": "8.0.0-rc.28"
     },
     {
       "name": "npm \"latest\" for @prisma/client is still 7.x",
@@ -25,7 +25,7 @@
     {
       "name": "Fix: `npx -y prisma@7 generate` generates the client",
       "ok": true,
-      "evidence": "✔ Generated Prisma Client (7.10.1) to ./src/generated/prisma in 27ms Prisma schema loaded from prisma/schema.prisma."
+      "evidence": "✔ Generated Prisma Client (7.10.1) to ./src/generated/prisma in 33ms Prisma schema loaded from prisma/schema.prisma."
     }
   ],
   "allHold": true

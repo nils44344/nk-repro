@@ -9,17 +9,17 @@
     {
       "name": "Undeclared workspace package: \"Cannot find module\" on a fresh install",
       "ok": true,
-      "evidence": "error: Cannot find module '@mono/ui' from 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\nk-ws-VIQvgK\\apps\\web\\index.ts' Bun v1.4.4 (Windows x64)"
+      "evidence": "error: Cannot find module '@mono/ui' from 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\nk-ws-eg2CwX\\apps\\web\\index.ts' Bun v1.4.4 (Windows x64)"
     },
     {
       "name": "Fix: bun add @mono/ui@workspace:* makes it load",
       "ok": true,
-      "evidence": "bun add v1.4.4 (38afee6c8) installed @mono/ui@workspace:packages/ui [25.00ms] done button Saved lockfile"
+      "evidence": "bun add v1.4.4 (38afee6c8) installed @mono/ui@workspace:packages/ui [17.00ms] done button Saved lockfile"
     },
     {
       "name": "bun test ignores Jest moduleNameMapper",
       "ok": true,
-      "evidence": "bun test v1.4.4 (38afee6c8) ::group::tests\\alias.test.ts: # Unhandled error between tests ------------------------------- error: Cannot find module '~/lib/math' from 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\nk-test-I1okYp\\tests\\alias.test.ts' ------------------------------- 0 pass 1 fail 1 error Ran"
+      "evidence": "bun test v1.4.4 (38afee6c8) ::group::tests\\alias.test.ts: # Unhandled error between tests ------------------------------- error: Cannot find module '~/lib/math' from 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\nk-test-EeDgBT\\tests\\alias.test.ts' ------------------------------- 0 pass 1 fail 1 error Ran"
     },
     {
       "name": "Fix: tsconfig paths makes bun test pass",
@@ -34,7 +34,7 @@
     {
       "name": "Project with node_modules, no React: \"Cannot find module react/jsx-dev-runtime\"",
       "ok": true,
-      "evidence": "error: Cannot find module 'react/jsx-dev-runtime' from 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\nk-jsx-proj-MK6HJ3\\index.tsx' Bun v1.4.4 (Windows x64)"
+      "evidence": "error: Cannot find module 'react/jsx-dev-runtime' from 'C:\\Users\\runneradmin\\AppData\\Local\\Temp\\nk-jsx-proj-fV3xbo\\index.tsx' Bun v1.4.4 (Windows x64)"
     },
     {
       "name": "Windows, Bun on the same drive as TEMP (C:): bun --bun run runs scripts in Bun",
