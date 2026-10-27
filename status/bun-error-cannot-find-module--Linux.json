@@ -9,7 +9,7 @@
     {
       "name": "Undeclared workspace package: \"Cannot find module\" on a fresh install",
       "ok": true,
-      "evidence": "error: Cannot find module '@mono/ui' from '/tmp/nk-ws-5WIDlj/apps/web/index.ts' Bun v1.4.4 (Linux x64)"
+      "evidence": "error: Cannot find module '@mono/ui' from '/tmp/nk-ws-muNASH/apps/web/index.ts' Bun v1.4.4 (Linux x64)"
     },
     {
       "name": "Fix: bun add @mono/ui@workspace:* makes it load",
@@ -19,7 +19,7 @@
     {
       "name": "bun test ignores Jest moduleNameMapper",
       "ok": true,
-      "evidence": "bun test v1.4.4 (38afee6c8) ::group::tests/alias.test.ts: # Unhandled error between tests ------------------------------- error: Cannot find module '~/lib/math' from '/tmp/nk-test-zFvgwU/tests/alias.test.ts' ------------------------------- 0 pass 1 fail 1 error Ran 1 test across 1 file. [2.00ms]"
+      "evidence": "bun test v1.4.4 (38afee6c8) ::group::tests/alias.test.ts: # Unhandled error between tests ------------------------------- error: Cannot find module '~/lib/math' from '/tmp/nk-test-Iz1mxA/tests/alias.test.ts' ------------------------------- 0 pass 1 fail 1 error Ran 1 test across 1 file. [2.00ms]"
     },
     {
       "name": "Fix: tsconfig paths makes bun test pass",
@@ -34,7 +34,7 @@
     {
       "name": "Project with node_modules, no React: \"Cannot find module react/jsx-dev-runtime\"",
       "ok": true,
-      "evidence": "error: Cannot find module 'react/jsx-dev-runtime' from '/tmp/nk-jsx-proj-ESjccD/index.tsx' Bun v1.4.4 (Linux x64)"
+      "evidence": "error: Cannot find module 'react/jsx-dev-runtime' from '/tmp/nk-jsx-proj-iMSB09/index.tsx' Bun v1.4.4 (Linux x64)"
     },
     {
       "name": "Linux: bun --bun run runs scripts in Bun",
@@ -44,7 +44,7 @@
     {
       "name": "Linux: wrong-case import fails (ENOENT reading ... utils.ts)",
       "ok": true,
-      "evidence": "error: ENOENT reading \"/tmp/nk-case-SS6aCc/utils.ts\" Bun v1.4.4 (Linux x64)"
+      "evidence": "error: ENOENT reading \"/tmp/nk-case-Hw9Ak4/utils.ts\" Bun v1.4.4 (Linux x64)"
     }
   ],
   "allHold": true
