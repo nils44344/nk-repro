@@ -1,0 +1,381 @@
+=================== debian:bookworm-slim
+Unable to find image 'debian:bookworm-slim' locally
+bookworm-slim: Pulling from library/debian
+3c5439d0ae62: Pulling fs layer
+3c5439d0ae62: Download complete
+40e0d6783829: Download complete
+3c5439d0ae62: Pull complete
+Digest: sha256:99c0b25c46d0214d5a2091092e7908907dcaecd6a962cde0ac700acee222b6f3
+Status: Downloaded newer image for debian:bookworm-slim
+--- libatomic present before:
+none
+--- node 26 (node-v26.12.1-linux-x64):
+/w/node-v26.12.1-linux-x64/bin/node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+exit=127
+--- npm 26 via PATH:
+node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+exit=127
+--- node 24 (node-v24.22.1-linux-x64):
+v24.22.1
+exit=0
+--- fix: apt-get update -qq >/dev/null && apt-get install -y -qq libatomic1 >/dev/null
+debconf: delaying package configuration, since apt-utils is not installed
+fix exit=0
+--- node 26 after fix:
+v26.12.1
+exit=0
+--- npm 26 after fix:
+11.20.0
+exit=0
+=================== debian:trixie-slim
+Unable to find image 'debian:trixie-slim' locally
+trixie-slim: Pulling from library/debian
+6fc242d221a6: Pulling fs layer
+6fc242d221a6: Download complete
+f74f9762bc2a: Download complete
+6fc242d221a6: Pull complete
+Digest: sha256:89c1ea91e897f0fe0a3731595330bc45b8bdef4047464a07116f891a94054b31
+Status: Downloaded newer image for debian:trixie-slim
+--- libatomic present before:
+none
+--- node 26 (node-v26.12.1-linux-x64):
+/w/node-v26.12.1-linux-x64/bin/node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+exit=127
+--- npm 26 via PATH:
+node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+exit=127
+--- node 24 (node-v24.22.1-linux-x64):
+v24.22.1
+exit=0
+--- fix: apt-get update -qq >/dev/null && apt-get install -y -qq libatomic1 >/dev/null
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.40.1 /usr/local/share/perl/5.40.1 /usr/lib/x86_64-linux-gnu/perl5/5.40 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.40 /usr/share/perl/5.40 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8, <STDIN> line 1.)
+debconf: falling back to frontend: Teletype
+debconf: unable to initialize frontend: Teletype
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Noninteractive
+fix exit=0
+--- node 26 after fix:
+v26.12.1
+exit=0
+--- npm 26 after fix:
+11.20.0
+exit=0
+=================== ubuntu:24.04
+Unable to find image 'ubuntu:24.04' locally
+24.04: Pulling from library/ubuntu
+7a48b8f0e5c7: Pulling fs layer
+7a48b8f0e5c7: Download complete
+98144013299c: Download complete
+7a48b8f0e5c7: Pull complete
+Digest: sha256:24737cef17f4e22b1977df7d9a05e77c4e28b7da5b8911f8d8ccda136bf3573c
+Status: Downloaded newer image for ubuntu:24.04
+--- libatomic present before:
+none
+--- node 26 (node-v26.12.1-linux-x64):
+/w/node-v26.12.1-linux-x64/bin/node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+exit=127
+--- npm 26 via PATH:
+node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+exit=127
+--- node 24 (node-v24.22.1-linux-x64):
+v24.22.1
+exit=0
+--- fix: apt-get update -qq >/dev/null && apt-get install -y -qq libatomic1 >/dev/null
+debconf: delaying package configuration, since apt-utils is not installed
+fix exit=0
+--- node 26 after fix:
+v26.12.1
+exit=0
+--- npm 26 after fix:
+11.20.0
+exit=0
+=================== ubuntu:22.04
+Unable to find image 'ubuntu:22.04' locally
+22.04: Pulling from library/ubuntu
+0626d3cc316c: Pulling fs layer
+0626d3cc316c: Download complete
+ae52aad3a114: Download complete
+0626d3cc316c: Pull complete
+Digest: sha256:e0f80c829509ef4df9e76bd8944eb7b8ec25cbb379b112a7f9448b2c77a77c9b
+Status: Downloaded newer image for ubuntu:22.04
+--- libatomic present before:
+none
+--- node 26 (node-v26.12.1-linux-x64):
+/w/node-v26.12.1-linux-x64/bin/node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+exit=127
+--- npm 26 via PATH:
+node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+exit=127
+--- node 24 (node-v24.22.1-linux-x64):
+v24.22.1
+exit=0
+--- fix: apt-get update -qq >/dev/null && apt-get install -y -qq libatomic1 >/dev/null
+debconf: delaying package configuration, since apt-utils is not installed
+fix exit=0
+--- node 26 after fix:
+v26.12.1
+exit=0
+--- npm 26 after fix:
+11.20.0
+exit=0
+=================== amazonlinux:2023
+Unable to find image 'amazonlinux:2023' locally
+2023: Pulling from library/amazonlinux
+da3e7a9e0d7c: Pulling fs layer
+da3e7a9e0d7c: Download complete
+ff74ac6f42a1: Download complete
+716ced900b99: Download complete
+da3e7a9e0d7c: Pull complete
+Digest: sha256:c04a1012acc483977f61f7f91c28624a39a621e56a59781319a75dec528be9b6
+Status: Downloaded newer image for amazonlinux:2023
+--- libatomic present before:
+none
+--- node 26 (node-v26.12.1-linux-x64):
+/w/node-v26.12.1-linux-x64/bin/node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+exit=127
+--- npm 26 via PATH:
+node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+exit=127
+--- node 24 (node-v24.22.1-linux-x64):
+v24.22.1
+exit=0
+--- fix: dnf install -y -q libatomic >/dev/null
+fix exit=0
+--- node 26 after fix:
+v26.12.1
+exit=0
+--- npm 26 after fix:
+11.20.0
+exit=0
+=================== fedora:42
+Unable to find image 'fedora:42' locally
+42: Pulling from library/fedora
+accf5bbc0c67: Pulling fs layer
+accf5bbc0c67: Download complete
+646baf3e5fc9: Download complete
+fc08d2721881: Download complete
+accf5bbc0c67: Pull complete
+Digest: sha256:99e203b80b1c3d8f7e161ec10a68fd02b081ef83a3963553e513c82846b97814
+Status: Downloaded newer image for fedora:42
+--- libatomic present before:
+none
+--- node 26 (node-v26.12.1-linux-x64):
+/w/node-v26.12.1-linux-x64/bin/node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+exit=127
+--- npm 26 via PATH:
+node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+exit=127
+--- node 24 (node-v24.22.1-linux-x64):
+v24.22.1
+exit=0
+--- fix: dnf install -y -q libatomic >/dev/null
+[1/3] Verify package files              100% |   0.0   B/s |   1.0   B |  00m00s
+[2/3] Prepare transaction               100% | 100.0   B/s |   1.0   B |  00m00s
+[3/3] Installing libatomic-0:15.2.1-7.f 100% | 721.8 KiB/s |  37.5 KiB |  00m00s
+fix exit=0
+--- node 26 after fix:
+v26.12.1
+exit=0
+--- npm 26 after fix:
+11.20.0
+exit=0
+=================== rockylinux:9-minimal
+Unable to find image 'rockylinux:9-minimal' locally
+9-minimal: Pulling from library/rockylinux
+8ec988941d66: Pulling fs layer
+8ec988941d66: Download complete
+d5537a5e0c33: Download complete
+7cf6eed521e3: Download complete
+8ec988941d66: Pull complete
+Digest: sha256:305de618a5681ff75b1d608fd22b10f362867dff2f550a4f1d427d21cd7f42b4
+Status: Downloaded newer image for rockylinux:9-minimal
+--- libatomic present before:
+none
+--- node 26 (node-v26.12.1-linux-x64):
+/w/node-v26.12.1-linux-x64/bin/node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+exit=127
+--- npm 26 via PATH:
+node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+exit=127
+--- node 24 (node-v24.22.1-linux-x64):
+v24.22.1
+exit=0
+--- fix: microdnf install -y libatomic >/dev/null
+fix exit=0
+--- node 26 after fix:
+v26.12.1
+exit=0
+--- npm 26 after fix:
+11.20.0
+exit=0
+=================== redhat/ubi9-minimal
+Unable to find image 'redhat/ubi9-minimal:latest' locally
+latest: Pulling from redhat/ubi9-minimal
+8f4a4ef7ec87: Pulling fs layer
+8f4a4ef7ec87: Download complete
+8f4a4ef7ec87: Pull complete
+Digest: sha256:6f3a78179e0b30b930a186e7f68a4af52e51bb82406c9653be10bddd624e40f5
+Status: Downloaded newer image for redhat/ubi9-minimal:latest
+--- libatomic present before:
+none
+--- node 26 (node-v26.12.1-linux-x64):
+/w/node-v26.12.1-linux-x64/bin/node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+exit=127
+--- npm 26 via PATH:
+node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+exit=127
+--- node 24 (node-v24.22.1-linux-x64):
+v24.22.1
+exit=0
+--- fix: microdnf install -y libatomic >/dev/null
+
+(microdnf:13): librhsm-WARNING **: 14:13:30.117: Found 0 entitlement certificates
+
+(microdnf:13): librhsm-WARNING **: 14:13:30.126: Found 0 entitlement certificates
+warning: Unsupported version of key: V6
+
+(microdnf:13): libdnf-WARNING **: 14:13:31.239: failed to parse public key for /etc/pki/rpm-gpg/RPM-GPG-KEY-PQC-redhat-release
+fix exit=0
+--- node 26 after fix:
+v26.12.1
+exit=0
+--- npm 26 after fix:
+11.20.0
+exit=0
+=================== opensuse/leap:15.6
+Unable to find image 'opensuse/leap:15.6' locally
+15.6: Pulling from opensuse/leap
+ef34389a9be2: Pulling fs layer
+ef34389a9be2: Download complete
+ef34389a9be2: Pull complete
+Digest: sha256:79be7751205ea84559990fb76b1bec71e38d6fad41c70a4f6c921b803b58f421
+Status: Downloaded newer image for opensuse/leap:15.6
+--- libatomic present before:
+none
+--- node 26 (node-v26.12.1-linux-x64):
+/w/node-v26.12.1-linux-x64/bin/node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+exit=127
+--- npm 26 via PATH:
+node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+exit=127
+--- node 24 (node-v24.22.1-linux-x64):
+v24.22.1
+exit=0
+--- fix: zypper -q -n install libatomic1 >/dev/null
+fix exit=0
+--- node 26 after fix:
+v26.12.1
+exit=0
+--- npm 26 after fix:
+11.20.0
+exit=0
+=================== node:26-bookworm-slim
+Unable to find image 'node:26-bookworm-slim' locally
+26-bookworm-slim: Pulling from library/node
+2e537d67d8ec: Pulling fs layer
+cda6f71c9f50: Pulling fs layer
+dd40b3a1a7f7: Pulling fs layer
+2e537d67d8ec: Download complete
+cda6f71c9f50: Download complete
+dd40b3a1a7f7: Download complete
+dc1e3a5e1fd5: Download complete
+6c6ba89f5717: Download complete
+cda6f71c9f50: Pull complete
+2e537d67d8ec: Pull complete
+dd40b3a1a7f7: Pull complete
+Digest: sha256:88e480776c6149ff1d098cd304f44bf18057fb5d284a3329b78162d29821e28c
+Status: Downloaded newer image for node:26-bookworm-slim
+--- libatomic present before:
+/lib/x86_64-linux-gnu/libatomic.so.1
+/usr/lib/x86_64-linux-gnu/libatomic.so.1
+none
+--- node 26 (node-v26.12.1-linux-x64):
+v26.12.1
+exit=0
+--- npm 26 via PATH:
+11.20.0
+exit=0
+--- node 24 (node-v24.22.1-linux-x64):
+v24.22.1
+exit=0
+--- image node: v26.12.1 at /usr/local/bin/node
+--- fix: true
+fix exit=0
+--- node 26 after fix:
+v26.12.1
+exit=0
+--- npm 26 after fix:
+11.20.0
+exit=0
+=================== node:26-alpine
+Unable to find image 'node:26-alpine' locally
+26-alpine: Pulling from library/node
+7b229517ed22: Pulling fs layer
+c2b34093fa7f: Pulling fs layer
+0108e084aaec: Pulling fs layer
+7b229517ed22: Download complete
+0108e084aaec: Download complete
+88f8328a6b6b: Download complete
+06a5f75d2a59: Download complete
+c2b34093fa7f: Download complete
+7b229517ed22: Pull complete
+0108e084aaec: Pull complete
+c2b34093fa7f: Pull complete
+Digest: sha256:40cd011b55415bc894e45b02fdd5a5dfde056921b7d23a64c74f80497af48797
+Status: Downloaded newer image for node:26-alpine
+--- libatomic present before:
+/usr/lib/libatomic.so.1
+none
+--- node 26 (node-v26.12.1-linux-x64):
+sh: /w/node-v26.12.1-linux-x64/bin/node: not found
+exit=127
+--- npm 26 via PATH:
+11.20.0
+exit=0
+--- node 24 (node-v24.22.1-linux-x64):
+sh: /w/node-v24.22.1-linux-x64/bin/node: not found
+exit=127
+--- image node: v26.12.1 at /usr/local/bin/node
+--- fix: true
+fix exit=0
+--- node 26 after fix:
+sh: /w/node-v26.12.1-linux-x64/bin/node: not found
+exit=127
+--- npm 26 after fix:
+11.20.0
+exit=0
+=================== NEEDED entries
+node-v26.12.1-linux-x64:
+ 0x0000000000000001 (NEEDED)             Shared library: [libatomic.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libdl.so.2]
+ 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libpthread.so.0]
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [ld-linux-x86-64.so.2]
+node-v24.22.1-linux-x64:
+ 0x0000000000000001 (NEEDED)             Shared library: [libdl.so.2]
+ 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libpthread.so.0]
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [ld-linux-x86-64.so.2]
+=================== runner (ubuntu-latest, setup-node not used)
+	libatomic.so.1 (libc6,x86-64) => /usr/lib/x86_64-linux-gnu/libatomic.so.1
+=================== nvm in debian:bookworm-slim (curl installed, libatomic not)
+debconf: delaying package configuration, since apt-utils is not installed
+libatomic after curl install:
+none
+Computing checksum with sha256sum
+Checksums matched!
+Now using node v26.12.1
+Creating default alias: default -> 26 (-> v26.12.1 *)
+nvm install exit=0
+bash: line 5: node: command not found
+node exit=127

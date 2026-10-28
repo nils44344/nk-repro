@@ -1,0 +1,35 @@
+=================== arch: aarch64
+=================== nvm in debian:bookworm-slim (curl installed, libatomic not)
+libatomic: none
+nvm install exit=0
+Checksums matched!
+Now using node v26.12.1
+Creating default alias: default -> 26 (-> v26.12.1 *)
+node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+node exit=127
+node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+npm exit=127
+v26.12.1
+after fix exit=0
+=================== COPY node from node:26 into debian:bookworm-slim
+node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+run exit=127
+=================== same + COPY libatomic.so.1 from the node stage
+v26.12.1
+run exit=0
+=================== same + apt-get install libatomic1
+v26.12.1
+run exit=0
+=================== COPY node into gcr.io/distroless/cc-debian12
+/usr/local/bin/node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+run exit=127
+=================== distroless/cc + COPY libatomic.so.1
+v26.12.1
+run exit=0
+=================== COPY node from node:24 into debian:bookworm-slim (control)
+v24.22.1
+run exit=0
+=================== gcr.io/distroless/nodejs26-debian12
+   3 |     
+--------------------
+ERROR: failed to build: failed to solve: gcr.io/distroless/nodejs26-debian12: failed to resolve source metadata for gcr.io/distroless/nodejs26-debian12:latest: gcr.io/distroless/nodejs26-debian12:latest: not found
