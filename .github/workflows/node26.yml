@@ -8,7 +8,7 @@ jobs:
   checks:
     strategy:
       matrix:
-        node: ['24.21.0', '26.11.1']
+        node: ['24.21.0', '26.11.1', '26.13.0']
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,6 +26,6 @@ jobs:
       - uses: actions/checkout@v4
       - working-directory: node26
         run: |
-          for t in 24-bookworm-slim 26-bookworm-slim; do echo "== node:$t"; docker run --rm node:$t sh -c 'node -v; yarn --version; corepack --version' || true; done
+          for t in 24-bookworm-slim 26-bookworm-slim lts-bookworm-slim lts; do echo "== node:$t"; docker run --rm node:$t sh -c "node -v; node -p process.release.lts; yarn --version; corepack --version" || true; done
           echo "== Dockerfile.broken"; docker build --progress=plain -f Dockerfile.broken . 2>&1 | grep -E "not found|ERROR|exit code" || true
           echo "== Dockerfile.fixed"; docker build --progress=plain -f Dockerfile.fixed . 2>&1 | grep -E "^#[0-9]+ [0-9.]+ [0-9]+\.[0-9]+\.[0-9]+$|ERROR|DONE" | tail -8
