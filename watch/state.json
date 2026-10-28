@@ -20,7 +20,7 @@
   "npm:@angular/cli@latest": "22.2.4",
   "npm:nuxt@latest": "4.6.3",
   "npm:@swc/core@latest": "1.16.20",
-  "npm:create-react-router@latest": "8.5.0",
+  "npm:create-react-router@latest": "8.5.1",
   "npm:@docusaurus/core@latest": "3.10.2",
   "npm:create-cloudflare@latest": "2.74.4",
   "npm:drizzle-orm@latest": "0.45.4",
@@ -31,6 +31,6 @@
   "pypi:ormsgpack": "1.13.0 +cp315-win",
   "pypi:tensorflow": "2.21.0",
   "pypi:sentencepiece": "0.2.2",
-  "pypi:pywinpty": "3.1.0 +cp315-win",
+  "pypi:pywinpty": "3.1.1 +cp315-win",
   "npm:remix@latest": "3.1.0"
 }
