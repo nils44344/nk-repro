@@ -12,7 +12,7 @@ docker run --rm debian:bookworm-slim bash -c '
   apt-get install -y -qq libatomic1 >/dev/null 2>&1; node -v; echo "after fix exit=$?"
 ' 2>&1
 mkdir -p ms && cd ms
-build() { echo "=================== $1"; printf '%s\n' "$2" > Dockerfile; docker build -q -t t . >/dev/null 2>build.log || { tail -3 build.log; return; }; docker run --rm t; echo "run exit=$?"; }
+build() { echo "=================== $1"; printf '%s\n' "$2" | sed "s/@ARCH@/$(uname -m)/g" > Dockerfile; docker build -q -t t . >/dev/null 2>build.log || { tail -3 build.log; return; }; docker run --rm t; echo "run exit=$?"; }
 build "COPY node from node:26 into debian:bookworm-slim" 'FROM node:26-bookworm-slim AS n
 FROM debian:bookworm-slim
 COPY --from=n /usr/local/bin/node /usr/local/bin/node
