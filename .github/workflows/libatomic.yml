@@ -1,0 +1,19 @@
+name: libatomic
+on: workflow_dispatch
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: libatomic } }
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download latest Node 26 and 24 official binaries
+        run: |
+          for m in 26 24; do
+            v=$(curl -s https://nodejs.org/dist/index.json | jq -r "[.[]|select(.version|startswith(\"v$m.\"))][0].version")
+            curl -sSLO https://nodejs.org/dist/$v/node-$v-linux-x64.tar.xz && tar -xJf node-$v-linux-x64.tar.xz
+            echo node-$v-linux-x64 > n$m.txt
+          done
+          cat n26.txt n24.txt
+      - run: bash run.sh | tee out.txt
+      - uses: actions/upload-artifact@v4
+        with: { name: out, path: libatomic/out.txt }
