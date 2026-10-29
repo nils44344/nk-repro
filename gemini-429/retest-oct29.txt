@@ -1,0 +1,15 @@
+gemini-2.5-flash | ERR 404 | This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+gemini-2.5-pro | ERR 404 | This model models/gemini-2.5-pro is no longer available to new users. Please update your code to use models/gemini-3.1-pro-preview for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+gemini-2.5-flash-lite | ERR 404 | This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+gemini-2.0-flash | ERR 404 | This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+gemini-2.0-flash-lite | ERR 404 | This model models/gemini-2.0-flash-lite is no longer available. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).
+gemini-1.5-flash | ERR 404 | models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+gemini-3.5-flash | OK | modelVersion=gemini-3.6-flash | 1597 ms
+gemini-3.6-flash | OK | modelVersion=gemini-3.6-flash | 1411 ms
+gemini-3.8-flash | ERR 503 | This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+gemini-3.5-flash-lite | OK | modelVersion=gemini-3.5-flash-lite | 3645 ms
+gemini-flash-latest | ERR 503 | This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+gemini-flash-lite-latest | OK | modelVersion=gemini-3.5-flash-lite | 8231 ms
+gemini-3.1-pro-preview | ERR 429 | You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis
+listed 2.5-flash: true | listed 3.8-flash: true
+sdk 2.27.0

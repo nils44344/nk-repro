@@ -1,0 +1,3 @@
+gemini-2.5-flash | interactions ERR 404 | 404 This model models/gemini-2.5-flash is no longer available to new users. Please update your cod
+gemini-3.6-flash | interactions OK | status=completed | text="hi" | keys=id,status,usage,created,updated,service_tier,steps,object,model,sdk
+gemini-3.5-flash-lite | interactions OK | status=completed | text="Hi" | keys=id,status,usage,created,updated,service_tier,steps,object,mode
