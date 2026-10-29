@@ -1,0 +1,180 @@
+################ npm 11.20.0
+== defaults: allow-remote=all allow-git=all allow-file=all
+== A: npm install <tarball URL> on the CLI
+added 2 packages in 13s
+== B: tarball URL in package.json
+added 2 packages in 8s
+== C: github: shorthand
+added 2 packages in 2m
+== D: git+https URL
+added 2 packages in 28s
+== E: GitHub archive .tar.gz URL
+added 2 packages in 35s
+== F: file: dependency
+added 1 package in 4s
+== G1: tarball URL one level down, allow-remote=root
+added 1 package in 11s
+== G2: same, allow-remote=all
+added 1 package in 14s
+== G3: same, overrides is-odd to registry 3.0.1, default settings
+added 1 package in 8s
+== J: env NPM_CONFIG_ALLOW_REMOTE=root
+added 2 packages in 50s
+== K: misspelled allow-remotes=root in .npmrc
+npm warn Unknown project config "allow-remotes". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+added 2 packages in 10s
+== L: misspelled --allow-remotes=root flag
+npm warn Unknown cli config "--allow-remotes". This will stop working in the next major version of npm.
+added 2 packages in 5s
+== M: allow-remote=root in project .npmrc
+added 2 packages in 5s
+== N: npx <tarball URL> (cowsay 1.6.0)
+################ npm 12.0.2
+== defaults: allow-remote=none allow-git=none allow-file=all
+== A: npm install <tarball URL> on the CLI
+npm error code EALLOWREMOTE
+npm error Fetching packages of type "remote" have been disabled
+npm error Refusing to fetch "https://registry.npmjs.org/is-odd/-/is-odd-3.0.1.tgz"
+== B: tarball URL in package.json
+npm error code EALLOWREMOTE
+npm error Fetching packages of type "remote" have been disabled
+npm error Refusing to fetch "is-odd@https://registry.npmjs.org/is-odd/-/is-odd-3.0.1.tgz"
+== C: github: shorthand
+npm error code EALLOWGIT
+npm error Fetching packages of type "git" have been disabled
+npm error Refusing to fetch "is-odd@github:jonschlinkert/is-odd"
+== D: git+https URL
+npm error code EALLOWGIT
+npm error Fetching packages of type "git" have been disabled
+npm error Refusing to fetch "is-odd@git+https://github.com/jonschlinkert/is-odd.git"
+== E: GitHub archive .tar.gz URL
+npm error code EALLOWREMOTE
+npm error Fetching packages of type "remote" have been disabled
+npm error Refusing to fetch "is-odd@https://github.com/jonschlinkert/is-odd/archive/refs/tags/3.0.1.tar.gz"
+== F: file: dependency
+added 1 package in 3s
+== G1: tarball URL one level down, allow-remote=root
+added 1 package in 3s
+== G2: same, allow-remote=all
+added 1 package in 6s
+== G3: same, overrides is-odd to registry 3.0.1, default settings
+added 1 package in 3s
+== J: env NPM_CONFIG_ALLOW_REMOTE=root
+added 2 packages in 3s
+== K: misspelled allow-remotes=root in .npmrc
+npm warn Unknown project config "allow-remotes". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm error code EALLOWREMOTE
+npm error Fetching packages of type "remote" have been disabled
+npm error Refusing to fetch "is-odd@https://registry.npmjs.org/is-odd/-/is-odd-3.0.1.tgz"
+== L: misspelled --allow-remotes=root flag
+npm error code EUNKNOWNCONFIG
+npm error Unknown cli flag:
+== M: allow-remote=root in project .npmrc
+added 2 packages in 7s
+== N: npx <tarball URL> (cowsay 1.6.0)
+npm error code EALLOWREMOTE
+npm error Fetching packages of type "remote" have been disabled
+npm error Refusing to fetch "https://registry.npmjs.org/cowsay/-/cowsay-1.6.0.tgz"
+################ npm 12.1.0
+== defaults: allow-remote=none allow-git=none allow-file=all
+== A: npm install <tarball URL> on the CLI
+npm error code EALLOWREMOTE
+npm error Fetching packages of type "remote" have been disabled
+npm error Refusing to fetch "https://registry.npmjs.org/is-odd/-/is-odd-3.0.1.tgz"
+== B: tarball URL in package.json
+npm error code EALLOWREMOTE
+npm error Fetching packages of type "remote" have been disabled
+npm error Refusing to fetch "is-odd@https://registry.npmjs.org/is-odd/-/is-odd-3.0.1.tgz"
+== C: github: shorthand
+npm error code EALLOWGIT
+npm error Fetching packages of type "git" have been disabled
+npm error Refusing to fetch "is-odd@github:jonschlinkert/is-odd"
+== D: git+https URL
+npm error code EALLOWGIT
+npm error Fetching packages of type "git" have been disabled
+npm error Refusing to fetch "is-odd@git+https://github.com/jonschlinkert/is-odd.git"
+== E: GitHub archive .tar.gz URL
+npm error code EALLOWREMOTE
+npm error Fetching packages of type "remote" have been disabled
+npm error Refusing to fetch "is-odd@https://github.com/jonschlinkert/is-odd/archive/refs/tags/3.0.1.tar.gz"
+== F: file: dependency
+added 1 package in 4s
+== G1: tarball URL one level down, allow-remote=root
+added 1 package in 3s
+== G2: same, allow-remote=all
+added 1 package in 6s
+== G3: same, overrides is-odd to registry 3.0.1, default settings
+added 1 package in 3s
+== J: env NPM_CONFIG_ALLOW_REMOTE=root
+added 2 packages in 5s
+== K: misspelled allow-remotes=root in .npmrc
+npm warn Unknown project config "allow-remotes". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm error code EALLOWREMOTE
+npm error Fetching packages of type "remote" have been disabled
+npm error Refusing to fetch "is-odd@https://registry.npmjs.org/is-odd/-/is-odd-3.0.1.tgz"
+== L: misspelled --allow-remotes=root flag
+npm error code EUNKNOWNCONFIG
+npm error Unknown cli flag:
+== M: allow-remote=root in project .npmrc
+added 2 packages in 4s
+== N: npx <tarball URL> (cowsay 1.6.0)
+npm error code EALLOWREMOTE
+npm error Fetching packages of type "remote" have been disabled
+npm error Refusing to fetch "https://registry.npmjs.org/cowsay/-/cowsay-1.6.0.tgz"
+################ npm 12.2.1
+== defaults: allow-remote=none allow-git=none allow-file=all
+== A: npm install <tarball URL> on the CLI
+npm error code EALLOWREMOTE
+npm error Fetching packages of type "remote" have been disabled
+npm error Refusing to fetch "https://registry.npmjs.org/is-odd/-/is-odd-3.0.1.tgz"
+== B: tarball URL in package.json
+npm error code EALLOWREMOTE
+npm error Fetching packages of type "remote" have been disabled
+npm error Refusing to fetch "is-odd@https://registry.npmjs.org/is-odd/-/is-odd-3.0.1.tgz"
+== C: github: shorthand
+npm error code EALLOWGIT
+npm error Fetching packages of type "git" have been disabled
+npm error Refusing to fetch "is-odd@github:jonschlinkert/is-odd"
+== D: git+https URL
+npm error code EALLOWGIT
+npm error Fetching packages of type "git" have been disabled
+npm error Refusing to fetch "is-odd@git+https://github.com/jonschlinkert/is-odd.git"
+== E: GitHub archive .tar.gz URL
+npm error code EALLOWREMOTE
+npm error Fetching packages of type "remote" have been disabled
+npm error Refusing to fetch "is-odd@https://github.com/jonschlinkert/is-odd/archive/refs/tags/3.0.1.tar.gz"
+== F: file: dependency
+added 1 package in 2s
+== G1: tarball URL one level down, allow-remote=root
+added 1 package in 2s
+== G2: same, allow-remote=all
+added 1 package in 3s
+== G3: same, overrides is-odd to registry 3.0.1, default settings
+added 1 package in 3s
+== J: env NPM_CONFIG_ALLOW_REMOTE=root
+added 2 packages in 2s
+== K: misspelled allow-remotes=root in .npmrc
+npm warn Unknown project config "allow-remotes". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm error code EALLOWREMOTE
+npm error Fetching packages of type "remote" have been disabled
+npm error Refusing to fetch "is-odd@https://registry.npmjs.org/is-odd/-/is-odd-3.0.1.tgz"
+== L: misspelled --allow-remotes=root flag
+npm error code EUNKNOWNCONFIG
+npm error Unknown cli flag:
+== M: allow-remote=root in project .npmrc
+added 2 packages in 2s
+== N: npx <tarball URL> (cowsay 1.6.0)
+npm error code EALLOWREMOTE
+npm error Fetching packages of type "remote" have been disabled
+npm error Refusing to fetch "https://registry.npmjs.org/cowsay/-/cowsay-1.6.0.tgz"
+################ H: lockfile written by npm 11.20.0 for a tarball dependency, then npm ci
+added 3 packages in 2s
+      "resolved": "https://registry.npmjs.org/is-number/-/is-number-7.0.0.tgz",
+      "resolved": "https://registry.npmjs.org/is-odd/-/is-odd-3.0.1.tgz",
+      "resolved": "https://registry.npmjs.org/is-number/-/is-number-6.0.0.tgz",
+== npm ci on 12.2.1
+npm error code EALLOWREMOTE
+npm error Fetching packages of type "remote" have been disabled
+npm error Refusing to fetch "is-odd@https://registry.npmjs.org/is-odd/-/is-odd-3.0.1.tgz"
+== H2: lockfile with registry deps only (is-number ^7), npm ci on 12.2.1
+added 1 package in 3s

@@ -1,0 +1,64 @@
+D:/nk-eallow/w/gbase/mid/mid-1.0.0.tgz
+################ npm 12.0.2
+== default
+npm error code EALLOWREMOTE
+npm error Fetching packages of type "remote" have been disabled
+npm error Refusing to fetch "is-odd@https://registry.npmjs.org/is-odd/-/is-odd-3.0.1.tgz"
+npm error A complete log of this run can be found in: D:\npm-cache\_logs\2026-10-29T02_42_23_703Z-debug-0.log
+== root
+npm error code EALLOWREMOTE
+npm error Fetching non-root packages of type "remote" have been disabled
+npm error Refusing to fetch "is-odd@https://registry.npmjs.org/is-odd/-/is-odd-3.0.1.tgz"
+npm error A complete log of this run can be found in: D:\npm-cache\_logs\2026-10-29T02_42_29_509Z-debug-0.log
+== all
+added 3 packages in 8s
+   is-odd installed: 3.0.1
+== overrides is-odd 3.0.1, default settings
+added 3 packages in 6s
+   is-odd installed: 3.0.1
+################ npm 12.1.0
+== default
+npm error code EALLOWREMOTE
+npm error Fetching packages of type "remote" have been disabled
+npm error Refusing to fetch "is-odd@https://registry.npmjs.org/is-odd/-/is-odd-3.0.1.tgz"
+npm error A complete log of this run can be found in: D:\npm-cache\_logs\2026-10-29T02_42_57_437Z-debug-0.log
+== root
+npm error code EALLOWREMOTE
+npm error Fetching non-root packages of type "remote" have been disabled
+npm error Refusing to fetch "is-odd@https://registry.npmjs.org/is-odd/-/is-odd-3.0.1.tgz"
+npm error A complete log of this run can be found in: D:\npm-cache\_logs\2026-10-29T02_43_03_403Z-debug-0.log
+== all
+added 3 packages in 12s
+   is-odd installed: 3.0.1
+== overrides is-odd 3.0.1, default settings
+added 3 packages in 4s
+   is-odd installed: 3.0.1
+################ npm 12.2.1
+== default
+npm error code EALLOWREMOTE
+npm error Fetching packages of type "remote" have been disabled
+npm error Refusing to fetch "is-odd@https://registry.npmjs.org/is-odd/-/is-odd-3.0.1.tgz"
+npm error A complete log of this run can be found in: D:\npm-cache\_logs\2026-10-29T02_43_32_202Z-debug-0.log
+== root
+npm error code EALLOWREMOTE
+npm error Fetching non-root packages of type "remote" have been disabled
+npm error Refusing to fetch "is-odd@https://registry.npmjs.org/is-odd/-/is-odd-3.0.1.tgz"
+npm error A complete log of this run can be found in: D:\npm-cache\_logs\2026-10-29T02_43_40_363Z-debug-0.log
+== all
+added 3 packages in 4s
+   is-odd installed: 3.0.1
+== overrides is-odd 3.0.1, default settings
+added 3 packages in 3s
+   is-odd installed: 3.0.1
+################ fixes on 12.2.1
+== A + --allow-remote=root (URL given on the command line)
+added 2 packages in 17s
+{"name":"a","version":"1.0.0","dependencies":{"is-odd":"https://registry.npmjs.org/is-odd/-/is-odd-3.0.1.tgz"}}
+== C + --allow-git=root
+added 2 packages in 30s
+== N npx + --allow-remote=root
+< hi >
+== N npx + --allow-remote=all
+< hi >
+== H npm ci + allow-remote=root in .npmrc
+added 3 packages in 6s
