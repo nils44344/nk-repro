@@ -1,0 +1,44 @@
+== strict install, typescript 7.0.2 + latest tools
+npm error code ERESOLVE
+npm error ERESOLVE unable to resolve dependency tree
+npm error Could not resolve dependency:
+npm error peer typescript@">=4.3 <7" from ts-jest@29.4.15
+== legacy-peer-deps install
+
+added 401 packages in 53s
+Version 7.0.2
+== ts-jest
+FAIL test/add.test.ts
+  ● Test suite failed to run
+    The TypeScript compiler "typescript" (version 7.0.2) does not expose the JavaScript compiler API required by ts-jest. To use TypeScript 7 for project type-checking, install it as "@typescript/native" and alias "@typescript/typescript6" as "typescript" for ts-jest.
+      at Importer.typescript (node_modules/ts-jest/dist/utils/importer.js:35:19)
+Test Suites: 1 failed, 1 total
+== typescript-eslint
+typescript-eslint does not support TS 7.0.
+Please see https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/#running-side-by-side-with-typescript-6.0 to run typescript-eslint using the TS 6 API.
+See also https://github.com/typescript-eslint/typescript-eslint/issues/10940 for tracking typescript-eslint's support for TS >=7.1
+
+== ts-node
+TypeError: Cannot read properties of undefined (reading 'fileExists')
+== typedoc
+TypeError: Cannot read properties of undefined (reading 'PropertyDeclaration')
+== npm install @typescript/native (the name in the ts-jest message)
+npm error code ERESOLVE
+== side-by-side aliases
+
+added 2 packages, and changed 1 package in 8s
+
+added 403 packages in 30s
+tsc from @typescript/native: Version 7.0.2
+== ts-jest
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+== typescript-eslint
+eslint exit 0
+== ts-node
+3
+== typedoc
+[96m[info][0m html generated at ./docs
+npm error code E404
+npm error 404 Not Found - GET https://registry.npmjs.org/@typescript%2fnative - Not found
+npm error 404
