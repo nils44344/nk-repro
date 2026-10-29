@@ -1,0 +1,75 @@
+added 35 packages in 30s
+v24.14.0
+11.9.0
+== rolldown 1.2.15
+== @tailwindcss/oxide 4.3.3
+node:internal/modules/cjs/loader:692
+      throw e;
+      ^
+
+Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './package.json' is not defined by "exports" in D:\nk-natb\p\node_modules\lightningcss\package.json
+    at exportsNotFound (node:internal/modules/esm/resolve:314:10)
+    at packageExportsResolve (node:internal/modules/esm/resolve:662:9)
+    at resolveExports (node:internal/modules/cjs/loader:685:36)
+    at Module._findPath (node:internal/modules/cjs/loader:752:31)
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1441:27)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1066:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1071:22)
+    at Module._load (node:internal/modules/cjs/loader:1242:25)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.require (node:internal/modules/cjs/loader:1556:12) {
+  code: 'ERR_PACKAGE_PATH_NOT_EXPORTED'
+}
+
+Node.js v24.14.0
+== lightningcss 
+== @rspack/core 2.3.0
+== oxc-parser 0.156.0
+== @swc/core 1.16.20
+== @parcel/watcher 2.6.0
+== esbuild 0.28.2
+== @biomejs/biome 2.6.4
+== platform packages present:
+node_modules/@biomejs/cli-win32-x64
+node_modules/@esbuild/win32-x64
+node_modules/@oxc-parser/binding-win32-x64-msvc
+node_modules/@parcel/watcher-win32-x64
+node_modules/@rolldown/binding-win32-x64-msvc
+node_modules/@rspack/binding-win32-x64-msvc
+node_modules/@swc/core-win32-x64-msvc
+node_modules/@tailwindcss/oxide-win32-x64-msvc
+node_modules/lightningcss-win32-x64-msvc
+-- rolldown
+Cannot find native binding. npm has a bug related to optional dependencies (https://github.com/npm/cli/issues/4828). Please try `npm i` again after removing both package-lock.json and node_modules directory.
+cause: Cannot find module '@rolldown/binding-wasm32-wasi'
+-- @tailwindcss/oxide
+Cannot find native binding. npm has a bug related to optional dependencies (https://github.com/npm/cli/issues/4828). Please try `npm i` again after removing both package-lock.json and node_modules directory.
+cause: Cannot find module '@tailwindcss/oxide-win32-x64-msvc'
+-- lightningcss
+Cannot find module '../lightningcss.win32-x64-msvc.node' / Require stack:
+-- @rspack/core
+Cannot find native binding. npm has a bug related to optional dependencies (https://github.com/npm/cli/issues/4828). Please try `npm i` again after removing both package-lock.json and node_modules directory. / 
+cause: Error: Cannot find module './rspack.win32-x64-msvc.node'
+-- oxc-parser
+Cannot find native binding. npm has a bug related to optional dependencies (https://github.com/npm/cli/issues/4828). Please try `npm i` again after removing both package-lock.json and node_modules directory.
+cause: Cannot find module '@oxc-parser/binding-wasm32-wasip1'
+-- @swc/core
+Failed to load native binding
+cause: Error: Cannot find module './swc.win32-x64-msvc.node'
+-- @parcel/watcher
+No prebuild or local build of @parcel/watcher found. Tried @parcel/watcher-win32-x64. Please ensure it is installed (don't use --no-optional when installing with npm). Otherwise it is possible we don't support your platform yet. If this is the case, please report an issue to https://github.com/parcel-bundler/watcher.
+-- esbuild
+-- biome
+node:internal/modules/cjs/loader:1459
+  throw err;
+== fix: npm install again
+added 9 packages in 5s
+-- rolldown
+-- @tailwindcss/oxide
+-- lightningcss
+-- @rspack/core
+-- oxc-parser
+-- @swc/core
+Failed to load native binding
+cause: Error: Cannot find module './swc.win32-x64-msvc.node'
+(blank '--' lines above = loaded fine)
