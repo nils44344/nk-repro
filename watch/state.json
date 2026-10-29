@@ -31,6 +31,6 @@
   "pypi:ormsgpack": "1.13.0 +cp315-win",
   "pypi:tensorflow": "2.21.0",
   "pypi:sentencepiece": "0.2.2",
-  "pypi:pywinpty": "3.1.1 +cp315-win",
+  "pypi:pywinpty": "3.1.2 +cp315-win",
   "npm:remix@latest": "3.1.0"
 }
