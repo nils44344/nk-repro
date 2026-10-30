@@ -33,7 +33,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add watch/state.json
           git diff --cached --quiet || (git commit -m "watch: $(date -u +%FT%H:%MZ)" && git pull --rebase --autostash -q && git push)
-      - name: Open an issue (emails the owner)
+      - name: Open an issue labelled release (the blog session picks these up)
         # always(): an alert must not be lost because saving the state failed (that happened on 2026-10-09).
         if: always() && steps.w.outputs.changed == 'true'
         env:
@@ -47,7 +47,7 @@ jobs:
             echo
             echo "Re-test the affected posts, and write the tested post if this is a breaking release."
           } > body.md
-          gh issue create --title "Release: $TITLE" --body-file body.md
+          gh issue create --title "Release: $TITLE" --label release --body-file body.md
       - name: Start the re-check (daily at 02 UTC, or now if a re-checked package moved)
         env:
           GH_TOKEN: ${{ github.token }}

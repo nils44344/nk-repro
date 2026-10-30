@@ -1,0 +1,37 @@
+== install prisma@8.0.0-rc.28 @prisma/client@8.0.0-rc.28
+
+added 323 packages in 1h
+npm error notarget In most cases you or one of your dependencies are requesting
+npm error notarget a package version that doesn't exist.
+npm error A complete log of this run can be found in: D:\npm-cache\_logs\2026-10-30T17_05_07_775Z-debug-0.log
+8.0.0-rc.28
+== prisma init (sqlite)
+✘ [CLI.INVALID_ARGUMENTS] No flag registered for --datasource-provider
+node_modules
+package-lock.json
+package.json
+cat: prisma/schema.prisma: No such file or directory
+D:/nk-repro-public/prisma8-ga/run.sh: line 15: prisma/schema.prisma: No such file or directory
+== prisma generate
+✘ [CLI.UNKNOWN_COMMAND] No command registered for `generate`
+→ List every command: prisma --help
+Prisma agent skills are out of date (installed @prisma/composer 0.35.0, synced none). Run: prisma skills sync
+== prisma migrate dev
+✘ [CLI.COMMAND_MOVED] `migrate dev` has been replaced
+  why: Prisma 8 emits the contract, plans the migration and applies it in separate steps: run `contract emit`, then `migration plan --name <name>` (for `--create-only`, stop here), then `db migrate --advance-ref db`; while Prisma 7 still owns this project's migrations, run `migrate dev` with Prisma 7's CLI instead.
+→ Use the replacement: prisma contract emit
+Prisma agent skills are out of date (installed @prisma/composer 0.35.0, synced none). Run: prisma skills sync
+== client import from @prisma/client (old path)
+node:internal/modules/package_json_reader:301
+  throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);
+        ^
+
+== client import from the generated output (new path)
+grep: prisma/schema.prisma: No such file or directory
+output: 
+== duplicate email (P2002)
+  url: 'file:///D:/nk-prisma8/p/node_modules/.prisma/client/client'
+}
+
+Node.js v24.14.0
+== done Fri Oct 30 22:43:38 IST 2026
