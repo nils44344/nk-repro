@@ -3,14 +3,14 @@
   "os": "Linux",
   "date": "2026-10-30",
   "versions": {
-    "prisma (latest tag)": "8.0.0-rc.28",
+    "prisma (latest tag)": "8.0.0-rc.29",
     "@prisma/client (latest tag)": "7.10.1"
   },
   "checks": [
     {
       "name": "npm \"latest\" for prisma is still a Prisma 8 release candidate",
       "ok": true,
-      "evidence": "8.0.0-rc.28"
+      "evidence": "8.0.0-rc.29"
     },
     {
       "name": "npm \"latest\" for @prisma/client is still 7.x",
