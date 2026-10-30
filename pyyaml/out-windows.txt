@@ -1,0 +1,63 @@
+== 1. Python 3.15.2: pip install pyyaml
+pip 26.2.2 from D:\nk-pyyaml\a\Lib\site-packages\pip (python 3.15)
+  Downloading pyyaml-6.0.3.tar.gz (130 kB)
+Building wheels for collected packages: pyyaml
+  Building wheel for pyyaml (pyproject.toml): started
+  Building wheel for pyyaml (pyproject.toml): finished with status 'error'
+  error: subprocess-exited-with-error
+  × Building wheel for pyyaml (pyproject.toml) did not run successfully.
+  ╰─> [46 lines of output]
+      copying lib\yaml\error.py -> build\lib.win-amd64-cpython-315\yaml
+      error: Microsoft Visual C++ 14.0 or greater is required. Get it with "Microsoft C++ Build Tools": https://visualstudio.microsoft.com/visual-cpp-build-tools/
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building wheel for pyyaml
+error: failed-wheel-build-for-install
+× Failed to build installable wheels for some pyproject.toml based projects
+╰─> pyyaml
+== 2. 3.15: PYYAML_FORCE_LIBYAML=0
+  Using cached pyyaml-6.0.3.tar.gz (130 kB)
+Building wheels for collected packages: pyyaml
+  Building wheel for pyyaml (pyproject.toml): started
+  Building wheel for pyyaml (pyproject.toml): finished with status 'done'
+Successfully built pyyaml
+Successfully installed pyyaml-6.0.3
+yaml 6.0.3 libyaml C: False
+== 3. 3.15: --only-binary
+ERROR: Could not find a version that satisfies the requirement pyyaml (from versions: none)
+ERROR: No matching distribution found for pyyaml
+== 4. 3.14: pip install pyyaml
+WARNING: Cache entry deserialization failed, entry ignored
+  Downloading pyyaml-6.0.3-cp314-cp314-win_amd64.whl.metadata (2.4 kB)
+Downloading pyyaml-6.0.3-cp314-cp314-win_amd64.whl (156 kB)
+Successfully installed pyyaml-6.0.3
+yaml 6.0.3 True
+== 5. 3.14: pyyaml==5.4.1
+  Downloading PyYAML-5.4.1.tar.gz (175 kB)
+  Getting requirements to build wheel: finished with status 'error'
+  error: subprocess-exited-with-error
+  AttributeError: 'build_ext' object has no attribute 'cython_sources'
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+ERROR: Failed to build 'pyyaml' when getting requirements to build wheel
+== 6. 3.14: 5.4.1 with cython<3 + --no-build-isolation
+  Downloading Cython-0.29.37-py2.py3-none-any.whl.metadata (3.1 kB)
+  Using cached setuptools-84.2.1-py3-none-any.whl.metadata (6.6 kB)
+  Using cached wheel-0.48.0-py3-none-any.whl.metadata (2.3 kB)
+  Using cached PyYAML-5.4.1.tar.gz (175 kB)
+Building wheels for collected packages: pyyaml
+  Building wheel for pyyaml (pyproject.toml): started
+  Building wheel for pyyaml (pyproject.toml): finished with status 'error'
+  error: subprocess-exited-with-error
+  Building wheel for pyyaml (pyproject.toml) did not run successfully.
+  copying lib3\yaml\error.py -> build\lib.win-amd64-cpython-314\yaml
+  error: Microsoft Visual C++ 14.0 or greater is required. Get it with "Microsoft C++ Build Tools": https://visualstudio.microsoft.com/visual-cpp-build-tools/
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building wheel for pyyaml
+== 7. 3.14: pyyaml==6.0.1
+  Downloading PyYAML-6.0.1.tar.gz (125 kB)
+Building wheels for collected packages: pyyaml
+  Building wheel for pyyaml (pyproject.toml): started
+  Building wheel for pyyaml (pyproject.toml): finished with status 'error'
+  error: subprocess-exited-with-error
+  Building wheel for pyyaml (pyproject.toml) did not run successfully.
+  copying lib\yaml\error.py -> build\lib.win-amd64-cpython-314\yaml
+  error: Microsoft Visual C++ 14.0 or greater is required. Get it with "Microsoft C++ Build Tools": https://visualstudio.microsoft.com/visual-cpp-build-tools/
