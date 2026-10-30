@@ -24,7 +24,7 @@
   "npm:@docusaurus/core@latest": "3.10.2",
   "npm:create-cloudflare@latest": "2.74.5",
   "npm:drizzle-orm@latest": "0.45.4",
-  "npm:eslint@latest": "10.13.0",
+  "npm:eslint@latest": "10.14.0",
   "npm:eslint-plugin-react@latest": "7.37.5",
   "pypi:pyyaml": "6.0.3",
   "pypi:torch": "2.15.0 +cp315-win",
@@ -32,5 +32,6 @@
   "pypi:tensorflow": "2.21.0",
   "pypi:sentencepiece": "0.2.2",
   "pypi:pywinpty": "3.1.2 +cp315-win",
-  "npm:remix@latest": "3.1.0"
+  "npm:remix@latest": "3.1.0",
+  "npm:typescript@rc": "7.0.1-rc"
 }
