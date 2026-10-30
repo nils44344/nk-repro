@@ -41,7 +41,7 @@ jobs:
           TITLE: ${{ steps.w.outputs.title }}
         run: |
           {
-            echo "@${{ github.repository_owner }} new releases of tools the blog covers:"
+            echo "New releases of tools the blog covers:"
             echo
             cat watch/last-changes.md
             echo
