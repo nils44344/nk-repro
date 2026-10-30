@@ -14,7 +14,7 @@ const NPM = {
   prisma: { tags: ['latest'], alert: 'all', posts: ['/database/prisma-generate-no-command-registered-prisma-8', '/database/prisma-client-did-not-initialize-yet', '/database/prisma-p1001-cant-reach-database-server'] },
   '@prisma/client': { tags: ['latest'], alert: 'all', posts: ['/database/prisma-generate-no-command-registered-prisma-8', '/database/prisma-client-did-not-initialize-yet'] },
   bun: { tags: ['latest'], alert: 'all', posts: ['/fixes/bun-error-cannot-find-module', '/tested/bun-vs-node-24-startup-typescript-tests'] },
-  typescript: { tags: ['latest'], alert: 'minor', posts: ['/topics/typescript'] },
+  typescript: { tags: ['latest', 'rc'], alert: 'minor', posts: ['/topics/typescript'] },
   vite: { tags: ['latest', 'beta'], alert: 'minor', posts: ['/fixes'] },
   tailwindcss: { tags: ['latest'], alert: 'minor', posts: ['/topics/tailwind'] },
   npm: { tags: ['latest'], alert: 'minor', posts: ['/topics/npm'] },
@@ -41,7 +41,7 @@ const NPM = {
 // existing release (PyYAML 6.0.3 may simply gain cp315 files), so a new wheel alerts even without a new version.
 const PY = 'cp315';
 const PYPI = {
-  pyyaml: ['/tested/python-3-15-windows-packages-tested', '/fixes/microsoft-visual-c-14-0-or-greater-is-required-pip'],
+  pyyaml: ['/fixes/failed-building-wheel-for-pyyaml', '/tested/python-3-15-windows-packages-tested', '/fixes/microsoft-visual-c-14-0-or-greater-is-required-pip'],
   torch: ['/tested/python-3-15-windows-packages-tested', '/fixes/no-matching-distribution-found-for-torch'],
   tensorflow: ['/tested/python-3-15-windows-packages-tested'],
   ormsgpack: ['/tested/python-3-15-windows-packages-tested'],
