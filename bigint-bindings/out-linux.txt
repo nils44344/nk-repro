@@ -1,0 +1,685 @@
+run (node:24-slim)	UNKNOWN STEP	﻿2026-10-31T06:29:17.4387964Z Current runner version: '2.338.2'
+run (node:24-slim) | ##[group]Runner Image Provisioner
+run (node:24-slim) | Hosted Compute Agent
+run (node:24-slim) | Version: 20261021.618
+run (node:24-slim) | Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+run (node:24-slim) | Build Date: 2026-10-21T00:45:21Z
+run (node:24-slim) | Worker ID: {1f85d127-800c-464b-9405-0639b090c1d5}
+run (node:24-slim) | Region: westus3
+run (node:24-slim) | Cloud: Azure
+run (node:24-slim) | ##[endgroup]
+run (node:24-slim) | ##[group]Operating System
+run (node:24-slim) | Ubuntu
+run (node:24-slim) | 26.04.1
+run (node:24-slim) | LTS
+run (node:24-slim) | ##[endgroup]
+run (node:24-slim) | ##[group]Runner Image
+run (node:24-slim) | Image: ubuntu-26.04
+run (node:24-slim) | Version: 20261025.179.1
+run (node:24-slim) | Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261025.179/images/ubuntu/Ubuntu2604-Readme.md
+run (node:24-slim) | Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261025.179
+run (node:24-slim) | ##[endgroup]
+run (node:24-slim) | ##[group]GITHUB_TOKEN Permissions
+run (node:24-slim) | Contents: read
+run (node:24-slim) | Metadata: read
+run (node:24-slim) | ##[endgroup]
+run (node:24-slim) | Secret source: Actions
+run (node:24-slim) | Cache mode: write
+run (node:24-slim) | Prepare workflow directory
+run (node:24-slim) | Prepare all required actions
+run (node:24-slim) | Getting action download info
+run (node:24-slim) | Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+run (node:24-slim) | Complete job name: run (node:24-slim)
+run (node:24-slim) | ##[group]Checking docker version
+run (node:24-slim) | ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+run (node:24-slim) | '1.54'
+run (node:24-slim) | Docker daemon API version: '1.54'
+run (node:24-slim) | ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+run (node:24-slim) | '1.54'
+run (node:24-slim) | Docker client API version: '1.54'
+run (node:24-slim) | ##[endgroup]
+run (node:24-slim) | ##[group]Clean up resources from previous jobs
+run (node:24-slim) | ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=41ea54"
+run (node:24-slim) | ##[command]/usr/bin/docker network prune --force --filter "label=41ea54"
+run (node:24-slim) | ##[endgroup]
+run (node:24-slim) | ##[group]Create local container network
+run (node:24-slim) | ##[command]/usr/bin/docker network create --label 41ea54 github_network_69d03c8b4a1e492c89c875e1d71724ee
+run (node:24-slim) | 4a8513998b1a9b25350a8529bb066a6b9e2e79efac4e34e57c68a3d3989a3d8f
+run (node:24-slim) | ##[endgroup]
+run (node:24-slim) | ##[group]Starting job container
+run (node:24-slim) | ##[command]/usr/bin/docker pull node:24-slim
+run (node:24-slim) | 24-slim: Pulling from library/node
+run (node:24-slim) | fc18cf736957: Pulling fs layer
+run (node:24-slim) | 3c5439d0ae62: Pulling fs layer
+run (node:24-slim) | 71cba37e8e97: Pulling fs layer
+run (node:24-slim) | e95aa4763e73: Pulling fs layer
+run (node:24-slim) | c82672318514: Pulling fs layer
+run (node:24-slim) | fc18cf736957: Download complete
+run (node:24-slim) | 71cba37e8e97: Download complete
+run (node:24-slim) | e95aa4763e73: Download complete
+run (node:24-slim) | cf583716216c: Download complete
+run (node:24-slim) | 3c5439d0ae62: Download complete
+run (node:24-slim) | e51401588838: Download complete
+run (node:24-slim) | c82672318514: Download complete
+run (node:24-slim) | 71cba37e8e97: Pull complete
+run (node:24-slim) | 3c5439d0ae62: Pull complete
+run (node:24-slim) | c82672318514: Pull complete
+run (node:24-slim) | fc18cf736957: Pull complete
+run (node:24-slim) | e95aa4763e73: Pull complete
+run (node:24-slim) | Digest: sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c
+run (node:24-slim) | Status: Downloaded newer image for node:24-slim
+run (node:24-slim) | docker.io/library/node:24-slim
+run (node:24-slim) | ##[command]/usr/bin/docker create --name d9820b5eecb847f7babe5376da2f7ead_node24slim_c690a6 --label 41ea54 --workdir /__w/nk-repro/nk-repro --network github_network_69d03c8b4a1e492c89c875e1d71724ee  -e "HOME=/github/home" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work":"/__w" -v "/home/runner/actions-runner/cached/2.338.2/externals":"/__e":ro -v "/home/runner/work/_temp":"/__w/_temp" -v "/home/runner/work/_actions":"/__w/_actions" -v "/opt/hostedtoolcache":"/__t" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" --entrypoint "tail" node:24-slim "-f" "/dev/null"
+run (node:24-slim) | 9cca98cad0f1efc9b79171ed41c4c2114b06aa4b2f7958258ea00c30c61ffdc0
+run (node:24-slim) | ##[command]/usr/bin/docker start 9cca98cad0f1efc9b79171ed41c4c2114b06aa4b2f7958258ea00c30c61ffdc0
+run (node:24-slim) | 9cca98cad0f1efc9b79171ed41c4c2114b06aa4b2f7958258ea00c30c61ffdc0
+run (node:24-slim) | ##[command]/usr/bin/docker ps --all --filter id=9cca98cad0f1efc9b79171ed41c4c2114b06aa4b2f7958258ea00c30c61ffdc0 --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+run (node:24-slim) | 9cca98cad0f1efc9b79171ed41c4c2114b06aa4b2f7958258ea00c30c61ffdc0 Up Less than a second
+run (node:24-slim) | ##[command]/usr/bin/docker inspect --format "{{range .Config.Env}}{{println .}}{{end}}" 9cca98cad0f1efc9b79171ed41c4c2114b06aa4b2f7958258ea00c30c61ffdc0
+run (node:24-slim) | HOME=/github/home
+run (node:24-slim) | GITHUB_ACTIONS=true
+run (node:24-slim) | CI=true
+run (node:24-slim) | PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+run (node:24-slim) | NODE_VERSION=24.22.2
+run (node:24-slim) | YARN_VERSION=1.22.22
+run (node:24-slim) | ##[endgroup]
+run (node:24-slim) | ##[group]Waiting for all services to be ready
+run (node:24-slim) | ##[endgroup]
+run (node:24-slim) | ##[group]Run actions/checkout@v4
+run (node:24-slim) | with:
+run (node:24-slim) |   repository: nils44344/nk-repro
+run (node:24-slim) |   token: ***
+run (node:24-slim) |   ssh-strict: true
+run (node:24-slim) |   ssh-user: git
+run (node:24-slim) |   persist-credentials: true
+run (node:24-slim) |   clean: true
+run (node:24-slim) |   sparse-checkout-cone-mode: true
+run (node:24-slim) |   fetch-depth: 1
+run (node:24-slim) |   fetch-tags: false
+run (node:24-slim) |   show-progress: true
+run (node:24-slim) |   lfs: false
+run (node:24-slim) |   submodules: false
+run (node:24-slim) |   set-safe-directory: true
+run (node:24-slim) |   allow-unsafe-pr-checkout: false
+run (node:24-slim) | ##[endgroup]
+run (node:24-slim) | ##[command]/usr/bin/docker exec  9cca98cad0f1efc9b79171ed41c4c2114b06aa4b2f7958258ea00c30c61ffdc0 sh -c "cat /etc/*release | grep ^ID"
+run (node:24-slim) | Syncing repository: nils44344/nk-repro
+run (node:24-slim) | ##[group]Getting Git version info
+run (node:24-slim) | Working directory is '/__w/nk-repro/nk-repro'
+run (node:24-slim) | ##[endgroup]
+run (node:24-slim) | Deleting the contents of '/__w/nk-repro/nk-repro'
+run (node:24-slim) | The repository will be downloaded using the GitHub REST API
+run (node:24-slim) | To create a local Git repository instead, add Git 2.18 or higher to the PATH
+run (node:24-slim) | Downloading the archive
+run (node:24-slim) | Writing archive to disk
+run (node:24-slim) | Extracting the archive
+run (node:24-slim) | [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /__w/nk-repro/nk-repro/a0286e97-d77c-4b8a-9624-e39287fa67e4 -f /__w/nk-repro/nk-repro/a0286e97-d77c-4b8a-9624-e39287fa67e4.tar.gz
+run (node:24-slim) | Resolved version nils44344-nk-repro-c8145d8
+run (node:24-slim) | ##[group]Run W=/tmp/work bash bigint-bindings/run.sh
+run (node:24-slim) | ^[[36;1mW=/tmp/work bash bigint-bindings/run.sh^[[0m
+run (node:24-slim) | shell: sh -e {0}
+run (node:24-slim) | ##[endgroup]
+run (node:24-slim) | == Sat Oct 31 06:29:24 UTC 2026 Linux node v24.22.2 npm 11.19.1
+run (node:24-slim) | 
+run (node:24-slim) | ######## npm 11.19.1, plain install
+run (node:24-slim) | > npm run rebuild || echo "Couldn't build bindings. Non-native version used."
+run (node:24-slim) | gyp ERR! find Python 
+run (node:24-slim) | gyp ERR! find Python --python was not set on the command line
+run (node:24-slim) | gyp ERR! find Python Python is not set from environment variable PYTHON
+run (node:24-slim) | gyp ERR! find Python checking if "python3" can be used
+run (node:24-slim) | gyp ERR! find Python - executable path is ""
+run (node:24-slim) | bigint: Failed to load bindings, pure JS will be used (try npm run rebuild?)
+run (node:24-slim) | native build present: false
+run (node:24-slim) | toBigIntLE: 67305985
+run (node:24-slim) | 
+run (node:24-slim) | ######## npm 12 (npx npm@12), plain install
+run (node:24-slim) | added 3 packages in 278ms
+run (node:24-slim) | npm warn install-scripts 1 package had install scripts blocked because they are not covered by allowScripts:
+run (node:24-slim) | npm warn install-scripts   bigint-buffer@1.1.5 (install: npm run rebuild || echo "Couldn't build bindings. Non-native version used.")
+run (node:24-slim) | npm warn install-scripts
+run (node:24-slim) | bigint: Failed to load bindings, pure JS will be used (try npm run rebuild?)
+run (node:24-slim) | native build present: false
+run (node:24-slim) | toBigIntLE: 67305985
+run (node:24-slim) | == npm 12: approve the script and rebuild
+run (node:24-slim) | Approved bigint-buffer:
+run (node:24-slim) |   added bigint-buffer@1.1.5
+run (node:24-slim) |   "allowScripts": {
+run (node:24-slim) |     "bigint-buffer@1.1.5": true
+run (node:24-slim) |   }
+run (node:24-slim) | npm notice run npm run rebuild || echo "Couldn't build bindings. Non-native version used."
+run (node:24-slim) | gyp ERR! find Python 
+run (node:24-slim) | gyp ERR! find Python --python was not set on the command line
+run (node:24-slim) | gyp ERR! find Python Python is not set from environment variable PYTHON
+run (node:24-slim) | bigint: Failed to load bindings, pure JS will be used (try npm run rebuild?)
+run (node:24-slim) | native build present: false
+run (node:24-slim) | toBigIntLE: 67305985
+run (node:24-slim) | 
+run (node:24-slim) | ######## a real dependency chain: @solana/spl-token
+run (node:24-slim) | npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+run (node:24-slim) | c@1.0.0 /tmp/work/c
+run (node:24-slim) | `-- @solana/spl-token@0.4.15
+run (node:24-slim) |   `-- @solana/buffer-layout-utils@0.3.0
+run (node:24-slim) |     `-- bigint-buffer@1.1.5
+run (node:24-slim) | 
+run (node:24-slim) | bigint: Failed to load bindings, pure JS will be used (try npm run rebuild?)
+run (node:24-slim) | spl-token loaded
+run (node:24-slim) | == npm audit
+run (node:24-slim) | bigint-buffer  *
+run (node:24-slim) | Severity: high
+run (node:24-slim) | bigint-buffer Vulnerable to Buffer Overflow via toBigIntLE() Function - https://github.com/advisories/GHSA-3gc7-fjrx-p6mg
+run (node:24-slim) | fix available via `npm audit fix --force`
+run (node:24-slim) | Will install @solana/spl-token@0.1.8, which is a breaking change
+run (node:24-slim) | node_modules/bigint-buffer
+run (node:24-slim) |   @solana/buffer-layout-utils  *
+run (node:24-slim) |   Depends on vulnerable versions of @solana/web3.js
+run (node:24-slim) |   Depends on vulnerable versions of bigint-buffer
+run (node:24-slim) |   node_modules/@solana/buffer-layout-utils
+run (node:24-slim) | 
+run (node:24-slim) | ######## speed: native vs pure JS (only where the native build exists)
+run (node:24-slim) | bigint: Failed to load bindings, pure JS will be used (try npm run rebuild?)
+run (node:24-slim) | 1e6 x toBigIntLE(32 bytes): module 323 ms | pure JS fallback 316 ms
+run (node:24-slim) | == done Sat Oct 31 06:29:39 UTC 2026
+run (node:24-slim) | Post job cleanup.
+run (node:24-slim) | ##[command]/usr/bin/docker exec  9cca98cad0f1efc9b79171ed41c4c2114b06aa4b2f7958258ea00c30c61ffdc0 sh -c "cat /etc/*release | grep ^ID"
+run (node:24-slim) | Stop and remove container: d9820b5eecb847f7babe5376da2f7ead_node24slim_c690a6
+run (node:24-slim) | ##[command]/usr/bin/docker rm --force 9cca98cad0f1efc9b79171ed41c4c2114b06aa4b2f7958258ea00c30c61ffdc0
+run (node:24-slim) | 9cca98cad0f1efc9b79171ed41c4c2114b06aa4b2f7958258ea00c30c61ffdc0
+run (node:24-slim) | Remove container network: github_network_69d03c8b4a1e492c89c875e1d71724ee
+run (node:24-slim) | ##[command]/usr/bin/docker network rm github_network_69d03c8b4a1e492c89c875e1d71724ee
+run (node:24-slim) | github_network_69d03c8b4a1e492c89c875e1d71724ee
+run (node:24-slim) | Cleaning up orphan processes
+run (node:24-slim) | ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+run (node:24)	UNKNOWN STEP	﻿2026-10-31T06:29:24.8125548Z Current runner version: '2.338.2'
+run (node:24) | ##[group]Runner Image Provisioner
+run (node:24) | Hosted Compute Agent
+run (node:24) | Version: 20261021.618
+run (node:24) | Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+run (node:24) | Build Date: 2026-10-21T00:45:21Z
+run (node:24) | Worker ID: {2bea21c5-9439-4a6b-99f2-9d7f1aa1ccc1}
+run (node:24) | Region: westus2
+run (node:24) | Cloud: Azure
+run (node:24) | ##[endgroup]
+run (node:24) | ##[group]Operating System
+run (node:24) | Ubuntu
+run (node:24) | 26.04.1
+run (node:24) | LTS
+run (node:24) | ##[endgroup]
+run (node:24) | ##[group]Runner Image
+run (node:24) | Image: ubuntu-26.04
+run (node:24) | Version: 20261025.179.1
+run (node:24) | Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261025.179/images/ubuntu/Ubuntu2604-Readme.md
+run (node:24) | Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261025.179
+run (node:24) | ##[endgroup]
+run (node:24) | ##[group]GITHUB_TOKEN Permissions
+run (node:24) | Contents: read
+run (node:24) | Metadata: read
+run (node:24) | ##[endgroup]
+run (node:24) | Secret source: Actions
+run (node:24) | Cache mode: write
+run (node:24) | Prepare workflow directory
+run (node:24) | Prepare all required actions
+run (node:24) | Getting action download info
+run (node:24) | Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+run (node:24) | Complete job name: run (node:24)
+run (node:24) | ##[group]Checking docker version
+run (node:24) | ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+run (node:24) | '1.54'
+run (node:24) | Docker daemon API version: '1.54'
+run (node:24) | ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+run (node:24) | '1.54'
+run (node:24) | Docker client API version: '1.54'
+run (node:24) | ##[endgroup]
+run (node:24) | ##[group]Clean up resources from previous jobs
+run (node:24) | ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=819051"
+run (node:24) | ##[command]/usr/bin/docker network prune --force --filter "label=819051"
+run (node:24) | ##[endgroup]
+run (node:24) | ##[group]Create local container network
+run (node:24) | ##[command]/usr/bin/docker network create --label 819051 github_network_14072b39407a4dcb88cbf4b448c56090
+run (node:24) | 351d7bd8acd8b0e095f7f3496a60137a499407a19b81314bdf9bacf0494430aa
+run (node:24) | ##[endgroup]
+run (node:24) | ##[group]Starting job container
+run (node:24) | ##[command]/usr/bin/docker pull node:24
+run (node:24) | 24: Pulling from library/node
+run (node:24) | d9c899d8f000: Pulling fs layer
+run (node:24) | a4aa977c0d0e: Pulling fs layer
+run (node:24) | 661ef7e1e7b1: Pulling fs layer
+run (node:24) | 68304cd75790: Pulling fs layer
+run (node:24) | 49dd0ae78313: Pulling fs layer
+run (node:24) | 9b2b3f6483a1: Pulling fs layer
+run (node:24) | c28c2f6c340d: Pulling fs layer
+run (node:24) | 6b10c2e8e756: Pulling fs layer
+run (node:24) | d9c899d8f000: Download complete
+run (node:24) | 68304cd75790: Download complete
+run (node:24) | 6b10c2e8e756: Download complete
+run (node:24) | 6d5f9254fbc4: Download complete
+run (node:24) | 49dd0ae78313: Download complete
+run (node:24) | 089396f7c706: Download complete
+run (node:24) | 9b2b3f6483a1: Download complete
+run (node:24) | a4aa977c0d0e: Download complete
+run (node:24) | 661ef7e1e7b1: Download complete
+run (node:24) | c28c2f6c340d: Download complete
+run (node:24) | a4aa977c0d0e: Pull complete
+run (node:24) | 49dd0ae78313: Pull complete
+run (node:24) | 661ef7e1e7b1: Pull complete
+run (node:24) | c28c2f6c340d: Pull complete
+run (node:24) | 68304cd75790: Pull complete
+run (node:24) | 9b2b3f6483a1: Pull complete
+run (node:24) | d9c899d8f000: Pull complete
+run (node:24) | 6b10c2e8e756: Pull complete
+run (node:24) | Digest: sha256:e7add2a490bb17d97b485b8641bd88455fff7839ade0f5eba493c3508124d413
+run (node:24) | Status: Downloaded newer image for node:24
+run (node:24) | docker.io/library/node:24
+run (node:24) | ##[command]/usr/bin/docker create --name 0da02757e690421ebea3fb1178d48ed9_node24_6fff0f --label 819051 --workdir /__w/nk-repro/nk-repro --network github_network_14072b39407a4dcb88cbf4b448c56090  -e "HOME=/github/home" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work":"/__w" -v "/home/runner/actions-runner/cached/2.338.2/externals":"/__e":ro -v "/home/runner/work/_temp":"/__w/_temp" -v "/home/runner/work/_actions":"/__w/_actions" -v "/opt/hostedtoolcache":"/__t" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" --entrypoint "tail" node:24 "-f" "/dev/null"
+run (node:24) | 748b2f50930a1452d5f96ccdb6cf4488c657614abc1067fc7d107083b41de004
+run (node:24) | ##[command]/usr/bin/docker start 748b2f50930a1452d5f96ccdb6cf4488c657614abc1067fc7d107083b41de004
+run (node:24) | 748b2f50930a1452d5f96ccdb6cf4488c657614abc1067fc7d107083b41de004
+run (node:24) | ##[command]/usr/bin/docker ps --all --filter id=748b2f50930a1452d5f96ccdb6cf4488c657614abc1067fc7d107083b41de004 --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+run (node:24) | 748b2f50930a1452d5f96ccdb6cf4488c657614abc1067fc7d107083b41de004 Up Less than a second
+run (node:24) | ##[command]/usr/bin/docker inspect --format "{{range .Config.Env}}{{println .}}{{end}}" 748b2f50930a1452d5f96ccdb6cf4488c657614abc1067fc7d107083b41de004
+run (node:24) | HOME=/github/home
+run (node:24) | GITHUB_ACTIONS=true
+run (node:24) | CI=true
+run (node:24) | PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+run (node:24) | NODE_VERSION=24.22.2
+run (node:24) | YARN_VERSION=1.22.22
+run (node:24) | ##[endgroup]
+run (node:24) | ##[group]Waiting for all services to be ready
+run (node:24) | ##[endgroup]
+run (node:24) | ##[group]Run actions/checkout@v4
+run (node:24) | with:
+run (node:24) |   repository: nils44344/nk-repro
+run (node:24) |   token: ***
+run (node:24) |   ssh-strict: true
+run (node:24) |   ssh-user: git
+run (node:24) |   persist-credentials: true
+run (node:24) |   clean: true
+run (node:24) |   sparse-checkout-cone-mode: true
+run (node:24) |   fetch-depth: 1
+run (node:24) |   fetch-tags: false
+run (node:24) |   show-progress: true
+run (node:24) |   lfs: false
+run (node:24) |   submodules: false
+run (node:24) |   set-safe-directory: true
+run (node:24) |   allow-unsafe-pr-checkout: false
+run (node:24) | ##[endgroup]
+run (node:24) | ##[command]/usr/bin/docker exec  748b2f50930a1452d5f96ccdb6cf4488c657614abc1067fc7d107083b41de004 sh -c "cat /etc/*release | grep ^ID"
+run (node:24) | Syncing repository: nils44344/nk-repro
+run (node:24) | ##[group]Getting Git version info
+run (node:24) | Working directory is '/__w/nk-repro/nk-repro'
+run (node:24) | [command]/usr/bin/git version
+run (node:24) | git version 2.39.5
+run (node:24) | ##[endgroup]
+run (node:24) | Temporarily overriding HOME='/__w/_temp/61ca173f-a82f-4d5b-96b3-0ea6029cbd08' before making global git config changes
+run (node:24) | Adding repository directory to the temporary git global config as a safe directory
+run (node:24) | [command]/usr/bin/git config --global --add safe.directory /__w/nk-repro/nk-repro
+run (node:24) | Deleting the contents of '/__w/nk-repro/nk-repro'
+run (node:24) | ##[group]Initializing the repository
+run (node:24) | [command]/usr/bin/git init /__w/nk-repro/nk-repro
+run (node:24) | hint: Using 'master' as the name for the initial branch. This default branch name
+run (node:24) | hint: is subject to change. To configure the initial branch name to use in all
+run (node:24) | hint: of your new repositories, which will suppress this warning, call:
+run (node:24) | hint: 
+run (node:24) | hint: 	git config --global init.defaultBranch <name>
+run (node:24) | hint: 
+run (node:24) | hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+run (node:24) | hint: 'development'. The just-created branch can be renamed via this command:
+run (node:24) | hint: 
+run (node:24) | hint: 	git branch -m <name>
+run (node:24) | Initialized empty Git repository in /__w/nk-repro/nk-repro/.git/
+run (node:24) | [command]/usr/bin/git remote add origin https://github.com/nils44344/nk-repro
+run (node:24) | ##[endgroup]
+run (node:24) | ##[group]Disabling automatic garbage collection
+run (node:24) | [command]/usr/bin/git config --local gc.auto 0
+run (node:24) | ##[endgroup]
+run (node:24) | ##[group]Setting up auth
+run (node:24) | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+run (node:24) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+run (node:24) | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+run (node:24) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+run (node:24) | [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+run (node:24) | [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+run (node:24) | [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+run (node:24) | ##[endgroup]
+run (node:24) | ##[group]Fetching the repository
+run (node:24) | [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +c8145d8aa077e3c12cc1362e2d0004f87b30195c:refs/remotes/origin/main
+run (node:24) | From https://github.com/nils44344/nk-repro
+run (node:24) |  * [new ref]         c8145d8aa077e3c12cc1362e2d0004f87b30195c -> origin/main
+run (node:24) | ##[endgroup]
+run (node:24) | ##[group]Determining the checkout info
+run (node:24) | ##[endgroup]
+run (node:24) | [command]/usr/bin/git sparse-checkout disable
+run (node:24) | [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+run (node:24) | ##[group]Checking out the ref
+run (node:24) | [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+run (node:24) | Switched to a new branch 'main'
+run (node:24) | branch 'main' set up to track 'origin/main'.
+run (node:24) | ##[endgroup]
+run (node:24) | [command]/usr/bin/git log -1 --format=%H
+run (node:24) | c8145d8aa077e3c12cc1362e2d0004f87b30195c
+run (node:24) | ##[group]Run W=/tmp/work bash bigint-bindings/run.sh
+run (node:24) | ^[[36;1mW=/tmp/work bash bigint-bindings/run.sh^[[0m
+run (node:24) | shell: sh -e {0}
+run (node:24) | ##[endgroup]
+run (node:24) | == Sat Oct 31 06:29:44 UTC 2026 Linux node v24.22.2 npm 11.19.1
+run (node:24) | 
+run (node:24) | ######## npm 11.19.1, plain install
+run (node:24) | > npm run rebuild || echo "Couldn't build bindings. Non-native version used."
+run (node:24) | added 3 packages in 4s
+run (node:24) | npm warn install-scripts 1 package has install scripts not yet covered by allowScripts:
+run (node:24) | npm warn install-scripts   bigint-buffer@1.1.5 (install: npm run rebuild || echo "Couldn't build bindings. Non-native version used.")
+run (node:24) | npm warn install-scripts
+run (node:24) | npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+run (node:24) | native build present: true
+run (node:24) | toBigIntLE: 67305985
+run (node:24) | 
+run (node:24) | ######## npm 12 (npx npm@12), plain install
+run (node:24) | added 3 packages in 320ms
+run (node:24) | npm warn install-scripts 1 package had install scripts blocked because they are not covered by allowScripts:
+run (node:24) | npm warn install-scripts   bigint-buffer@1.1.5 (install: npm run rebuild || echo "Couldn't build bindings. Non-native version used.")
+run (node:24) | npm warn install-scripts
+run (node:24) | bigint: Failed to load bindings, pure JS will be used (try npm run rebuild?)
+run (node:24) | native build present: false
+run (node:24) | toBigIntLE: 67305985
+run (node:24) | == npm 12: approve the script and rebuild
+run (node:24) | Approved bigint-buffer:
+run (node:24) |   added bigint-buffer@1.1.5
+run (node:24) |   "allowScripts": {
+run (node:24) |     "bigint-buffer@1.1.5": true
+run (node:24) |   }
+run (node:24) | npm notice run npm run rebuild || echo "Couldn't build bindings. Non-native version used."
+run (node:24) | gyp info ok 
+run (node:24) | rebuilt dependencies successfully
+run (node:24) | native build present: true
+run (node:24) | toBigIntLE: 67305985
+run (node:24) | 
+run (node:24) | ######## a real dependency chain: @solana/spl-token
+run (node:24) | npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+run (node:24) | c@1.0.0 /tmp/work/c
+run (node:24) | `-- @solana/spl-token@0.4.15
+run (node:24) |   `-- @solana/buffer-layout-utils@0.3.0
+run (node:24) |     `-- bigint-buffer@1.1.5
+run (node:24) | 
+run (node:24) | spl-token loaded
+run (node:24) | == npm audit
+run (node:24) | bigint-buffer  *
+run (node:24) | Severity: high
+run (node:24) | bigint-buffer Vulnerable to Buffer Overflow via toBigIntLE() Function - https://github.com/advisories/GHSA-3gc7-fjrx-p6mg
+run (node:24) | fix available via `npm audit fix --force`
+run (node:24) | Will install @solana/spl-token@0.1.8, which is a breaking change
+run (node:24) | node_modules/bigint-buffer
+run (node:24) |   @solana/buffer-layout-utils  *
+run (node:24) |   Depends on vulnerable versions of @solana/web3.js
+run (node:24) |   Depends on vulnerable versions of bigint-buffer
+run (node:24) |   node_modules/@solana/buffer-layout-utils
+run (node:24) | 
+run (node:24) | ######## speed: native vs pure JS (only where the native build exists)
+run (node:24) | 1e6 x toBigIntLE(32 bytes): module 93 ms | pure JS fallback 367 ms
+run (node:24) | == done Sat Oct 31 06:30:05 UTC 2026
+run (node:24) | Post job cleanup.
+run (node:24) | ##[command]/usr/bin/docker exec  748b2f50930a1452d5f96ccdb6cf4488c657614abc1067fc7d107083b41de004 sh -c "cat /etc/*release | grep ^ID"
+run (node:24) | [command]/usr/bin/git version
+run (node:24) | git version 2.39.5
+run (node:24) | Temporarily overriding HOME='/__w/_temp/acbe0604-15fb-4432-97ea-284816cb8df7' before making global git config changes
+run (node:24) | Adding repository directory to the temporary git global config as a safe directory
+run (node:24) | [command]/usr/bin/git config --global --add safe.directory /__w/nk-repro/nk-repro
+run (node:24) | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+run (node:24) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+run (node:24) | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+run (node:24) | http.https://github.com/.extraheader
+run (node:24) | [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+run (node:24) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+run (node:24) | [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+run (node:24) | [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+run (node:24) | Stop and remove container: 0da02757e690421ebea3fb1178d48ed9_node24_6fff0f
+run (node:24) | ##[command]/usr/bin/docker rm --force 748b2f50930a1452d5f96ccdb6cf4488c657614abc1067fc7d107083b41de004
+run (node:24) | 748b2f50930a1452d5f96ccdb6cf4488c657614abc1067fc7d107083b41de004
+run (node:24) | Remove container network: github_network_14072b39407a4dcb88cbf4b448c56090
+run (node:24) | ##[command]/usr/bin/docker network rm github_network_14072b39407a4dcb88cbf4b448c56090
+run (node:24) | github_network_14072b39407a4dcb88cbf4b448c56090
+run (node:24) | Cleaning up orphan processes
+run (node:24) | ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+run (node:26)	UNKNOWN STEP	﻿2026-10-31T06:29:17.6863380Z Current runner version: '2.338.2'
+run (node:26) | ##[group]Runner Image Provisioner
+run (node:26) | Hosted Compute Agent
+run (node:26) | Version: 20261021.618
+run (node:26) | Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+run (node:26) | Build Date: 2026-10-21T00:45:21Z
+run (node:26) | Worker ID: {04fd4bec-1b95-42ac-a0f5-35708f4868db}
+run (node:26) | Region: centralus
+run (node:26) | Cloud: Azure
+run (node:26) | ##[endgroup]
+run (node:26) | ##[group]Operating System
+run (node:26) | Ubuntu
+run (node:26) | 26.04.1
+run (node:26) | LTS
+run (node:26) | ##[endgroup]
+run (node:26) | ##[group]Runner Image
+run (node:26) | Image: ubuntu-26.04
+run (node:26) | Version: 20261025.179.1
+run (node:26) | Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261025.179/images/ubuntu/Ubuntu2604-Readme.md
+run (node:26) | Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261025.179
+run (node:26) | ##[endgroup]
+run (node:26) | ##[group]GITHUB_TOKEN Permissions
+run (node:26) | Contents: read
+run (node:26) | Metadata: read
+run (node:26) | ##[endgroup]
+run (node:26) | Secret source: Actions
+run (node:26) | Cache mode: write
+run (node:26) | Prepare workflow directory
+run (node:26) | Prepare all required actions
+run (node:26) | Getting action download info
+run (node:26) | Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+run (node:26) | Complete job name: run (node:26)
+run (node:26) | ##[group]Checking docker version
+run (node:26) | ##[command]/usr/bin/docker version --format '{{.Server.APIVersion}}'
+run (node:26) | '1.54'
+run (node:26) | Docker daemon API version: '1.54'
+run (node:26) | ##[command]/usr/bin/docker version --format '{{.Client.APIVersion}}'
+run (node:26) | '1.54'
+run (node:26) | Docker client API version: '1.54'
+run (node:26) | ##[endgroup]
+run (node:26) | ##[group]Clean up resources from previous jobs
+run (node:26) | ##[command]/usr/bin/docker ps --all --quiet --no-trunc --filter "label=378e06"
+run (node:26) | ##[command]/usr/bin/docker network prune --force --filter "label=378e06"
+run (node:26) | ##[endgroup]
+run (node:26) | ##[group]Create local container network
+run (node:26) | ##[command]/usr/bin/docker network create --label 378e06 github_network_c7bd7c48b5bf4e24bcd9e68667efd227
+run (node:26) | 4f749e6cd3a240fc71fab303bf8b4888fc9127585b75cf7ed25004bb24999a3a
+run (node:26) | ##[endgroup]
+run (node:26) | ##[group]Starting job container
+run (node:26) | ##[command]/usr/bin/docker pull node:26
+run (node:26) | 26: Pulling from library/node
+run (node:26) | 5322b180191f: Pulling fs layer
+run (node:26) | a1d156b0aab5: Pulling fs layer
+run (node:26) | 425148f8d5eb: Pulling fs layer
+run (node:26) | 51510215cbf8: Pulling fs layer
+run (node:26) | 7fac3b752bd4: Pulling fs layer
+run (node:26) | 1cd4cfd2e25a: Pulling fs layer
+run (node:26) | c0168c6e6744: Pulling fs layer
+run (node:26) | 22a5858bbbde: Download complete
+run (node:26) | 5322b180191f: Download complete
+run (node:26) | 51510215cbf8: Download complete
+run (node:26) | db700b4405df: Download complete
+run (node:26) | 7fac3b752bd4: Download complete
+run (node:26) | a1d156b0aab5: Download complete
+run (node:26) | 1cd4cfd2e25a: Download complete
+run (node:26) | c0168c6e6744: Download complete
+run (node:26) | 425148f8d5eb: Download complete
+run (node:26) | a1d156b0aab5: Pull complete
+run (node:26) | 7fac3b752bd4: Pull complete
+run (node:26) | c0168c6e6744: Pull complete
+run (node:26) | 51510215cbf8: Pull complete
+run (node:26) | 425148f8d5eb: Pull complete
+run (node:26) | 5322b180191f: Pull complete
+run (node:26) | 1cd4cfd2e25a: Pull complete
+run (node:26) | Digest: sha256:6d2c7d5d074bf72f81ddc252b4fbb5d625bc028eeda49cb4b8c2ff8eda1ee617
+run (node:26) | Status: Downloaded newer image for node:26
+run (node:26) | docker.io/library/node:26
+run (node:26) | ##[command]/usr/bin/docker create --name e16b7dd71f664aca937f7432771fec98_node26_ce08d6 --label 378e06 --workdir /__w/nk-repro/nk-repro --network github_network_c7bd7c48b5bf4e24bcd9e68667efd227  -e "HOME=/github/home" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work":"/__w" -v "/home/runner/actions-runner/cached/2.338.2/externals":"/__e":ro -v "/home/runner/work/_temp":"/__w/_temp" -v "/home/runner/work/_actions":"/__w/_actions" -v "/opt/hostedtoolcache":"/__t" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" --entrypoint "tail" node:26 "-f" "/dev/null"
+run (node:26) | e659832744ec3e030097f8f49ac442ceeccf6280aa4c3166d47a0f85f5483557
+run (node:26) | ##[command]/usr/bin/docker start e659832744ec3e030097f8f49ac442ceeccf6280aa4c3166d47a0f85f5483557
+run (node:26) | e659832744ec3e030097f8f49ac442ceeccf6280aa4c3166d47a0f85f5483557
+run (node:26) | ##[command]/usr/bin/docker ps --all --filter id=e659832744ec3e030097f8f49ac442ceeccf6280aa4c3166d47a0f85f5483557 --filter status=running --no-trunc --format "{{.ID}} {{.Status}}"
+run (node:26) | e659832744ec3e030097f8f49ac442ceeccf6280aa4c3166d47a0f85f5483557 Up Less than a second
+run (node:26) | ##[command]/usr/bin/docker inspect --format "{{range .Config.Env}}{{println .}}{{end}}" e659832744ec3e030097f8f49ac442ceeccf6280aa4c3166d47a0f85f5483557
+run (node:26) | HOME=/github/home
+run (node:26) | GITHUB_ACTIONS=true
+run (node:26) | CI=true
+run (node:26) | PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+run (node:26) | NODE_VERSION=26.13.0
+run (node:26) | ##[endgroup]
+run (node:26) | ##[group]Waiting for all services to be ready
+run (node:26) | ##[endgroup]
+run (node:26) | ##[group]Run actions/checkout@v4
+run (node:26) | with:
+run (node:26) |   repository: nils44344/nk-repro
+run (node:26) |   token: ***
+run (node:26) |   ssh-strict: true
+run (node:26) |   ssh-user: git
+run (node:26) |   persist-credentials: true
+run (node:26) |   clean: true
+run (node:26) |   sparse-checkout-cone-mode: true
+run (node:26) |   fetch-depth: 1
+run (node:26) |   fetch-tags: false
+run (node:26) |   show-progress: true
+run (node:26) |   lfs: false
+run (node:26) |   submodules: false
+run (node:26) |   set-safe-directory: true
+run (node:26) |   allow-unsafe-pr-checkout: false
+run (node:26) | ##[endgroup]
+run (node:26) | ##[command]/usr/bin/docker exec  e659832744ec3e030097f8f49ac442ceeccf6280aa4c3166d47a0f85f5483557 sh -c "cat /etc/*release | grep ^ID"
+run (node:26) | Syncing repository: nils44344/nk-repro
+run (node:26) | ##[group]Getting Git version info
+run (node:26) | Working directory is '/__w/nk-repro/nk-repro'
+run (node:26) | [command]/usr/bin/git version
+run (node:26) | git version 2.47.3
+run (node:26) | ##[endgroup]
+run (node:26) | Temporarily overriding HOME='/__w/_temp/629fc9aa-b7ee-4c09-ad39-c3e0cde624bc' before making global git config changes
+run (node:26) | Adding repository directory to the temporary git global config as a safe directory
+run (node:26) | [command]/usr/bin/git config --global --add safe.directory /__w/nk-repro/nk-repro
+run (node:26) | Deleting the contents of '/__w/nk-repro/nk-repro'
+run (node:26) | ##[group]Initializing the repository
+run (node:26) | [command]/usr/bin/git init /__w/nk-repro/nk-repro
+run (node:26) | hint: Using 'master' as the name for the initial branch. This default branch name
+run (node:26) | hint: is subject to change. To configure the initial branch name to use in all
+run (node:26) | hint: of your new repositories, which will suppress this warning, call:
+run (node:26) | hint:
+run (node:26) | hint: 	git config --global init.defaultBranch <name>
+run (node:26) | hint:
+run (node:26) | hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+run (node:26) | hint: 'development'. The just-created branch can be renamed via this command:
+run (node:26) | hint:
+run (node:26) | hint: 	git branch -m <name>
+run (node:26) | Initialized empty Git repository in /__w/nk-repro/nk-repro/.git/
+run (node:26) | [command]/usr/bin/git remote add origin https://github.com/nils44344/nk-repro
+run (node:26) | ##[endgroup]
+run (node:26) | ##[group]Disabling automatic garbage collection
+run (node:26) | [command]/usr/bin/git config --local gc.auto 0
+run (node:26) | ##[endgroup]
+run (node:26) | ##[group]Setting up auth
+run (node:26) | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+run (node:26) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+run (node:26) | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+run (node:26) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+run (node:26) | [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+run (node:26) | [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+run (node:26) | [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+run (node:26) | ##[endgroup]
+run (node:26) | ##[group]Fetching the repository
+run (node:26) | [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +c8145d8aa077e3c12cc1362e2d0004f87b30195c:refs/remotes/origin/main
+run (node:26) | From https://github.com/nils44344/nk-repro
+run (node:26) |  * [new ref]         c8145d8aa077e3c12cc1362e2d0004f87b30195c -> origin/main
+run (node:26) | ##[endgroup]
+run (node:26) | ##[group]Determining the checkout info
+run (node:26) | ##[endgroup]
+run (node:26) | [command]/usr/bin/git sparse-checkout disable
+run (node:26) | [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+run (node:26) | ##[group]Checking out the ref
+run (node:26) | [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+run (node:26) | Switched to a new branch 'main'
+run (node:26) | branch 'main' set up to track 'origin/main'.
+run (node:26) | ##[endgroup]
+run (node:26) | [command]/usr/bin/git log -1 --format=%H
+run (node:26) | c8145d8aa077e3c12cc1362e2d0004f87b30195c
+run (node:26) | ##[group]Run W=/tmp/work bash bigint-bindings/run.sh
+run (node:26) | ^[[36;1mW=/tmp/work bash bigint-bindings/run.sh^[[0m
+run (node:26) | shell: sh -e {0}
+run (node:26) | ##[endgroup]
+run (node:26) | == Sat Oct 31 06:29:33 UTC 2026 Linux node v26.13.0 npm 11.20.0
+run (node:26) | 
+run (node:26) | ######## npm 11.20.0, plain install
+run (node:26) | > npm run rebuild || echo "Couldn't build bindings. Non-native version used."
+run (node:26) | added 3 packages in 4s
+run (node:26) | npm warn install-scripts 1 package has install scripts not yet covered by allowScripts:
+run (node:26) | npm warn install-scripts   bigint-buffer@1.1.5 (install: npm run rebuild || echo "Couldn't build bindings. Non-native version used.")
+run (node:26) | npm warn install-scripts
+run (node:26) | npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+run (node:26) | native build present: true
+run (node:26) | toBigIntLE: 67305985
+run (node:26) | 
+run (node:26) | ######## npm 12 (npx npm@12), plain install
+run (node:26) | added 3 packages in 393ms
+run (node:26) | npm warn install-scripts 1 package had install scripts blocked because they are not covered by allowScripts:
+run (node:26) | npm warn install-scripts   bigint-buffer@1.1.5 (install: npm run rebuild || echo "Couldn't build bindings. Non-native version used.")
+run (node:26) | npm warn install-scripts
+run (node:26) | bigint: Failed to load bindings, pure JS will be used (try npm run rebuild?)
+run (node:26) | native build present: false
+run (node:26) | toBigIntLE: 67305985
+run (node:26) | == npm 12: approve the script and rebuild
+run (node:26) | Approved bigint-buffer:
+run (node:26) |   added bigint-buffer@1.1.5
+run (node:26) |   "allowScripts": {
+run (node:26) |     "bigint-buffer@1.1.5": true
+run (node:26) |   }
+run (node:26) | npm notice run npm run rebuild || echo "Couldn't build bindings. Non-native version used."
+run (node:26) | gyp info ok 
+run (node:26) | rebuilt dependencies successfully
+run (node:26) | native build present: true
+run (node:26) | toBigIntLE: 67305985
+run (node:26) | 
+run (node:26) | ######## a real dependency chain: @solana/spl-token
+run (node:26) | npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+run (node:26) | c@1.0.0 /tmp/work/c
+run (node:26) | `-- @solana/spl-token@0.4.15
+run (node:26) |   `-- @solana/buffer-layout-utils@0.3.0
+run (node:26) |     `-- bigint-buffer@1.1.5
+run (node:26) | 
+run (node:26) | spl-token loaded
+run (node:26) | == npm audit
+run (node:26) | bigint-buffer  *
+run (node:26) | Severity: high
+run (node:26) | bigint-buffer Vulnerable to Buffer Overflow via toBigIntLE() Function - https://github.com/advisories/GHSA-3gc7-fjrx-p6mg
+run (node:26) | fix available via `npm audit fix --force`
+run (node:26) | Will install @solana/spl-token@0.1.8, which is a breaking change
+run (node:26) | node_modules/bigint-buffer
+run (node:26) |   @solana/buffer-layout-utils  *
+run (node:26) |   Depends on vulnerable versions of @solana/web3.js
+run (node:26) |   Depends on vulnerable versions of bigint-buffer
+run (node:26) |   node_modules/@solana/buffer-layout-utils
+run (node:26) | 
+run (node:26) | ######## speed: native vs pure JS (only where the native build exists)
+run (node:26) | 1e6 x toBigIntLE(32 bytes): module 91 ms | pure JS fallback 474 ms
+run (node:26) | == done Sat Oct 31 06:29:55 UTC 2026
+run (node:26) | Post job cleanup.
+run (node:26) | ##[command]/usr/bin/docker exec  e659832744ec3e030097f8f49ac442ceeccf6280aa4c3166d47a0f85f5483557 sh -c "cat /etc/*release | grep ^ID"
+run (node:26) | [command]/usr/bin/git version
+run (node:26) | git version 2.47.3
+run (node:26) | Temporarily overriding HOME='/__w/_temp/c2d03480-3523-4da6-9dd3-447cd7f4564e' before making global git config changes
+run (node:26) | Adding repository directory to the temporary git global config as a safe directory
+run (node:26) | [command]/usr/bin/git config --global --add safe.directory /__w/nk-repro/nk-repro
+run (node:26) | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+run (node:26) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+run (node:26) | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+run (node:26) | http.https://github.com/.extraheader
+run (node:26) | [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+run (node:26) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+run (node:26) | [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+run (node:26) | [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+run (node:26) | Stop and remove container: e16b7dd71f664aca937f7432771fec98_node26_ce08d6
+run (node:26) | ##[command]/usr/bin/docker rm --force e659832744ec3e030097f8f49ac442ceeccf6280aa4c3166d47a0f85f5483557
+run (node:26) | e659832744ec3e030097f8f49ac442ceeccf6280aa4c3166d47a0f85f5483557
+run (node:26) | Remove container network: github_network_c7bd7c48b5bf4e24bcd9e68667efd227
+run (node:26) | ##[command]/usr/bin/docker network rm github_network_c7bd7c48b5bf4e24bcd9e68667efd227
+run (node:26) | github_network_c7bd7c48b5bf4e24bcd9e68667efd227
+run (node:26) | Cleaning up orphan processes
+run (node:26) | ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

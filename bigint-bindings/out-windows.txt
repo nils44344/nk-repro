@@ -1,0 +1,60 @@
+== Sat Oct 31 11:59:13 IST 2026 MINGW64_NT-10.0-26300 node v24.14.0 npm 11.9.0
+
+######## npm 11.9.0, plain install
+> npm run rebuild || echo "Couldn't build bindings. Non-native version used."
+gyp ERR! find VS 
+gyp ERR! find VS --msvs_version was not set on the command line
+gyp ERR! find VS VCINSTALLDIR not set, not running in VS Command Prompt
+gyp ERR! find VS could not use PowerShell to find Visual Studio 2017 or newer, try re-running with '--loglevel silly' for more details.
+gyp ERR! find VS 
+bigint: Failed to load bindings, pure JS will be used (try npm run rebuild?)
+native build present: false
+toBigIntLE: 67305985
+
+######## npm 12 (npx npm@12), plain install
+added 3 packages in 6s
+npm warn install-scripts 1 package had install scripts blocked because they are not covered by allowScripts:
+npm warn install-scripts   bigint-buffer@1.1.5 (install: npm run rebuild || echo "Couldn't build bindings. Non-native version used.")
+npm warn install-scripts
+bigint: Failed to load bindings, pure JS will be used (try npm run rebuild?)
+native build present: false
+toBigIntLE: 67305985
+== npm 12: approve the script and rebuild
+Approved bigint-buffer:
+  added bigint-buffer@1.1.5
+  "allowScripts": {
+    "bigint-buffer@1.1.5": true
+  }
+npm notice run npm run rebuild || echo "Couldn't build bindings. Non-native version used."
+gyp ERR! find VS 
+gyp ERR! find VS --msvs_version was not set on the command line
+gyp ERR! find VS VCINSTALLDIR not set, not running in VS Command Prompt
+bigint: Failed to load bindings, pure JS will be used (try npm run rebuild?)
+native build present: false
+toBigIntLE: 67305985
+
+######## a real dependency chain: @solana/spl-token
+added 73 packages in 57s
+c@1.0.0 <work>\c
+`-- @solana/spl-token@0.4.15
+  `-- @solana/buffer-layout-utils@0.3.0
+    `-- bigint-buffer@1.1.5
+
+bigint: Failed to load bindings, pure JS will be used (try npm run rebuild?)
+spl-token loaded
+== npm audit
+bigint-buffer  *
+Severity: high
+bigint-buffer Vulnerable to Buffer Overflow via toBigIntLE() Function - https://github.com/advisories/GHSA-3gc7-fjrx-p6mg
+fix available via `npm audit fix --force`
+Will install @solana/spl-token@0.1.8, which is a breaking change
+node_modules/bigint-buffer
+  @solana/buffer-layout-utils  *
+  Depends on vulnerable versions of @solana/web3.js
+  Depends on vulnerable versions of bigint-buffer
+  node_modules/@solana/buffer-layout-utils
+
+######## speed: native vs pure JS (only where the native build exists)
+bigint: Failed to load bindings, pure JS will be used (try npm run rebuild?)
+1e6 x toBigIntLE(32 bytes): module 4079 ms | pure JS fallback 2557 ms
+== done Sat Oct 31 12:02:49 IST 2026
