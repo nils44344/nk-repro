@@ -1,0 +1,95 @@
+== Sat Oct 31 20:25:38 UTC 2026 node v24.22.1 npm 11.19.1
+
+######## npm 11.19.1
+-- React 19 + react-beautiful-dnd
+npm error code ERESOLVE
+npm error ERESOLVE unable to resolve dependency tree
+npm error While resolving: r11.19.1@1.0.0
+npm error Found: react@19.3.1
+npm error node_modules/react
+npm error   react@"19" from the root project
+npm error Could not resolve dependency:
+npm error peer react@"^16.8.5 || ^17.0.0 || ^18.0.0" from react-beautiful-dnd@13.1.1
+npm error node_modules/react-beautiful-dnd
+npm error   react-beautiful-dnd@"13.1.1" from the root project
+-- fix: @hello-pangea/dnd
+added 12 packages in 2s
+-- ESLint 10 + eslint-plugin-react
+npm error code ERESOLVE
+npm error ERESOLVE unable to resolve dependency tree
+npm error While resolving: e11.19.1@1.0.0
+npm error Found: eslint@10.14.0
+npm error node_modules/eslint
+npm error   dev eslint@"10" from the root project
+npm error Could not resolve dependency:
+npm error peer eslint@"^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7" from eslint-plugin-react@7.37.5
+npm error node_modules/eslint-plugin-react
+npm error   dev eslint-plugin-react@"*" from the root project
+-- peer range of eslint-plugin-react: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
+
+######## npm 12.2.1
+-- React 19 + react-beautiful-dnd
+npm error code ERESOLVE
+npm error ERESOLVE unable to resolve dependency tree
+npm error While resolving: r12.2.1@1.0.0
+npm error Found: react@19.3.1
+npm error node_modules/react
+npm error   react@"19" from the root project
+npm error Could not resolve dependency:
+npm error peer react@"^16.8.5 || ^17.0.0 || ^18.0.0" from react-beautiful-dnd@13.1.1
+npm error node_modules/react-beautiful-dnd
+npm error   react-beautiful-dnd@"13.1.1" from the root project
+-- fix: @hello-pangea/dnd
+added 12 packages in 1s
+-- ESLint 10 + eslint-plugin-react
+npm error code ERESOLVE
+npm error ERESOLVE unable to resolve dependency tree
+npm error While resolving: e12.2.1@1.0.0
+npm error Found: eslint@10.14.0
+npm error node_modules/eslint
+npm error   dev eslint@"10" from the root project
+npm error Could not resolve dependency:
+npm error peer eslint@"^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7" from eslint-plugin-react@7.37.5
+npm error node_modules/eslint-plugin-react
+npm error   dev eslint-plugin-react@"*" from the root project
+-- peer range of eslint-plugin-react: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
+
+######## fixes, on 11.19.1
+-- --legacy-peer-deps
+added 24 packages in 1s
+-- next plain npm install (clean)
+npm error code ERESOLVE
+npm error ERESOLVE unable to resolve dependency tree
+npm error While resolving: f@1.0.0
+-- npm ci after a --legacy-peer-deps install
+npm error code ERESOLVE
+npm error ERESOLVE could not resolve
+npm error While resolving: react-beautiful-dnd@13.1.1
+npm error Found: react@19.3.1
+-- overrides with $react
+added 24 packages in 1s
+added 24 packages in 586ms
+-- npm explain react (who wants which react)
+react@19.3.1
+node_modules/react
+  react@"^19.3.1" from the root project
+  peer overridden react@"^19.3.1" (was "^16.8.5 || ^17.0.0 || ^18.0.0") from react-beautiful-dnd@13.1.1
+  node_modules/react-beautiful-dnd
+    react-beautiful-dnd@"^13.1.1" from the root project
+  peer react@"^19.3.1" from react-dom@19.3.1
+  node_modules/react-dom
+    react-dom@"^19.3.1" from the root project
+    peer overridden react-dom@"^19.3.1" (was "^16.8.5 || ^17.0.0 || ^18.0.0") from react-beautiful-dnd@13.1.1
+    node_modules/react-beautiful-dnd
+      react-beautiful-dnd@"^13.1.1" from the root project
+-- eslint 10 + plugin with overrides
+added 199 packages in 4s
+-- does eslint-plugin-react run on ESLint 10?
+
+/home/runner/work/_temp/work/g/a.jsx
+  0:0  warning  File ignored because no matching configuration was supplied
+
+✖ 1 problem (0 errors, 1 warning)
+
+eslint exit 0
+== done
