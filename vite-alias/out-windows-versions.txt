@@ -1,0 +1,22 @@
+
+######## vite 8.3.0, no alias, tsconfig paths only
+changed 1 package in 12s
+✓ built in 298ms
+dev (no alias): HTTP 500 | serves @/ import as: 
+Binary file (standard input) matches
+Error: Cannot find package '@/utils/hello' imported from D:/nk-vitealias/test/a.test.js
+      Tests  no tests
+
+######## vite 8.3.5, no alias, tsconfig paths only
+changed 1 package in 6s
+✓ built in 567ms
+dev (no alias): HTTP 500 | serves @/ import as: 
+Binary file (standard input) matches
+Error: Cannot find package '@/utils/hello' imported from D:/nk-vitealias/test/a.test.js
+      Tests  no tests
+
+######## vite 8.3.5, resolve.tsconfigPaths: true
+✓ built in 430ms
+dev (tsconfigPaths: true): HTTP 200 | serves @/ import as: from "/src/utils/hello.js"
+      Tests  1 passed (1)
+== done Sat Oct 31 21:44:30 IST 2026

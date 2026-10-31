@@ -1,0 +1,31 @@
+== Sat Oct 31 21:32:57 IST 2026 MINGW64_NT-10.0-26300 node v24.14.0
+added 41 packages in 37s
+vite/8.3.5 win32-x64 node-v24.14.0
++-- vite-tsconfig-paths@6.1.1
+`-- vitest@5.0.5
+== does Vite 8 have a tsconfig paths option?
+tsconfigPaths?: boolean
+== no alias, tsconfig paths only
+✓ built in 453ms
+== alias with fileURLToPath (the fix)
+✓ built in 134ms
+== alias as a relative string ./src
+error during build:
+Build failed with 1 error:
+   │                              ╰───────── The system cannot find the file specified. (os error 2)
+== alias as /src
+✓ built in 153ms
+== alias array form
+✓ built in 414ms
+== vite-tsconfig-paths plugin
+✓ built in 395ms
+== resolve.tsconfigPaths: true
+✓ built in 502ms
+== dev server without alias: request /src/main.js
+== vitest: test importing @/ with and without the alias
+Error: Cannot find package '@/utils/hello' imported from D:/nk-vitealias/test/a.test.js
+      Tests  no tests
+      Tests  1 passed (1)
+== letter case: file Hello.js imported as @/utils/hello
+✓ built in 315ms
+== done Sat Oct 31 21:36:24 IST 2026

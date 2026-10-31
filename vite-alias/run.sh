@@ -38,6 +38,6 @@ npx vitest run 2>&1 | grep -E "Tests " | head -1
 
 echo "== letter case: file Hello.js imported as @/utils/hello"
 mv src/utils/hello.js src/utils/Hello.js
-npx vite build 2>&1 | grep -E "built in|resolve|UNRESOLVED|error" | head -2
+npx vite build 2>&1 | sed 's/\[[0-9;]*m//g' | grep -E "built in|resolve|Rolldown|UNRESOLVED|Could not" | head -4
 mv src/utils/Hello.js src/utils/hello.js
 echo "== done $(date)"
