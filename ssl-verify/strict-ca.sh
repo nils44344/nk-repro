@@ -19,4 +19,18 @@ sleep 2
 python "$GITHUB_WORKSPACE/ssl-verify/probe.py" https://localhost:8443/ "$D/ca.pem"
 echo "== SSL_CERT_FILE=ca.pem, default urllib"
 SSL_CERT_FILE="$D/ca.pem" python -c "import urllib.request; urllib.request.urlopen('https://localhost:8443/', timeout=10); print('OK')" 2>&1 | tail -1
+echo "== requests with an HTTPAdapter whose ssl_context has the strict flag cleared"
+python - "$D/ca.pem" <<'PY2' 2>&1 | tail -1
+import ssl, sys, requests
+from requests.adapters import HTTPAdapter
+class A(HTTPAdapter):
+    def init_poolmanager(self, *a, **k):
+        c = ssl.create_default_context(cafile=sys.argv[1]); c.verify_flags &= ~ssl.VERIFY_X509_STRICT
+        k['ssl_context'] = c; return super().init_poolmanager(*a, **k)
+s = requests.Session(); s.mount('https://', A()); s.get('https://localhost:8443/', timeout=10); print('requests with adapter OK')
+PY2
+echo "== CA added to the system store (update-ca-certificates), then truststore and plain urllib"
+sudo cp "$D/ca.pem" /usr/local/share/ca-certificates/test-proxy-root.crt && sudo update-ca-certificates >/dev/null 2>&1
+python -c "import truststore,requests; truststore.inject_into_ssl(); requests.get('https://localhost:8443/', timeout=10); print('truststore + system store OK')" 2>&1 | tail -1 | cut -c1-220
+python -c "import urllib.request; urllib.request.urlopen('https://localhost:8443/', timeout=10); print('urllib + system store OK')" 2>&1 | tail -1 | cut -c1-220
 kill %1 2>/dev/null
