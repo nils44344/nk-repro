@@ -16,7 +16,7 @@ case_() { # $1 label, $2 file body
   sed 's/\x1b\[[0-9;]*m//g' dev.log | grep -aiE "error|handler|warn|10021|10068" | grep -v "update available" | head -4 | cut -c1-200; grep -q . body.txt 2>/dev/null || { echo "  (no response; last dev.log lines:)"; sed "s/[[0-9;]*m//g" dev.log | grep -v "^s*$" | tail -4 | cut -c1-200; }
   if command -v powershell >/dev/null; then powershell -NoProfile -c 'Get-NetTCPConnection -LocalPort 8799 -State Listen -EA 0 | % { Stop-Process -Id $_.OwningProcess -Force }'; else pkill -f "wrangler dev" ; pkill -f workerd; fi; sleep 3
   if [ "$DEPLOY" = 1 ]; then
-    npx wrangler deploy 2>&1 | sed 's/\x1b\[[0-9;]*m//g' | grep -aE "Uploaded|Deployed|ERROR|code:|registered|does nothing" | head -4 | cut -c1-200; grep -q . body.txt 2>/dev/null || { echo "  (no response; last dev.log lines:)"; sed "s/[[0-9;]*m//g" dev.log | grep -v "^s*$" | tail -4 | cut -c1-200; }
+    npx wrangler deploy 2>&1 | sed 's/\x1b\[[0-9;]*m//g' | grep -aE "Uploaded|Deployed|ERROR|code:|registered|does nothing" | head -4 | cut -c1-200
   fi
 }
 case_ "default export object (the fix)" 'export default { async fetch() { return new Response("hello"); } };'
