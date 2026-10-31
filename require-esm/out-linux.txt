@@ -1,0 +1,879 @@
+run (24)	Set up job	﻿2026-10-31T16:29:29.3906858Z Current runner version: '2.338.2'
+run (24) | ##[group]Runner Image Provisioner
+run (24) | Hosted Compute Agent
+run (24) | Version: 20261021.618
+run (24) | Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+run (24) | Build Date: 2026-10-21T00:45:21Z
+run (24) | Worker ID: {f3b6d8d2-369e-47dd-aaa3-d8f3b0a9d1b7}
+run (24) | Region: centralus
+run (24) | Cloud: Azure
+run (24) | ##[endgroup]
+run (24) | ##[group]Operating System
+run (24) | Ubuntu
+run (24) | 26.04.1
+run (24) | LTS
+run (24) | ##[endgroup]
+run (24) | ##[group]Runner Image
+run (24) | Image: ubuntu-26.04
+run (24) | Version: 20261025.179.1
+run (24) | Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261025.179/images/ubuntu/Ubuntu2604-Readme.md
+run (24) | Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261025.179
+run (24) | ##[endgroup]
+run (24) | ##[group]GITHUB_TOKEN Permissions
+run (24) | Contents: read
+run (24) | Metadata: read
+run (24) | ##[endgroup]
+run (24) | Secret source: Actions
+run (24) | Cache mode: write
+run (24) | Prepare workflow directory
+run (24) | Prepare all required actions
+run (24) | Getting action download info
+run (24) | Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+run (24) | Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+run (24) | Complete job name: run (24)
+run (24)	Run actions/checkout@v4	﻿2026-10-31T16:29:29.9597746Z ##[group]Run actions/checkout@v4
+run (24) | with:
+run (24) |   repository: nils44344/nk-repro
+run (24) |   token: ***
+run (24) |   ssh-strict: true
+run (24) |   ssh-user: git
+run (24) |   persist-credentials: true
+run (24) |   clean: true
+run (24) |   sparse-checkout-cone-mode: true
+run (24) |   fetch-depth: 1
+run (24) |   fetch-tags: false
+run (24) |   show-progress: true
+run (24) |   lfs: false
+run (24) |   submodules: false
+run (24) |   set-safe-directory: true
+run (24) |   allow-unsafe-pr-checkout: false
+run (24) | ##[endgroup]
+run (24) | Syncing repository: nils44344/nk-repro
+run (24) | ##[group]Getting Git version info
+run (24) | Working directory is '/home/runner/work/nk-repro/nk-repro'
+run (24) | [command]/usr/bin/git version
+run (24) | git version 2.56.0
+run (24) | ##[endgroup]
+run (24) | Temporarily overriding HOME='/home/runner/work/_temp/8e72ce53-cf9c-4dc1-9f92-bbd20c819044' before making global git config changes
+run (24) | Adding repository directory to the temporary git global config as a safe directory
+run (24) | [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nk-repro/nk-repro
+run (24) | Deleting the contents of '/home/runner/work/nk-repro/nk-repro'
+run (24) | ##[group]Initializing the repository
+run (24) | [command]/usr/bin/git init /home/runner/work/nk-repro/nk-repro
+run (24) | hint: Using 'master' as the name for the initial branch. This default branch name
+run (24) | hint: will change to "main" in Git 3.0. To configure the initial branch name
+run (24) | hint: to use in all of your new repositories, which will suppress this warning,
+run (24) | hint: call:
+run (24) | hint:
+run (24) | hint: 	git config --global init.defaultBranch <name>
+run (24) | hint:
+run (24) | hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+run (24) | hint: 'development'. The just-created branch can be renamed via this command:
+run (24) | hint:
+run (24) | hint: 	git branch -m <name>
+run (24) | hint:
+run (24) | hint: Disable this message with "git config set advice.defaultBranchName false"
+run (24) | Initialized empty Git repository in /home/runner/work/nk-repro/nk-repro/.git/
+run (24) | [command]/usr/bin/git remote add origin https://github.com/nils44344/nk-repro
+run (24) | ##[endgroup]
+run (24) | ##[group]Disabling automatic garbage collection
+run (24) | [command]/usr/bin/git config --local gc.auto 0
+run (24) | ##[endgroup]
+run (24) | ##[group]Setting up auth
+run (24) | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+run (24) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+run (24) | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+run (24) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+run (24) | [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+run (24) | [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+run (24) | [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+run (24) | ##[endgroup]
+run (24) | ##[group]Fetching the repository
+run (24) | [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a69f0b8b2d6f751f21a478a795f3313e5758764a:refs/remotes/origin/main
+run (24) | From https://github.com/nils44344/nk-repro
+run (24) |  * [new ref]         a69f0b8b2d6f751f21a478a795f3313e5758764a -> origin/main
+run (24) | ##[endgroup]
+run (24) | ##[group]Determining the checkout info
+run (24) | ##[endgroup]
+run (24) | [command]/usr/bin/git sparse-checkout disable
+run (24) | [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+run (24) | ##[group]Checking out the ref
+run (24) | [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+run (24) | Switched to a new branch 'main'
+run (24) | branch 'main' set up to track 'origin/main'.
+run (24) | ##[endgroup]
+run (24) | [command]/usr/bin/git log -1 --format=%H
+run (24) | a69f0b8b2d6f751f21a478a795f3313e5758764a
+run (24)	Run actions/setup-node@v4	﻿2026-10-31T16:29:30.7198036Z ##[group]Run actions/setup-node@v4
+run (24) | with:
+run (24) |   node-version: 24
+run (24) |   always-auth: false
+run (24) |   check-latest: false
+run (24) |   token: ***
+run (24) | ##[endgroup]
+run (24) | Found in cache @ /opt/hostedtoolcache/node/24.22.1/x64
+run (24) | (node:2139) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+run (24) | (Use `node --trace-deprecation ...` to show where the warning was created)
+run (24) | ##[group]Environment details
+run (24) | node: v24.22.1
+run (24) | npm: 11.19.1
+run (24) | yarn: 1.22.22
+run (24) | ##[endgroup]
+run (24)	Run W=$RUNNER_TEMP/work bash require-esm/run.sh	﻿2026-10-31T16:29:31.1407296Z ##[group]Run W=$RUNNER_TEMP/work bash require-esm/run.sh
+run (24) | ^[[36;1mW=$RUNNER_TEMP/work bash require-esm/run.sh^[[0m
+run (24) | shell: /usr/bin/bash -e {0}
+run (24) | ##[endgroup]
+run (24) | == node v24.22.1
+run (24) | added 2 packages in 898ms
+run (24) | -- require('chalk') of ESM-only chalk 5
+run (24) | require ok, chalk.green is undefined
+run (24) | -- require('chalk').default
+run (24) | require(...).default.green: function
+run (24) | -- dynamic import() from CommonJS
+run (24) | dynamic import ok: function
+run (24) | -- require() of an ES module with top-level await
+run (24) | node:internal/modules/esm/module_job:313
+run (24) |     throw new ERR_REQUIRE_ASYNC_MODULE(filename, parent, locations);
+run (24) |     ^
+run (24) | Error [ERR_REQUIRE_ASYNC_MODULE]: require() cannot be used on an ESM graph with top-level await. Use import() instead. To see where the top-level await comes from, use --experimental-print-required-tla.
+run (24) | -- import() of the same module
+run (24) | import() of top-level-await module: 42
+run (24) | -- top-level await inside a .cjs file
+run (24) | (node:2253) Warning: Failed to load the ES module: /home/runner/work/_temp/work/f.cjs. Make sure to set "type": "module" in the nearest package.json file or use the .mjs extension.
+run (24) | (Use `node --trace-warnings ...` to show where the warning was created)
+run (24) | /home/runner/work/_temp/work/f.cjs:1
+run (24) | const x = await Promise.resolve(1); console.log(x);
+run (24) | error TS5107: Option 'moduleResolution=node10' is deprecated and will stop functioning in TypeScript 7.0. Specify compilerOption '"ignoreDeprecations": "6.0"' to silence this error.
+run (24) |   Visit https://aka.ms/ts6 for migration information.
+run (24) | -- TypeScript compiled to CommonJS (import chalk -> require)
+run (24) | ts->cjs: function
+run (24) | == done
+run (24)	Post Run actions/setup-node@v4	﻿2026-10-31T16:29:33.2606118Z Post job cleanup.
+run (24) | (node:2295) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+run (24) | (Use `node --trace-deprecation ...` to show where the warning was created)
+run (24)	Post Run actions/checkout@v4	﻿2026-10-31T16:29:33.3590942Z Post job cleanup.
+run (24) | [command]/usr/bin/git version
+run (24) | git version 2.56.0
+run (24) | Temporarily overriding HOME='/home/runner/work/_temp/d7efb3c8-74e7-42ef-ad49-39e8a4135607' before making global git config changes
+run (24) | Adding repository directory to the temporary git global config as a safe directory
+run (24) | [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nk-repro/nk-repro
+run (24) | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+run (24) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+run (24) | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+run (24) | http.https://github.com/.extraheader
+run (24) | [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+run (24) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+run (24) | [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+run (24) | [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+run (24)	Complete job	﻿2026-10-31T16:29:33.5432408Z Cleaning up orphan processes
+run (24) | ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+run (22.11.0)	Set up job	﻿2026-10-31T16:29:29.8947081Z Current runner version: '2.338.2'
+run (22.11.0) | ##[group]Runner Image Provisioner
+run (22.11.0) | Hosted Compute Agent
+run (22.11.0) | Version: 20261021.618
+run (22.11.0) | Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+run (22.11.0) | Build Date: 2026-10-21T00:45:21Z
+run (22.11.0) | Worker ID: {0e9f6b81-dbd5-4dff-a06b-6ceb3ec5e981}
+run (22.11.0) | Region: westus3
+run (22.11.0) | Cloud: Azure
+run (22.11.0) | ##[endgroup]
+run (22.11.0) | ##[group]Operating System
+run (22.11.0) | Ubuntu
+run (22.11.0) | 26.04.1
+run (22.11.0) | LTS
+run (22.11.0) | ##[endgroup]
+run (22.11.0) | ##[group]Runner Image
+run (22.11.0) | Image: ubuntu-26.04
+run (22.11.0) | Version: 20261025.179.1
+run (22.11.0) | Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261025.179/images/ubuntu/Ubuntu2604-Readme.md
+run (22.11.0) | Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261025.179
+run (22.11.0) | ##[endgroup]
+run (22.11.0) | ##[group]GITHUB_TOKEN Permissions
+run (22.11.0) | Contents: read
+run (22.11.0) | Metadata: read
+run (22.11.0) | ##[endgroup]
+run (22.11.0) | Secret source: Actions
+run (22.11.0) | Cache mode: write
+run (22.11.0) | Prepare workflow directory
+run (22.11.0) | Prepare all required actions
+run (22.11.0) | Getting action download info
+run (22.11.0) | Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+run (22.11.0) | Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+run (22.11.0) | Complete job name: run (22.11.0)
+run (22.11.0)	Run actions/checkout@v4	﻿2026-10-31T16:29:30.5299649Z ##[group]Run actions/checkout@v4
+run (22.11.0) | with:
+run (22.11.0) |   repository: nils44344/nk-repro
+run (22.11.0) |   token: ***
+run (22.11.0) |   ssh-strict: true
+run (22.11.0) |   ssh-user: git
+run (22.11.0) |   persist-credentials: true
+run (22.11.0) |   clean: true
+run (22.11.0) |   sparse-checkout-cone-mode: true
+run (22.11.0) |   fetch-depth: 1
+run (22.11.0) |   fetch-tags: false
+run (22.11.0) |   show-progress: true
+run (22.11.0) |   lfs: false
+run (22.11.0) |   submodules: false
+run (22.11.0) |   set-safe-directory: true
+run (22.11.0) |   allow-unsafe-pr-checkout: false
+run (22.11.0) | ##[endgroup]
+run (22.11.0) | Syncing repository: nils44344/nk-repro
+run (22.11.0) | ##[group]Getting Git version info
+run (22.11.0) | Working directory is '/home/runner/work/nk-repro/nk-repro'
+run (22.11.0) | [command]/usr/bin/git version
+run (22.11.0) | git version 2.56.0
+run (22.11.0) | ##[endgroup]
+run (22.11.0) | Temporarily overriding HOME='/home/runner/work/_temp/97fbdc13-d8cd-4d67-b38c-8badc53ee9dd' before making global git config changes
+run (22.11.0) | Adding repository directory to the temporary git global config as a safe directory
+run (22.11.0) | [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nk-repro/nk-repro
+run (22.11.0) | Deleting the contents of '/home/runner/work/nk-repro/nk-repro'
+run (22.11.0) | ##[group]Initializing the repository
+run (22.11.0) | [command]/usr/bin/git init /home/runner/work/nk-repro/nk-repro
+run (22.11.0) | hint: Using 'master' as the name for the initial branch. This default branch name
+run (22.11.0) | hint: will change to "main" in Git 3.0. To configure the initial branch name
+run (22.11.0) | hint: to use in all of your new repositories, which will suppress this warning,
+run (22.11.0) | hint: call:
+run (22.11.0) | hint:
+run (22.11.0) | hint: 	git config --global init.defaultBranch <name>
+run (22.11.0) | hint:
+run (22.11.0) | hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+run (22.11.0) | hint: 'development'. The just-created branch can be renamed via this command:
+run (22.11.0) | hint:
+run (22.11.0) | hint: 	git branch -m <name>
+run (22.11.0) | hint:
+run (22.11.0) | hint: Disable this message with "git config set advice.defaultBranchName false"
+run (22.11.0) | Initialized empty Git repository in /home/runner/work/nk-repro/nk-repro/.git/
+run (22.11.0) | [command]/usr/bin/git remote add origin https://github.com/nils44344/nk-repro
+run (22.11.0) | ##[endgroup]
+run (22.11.0) | ##[group]Disabling automatic garbage collection
+run (22.11.0) | [command]/usr/bin/git config --local gc.auto 0
+run (22.11.0) | ##[endgroup]
+run (22.11.0) | ##[group]Setting up auth
+run (22.11.0) | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+run (22.11.0) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+run (22.11.0) | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+run (22.11.0) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+run (22.11.0) | [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+run (22.11.0) | [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+run (22.11.0) | [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+run (22.11.0) | ##[endgroup]
+run (22.11.0) | ##[group]Fetching the repository
+run (22.11.0) | [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a69f0b8b2d6f751f21a478a795f3313e5758764a:refs/remotes/origin/main
+run (22.11.0) | From https://github.com/nils44344/nk-repro
+run (22.11.0) |  * [new ref]         a69f0b8b2d6f751f21a478a795f3313e5758764a -> origin/main
+run (22.11.0) | ##[endgroup]
+run (22.11.0) | ##[group]Determining the checkout info
+run (22.11.0) | ##[endgroup]
+run (22.11.0) | [command]/usr/bin/git sparse-checkout disable
+run (22.11.0) | [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+run (22.11.0) | ##[group]Checking out the ref
+run (22.11.0) | [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+run (22.11.0) | Switched to a new branch 'main'
+run (22.11.0) | branch 'main' set up to track 'origin/main'.
+run (22.11.0) | ##[endgroup]
+run (22.11.0) | [command]/usr/bin/git log -1 --format=%H
+run (22.11.0) | a69f0b8b2d6f751f21a478a795f3313e5758764a
+run (22.11.0)	Run actions/setup-node@v4	﻿2026-10-31T16:29:31.4838493Z ##[group]Run actions/setup-node@v4
+run (22.11.0) | with:
+run (22.11.0) |   node-version: 22.11.0
+run (22.11.0) |   always-auth: false
+run (22.11.0) |   check-latest: false
+run (22.11.0) |   token: ***
+run (22.11.0) | ##[endgroup]
+run (22.11.0) | Attempting to download 22.11.0...
+run (22.11.0) | (node:2141) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+run (22.11.0) | (Use `node --trace-deprecation ...` to show where the warning was created)
+run (22.11.0) | Acquiring 22.11.0 - x64 from https://github.com/actions/node-versions/releases/download/22.11.0-11593095476/node-22.11.0-linux-x64.tar.gz
+run (22.11.0) | Extracting ...
+run (22.11.0) | [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/8246e850-f9a5-491d-93ec-ec8fe8c1dca4 -f /home/runner/work/_temp/fdd81e94-913f-4a65-906d-4600be47d055
+run (22.11.0) | Adding to the cache ...
+run (22.11.0) | ##[group]Environment details
+run (22.11.0) | node: v22.11.0
+run (22.11.0) | npm: 10.9.0
+run (22.11.0) | yarn: 1.22.22
+run (22.11.0) | ##[endgroup]
+run (22.11.0)	Run W=$RUNNER_TEMP/work bash require-esm/run.sh	﻿2026-10-31T16:29:35.4738717Z ##[group]Run W=$RUNNER_TEMP/work bash require-esm/run.sh
+run (22.11.0) | ^[[36;1mW=$RUNNER_TEMP/work bash require-esm/run.sh^[[0m
+run (22.11.0) | shell: /usr/bin/bash -e {0}
+run (22.11.0) | ##[endgroup]
+run (22.11.0) | == node v22.11.0
+run (22.11.0) | added 2 packages in 947ms
+run (22.11.0) | -- require('chalk') of ESM-only chalk 5
+run (22.11.0) | /home/runner/work/_temp/work/a.cjs:315
+run (22.11.0) | undefined
+run (22.11.0) |              ^
+run (22.11.0) | Error [ERR_REQUIRE_ESM]: require() of ES Module /home/runner/work/_temp/work/node_modules/chalk/source/index.js from /home/runner/work/_temp/work/a.cjs not supported.
+run (22.11.0) | -- require('chalk').default
+run (22.11.0) | /home/runner/work/_temp/work/b.cjs:315
+run (22.11.0) | undefined
+run (22.11.0) |              ^
+run (22.11.0) | Error [ERR_REQUIRE_ESM]: require() of ES Module /home/runner/work/_temp/work/node_modules/chalk/source/index.js from /home/runner/work/_temp/work/b.cjs not supported.
+run (22.11.0) | -- dynamic import() from CommonJS
+run (22.11.0) | dynamic import ok: function
+run (22.11.0) | -- require() of an ES module with top-level await
+run (22.11.0) | /home/runner/work/_temp/work/d.cjs:315
+run (22.11.0) | undefined
+run (22.11.0) |              ^
+run (22.11.0) | Error [ERR_REQUIRE_ESM]: require() of ES Module /home/runner/work/_temp/work/tla/index.js from /home/runner/work/_temp/work/d.cjs not supported.
+run (22.11.0) | -- import() of the same module
+run (22.11.0) | import() of top-level-await module: 42
+run (22.11.0) | -- top-level await inside a .cjs file
+run (22.11.0) | (node:2264) Warning: To load an ES module, set "type": "module" in the package.json or use the .mjs extension.
+run (22.11.0) | (Use `node --trace-warnings ...` to show where the warning was created)
+run (22.11.0) | /home/runner/work/_temp/work/f.cjs:1
+run (22.11.0) | const x = await Promise.resolve(1); console.log(x);
+run (22.11.0) | error TS5107: Option 'moduleResolution=node10' is deprecated and will stop functioning in TypeScript 7.0. Specify compilerOption '"ignoreDeprecations": "6.0"' to silence this error.
+run (22.11.0) |   Visit https://aka.ms/ts6 for migration information.
+run (22.11.0) | -- TypeScript compiled to CommonJS (import chalk -> require)
+run (22.11.0) | /home/runner/work/_temp/work/out/g.cjs:315
+run (22.11.0) | undefined
+run (22.11.0) |              ^
+run (22.11.0) | Error [ERR_REQUIRE_ESM]: require() of ES Module /home/runner/work/_temp/work/node_modules/chalk/source/index.js from /home/runner/work/_temp/work/out/g.cjs not supported.
+run (22.11.0) | == done
+run (22.11.0)	Post Run actions/setup-node@v4	﻿2026-10-31T16:29:37.5198417Z Post job cleanup.
+run (22.11.0) | (node:2306) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+run (22.11.0) | (Use `node --trace-deprecation ...` to show where the warning was created)
+run (22.11.0)	Post Run actions/checkout@v4	﻿2026-10-31T16:29:37.6309889Z Post job cleanup.
+run (22.11.0) | [command]/usr/bin/git version
+run (22.11.0) | git version 2.56.0
+run (22.11.0) | Temporarily overriding HOME='/home/runner/work/_temp/98229ee9-3fee-45ff-8fe9-2422234ddc2f' before making global git config changes
+run (22.11.0) | Adding repository directory to the temporary git global config as a safe directory
+run (22.11.0) | [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nk-repro/nk-repro
+run (22.11.0) | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+run (22.11.0) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+run (22.11.0) | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+run (22.11.0) | http.https://github.com/.extraheader
+run (22.11.0) | [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+run (22.11.0) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+run (22.11.0) | [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+run (22.11.0) | [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+run (22.11.0)	Complete job	﻿2026-10-31T16:29:37.8228710Z Cleaning up orphan processes
+run (22.11.0) | ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+run (26)	Set up job	﻿2026-10-31T16:29:30.0370189Z Current runner version: '2.338.2'
+run (26) | ##[group]Runner Image Provisioner
+run (26) | Hosted Compute Agent
+run (26) | Version: 20261021.618
+run (26) | Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+run (26) | Build Date: 2026-10-21T00:45:21Z
+run (26) | Worker ID: {c1f12f26-c2a5-4bdc-a4cc-c3f909a79361}
+run (26) | Region: northcentralus
+run (26) | Cloud: Azure
+run (26) | ##[endgroup]
+run (26) | ##[group]Operating System
+run (26) | Ubuntu
+run (26) | 26.04.1
+run (26) | LTS
+run (26) | ##[endgroup]
+run (26) | ##[group]Runner Image
+run (26) | Image: ubuntu-26.04
+run (26) | Version: 20261025.179.1
+run (26) | Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261025.179/images/ubuntu/Ubuntu2604-Readme.md
+run (26) | Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261025.179
+run (26) | ##[endgroup]
+run (26) | ##[group]GITHUB_TOKEN Permissions
+run (26) | Contents: read
+run (26) | Metadata: read
+run (26) | ##[endgroup]
+run (26) | Secret source: Actions
+run (26) | Cache mode: write
+run (26) | Prepare workflow directory
+run (26) | Prepare all required actions
+run (26) | Getting action download info
+run (26) | Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+run (26) | Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+run (26) | Complete job name: run (26)
+run (26)	Run actions/checkout@v4	﻿2026-10-31T16:29:30.7250838Z ##[group]Run actions/checkout@v4
+run (26) | with:
+run (26) |   repository: nils44344/nk-repro
+run (26) |   token: ***
+run (26) |   ssh-strict: true
+run (26) |   ssh-user: git
+run (26) |   persist-credentials: true
+run (26) |   clean: true
+run (26) |   sparse-checkout-cone-mode: true
+run (26) |   fetch-depth: 1
+run (26) |   fetch-tags: false
+run (26) |   show-progress: true
+run (26) |   lfs: false
+run (26) |   submodules: false
+run (26) |   set-safe-directory: true
+run (26) |   allow-unsafe-pr-checkout: false
+run (26) | ##[endgroup]
+run (26) | Syncing repository: nils44344/nk-repro
+run (26) | ##[group]Getting Git version info
+run (26) | Working directory is '/home/runner/work/nk-repro/nk-repro'
+run (26) | [command]/usr/bin/git version
+run (26) | git version 2.56.0
+run (26) | ##[endgroup]
+run (26) | Temporarily overriding HOME='/home/runner/work/_temp/fed20106-115a-48c7-adf2-fc632e7ce994' before making global git config changes
+run (26) | Adding repository directory to the temporary git global config as a safe directory
+run (26) | [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nk-repro/nk-repro
+run (26) | Deleting the contents of '/home/runner/work/nk-repro/nk-repro'
+run (26) | ##[group]Initializing the repository
+run (26) | [command]/usr/bin/git init /home/runner/work/nk-repro/nk-repro
+run (26) | hint: Using 'master' as the name for the initial branch. This default branch name
+run (26) | hint: will change to "main" in Git 3.0. To configure the initial branch name
+run (26) | hint: to use in all of your new repositories, which will suppress this warning,
+run (26) | hint: call:
+run (26) | hint:
+run (26) | hint: 	git config --global init.defaultBranch <name>
+run (26) | hint:
+run (26) | hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+run (26) | hint: 'development'. The just-created branch can be renamed via this command:
+run (26) | hint:
+run (26) | hint: 	git branch -m <name>
+run (26) | hint:
+run (26) | hint: Disable this message with "git config set advice.defaultBranchName false"
+run (26) | Initialized empty Git repository in /home/runner/work/nk-repro/nk-repro/.git/
+run (26) | [command]/usr/bin/git remote add origin https://github.com/nils44344/nk-repro
+run (26) | ##[endgroup]
+run (26) | ##[group]Disabling automatic garbage collection
+run (26) | [command]/usr/bin/git config --local gc.auto 0
+run (26) | ##[endgroup]
+run (26) | ##[group]Setting up auth
+run (26) | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+run (26) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+run (26) | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+run (26) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+run (26) | [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+run (26) | [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+run (26) | [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+run (26) | ##[endgroup]
+run (26) | ##[group]Fetching the repository
+run (26) | [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a69f0b8b2d6f751f21a478a795f3313e5758764a:refs/remotes/origin/main
+run (26) | From https://github.com/nils44344/nk-repro
+run (26) |  * [new ref]         a69f0b8b2d6f751f21a478a795f3313e5758764a -> origin/main
+run (26) | ##[endgroup]
+run (26) | ##[group]Determining the checkout info
+run (26) | ##[endgroup]
+run (26) | [command]/usr/bin/git sparse-checkout disable
+run (26) | [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+run (26) | ##[group]Checking out the ref
+run (26) | [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+run (26) | Switched to a new branch 'main'
+run (26) | branch 'main' set up to track 'origin/main'.
+run (26) | ##[endgroup]
+run (26) | [command]/usr/bin/git log -1 --format=%H
+run (26) | a69f0b8b2d6f751f21a478a795f3313e5758764a
+run (26)	Run actions/setup-node@v4	﻿2026-10-31T16:29:31.5006386Z ##[group]Run actions/setup-node@v4
+run (26) | with:
+run (26) |   node-version: 26
+run (26) |   always-auth: false
+run (26) |   check-latest: false
+run (26) |   token: ***
+run (26) | ##[endgroup]
+run (26) | Attempting to download 26...
+run (26) | (node:2341) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+run (26) | (Use `node --trace-deprecation ...` to show where the warning was created)
+run (26) | Acquiring 26.13.0 - x64 from https://github.com/actions/node-versions/releases/download/26.13.0-40806794713/node-26.13.0-linux-x64.tar.gz
+run (26) | Extracting ...
+run (26) | [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/b617bc8d-241a-405e-8c7e-030551113dda -f /home/runner/work/_temp/28ec5fd9-35ed-481b-96fc-130e017aa19a
+run (26) | Adding to the cache ...
+run (26) | ##[group]Environment details
+run (26) | node: v26.13.0
+run (26) | npm: 11.20.0
+run (26) | yarn: 1.22.22
+run (26) | ##[endgroup]
+run (26)	Run W=$RUNNER_TEMP/work bash require-esm/run.sh	﻿2026-10-31T16:29:35.5706421Z ##[group]Run W=$RUNNER_TEMP/work bash require-esm/run.sh
+run (26) | ^[[36;1mW=$RUNNER_TEMP/work bash require-esm/run.sh^[[0m
+run (26) | shell: /usr/bin/bash -e {0}
+run (26) | ##[endgroup]
+run (26) | == node v26.13.0
+run (26) | added 2 packages in 984ms
+run (26) | -- require('chalk') of ESM-only chalk 5
+run (26) | require ok, chalk.green is undefined
+run (26) | -- require('chalk').default
+run (26) | require(...).default.green: function
+run (26) | -- dynamic import() from CommonJS
+run (26) | dynamic import ok: function
+run (26) | -- require() of an ES module with top-level await
+run (26) | node:internal/modules/esm/module_job:314
+run (26) |     throw new ERR_REQUIRE_ASYNC_MODULE(filename, parent, locations);
+run (26) |     ^
+run (26) | Error [ERR_REQUIRE_ASYNC_MODULE]: require() cannot be used on an ESM graph with top-level await. Use import() instead. To see where the top-level await comes from, use --experimental-print-required-tla.
+run (26) | -- import() of the same module
+run (26) | import() of top-level-await module: 42
+run (26) | -- top-level await inside a .cjs file
+run (26) | (node:2488) Warning: Failed to load the ES module: /home/runner/work/_temp/work/f.cjs. Make sure to set "type": "module" in the nearest package.json file or use the .mjs extension.
+run (26) | (Use `node --trace-warnings ...` to show where the warning was created)
+run (26) | /home/runner/work/_temp/work/f.cjs:1
+run (26) | const x = await Promise.resolve(1); console.log(x);
+run (26) | error TS5107: Option 'moduleResolution=node10' is deprecated and will stop functioning in TypeScript 7.0. Specify compilerOption '"ignoreDeprecations": "6.0"' to silence this error.
+run (26) |   Visit https://aka.ms/ts6 for migration information.
+run (26) | -- TypeScript compiled to CommonJS (import chalk -> require)
+run (26) | ts->cjs: function
+run (26) | == done
+run (26)	Post Run actions/setup-node@v4	﻿2026-10-31T16:29:38.0733123Z Post job cleanup.
+run (26) | (node:2530) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+run (26) | (Use `node --trace-deprecation ...` to show where the warning was created)
+run (26)	Post Run actions/checkout@v4	﻿2026-10-31T16:29:38.2158409Z Post job cleanup.
+run (26) | [command]/usr/bin/git version
+run (26) | git version 2.56.0
+run (26) | Temporarily overriding HOME='/home/runner/work/_temp/10dc8272-0092-470f-8212-4462813dda58' before making global git config changes
+run (26) | Adding repository directory to the temporary git global config as a safe directory
+run (26) | [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nk-repro/nk-repro
+run (26) | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+run (26) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+run (26) | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+run (26) | http.https://github.com/.extraheader
+run (26) | [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+run (26) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+run (26) | [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+run (26) | [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+run (26)	Complete job	﻿2026-10-31T16:29:38.4436974Z Cleaning up orphan processes
+run (26) | ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+run (20)	Set up job	﻿2026-10-31T16:29:29.8490050Z Current runner version: '2.338.2'
+run (20) | ##[group]Runner Image Provisioner
+run (20) | Hosted Compute Agent
+run (20) | Version: 20261021.618
+run (20) | Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+run (20) | Build Date: 2026-10-21T00:45:21Z
+run (20) | Worker ID: {c740e8a0-b89b-4471-b1d7-cc0d48b64aed}
+run (20) | Region: centralus
+run (20) | Cloud: Azure
+run (20) | ##[endgroup]
+run (20) | ##[group]Operating System
+run (20) | Ubuntu
+run (20) | 26.04.1
+run (20) | LTS
+run (20) | ##[endgroup]
+run (20) | ##[group]Runner Image
+run (20) | Image: ubuntu-26.04
+run (20) | Version: 20261025.179.1
+run (20) | Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261025.179/images/ubuntu/Ubuntu2604-Readme.md
+run (20) | Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261025.179
+run (20) | ##[endgroup]
+run (20) | ##[group]GITHUB_TOKEN Permissions
+run (20) | Contents: read
+run (20) | Metadata: read
+run (20) | ##[endgroup]
+run (20) | Secret source: Actions
+run (20) | Cache mode: write
+run (20) | Prepare workflow directory
+run (20) | Prepare all required actions
+run (20) | Getting action download info
+run (20) | Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+run (20) | Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+run (20) | Complete job name: run (20)
+run (20)	Run actions/checkout@v4	﻿2026-10-31T16:29:30.4357840Z ##[group]Run actions/checkout@v4
+run (20) | with:
+run (20) |   repository: nils44344/nk-repro
+run (20) |   token: ***
+run (20) |   ssh-strict: true
+run (20) |   ssh-user: git
+run (20) |   persist-credentials: true
+run (20) |   clean: true
+run (20) |   sparse-checkout-cone-mode: true
+run (20) |   fetch-depth: 1
+run (20) |   fetch-tags: false
+run (20) |   show-progress: true
+run (20) |   lfs: false
+run (20) |   submodules: false
+run (20) |   set-safe-directory: true
+run (20) |   allow-unsafe-pr-checkout: false
+run (20) | ##[endgroup]
+run (20) | Syncing repository: nils44344/nk-repro
+run (20) | ##[group]Getting Git version info
+run (20) | Working directory is '/home/runner/work/nk-repro/nk-repro'
+run (20) | [command]/usr/bin/git version
+run (20) | git version 2.56.0
+run (20) | ##[endgroup]
+run (20) | Temporarily overriding HOME='/home/runner/work/_temp/4a415b33-5f0c-478b-9423-fac376e45497' before making global git config changes
+run (20) | Adding repository directory to the temporary git global config as a safe directory
+run (20) | [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nk-repro/nk-repro
+run (20) | Deleting the contents of '/home/runner/work/nk-repro/nk-repro'
+run (20) | ##[group]Initializing the repository
+run (20) | [command]/usr/bin/git init /home/runner/work/nk-repro/nk-repro
+run (20) | hint: Using 'master' as the name for the initial branch. This default branch name
+run (20) | hint: will change to "main" in Git 3.0. To configure the initial branch name
+run (20) | hint: to use in all of your new repositories, which will suppress this warning,
+run (20) | hint: call:
+run (20) | hint:
+run (20) | hint: 	git config --global init.defaultBranch <name>
+run (20) | hint:
+run (20) | hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+run (20) | hint: 'development'. The just-created branch can be renamed via this command:
+run (20) | hint:
+run (20) | hint: 	git branch -m <name>
+run (20) | hint:
+run (20) | hint: Disable this message with "git config set advice.defaultBranchName false"
+run (20) | Initialized empty Git repository in /home/runner/work/nk-repro/nk-repro/.git/
+run (20) | [command]/usr/bin/git remote add origin https://github.com/nils44344/nk-repro
+run (20) | ##[endgroup]
+run (20) | ##[group]Disabling automatic garbage collection
+run (20) | [command]/usr/bin/git config --local gc.auto 0
+run (20) | ##[endgroup]
+run (20) | ##[group]Setting up auth
+run (20) | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+run (20) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+run (20) | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+run (20) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+run (20) | [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+run (20) | [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+run (20) | [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+run (20) | ##[endgroup]
+run (20) | ##[group]Fetching the repository
+run (20) | [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a69f0b8b2d6f751f21a478a795f3313e5758764a:refs/remotes/origin/main
+run (20) | From https://github.com/nils44344/nk-repro
+run (20) |  * [new ref]         a69f0b8b2d6f751f21a478a795f3313e5758764a -> origin/main
+run (20) | ##[endgroup]
+run (20) | ##[group]Determining the checkout info
+run (20) | ##[endgroup]
+run (20) | [command]/usr/bin/git sparse-checkout disable
+run (20) | [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+run (20) | ##[group]Checking out the ref
+run (20) | [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+run (20) | Switched to a new branch 'main'
+run (20) | branch 'main' set up to track 'origin/main'.
+run (20) | ##[endgroup]
+run (20) | [command]/usr/bin/git log -1 --format=%H
+run (20) | a69f0b8b2d6f751f21a478a795f3313e5758764a
+run (20)	Run actions/setup-node@v4	﻿2026-10-31T16:29:31.1482420Z ##[group]Run actions/setup-node@v4
+run (20) | with:
+run (20) |   node-version: 20
+run (20) |   always-auth: false
+run (20) |   check-latest: false
+run (20) |   token: ***
+run (20) | ##[endgroup]
+run (20) | Attempting to download 20...
+run (20) | (node:2160) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+run (20) | (Use `node --trace-deprecation ...` to show where the warning was created)
+run (20) | Acquiring 20.20.2 - x64 from https://github.com/actions/node-versions/releases/download/20.20.2-23521894959/node-20.20.2-linux-x64.tar.gz
+run (20) | Extracting ...
+run (20) | [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/fd744561-e940-4c80-a550-a2966044087d -f /home/runner/work/_temp/4b1e3f3f-1815-41af-9519-7b9140a26ea0
+run (20) | Adding to the cache ...
+run (20) | ##[group]Environment details
+run (20) | node: v20.20.2
+run (20) | npm: 10.8.2
+run (20) | yarn: 1.22.22
+run (20) | ##[endgroup]
+run (20)	Run W=$RUNNER_TEMP/work bash require-esm/run.sh	﻿2026-10-31T16:29:34.7617888Z ##[group]Run W=$RUNNER_TEMP/work bash require-esm/run.sh
+run (20) | ^[[36;1mW=$RUNNER_TEMP/work bash require-esm/run.sh^[[0m
+run (20) | shell: /usr/bin/bash -e {0}
+run (20) | ##[endgroup]
+run (20) | == node v20.20.2
+run (20) | added 2 packages in 967ms
+run (20) | -- require('chalk') of ESM-only chalk 5
+run (20) | require ok, chalk.green is undefined
+run (20) | -- require('chalk').default
+run (20) | require(...).default.green: function
+run (20) | -- dynamic import() from CommonJS
+run (20) | dynamic import ok: function
+run (20) | -- require() of an ES module with top-level await
+run (20) | node:internal/modules/esm/module_job:433
+run (20) |       throw new ERR_REQUIRE_ASYNC_MODULE(filename, parentFilename);
+run (20) |       ^
+run (20) | Error [ERR_REQUIRE_ASYNC_MODULE]: require() cannot be used on an ESM graph with top-level await. Use import() instead. To see where the top-level await comes from, use --experimental-print-required-tla.
+run (20) | -- import() of the same module
+run (20) | import() of top-level-await module: 42
+run (20) | -- top-level await inside a .cjs file
+run (20) | (node:2283) Warning: To load an ES module, set "type": "module" in the package.json or use the .mjs extension.
+run (20) | (Use `node --trace-warnings ...` to show where the warning was created)
+run (20) | /home/runner/work/_temp/work/f.cjs:1
+run (20) | const x = await Promise.resolve(1); console.log(x);
+run (20) | error TS5107: Option 'moduleResolution=node10' is deprecated and will stop functioning in TypeScript 7.0. Specify compilerOption '"ignoreDeprecations": "6.0"' to silence this error.
+run (20) |   Visit https://aka.ms/ts6 for migration information.
+run (20) | -- TypeScript compiled to CommonJS (import chalk -> require)
+run (20) | ts->cjs: function
+run (20) | == done
+run (20)	Post Run actions/setup-node@v4	﻿2026-10-31T16:29:36.9319142Z Post job cleanup.
+run (20) | (node:2324) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+run (20) | (Use `node --trace-deprecation ...` to show where the warning was created)
+run (20)	Post Run actions/checkout@v4	﻿2026-10-31T16:29:37.0541326Z Post job cleanup.
+run (20) | [command]/usr/bin/git version
+run (20) | git version 2.56.0
+run (20) | Temporarily overriding HOME='/home/runner/work/_temp/e2bd3ec0-0774-404e-a96d-11a6228c814a' before making global git config changes
+run (20) | Adding repository directory to the temporary git global config as a safe directory
+run (20) | [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nk-repro/nk-repro
+run (20) | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+run (20) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+run (20) | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+run (20) | http.https://github.com/.extraheader
+run (20) | [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+run (20) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+run (20) | [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+run (20) | [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+run (20)	Complete job	﻿2026-10-31T16:29:37.2206680Z Cleaning up orphan processes
+run (20) | ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+run (22.12.0)	Set up job	﻿2026-10-31T16:29:29.6366651Z Current runner version: '2.338.2'
+run (22.12.0) | ##[group]Runner Image Provisioner
+run (22.12.0) | Hosted Compute Agent
+run (22.12.0) | Version: 20261021.618
+run (22.12.0) | Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+run (22.12.0) | Build Date: 2026-10-21T00:45:21Z
+run (22.12.0) | Worker ID: {888e0556-400e-45d3-8d7c-3950f33413da}
+run (22.12.0) | Region: southcentralus
+run (22.12.0) | Cloud: Azure
+run (22.12.0) | ##[endgroup]
+run (22.12.0) | ##[group]Operating System
+run (22.12.0) | Ubuntu
+run (22.12.0) | 26.04.1
+run (22.12.0) | LTS
+run (22.12.0) | ##[endgroup]
+run (22.12.0) | ##[group]Runner Image
+run (22.12.0) | Image: ubuntu-26.04
+run (22.12.0) | Version: 20261025.179.1
+run (22.12.0) | Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261025.179/images/ubuntu/Ubuntu2604-Readme.md
+run (22.12.0) | Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261025.179
+run (22.12.0) | ##[endgroup]
+run (22.12.0) | ##[group]GITHUB_TOKEN Permissions
+run (22.12.0) | Contents: read
+run (22.12.0) | Metadata: read
+run (22.12.0) | ##[endgroup]
+run (22.12.0) | Secret source: Actions
+run (22.12.0) | Cache mode: write
+run (22.12.0) | Prepare workflow directory
+run (22.12.0) | Prepare all required actions
+run (22.12.0) | Getting action download info
+run (22.12.0) | Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+run (22.12.0) | Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+run (22.12.0) | Complete job name: run (22.12.0)
+run (22.12.0)	Run actions/checkout@v4	﻿2026-10-31T16:29:30.2248197Z ##[group]Run actions/checkout@v4
+run (22.12.0) | with:
+run (22.12.0) |   repository: nils44344/nk-repro
+run (22.12.0) |   token: ***
+run (22.12.0) |   ssh-strict: true
+run (22.12.0) |   ssh-user: git
+run (22.12.0) |   persist-credentials: true
+run (22.12.0) |   clean: true
+run (22.12.0) |   sparse-checkout-cone-mode: true
+run (22.12.0) |   fetch-depth: 1
+run (22.12.0) |   fetch-tags: false
+run (22.12.0) |   show-progress: true
+run (22.12.0) |   lfs: false
+run (22.12.0) |   submodules: false
+run (22.12.0) |   set-safe-directory: true
+run (22.12.0) |   allow-unsafe-pr-checkout: false
+run (22.12.0) | ##[endgroup]
+run (22.12.0) | Syncing repository: nils44344/nk-repro
+run (22.12.0) | ##[group]Getting Git version info
+run (22.12.0) | Working directory is '/home/runner/work/nk-repro/nk-repro'
+run (22.12.0) | [command]/usr/bin/git version
+run (22.12.0) | git version 2.56.0
+run (22.12.0) | ##[endgroup]
+run (22.12.0) | Temporarily overriding HOME='/home/runner/work/_temp/a6b462b0-db9c-455e-b308-3363f54b8bfb' before making global git config changes
+run (22.12.0) | Adding repository directory to the temporary git global config as a safe directory
+run (22.12.0) | [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nk-repro/nk-repro
+run (22.12.0) | Deleting the contents of '/home/runner/work/nk-repro/nk-repro'
+run (22.12.0) | ##[group]Initializing the repository
+run (22.12.0) | [command]/usr/bin/git init /home/runner/work/nk-repro/nk-repro
+run (22.12.0) | hint: Using 'master' as the name for the initial branch. This default branch name
+run (22.12.0) | hint: will change to "main" in Git 3.0. To configure the initial branch name
+run (22.12.0) | hint: to use in all of your new repositories, which will suppress this warning,
+run (22.12.0) | hint: call:
+run (22.12.0) | hint:
+run (22.12.0) | hint: 	git config --global init.defaultBranch <name>
+run (22.12.0) | hint:
+run (22.12.0) | hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+run (22.12.0) | hint: 'development'. The just-created branch can be renamed via this command:
+run (22.12.0) | hint:
+run (22.12.0) | hint: 	git branch -m <name>
+run (22.12.0) | hint:
+run (22.12.0) | hint: Disable this message with "git config set advice.defaultBranchName false"
+run (22.12.0) | Initialized empty Git repository in /home/runner/work/nk-repro/nk-repro/.git/
+run (22.12.0) | [command]/usr/bin/git remote add origin https://github.com/nils44344/nk-repro
+run (22.12.0) | ##[endgroup]
+run (22.12.0) | ##[group]Disabling automatic garbage collection
+run (22.12.0) | [command]/usr/bin/git config --local gc.auto 0
+run (22.12.0) | ##[endgroup]
+run (22.12.0) | ##[group]Setting up auth
+run (22.12.0) | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+run (22.12.0) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+run (22.12.0) | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+run (22.12.0) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+run (22.12.0) | [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+run (22.12.0) | [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+run (22.12.0) | [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+run (22.12.0) | ##[endgroup]
+run (22.12.0) | ##[group]Fetching the repository
+run (22.12.0) | [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a69f0b8b2d6f751f21a478a795f3313e5758764a:refs/remotes/origin/main
+run (22.12.0) | From https://github.com/nils44344/nk-repro
+run (22.12.0) |  * [new ref]         a69f0b8b2d6f751f21a478a795f3313e5758764a -> origin/main
+run (22.12.0) | ##[endgroup]
+run (22.12.0) | ##[group]Determining the checkout info
+run (22.12.0) | ##[endgroup]
+run (22.12.0) | [command]/usr/bin/git sparse-checkout disable
+run (22.12.0) | [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+run (22.12.0) | ##[group]Checking out the ref
+run (22.12.0) | [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+run (22.12.0) | Switched to a new branch 'main'
+run (22.12.0) | branch 'main' set up to track 'origin/main'.
+run (22.12.0) | ##[endgroup]
+run (22.12.0) | [command]/usr/bin/git log -1 --format=%H
+run (22.12.0) | a69f0b8b2d6f751f21a478a795f3313e5758764a
+run (22.12.0)	Run actions/setup-node@v4	﻿2026-10-31T16:29:31.0860020Z ##[group]Run actions/setup-node@v4
+run (22.12.0) | with:
+run (22.12.0) |   node-version: 22.12.0
+run (22.12.0) |   always-auth: false
+run (22.12.0) |   check-latest: false
+run (22.12.0) |   token: ***
+run (22.12.0) | ##[endgroup]
+run (22.12.0) | Attempting to download 22.12.0...
+run (22.12.0) | (node:2149) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+run (22.12.0) | (Use `node --trace-deprecation ...` to show where the warning was created)
+run (22.12.0) | Acquiring 22.12.0 - x64 from https://github.com/actions/node-versions/releases/download/22.12.0-12152383658/node-22.12.0-linux-x64.tar.gz
+run (22.12.0) | Extracting ...
+run (22.12.0) | [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/1aa114fd-00a9-410d-bfad-01448af4c607 -f /home/runner/work/_temp/b35636d1-a48e-4e96-82a0-9757e3d0f35f
+run (22.12.0) | Adding to the cache ...
+run (22.12.0) | ##[group]Environment details
+run (22.12.0) | node: v22.12.0
+run (22.12.0) | npm: 10.9.0
+run (22.12.0) | yarn: 1.22.22
+run (22.12.0) | ##[endgroup]
+run (22.12.0)	Run W=$RUNNER_TEMP/work bash require-esm/run.sh	﻿2026-10-31T16:29:34.8754905Z ##[group]Run W=$RUNNER_TEMP/work bash require-esm/run.sh
+run (22.12.0) | ^[[36;1mW=$RUNNER_TEMP/work bash require-esm/run.sh^[[0m
+run (22.12.0) | shell: /usr/bin/bash -e {0}
+run (22.12.0) | ##[endgroup]
+run (22.12.0) | == node v22.12.0
+run (22.12.0) | added 2 packages in 772ms
+run (22.12.0) | -- require('chalk') of ESM-only chalk 5
+run (22.12.0) | require ok, chalk.green is undefined
+run (22.12.0) | (node:2213) ExperimentalWarning: CommonJS module /home/runner/work/_temp/work/a.cjs is loading ES Module /home/runner/work/_temp/work/node_modules/chalk/source/index.js using require().
+run (22.12.0) | Support for loading ES Module in require() is an experimental feature and might change at any time
+run (22.12.0) | (Use `node --trace-warnings ...` to show where the warning was created)
+run (22.12.0) | -- require('chalk').default
+run (22.12.0) | require(...).default.green: function
+run (22.12.0) | (node:2223) ExperimentalWarning: CommonJS module /home/runner/work/_temp/work/b.cjs is loading ES Module /home/runner/work/_temp/work/node_modules/chalk/source/index.js using require().
+run (22.12.0) | Support for loading ES Module in require() is an experimental feature and might change at any time
+run (22.12.0) | (Use `node --trace-warnings ...` to show where the warning was created)
+run (22.12.0) | -- dynamic import() from CommonJS
+run (22.12.0) | dynamic import ok: function
+run (22.12.0) | -- require() of an ES module with top-level await
+run (22.12.0) | node:internal/modules/esm/module_job:392
+run (22.12.0) |       throw new ERR_REQUIRE_ASYNC_MODULE();
+run (22.12.0) |       ^
+run (22.12.0) | Error [ERR_REQUIRE_ASYNC_MODULE]: require() cannot be used on an ESM graph with top-level await. Use import() instead. To see where the top-level await comes from, use --experimental-print-required-tla.
+run (22.12.0) | -- import() of the same module
+run (22.12.0) | import() of top-level-await module: 42
+run (22.12.0) | -- top-level await inside a .cjs file
+run (22.12.0) | (node:2272) Warning: To load an ES module, set "type": "module" in the package.json or use the .mjs extension.
+run (22.12.0) | (Use `node --trace-warnings ...` to show where the warning was created)
+run (22.12.0) | /home/runner/work/_temp/work/f.cjs:1
+run (22.12.0) | const x = await Promise.resolve(1); console.log(x);
+run (22.12.0) | error TS5107: Option 'moduleResolution=node10' is deprecated and will stop functioning in TypeScript 7.0. Specify compilerOption '"ignoreDeprecations": "6.0"' to silence this error.
+run (22.12.0) |   Visit https://aka.ms/ts6 for migration information.
+run (22.12.0) | -- TypeScript compiled to CommonJS (import chalk -> require)
+run (22.12.0) | ts->cjs: function
+run (22.12.0) | (node:2304) ExperimentalWarning: CommonJS module /home/runner/work/_temp/work/out/g.cjs is loading ES Module /home/runner/work/_temp/work/node_modules/chalk/source/index.js using require().
+run (22.12.0) | Support for loading ES Module in require() is an experimental feature and might change at any time
+run (22.12.0) | (Use `node --trace-warnings ...` to show where the warning was created)
+run (22.12.0) | == done
+run (22.12.0)	Post Run actions/setup-node@v4	﻿2026-10-31T16:29:36.6673315Z Post job cleanup.
+run (22.12.0) | (node:2314) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+run (22.12.0) | (Use `node --trace-deprecation ...` to show where the warning was created)
+run (22.12.0)	Post Run actions/checkout@v4	﻿2026-10-31T16:29:36.7785558Z Post job cleanup.
+run (22.12.0) | [command]/usr/bin/git version
+run (22.12.0) | git version 2.56.0
+run (22.12.0) | Temporarily overriding HOME='/home/runner/work/_temp/3f1722c0-dff4-4a02-b69b-d7b0e444bd43' before making global git config changes
+run (22.12.0) | Adding repository directory to the temporary git global config as a safe directory
+run (22.12.0) | [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nk-repro/nk-repro
+run (22.12.0) | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+run (22.12.0) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+run (22.12.0) | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+run (22.12.0) | http.https://github.com/.extraheader
+run (22.12.0) | [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+run (22.12.0) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+run (22.12.0) | [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+run (22.12.0) | [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+run (22.12.0)	Complete job	﻿2026-10-31T16:29:37.0170197Z Cleaning up orphan processes
+run (22.12.0) | ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
