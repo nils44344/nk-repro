@@ -1,0 +1,48 @@
+== Sat Oct 31 09:41:13 IST 2026 node v24.14.0 typescript@7.1.0-beta
+
+######## vue-tsc
+
+added 40 packages in 24s
+Version 7.1.0-beta
+vue@1.0.0 <work>\fw\vue
++-- vue-tsc@3.3.14
+`-- vue@3.5.44
+<work>\fw\vue\node_modules\vue-tsc\index.js:68
+                throw err;
+                ^
+
+vue-tsc exit 1
+
+######## svelte-check
+
+added 29 packages in 51s
+svelte@1.0.0 <work>\fw\svelte
++-- svelte-check@4.7.7
+| `-- svelte@5.57.3 deduped
+`-- svelte@5.57.3
+<work>\fw\svelte\node_modules\svelte-check\bin\ts-version-check.js:38
+    throw new Error(message);
+    ^
+Error: TypeScript 7 support currently requires both TypeScript 7 and TypeScript 6 installed in your project, and requires using the --tsgo or --tsgo-experimental-api flag. You can setup both version with an npm alias via the following command.
+npm install --save-dev typescript@~6 @typescript/native@npm:typescript@7
+
+######## astro check
+
+added 266 packages in 4m
+astro@1.0.0 <work>\fw\astro
++-- @astrojs/check@0.9.12
+`-- astro@7.4.4
+[31m[1m09:47:09[22m [ERROR] [check][39m astro check does not currently support TypeScript 7.0. To continue using astro check, install TypeScript 6 instead.
+astro check will be deprecated in a future Astro release. Experimental support for type-checking Astro files with TypeScript 7.1+ is available through @astrojs/ts-content-mapper. See its README for setup instructions:
+https://github.com/withastro/astro/tree/main/packages/language-tools/ts-content-mapper#usage
+
+######## Angular
+Please update your Node.js version or visit https://nodejs.org/ for additional instructions.
+
+D:/nk-repro-public/ts71/frameworks.sh: line 32: cd: ang: No such file or directory
+
+added 2 packages in 27s
+Version 7.1.0-beta
+npm error could not determine executable to run
+npm error A complete log of this run can be found in: D:\npm-cache\_logs\2026-10-31T04_18_55_540Z-debug-0.log
+== done Sat Oct 31 09:48:57 IST 2026

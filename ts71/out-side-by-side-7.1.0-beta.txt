@@ -1,0 +1,21 @@
+added 1 package, and changed 1 package in 30s
+== svelte-check (no flag)
+1793420539846 START "d:\\nk-ts71\\fw\\svelte"
+1793420539849 COMPLETED 111 FILES 0 ERRORS 0 WARNINGS 0 FILES_WITH_PROBLEMS
+== svelte-check --tsgo
+1793420570947 START "d:\\nk-ts71\\fw\\svelte"
+1793420570947 COMPLETED 1 FILES 0 ERRORS 0 WARNINGS 0 FILES_WITH_PROBLEMS
+== svelte-check --tsgo-experimental-api
+    at SvelteCheck.initialize (<work>\fw\svelte\node_modules\svelte-check\dist\src\index.js:135309:48)
+    at new SvelteCheck (<work>\fw\svelte\node_modules\svelte-check\dist\src\index.js:135267:14)
+    at <work>\fw\svelte\node_modules\svelte-check\dist\src\index.js:143319:33
+svelte-check failed
+== with a type error, --tsgo-experimental-api
+    at new SvelteCheckTSGoDiagnosticsProvider (<work>\fw\svelte\node_modules\svelte-check\dist\src\index.js:134412:20)
+    at SvelteCheck.initialize (<work>\fw\svelte\node_modules\svelte-check\dist\src\index.js:135309:48)
+    at new SvelteCheck (<work>\fw\svelte\node_modules\svelte-check\dist\src\index.js:135267:14)
+    at <work>\fw\svelte\node_modules\svelte-check\dist\src\index.js:143319:33
+svelte-check failed
+added 1 package, and changed 1 package in 59s
+== vue-tsc side-by-side
+vue-tsc exit 0
