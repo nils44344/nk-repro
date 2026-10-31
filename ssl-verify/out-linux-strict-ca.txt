@@ -1,0 +1,729 @@
+strict-ca (3.13)	Set up job	﻿2026-10-31T15:30:32.0134320Z Current runner version: '2.338.2'
+strict-ca (3.13) | ##[group]Runner Image Provisioner
+strict-ca (3.13) | Hosted Compute Agent
+strict-ca (3.13) | Version: 20261021.618
+strict-ca (3.13) | Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+strict-ca (3.13) | Build Date: 2026-10-21T00:45:21Z
+strict-ca (3.13) | Worker ID: {0ebc9c4e-44a7-4e0e-8ce9-3be7cb4fd860}
+strict-ca (3.13) | Region: westus3
+strict-ca (3.13) | Cloud: Azure
+strict-ca (3.13) | ##[endgroup]
+strict-ca (3.13) | ##[group]Operating System
+strict-ca (3.13) | Ubuntu
+strict-ca (3.13) | 26.04.1
+strict-ca (3.13) | LTS
+strict-ca (3.13) | ##[endgroup]
+strict-ca (3.13) | ##[group]Runner Image
+strict-ca (3.13) | Image: ubuntu-26.04
+strict-ca (3.13) | Version: 20261025.179.1
+strict-ca (3.13) | Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261025.179/images/ubuntu/Ubuntu2604-Readme.md
+strict-ca (3.13) | Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261025.179
+strict-ca (3.13) | ##[endgroup]
+strict-ca (3.13) | ##[group]GITHUB_TOKEN Permissions
+strict-ca (3.13) | Contents: read
+strict-ca (3.13) | Metadata: read
+strict-ca (3.13) | ##[endgroup]
+strict-ca (3.13) | Secret source: Actions
+strict-ca (3.13) | Cache mode: write
+strict-ca (3.13) | Prepare workflow directory
+strict-ca (3.13) | Prepare all required actions
+strict-ca (3.13) | Getting action download info
+strict-ca (3.13) | Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+strict-ca (3.13) | Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+strict-ca (3.13) | Complete job name: strict-ca (3.13)
+strict-ca (3.13)	Run actions/checkout@v4	﻿2026-10-31T15:30:32.7170440Z ##[group]Run actions/checkout@v4
+strict-ca (3.13) | with:
+strict-ca (3.13) |   repository: nils44344/nk-repro
+strict-ca (3.13) |   token: ***
+strict-ca (3.13) |   ssh-strict: true
+strict-ca (3.13) |   ssh-user: git
+strict-ca (3.13) |   persist-credentials: true
+strict-ca (3.13) |   clean: true
+strict-ca (3.13) |   sparse-checkout-cone-mode: true
+strict-ca (3.13) |   fetch-depth: 1
+strict-ca (3.13) |   fetch-tags: false
+strict-ca (3.13) |   show-progress: true
+strict-ca (3.13) |   lfs: false
+strict-ca (3.13) |   submodules: false
+strict-ca (3.13) |   set-safe-directory: true
+strict-ca (3.13) |   allow-unsafe-pr-checkout: false
+strict-ca (3.13) | ##[endgroup]
+strict-ca (3.13) | Syncing repository: nils44344/nk-repro
+strict-ca (3.13) | ##[group]Getting Git version info
+strict-ca (3.13) | Working directory is '/home/runner/work/nk-repro/nk-repro'
+strict-ca (3.13) | [command]/usr/bin/git version
+strict-ca (3.13) | git version 2.56.0
+strict-ca (3.13) | ##[endgroup]
+strict-ca (3.13) | Temporarily overriding HOME='/home/runner/work/_temp/276cd026-4cf2-4c89-82ae-85a980ac09c7' before making global git config changes
+strict-ca (3.13) | Adding repository directory to the temporary git global config as a safe directory
+strict-ca (3.13) | [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nk-repro/nk-repro
+strict-ca (3.13) | Deleting the contents of '/home/runner/work/nk-repro/nk-repro'
+strict-ca (3.13) | ##[group]Initializing the repository
+strict-ca (3.13) | [command]/usr/bin/git init /home/runner/work/nk-repro/nk-repro
+strict-ca (3.13) | hint: Using 'master' as the name for the initial branch. This default branch name
+strict-ca (3.13) | hint: will change to "main" in Git 3.0. To configure the initial branch name
+strict-ca (3.13) | hint: to use in all of your new repositories, which will suppress this warning,
+strict-ca (3.13) | hint: call:
+strict-ca (3.13) | hint:
+strict-ca (3.13) | hint: 	git config --global init.defaultBranch <name>
+strict-ca (3.13) | hint:
+strict-ca (3.13) | hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+strict-ca (3.13) | hint: 'development'. The just-created branch can be renamed via this command:
+strict-ca (3.13) | hint:
+strict-ca (3.13) | hint: 	git branch -m <name>
+strict-ca (3.13) | hint:
+strict-ca (3.13) | hint: Disable this message with "git config set advice.defaultBranchName false"
+strict-ca (3.13) | Initialized empty Git repository in /home/runner/work/nk-repro/nk-repro/.git/
+strict-ca (3.13) | [command]/usr/bin/git remote add origin https://github.com/nils44344/nk-repro
+strict-ca (3.13) | ##[endgroup]
+strict-ca (3.13) | ##[group]Disabling automatic garbage collection
+strict-ca (3.13) | [command]/usr/bin/git config --local gc.auto 0
+strict-ca (3.13) | ##[endgroup]
+strict-ca (3.13) | ##[group]Setting up auth
+strict-ca (3.13) | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+strict-ca (3.13) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+strict-ca (3.13) | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+strict-ca (3.13) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+strict-ca (3.13) | [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+strict-ca (3.13) | [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+strict-ca (3.13) | [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+strict-ca (3.13) | ##[endgroup]
+strict-ca (3.13) | ##[group]Fetching the repository
+strict-ca (3.13) | [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +94cf712a0078084dedaff87486547202f2dba62d:refs/remotes/origin/main
+strict-ca (3.13) | From https://github.com/nils44344/nk-repro
+strict-ca (3.13) |  * [new ref]         94cf712a0078084dedaff87486547202f2dba62d -> origin/main
+strict-ca (3.13) | ##[endgroup]
+strict-ca (3.13) | ##[group]Determining the checkout info
+strict-ca (3.13) | ##[endgroup]
+strict-ca (3.13) | [command]/usr/bin/git sparse-checkout disable
+strict-ca (3.13) | [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+strict-ca (3.13) | ##[group]Checking out the ref
+strict-ca (3.13) | [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+strict-ca (3.13) | Switched to a new branch 'main'
+strict-ca (3.13) | branch 'main' set up to track 'origin/main'.
+strict-ca (3.13) | ##[endgroup]
+strict-ca (3.13) | [command]/usr/bin/git log -1 --format=%H
+strict-ca (3.13) | 94cf712a0078084dedaff87486547202f2dba62d
+strict-ca (3.13)	Run actions/setup-python@v5	﻿2026-10-31T15:30:33.7468288Z ##[group]Run actions/setup-python@v5
+strict-ca (3.13) | with:
+strict-ca (3.13) |   python-version: 3.13
+strict-ca (3.13) |   allow-prereleases: true
+strict-ca (3.13) |   check-latest: false
+strict-ca (3.13) |   token: ***
+strict-ca (3.13) |   update-environment: true
+strict-ca (3.13) |   freethreaded: false
+strict-ca (3.13) | ##[endgroup]
+strict-ca (3.13) | ##[group]Installed versions
+strict-ca (3.13) | (node:2388) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+strict-ca (3.13) | (Use `node --trace-deprecation ...` to show where the warning was created)
+strict-ca (3.13) | Successfully set up CPython (3.13.17)
+strict-ca (3.13) | ##[endgroup]
+strict-ca (3.13)	Run pip install -q requests truststore	﻿2026-10-31T15:30:33.9207501Z ##[group]Run pip install -q requests truststore
+strict-ca (3.13) | ^[[36;1mpip install -q requests truststore^[[0m
+strict-ca (3.13) | shell: /usr/bin/bash -e {0}
+strict-ca (3.13) | env:
+strict-ca (3.13) |   pythonLocation: /opt/hostedtoolcache/Python/3.13.17/x64
+strict-ca (3.13) |   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.17/x64/lib/pkgconfig
+strict-ca (3.13) |   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+strict-ca (3.13) |   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+strict-ca (3.13) |   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+strict-ca (3.13) |   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.17/x64/lib
+strict-ca (3.13) | ##[endgroup]
+strict-ca (3.13)	Run bash ssl-verify/strict-ca.sh	﻿2026-10-31T15:30:36.7573577Z ##[group]Run bash ssl-verify/strict-ca.sh
+strict-ca (3.13) | ^[[36;1mbash ssl-verify/strict-ca.sh^[[0m
+strict-ca (3.13) | shell: /usr/bin/bash -e {0}
+strict-ca (3.13) | env:
+strict-ca (3.13) |   pythonLocation: /opt/hostedtoolcache/Python/3.13.17/x64
+strict-ca (3.13) |   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.17/x64/lib/pkgconfig
+strict-ca (3.13) |   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+strict-ca (3.13) |   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+strict-ca (3.13) |   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.17/x64
+strict-ca (3.13) |   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.17/x64/lib
+strict-ca (3.13) | ##[endgroup]
+strict-ca (3.13) | X509v3 Basic Constraints: 
+strict-ca (3.13) |     CA:TRUE
+strict-ca (3.13) | 127.0.0.1 - - [31/Oct/2026 15:30:39] "GET / HTTP/1.1" 200 -
+strict-ca (3.13) | python 3.13.17 | openssl OpenSSL 3.5.5 27 Jan 2026 | https://localhost:8443/
+strict-ca (3.13) | default context has VERIFY_X509_STRICT: True
+strict-ca (3.13) | urllib, default: FAILED URLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)
+strict-ca (3.13) | requests, default (certifi): FAILED SSLError: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer c
+strict-ca (3.13) | urllib, cafile=bundle: FAILED URLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1032)
+strict-ca (3.13) | urllib, cafile=bundle, strict flag off: OK
+strict-ca (3.13) | requests, verify=bundle: FAILED SSLError: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert
+strict-ca (3.13) | urllib, after truststore.inject_into_ssl(): FAILED URLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1032)
+strict-ca (3.13) | requests, after truststore.inject_into_ssl(): FAILED SSLError: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer c
+strict-ca (3.13) | == SSL_CERT_FILE=ca.pem, default urllib
+strict-ca (3.13) | urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1032)>
+strict-ca (3.13) | == requests with an HTTPAdapter whose ssl_context has the strict flag cleared
+strict-ca (3.13) | 127.0.0.1 - - [31/Oct/2026 15:30:39] "GET / HTTP/1.1" 200 -
+strict-ca (3.13) | requests with adapter OK
+strict-ca (3.13) | == CA added to the system store (update-ca-certificates), then truststore and plain urllib
+strict-ca (3.13) | requests.exceptions.SSLError: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed
+strict-ca (3.13) | urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1032)>
+strict-ca (3.13)	Post Run actions/setup-python@v5	﻿2026-10-31T15:30:41.3363044Z Post job cleanup.
+strict-ca (3.13) | (node:3357) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+strict-ca (3.13) | (Use `node --trace-deprecation ...` to show where the warning was created)
+strict-ca (3.13)	Post Run actions/checkout@v4	﻿2026-10-31T15:30:41.4836858Z Post job cleanup.
+strict-ca (3.13) | [command]/usr/bin/git version
+strict-ca (3.13) | git version 2.56.0
+strict-ca (3.13) | Temporarily overriding HOME='/home/runner/work/_temp/c4756c53-69d3-475e-ae92-d6bc4d6c95c7' before making global git config changes
+strict-ca (3.13) | Adding repository directory to the temporary git global config as a safe directory
+strict-ca (3.13) | [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nk-repro/nk-repro
+strict-ca (3.13) | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+strict-ca (3.13) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+strict-ca (3.13) | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+strict-ca (3.13) | http.https://github.com/.extraheader
+strict-ca (3.13) | [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+strict-ca (3.13) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+strict-ca (3.13) | [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+strict-ca (3.13) | [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+strict-ca (3.13)	Complete job	﻿2026-10-31T15:30:41.7189844Z Cleaning up orphan processes
+strict-ca (3.13) | ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+strict-ca (3.15)	Set up job	﻿2026-10-31T15:30:32.0974934Z Current runner version: '2.338.2'
+strict-ca (3.15) | ##[group]Runner Image Provisioner
+strict-ca (3.15) | Hosted Compute Agent
+strict-ca (3.15) | Version: 20261021.618
+strict-ca (3.15) | Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+strict-ca (3.15) | Build Date: 2026-10-21T00:45:21Z
+strict-ca (3.15) | Worker ID: {56e112d2-7eca-4c9d-8117-cec2986d3e95}
+strict-ca (3.15) | Region: westus3
+strict-ca (3.15) | Cloud: Azure
+strict-ca (3.15) | ##[endgroup]
+strict-ca (3.15) | ##[group]Operating System
+strict-ca (3.15) | Ubuntu
+strict-ca (3.15) | 26.04.1
+strict-ca (3.15) | LTS
+strict-ca (3.15) | ##[endgroup]
+strict-ca (3.15) | ##[group]Runner Image
+strict-ca (3.15) | Image: ubuntu-26.04
+strict-ca (3.15) | Version: 20261025.179.1
+strict-ca (3.15) | Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261025.179/images/ubuntu/Ubuntu2604-Readme.md
+strict-ca (3.15) | Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261025.179
+strict-ca (3.15) | ##[endgroup]
+strict-ca (3.15) | ##[group]GITHUB_TOKEN Permissions
+strict-ca (3.15) | Contents: read
+strict-ca (3.15) | Metadata: read
+strict-ca (3.15) | ##[endgroup]
+strict-ca (3.15) | Secret source: Actions
+strict-ca (3.15) | Cache mode: write
+strict-ca (3.15) | Prepare workflow directory
+strict-ca (3.15) | Prepare all required actions
+strict-ca (3.15) | Getting action download info
+strict-ca (3.15) | Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+strict-ca (3.15) | Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+strict-ca (3.15) | Complete job name: strict-ca (3.15)
+strict-ca (3.15)	Run actions/checkout@v4	﻿2026-10-31T15:30:32.7309663Z ##[group]Run actions/checkout@v4
+strict-ca (3.15) | with:
+strict-ca (3.15) |   repository: nils44344/nk-repro
+strict-ca (3.15) |   token: ***
+strict-ca (3.15) |   ssh-strict: true
+strict-ca (3.15) |   ssh-user: git
+strict-ca (3.15) |   persist-credentials: true
+strict-ca (3.15) |   clean: true
+strict-ca (3.15) |   sparse-checkout-cone-mode: true
+strict-ca (3.15) |   fetch-depth: 1
+strict-ca (3.15) |   fetch-tags: false
+strict-ca (3.15) |   show-progress: true
+strict-ca (3.15) |   lfs: false
+strict-ca (3.15) |   submodules: false
+strict-ca (3.15) |   set-safe-directory: true
+strict-ca (3.15) |   allow-unsafe-pr-checkout: false
+strict-ca (3.15) | ##[endgroup]
+strict-ca (3.15) | Syncing repository: nils44344/nk-repro
+strict-ca (3.15) | ##[group]Getting Git version info
+strict-ca (3.15) | Working directory is '/home/runner/work/nk-repro/nk-repro'
+strict-ca (3.15) | [command]/usr/bin/git version
+strict-ca (3.15) | git version 2.56.0
+strict-ca (3.15) | ##[endgroup]
+strict-ca (3.15) | Temporarily overriding HOME='/home/runner/work/_temp/7b5a91ca-3a9d-400f-a199-3e15ae5003ac' before making global git config changes
+strict-ca (3.15) | Adding repository directory to the temporary git global config as a safe directory
+strict-ca (3.15) | [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nk-repro/nk-repro
+strict-ca (3.15) | Deleting the contents of '/home/runner/work/nk-repro/nk-repro'
+strict-ca (3.15) | ##[group]Initializing the repository
+strict-ca (3.15) | [command]/usr/bin/git init /home/runner/work/nk-repro/nk-repro
+strict-ca (3.15) | hint: Using 'master' as the name for the initial branch. This default branch name
+strict-ca (3.15) | hint: will change to "main" in Git 3.0. To configure the initial branch name
+strict-ca (3.15) | hint: to use in all of your new repositories, which will suppress this warning,
+strict-ca (3.15) | hint: call:
+strict-ca (3.15) | hint:
+strict-ca (3.15) | hint: 	git config --global init.defaultBranch <name>
+strict-ca (3.15) | hint:
+strict-ca (3.15) | hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+strict-ca (3.15) | hint: 'development'. The just-created branch can be renamed via this command:
+strict-ca (3.15) | hint:
+strict-ca (3.15) | hint: 	git branch -m <name>
+strict-ca (3.15) | hint:
+strict-ca (3.15) | hint: Disable this message with "git config set advice.defaultBranchName false"
+strict-ca (3.15) | Initialized empty Git repository in /home/runner/work/nk-repro/nk-repro/.git/
+strict-ca (3.15) | [command]/usr/bin/git remote add origin https://github.com/nils44344/nk-repro
+strict-ca (3.15) | ##[endgroup]
+strict-ca (3.15) | ##[group]Disabling automatic garbage collection
+strict-ca (3.15) | [command]/usr/bin/git config --local gc.auto 0
+strict-ca (3.15) | ##[endgroup]
+strict-ca (3.15) | ##[group]Setting up auth
+strict-ca (3.15) | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+strict-ca (3.15) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+strict-ca (3.15) | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+strict-ca (3.15) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+strict-ca (3.15) | [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+strict-ca (3.15) | [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+strict-ca (3.15) | [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+strict-ca (3.15) | ##[endgroup]
+strict-ca (3.15) | ##[group]Fetching the repository
+strict-ca (3.15) | [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +94cf712a0078084dedaff87486547202f2dba62d:refs/remotes/origin/main
+strict-ca (3.15) | From https://github.com/nils44344/nk-repro
+strict-ca (3.15) |  * [new ref]         94cf712a0078084dedaff87486547202f2dba62d -> origin/main
+strict-ca (3.15) | ##[endgroup]
+strict-ca (3.15) | ##[group]Determining the checkout info
+strict-ca (3.15) | ##[endgroup]
+strict-ca (3.15) | [command]/usr/bin/git sparse-checkout disable
+strict-ca (3.15) | [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+strict-ca (3.15) | ##[group]Checking out the ref
+strict-ca (3.15) | [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+strict-ca (3.15) | Switched to a new branch 'main'
+strict-ca (3.15) | branch 'main' set up to track 'origin/main'.
+strict-ca (3.15) | ##[endgroup]
+strict-ca (3.15) | [command]/usr/bin/git log -1 --format=%H
+strict-ca (3.15) | 94cf712a0078084dedaff87486547202f2dba62d
+strict-ca (3.15)	Run actions/setup-python@v5	﻿2026-10-31T15:30:33.6718947Z ##[group]Run actions/setup-python@v5
+strict-ca (3.15) | with:
+strict-ca (3.15) |   python-version: 3.15
+strict-ca (3.15) |   allow-prereleases: true
+strict-ca (3.15) |   check-latest: false
+strict-ca (3.15) |   token: ***
+strict-ca (3.15) |   update-environment: true
+strict-ca (3.15) |   freethreaded: false
+strict-ca (3.15) | ##[endgroup]
+strict-ca (3.15) | ##[group]Installed versions
+strict-ca (3.15) | (node:2363) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+strict-ca (3.15) | (Use `node --trace-deprecation ...` to show where the warning was created)
+strict-ca (3.15) | Successfully set up CPython (3.15.1)
+strict-ca (3.15) | ##[endgroup]
+strict-ca (3.15)	Run pip install -q requests truststore	﻿2026-10-31T15:30:33.8312675Z ##[group]Run pip install -q requests truststore
+strict-ca (3.15) | ^[[36;1mpip install -q requests truststore^[[0m
+strict-ca (3.15) | shell: /usr/bin/bash -e {0}
+strict-ca (3.15) | env:
+strict-ca (3.15) |   pythonLocation: /opt/hostedtoolcache/Python/3.15.1/x64
+strict-ca (3.15) |   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.1/x64/lib/pkgconfig
+strict-ca (3.15) |   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.1/x64
+strict-ca (3.15) |   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.1/x64
+strict-ca (3.15) |   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.1/x64
+strict-ca (3.15) |   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.1/x64/lib
+strict-ca (3.15) | ##[endgroup]
+strict-ca (3.15)	Run bash ssl-verify/strict-ca.sh	﻿2026-10-31T15:30:36.7552149Z ##[group]Run bash ssl-verify/strict-ca.sh
+strict-ca (3.15) | ^[[36;1mbash ssl-verify/strict-ca.sh^[[0m
+strict-ca (3.15) | shell: /usr/bin/bash -e {0}
+strict-ca (3.15) | env:
+strict-ca (3.15) |   pythonLocation: /opt/hostedtoolcache/Python/3.15.1/x64
+strict-ca (3.15) |   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.15.1/x64/lib/pkgconfig
+strict-ca (3.15) |   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.1/x64
+strict-ca (3.15) |   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.1/x64
+strict-ca (3.15) |   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.15.1/x64
+strict-ca (3.15) |   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.15.1/x64/lib
+strict-ca (3.15) | ##[endgroup]
+strict-ca (3.15) | X509v3 Basic Constraints: 
+strict-ca (3.15) |     CA:TRUE
+strict-ca (3.15) | 127.0.0.1 - - [31/Oct/2026 15:30:39] "GET / HTTP/1.1" 200 -
+strict-ca (3.15) | python 3.15.1 | openssl OpenSSL 3.5.5 27 Jan 2026 | https://localhost:8443/
+strict-ca (3.15) | default context has VERIFY_X509_STRICT: True
+strict-ca (3.15) | urllib, default: FAILED URLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1144)
+strict-ca (3.15) | requests, default (certifi): FAILED SSLError: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer c
+strict-ca (3.15) | urllib, cafile=bundle: FAILED URLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1144)
+strict-ca (3.15) | urllib, cafile=bundle, strict flag off: OK
+strict-ca (3.15) | requests, verify=bundle: FAILED SSLError: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert
+strict-ca (3.15) | urllib, after truststore.inject_into_ssl(): FAILED URLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1144)
+strict-ca (3.15) | requests, after truststore.inject_into_ssl(): FAILED SSLError: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer c
+strict-ca (3.15) | == SSL_CERT_FILE=ca.pem, default urllib
+strict-ca (3.15) | urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1144)>
+strict-ca (3.15) | == requests with an HTTPAdapter whose ssl_context has the strict flag cleared
+strict-ca (3.15) | 127.0.0.1 - - [31/Oct/2026 15:30:39] "GET / HTTP/1.1" 200 -
+strict-ca (3.15) | requests with adapter OK
+strict-ca (3.15) | == CA added to the system store (update-ca-certificates), then truststore and plain urllib
+strict-ca (3.15) | requests.exceptions.SSLError: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed
+strict-ca (3.15) | urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1144)>
+strict-ca (3.15)	Post Run actions/setup-python@v5	﻿2026-10-31T15:30:40.9647284Z Post job cleanup.
+strict-ca (3.15) | (node:3333) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+strict-ca (3.15) | (Use `node --trace-deprecation ...` to show where the warning was created)
+strict-ca (3.15)	Post Run actions/checkout@v4	﻿2026-10-31T15:30:41.1001397Z Post job cleanup.
+strict-ca (3.15) | [command]/usr/bin/git version
+strict-ca (3.15) | git version 2.56.0
+strict-ca (3.15) | Temporarily overriding HOME='/home/runner/work/_temp/c446137d-caef-41af-a790-628896cfe025' before making global git config changes
+strict-ca (3.15) | Adding repository directory to the temporary git global config as a safe directory
+strict-ca (3.15) | [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nk-repro/nk-repro
+strict-ca (3.15) | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+strict-ca (3.15) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+strict-ca (3.15) | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+strict-ca (3.15) | http.https://github.com/.extraheader
+strict-ca (3.15) | [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+strict-ca (3.15) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+strict-ca (3.15) | [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+strict-ca (3.15) | [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+strict-ca (3.15)	Complete job	﻿2026-10-31T15:30:41.3030298Z Cleaning up orphan processes
+strict-ca (3.15) | ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+strict-ca (3.14)	Set up job	﻿2026-10-31T15:30:32.0169717Z Current runner version: '2.338.2'
+strict-ca (3.14) | ##[group]Runner Image Provisioner
+strict-ca (3.14) | Hosted Compute Agent
+strict-ca (3.14) | Version: 20261021.618
+strict-ca (3.14) | Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+strict-ca (3.14) | Build Date: 2026-10-21T00:45:21Z
+strict-ca (3.14) | Worker ID: {317fd9e7-4885-48f4-bc6d-28af8e2ea125}
+strict-ca (3.14) | Region: westcentralus
+strict-ca (3.14) | Cloud: Azure
+strict-ca (3.14) | ##[endgroup]
+strict-ca (3.14) | ##[group]Operating System
+strict-ca (3.14) | Ubuntu
+strict-ca (3.14) | 26.04.1
+strict-ca (3.14) | LTS
+strict-ca (3.14) | ##[endgroup]
+strict-ca (3.14) | ##[group]Runner Image
+strict-ca (3.14) | Image: ubuntu-26.04
+strict-ca (3.14) | Version: 20261025.179.1
+strict-ca (3.14) | Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261025.179/images/ubuntu/Ubuntu2604-Readme.md
+strict-ca (3.14) | Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261025.179
+strict-ca (3.14) | ##[endgroup]
+strict-ca (3.14) | ##[group]GITHUB_TOKEN Permissions
+strict-ca (3.14) | Contents: read
+strict-ca (3.14) | Metadata: read
+strict-ca (3.14) | ##[endgroup]
+strict-ca (3.14) | Secret source: Actions
+strict-ca (3.14) | Cache mode: write
+strict-ca (3.14) | Prepare workflow directory
+strict-ca (3.14) | Prepare all required actions
+strict-ca (3.14) | Getting action download info
+strict-ca (3.14) | Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+strict-ca (3.14) | Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+strict-ca (3.14) | Complete job name: strict-ca (3.14)
+strict-ca (3.14)	Run actions/checkout@v4	﻿2026-10-31T15:30:32.6352076Z ##[group]Run actions/checkout@v4
+strict-ca (3.14) | with:
+strict-ca (3.14) |   repository: nils44344/nk-repro
+strict-ca (3.14) |   token: ***
+strict-ca (3.14) |   ssh-strict: true
+strict-ca (3.14) |   ssh-user: git
+strict-ca (3.14) |   persist-credentials: true
+strict-ca (3.14) |   clean: true
+strict-ca (3.14) |   sparse-checkout-cone-mode: true
+strict-ca (3.14) |   fetch-depth: 1
+strict-ca (3.14) |   fetch-tags: false
+strict-ca (3.14) |   show-progress: true
+strict-ca (3.14) |   lfs: false
+strict-ca (3.14) |   submodules: false
+strict-ca (3.14) |   set-safe-directory: true
+strict-ca (3.14) |   allow-unsafe-pr-checkout: false
+strict-ca (3.14) | ##[endgroup]
+strict-ca (3.14) | Syncing repository: nils44344/nk-repro
+strict-ca (3.14) | ##[group]Getting Git version info
+strict-ca (3.14) | Working directory is '/home/runner/work/nk-repro/nk-repro'
+strict-ca (3.14) | [command]/usr/bin/git version
+strict-ca (3.14) | git version 2.56.0
+strict-ca (3.14) | ##[endgroup]
+strict-ca (3.14) | Temporarily overriding HOME='/home/runner/work/_temp/25247bb8-9b55-4c04-8426-700d5b59f2bf' before making global git config changes
+strict-ca (3.14) | Adding repository directory to the temporary git global config as a safe directory
+strict-ca (3.14) | [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nk-repro/nk-repro
+strict-ca (3.14) | Deleting the contents of '/home/runner/work/nk-repro/nk-repro'
+strict-ca (3.14) | ##[group]Initializing the repository
+strict-ca (3.14) | [command]/usr/bin/git init /home/runner/work/nk-repro/nk-repro
+strict-ca (3.14) | hint: Using 'master' as the name for the initial branch. This default branch name
+strict-ca (3.14) | hint: will change to "main" in Git 3.0. To configure the initial branch name
+strict-ca (3.14) | hint: to use in all of your new repositories, which will suppress this warning,
+strict-ca (3.14) | hint: call:
+strict-ca (3.14) | hint:
+strict-ca (3.14) | hint: 	git config --global init.defaultBranch <name>
+strict-ca (3.14) | hint:
+strict-ca (3.14) | hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+strict-ca (3.14) | hint: 'development'. The just-created branch can be renamed via this command:
+strict-ca (3.14) | hint:
+strict-ca (3.14) | hint: 	git branch -m <name>
+strict-ca (3.14) | hint:
+strict-ca (3.14) | hint: Disable this message with "git config set advice.defaultBranchName false"
+strict-ca (3.14) | Initialized empty Git repository in /home/runner/work/nk-repro/nk-repro/.git/
+strict-ca (3.14) | [command]/usr/bin/git remote add origin https://github.com/nils44344/nk-repro
+strict-ca (3.14) | ##[endgroup]
+strict-ca (3.14) | ##[group]Disabling automatic garbage collection
+strict-ca (3.14) | [command]/usr/bin/git config --local gc.auto 0
+strict-ca (3.14) | ##[endgroup]
+strict-ca (3.14) | ##[group]Setting up auth
+strict-ca (3.14) | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+strict-ca (3.14) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+strict-ca (3.14) | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+strict-ca (3.14) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+strict-ca (3.14) | [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+strict-ca (3.14) | [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+strict-ca (3.14) | [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+strict-ca (3.14) | ##[endgroup]
+strict-ca (3.14) | ##[group]Fetching the repository
+strict-ca (3.14) | [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +94cf712a0078084dedaff87486547202f2dba62d:refs/remotes/origin/main
+strict-ca (3.14) | From https://github.com/nils44344/nk-repro
+strict-ca (3.14) |  * [new ref]         94cf712a0078084dedaff87486547202f2dba62d -> origin/main
+strict-ca (3.14) | ##[endgroup]
+strict-ca (3.14) | ##[group]Determining the checkout info
+strict-ca (3.14) | ##[endgroup]
+strict-ca (3.14) | [command]/usr/bin/git sparse-checkout disable
+strict-ca (3.14) | [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+strict-ca (3.14) | ##[group]Checking out the ref
+strict-ca (3.14) | [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+strict-ca (3.14) | Switched to a new branch 'main'
+strict-ca (3.14) | branch 'main' set up to track 'origin/main'.
+strict-ca (3.14) | ##[endgroup]
+strict-ca (3.14) | [command]/usr/bin/git log -1 --format=%H
+strict-ca (3.14) | 94cf712a0078084dedaff87486547202f2dba62d
+strict-ca (3.14)	Run actions/setup-python@v5	﻿2026-10-31T15:30:33.5436179Z ##[group]Run actions/setup-python@v5
+strict-ca (3.14) | with:
+strict-ca (3.14) |   python-version: 3.14
+strict-ca (3.14) |   allow-prereleases: true
+strict-ca (3.14) |   check-latest: false
+strict-ca (3.14) |   token: ***
+strict-ca (3.14) |   update-environment: true
+strict-ca (3.14) |   freethreaded: false
+strict-ca (3.14) | ##[endgroup]
+strict-ca (3.14) | ##[group]Installed versions
+strict-ca (3.14) | (node:2442) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+strict-ca (3.14) | (Use `node --trace-deprecation ...` to show where the warning was created)
+strict-ca (3.14) | Successfully set up CPython (3.14.9)
+strict-ca (3.14) | ##[endgroup]
+strict-ca (3.14)	Run pip install -q requests truststore	﻿2026-10-31T15:30:33.7112540Z ##[group]Run pip install -q requests truststore
+strict-ca (3.14) | ^[[36;1mpip install -q requests truststore^[[0m
+strict-ca (3.14) | shell: /usr/bin/bash -e {0}
+strict-ca (3.14) | env:
+strict-ca (3.14) |   pythonLocation: /opt/hostedtoolcache/Python/3.14.9/x64
+strict-ca (3.14) |   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.14.9/x64/lib/pkgconfig
+strict-ca (3.14) |   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.9/x64
+strict-ca (3.14) |   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.9/x64
+strict-ca (3.14) |   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.9/x64
+strict-ca (3.14) |   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.14.9/x64/lib
+strict-ca (3.14) | ##[endgroup]
+strict-ca (3.14)	Run bash ssl-verify/strict-ca.sh	﻿2026-10-31T15:30:35.5285452Z ##[group]Run bash ssl-verify/strict-ca.sh
+strict-ca (3.14) | ^[[36;1mbash ssl-verify/strict-ca.sh^[[0m
+strict-ca (3.14) | shell: /usr/bin/bash -e {0}
+strict-ca (3.14) | env:
+strict-ca (3.14) |   pythonLocation: /opt/hostedtoolcache/Python/3.14.9/x64
+strict-ca (3.14) |   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.14.9/x64/lib/pkgconfig
+strict-ca (3.14) |   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.9/x64
+strict-ca (3.14) |   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.9/x64
+strict-ca (3.14) |   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.9/x64
+strict-ca (3.14) |   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.14.9/x64/lib
+strict-ca (3.14) | ##[endgroup]
+strict-ca (3.14) | X509v3 Basic Constraints: 
+strict-ca (3.14) |     CA:TRUE
+strict-ca (3.14) | 127.0.0.1 - - [31/Oct/2026 15:30:37] "GET / HTTP/1.1" 200 -
+strict-ca (3.14) | python 3.14.9 | openssl OpenSSL 3.5.5 27 Jan 2026 | https://localhost:8443/
+strict-ca (3.14) | default context has VERIFY_X509_STRICT: True
+strict-ca (3.14) | urllib, default: FAILED URLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)
+strict-ca (3.14) | requests, default (certifi): FAILED SSLError: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer c
+strict-ca (3.14) | urllib, cafile=bundle: FAILED URLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1082)
+strict-ca (3.14) | urllib, cafile=bundle, strict flag off: OK
+strict-ca (3.14) | requests, verify=bundle: FAILED SSLError: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert
+strict-ca (3.14) | urllib, after truststore.inject_into_ssl(): FAILED URLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)
+strict-ca (3.14) | requests, after truststore.inject_into_ssl(): FAILED SSLError: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer c
+strict-ca (3.14) | == SSL_CERT_FILE=ca.pem, default urllib
+strict-ca (3.14) | urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1082)>
+strict-ca (3.14) | == requests with an HTTPAdapter whose ssl_context has the strict flag cleared
+strict-ca (3.14) | 127.0.0.1 - - [31/Oct/2026 15:30:38] "GET / HTTP/1.1" 200 -
+strict-ca (3.14) | requests with adapter OK
+strict-ca (3.14) | == CA added to the system store (update-ca-certificates), then truststore and plain urllib
+strict-ca (3.14) | requests.exceptions.SSLError: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed
+strict-ca (3.14) | urllib.error.URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Basic Constraints of CA cert not marked critical (_ssl.c:1082)>
+strict-ca (3.14)	Post Run actions/setup-python@v5	﻿2026-10-31T15:30:40.1165243Z Post job cleanup.
+strict-ca (3.14) | (node:3410) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+strict-ca (3.14) | (Use `node --trace-deprecation ...` to show where the warning was created)
+strict-ca (3.14)	Post Run actions/checkout@v4	﻿2026-10-31T15:30:40.2570827Z Post job cleanup.
+strict-ca (3.14) | [command]/usr/bin/git version
+strict-ca (3.14) | git version 2.56.0
+strict-ca (3.14) | Temporarily overriding HOME='/home/runner/work/_temp/263a11ea-8793-4dbd-8e1a-68d92a27cdc7' before making global git config changes
+strict-ca (3.14) | Adding repository directory to the temporary git global config as a safe directory
+strict-ca (3.14) | [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nk-repro/nk-repro
+strict-ca (3.14) | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+strict-ca (3.14) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+strict-ca (3.14) | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+strict-ca (3.14) | http.https://github.com/.extraheader
+strict-ca (3.14) | [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+strict-ca (3.14) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+strict-ca (3.14) | [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+strict-ca (3.14) | [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+strict-ca (3.14)	Complete job	﻿2026-10-31T15:30:40.4880044Z Cleaning up orphan processes
+strict-ca (3.14) | ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+strict-ca (3.12)	Set up job	﻿2026-10-31T15:30:31.6809121Z Current runner version: '2.338.2'
+strict-ca (3.12) | ##[group]Runner Image Provisioner
+strict-ca (3.12) | Hosted Compute Agent
+strict-ca (3.12) | Version: 20261021.618
+strict-ca (3.12) | Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+strict-ca (3.12) | Build Date: 2026-10-21T00:45:21Z
+strict-ca (3.12) | Worker ID: {d71f8095-34d4-4604-809a-4210180aecb1}
+strict-ca (3.12) | Region: centralus
+strict-ca (3.12) | Cloud: Azure
+strict-ca (3.12) | ##[endgroup]
+strict-ca (3.12) | ##[group]Operating System
+strict-ca (3.12) | Ubuntu
+strict-ca (3.12) | 26.04.1
+strict-ca (3.12) | LTS
+strict-ca (3.12) | ##[endgroup]
+strict-ca (3.12) | ##[group]Runner Image
+strict-ca (3.12) | Image: ubuntu-26.04
+strict-ca (3.12) | Version: 20261025.179.1
+strict-ca (3.12) | Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261025.179/images/ubuntu/Ubuntu2604-Readme.md
+strict-ca (3.12) | Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261025.179
+strict-ca (3.12) | ##[endgroup]
+strict-ca (3.12) | ##[group]GITHUB_TOKEN Permissions
+strict-ca (3.12) | Contents: read
+strict-ca (3.12) | Metadata: read
+strict-ca (3.12) | ##[endgroup]
+strict-ca (3.12) | Secret source: Actions
+strict-ca (3.12) | Cache mode: write
+strict-ca (3.12) | Prepare workflow directory
+strict-ca (3.12) | Prepare all required actions
+strict-ca (3.12) | Getting action download info
+strict-ca (3.12) | Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+strict-ca (3.12) | Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+strict-ca (3.12) | Complete job name: strict-ca (3.12)
+strict-ca (3.12)	Run actions/checkout@v4	﻿2026-10-31T15:30:32.2004437Z ##[group]Run actions/checkout@v4
+strict-ca (3.12) | with:
+strict-ca (3.12) |   repository: nils44344/nk-repro
+strict-ca (3.12) |   token: ***
+strict-ca (3.12) |   ssh-strict: true
+strict-ca (3.12) |   ssh-user: git
+strict-ca (3.12) |   persist-credentials: true
+strict-ca (3.12) |   clean: true
+strict-ca (3.12) |   sparse-checkout-cone-mode: true
+strict-ca (3.12) |   fetch-depth: 1
+strict-ca (3.12) |   fetch-tags: false
+strict-ca (3.12) |   show-progress: true
+strict-ca (3.12) |   lfs: false
+strict-ca (3.12) |   submodules: false
+strict-ca (3.12) |   set-safe-directory: true
+strict-ca (3.12) |   allow-unsafe-pr-checkout: false
+strict-ca (3.12) | ##[endgroup]
+strict-ca (3.12) | Syncing repository: nils44344/nk-repro
+strict-ca (3.12) | ##[group]Getting Git version info
+strict-ca (3.12) | Working directory is '/home/runner/work/nk-repro/nk-repro'
+strict-ca (3.12) | [command]/usr/bin/git version
+strict-ca (3.12) | git version 2.56.0
+strict-ca (3.12) | ##[endgroup]
+strict-ca (3.12) | Temporarily overriding HOME='/home/runner/work/_temp/4db07c4f-db98-4043-9d54-35812ab4612b' before making global git config changes
+strict-ca (3.12) | Adding repository directory to the temporary git global config as a safe directory
+strict-ca (3.12) | [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nk-repro/nk-repro
+strict-ca (3.12) | Deleting the contents of '/home/runner/work/nk-repro/nk-repro'
+strict-ca (3.12) | ##[group]Initializing the repository
+strict-ca (3.12) | [command]/usr/bin/git init /home/runner/work/nk-repro/nk-repro
+strict-ca (3.12) | hint: Using 'master' as the name for the initial branch. This default branch name
+strict-ca (3.12) | hint: will change to "main" in Git 3.0. To configure the initial branch name
+strict-ca (3.12) | hint: to use in all of your new repositories, which will suppress this warning,
+strict-ca (3.12) | hint: call:
+strict-ca (3.12) | hint:
+strict-ca (3.12) | hint: 	git config --global init.defaultBranch <name>
+strict-ca (3.12) | hint:
+strict-ca (3.12) | hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+strict-ca (3.12) | hint: 'development'. The just-created branch can be renamed via this command:
+strict-ca (3.12) | hint:
+strict-ca (3.12) | hint: 	git branch -m <name>
+strict-ca (3.12) | hint:
+strict-ca (3.12) | hint: Disable this message with "git config set advice.defaultBranchName false"
+strict-ca (3.12) | Initialized empty Git repository in /home/runner/work/nk-repro/nk-repro/.git/
+strict-ca (3.12) | [command]/usr/bin/git remote add origin https://github.com/nils44344/nk-repro
+strict-ca (3.12) | ##[endgroup]
+strict-ca (3.12) | ##[group]Disabling automatic garbage collection
+strict-ca (3.12) | [command]/usr/bin/git config --local gc.auto 0
+strict-ca (3.12) | ##[endgroup]
+strict-ca (3.12) | ##[group]Setting up auth
+strict-ca (3.12) | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+strict-ca (3.12) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+strict-ca (3.12) | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+strict-ca (3.12) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+strict-ca (3.12) | [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+strict-ca (3.12) | [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+strict-ca (3.12) | [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+strict-ca (3.12) | ##[endgroup]
+strict-ca (3.12) | ##[group]Fetching the repository
+strict-ca (3.12) | [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +94cf712a0078084dedaff87486547202f2dba62d:refs/remotes/origin/main
+strict-ca (3.12) | From https://github.com/nils44344/nk-repro
+strict-ca (3.12) |  * [new ref]         94cf712a0078084dedaff87486547202f2dba62d -> origin/main
+strict-ca (3.12) | ##[endgroup]
+strict-ca (3.12) | ##[group]Determining the checkout info
+strict-ca (3.12) | ##[endgroup]
+strict-ca (3.12) | [command]/usr/bin/git sparse-checkout disable
+strict-ca (3.12) | [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+strict-ca (3.12) | ##[group]Checking out the ref
+strict-ca (3.12) | [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+strict-ca (3.12) | Switched to a new branch 'main'
+strict-ca (3.12) | branch 'main' set up to track 'origin/main'.
+strict-ca (3.12) | ##[endgroup]
+strict-ca (3.12) | [command]/usr/bin/git log -1 --format=%H
+strict-ca (3.12) | 94cf712a0078084dedaff87486547202f2dba62d
+strict-ca (3.12)	Run actions/setup-python@v5	﻿2026-10-31T15:30:33.0037940Z ##[group]Run actions/setup-python@v5
+strict-ca (3.12) | with:
+strict-ca (3.12) |   python-version: 3.12
+strict-ca (3.12) |   allow-prereleases: true
+strict-ca (3.12) |   check-latest: false
+strict-ca (3.12) |   token: ***
+strict-ca (3.12) |   update-environment: true
+strict-ca (3.12) |   freethreaded: false
+strict-ca (3.12) | ##[endgroup]
+strict-ca (3.12) | ##[group]Installed versions
+strict-ca (3.12) | (node:2166) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+strict-ca (3.12) | (Use `node --trace-deprecation ...` to show where the warning was created)
+strict-ca (3.12) | Successfully set up CPython (3.12.15)
+strict-ca (3.12) | ##[endgroup]
+strict-ca (3.12)	Run pip install -q requests truststore	﻿2026-10-31T15:30:33.1159418Z ##[group]Run pip install -q requests truststore
+strict-ca (3.12) | ^[[36;1mpip install -q requests truststore^[[0m
+strict-ca (3.12) | shell: /usr/bin/bash -e {0}
+strict-ca (3.12) | env:
+strict-ca (3.12) |   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+strict-ca (3.12) |   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+strict-ca (3.12) |   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+strict-ca (3.12) |   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+strict-ca (3.12) |   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+strict-ca (3.12) |   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+strict-ca (3.12) | ##[endgroup]
+strict-ca (3.12)	Run bash ssl-verify/strict-ca.sh	﻿2026-10-31T15:30:34.6197008Z ##[group]Run bash ssl-verify/strict-ca.sh
+strict-ca (3.12) | ^[[36;1mbash ssl-verify/strict-ca.sh^[[0m
+strict-ca (3.12) | shell: /usr/bin/bash -e {0}
+strict-ca (3.12) | env:
+strict-ca (3.12) |   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+strict-ca (3.12) |   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+strict-ca (3.12) |   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+strict-ca (3.12) |   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+strict-ca (3.12) |   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+strict-ca (3.12) |   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+strict-ca (3.12) | ##[endgroup]
+strict-ca (3.12) | X509v3 Basic Constraints: 
+strict-ca (3.12) |     CA:TRUE
+strict-ca (3.12) | 127.0.0.1 - - [31/Oct/2026 15:30:36] "GET / HTTP/1.1" 200 -
+strict-ca (3.12) | 127.0.0.1 - - [31/Oct/2026 15:30:36] "GET / HTTP/1.1" 200 -
+strict-ca (3.12) | 127.0.0.1 - - [31/Oct/2026 15:30:36] "GET / HTTP/1.1" 200 -
+strict-ca (3.12) | python 3.12.15 | openssl OpenSSL 3.5.5 27 Jan 2026 | https://localhost:8443/
+strict-ca (3.12) | default context has VERIFY_X509_STRICT: False
+strict-ca (3.12) | urllib, default: FAILED URLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)
+strict-ca (3.12) | requests, default (certifi): FAILED SSLError: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer c
+strict-ca (3.12) | urllib, cafile=bundle: OK
+strict-ca (3.12) | urllib, cafile=bundle, strict flag off: OK
+strict-ca (3.12) | requests, verify=bundle: OK
+strict-ca (3.12) | urllib, after truststore.inject_into_ssl(): FAILED URLError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)
+strict-ca (3.12) | requests, after truststore.inject_into_ssl(): FAILED SSLError: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer c
+strict-ca (3.12) | == SSL_CERT_FILE=ca.pem, default urllib
+strict-ca (3.12) | 127.0.0.1 - - [31/Oct/2026 15:30:36] "GET / HTTP/1.1" 200 -
+strict-ca (3.12) | OK
+strict-ca (3.12) | == requests with an HTTPAdapter whose ssl_context has the strict flag cleared
+strict-ca (3.12) | 127.0.0.1 - - [31/Oct/2026 15:30:36] "GET / HTTP/1.1" 200 -
+strict-ca (3.12) | requests with adapter OK
+strict-ca (3.12) | == CA added to the system store (update-ca-certificates), then truststore and plain urllib
+strict-ca (3.12) | 127.0.0.1 - - [31/Oct/2026 15:30:38] "GET / HTTP/1.1" 200 -
+strict-ca (3.12) | truststore + system store OK
+strict-ca (3.12) | 127.0.0.1 - - [31/Oct/2026 15:30:38] "GET / HTTP/1.1" 200 -
+strict-ca (3.12) | urllib + system store OK
+strict-ca (3.12)	Post Run actions/setup-python@v5	﻿2026-10-31T15:30:38.3093010Z Post job cleanup.
+strict-ca (3.12) | (node:3133) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+strict-ca (3.12) | (Use `node --trace-deprecation ...` to show where the warning was created)
+strict-ca (3.12)	Post Run actions/checkout@v4	﻿2026-10-31T15:30:38.4029815Z Post job cleanup.
+strict-ca (3.12) | [command]/usr/bin/git version
+strict-ca (3.12) | git version 2.56.0
+strict-ca (3.12) | Temporarily overriding HOME='/home/runner/work/_temp/6418e9a6-e845-4b0a-8d46-a468856f922f' before making global git config changes
+strict-ca (3.12) | Adding repository directory to the temporary git global config as a safe directory
+strict-ca (3.12) | [command]/usr/bin/git config --global --add safe.directory /home/runner/work/nk-repro/nk-repro
+strict-ca (3.12) | [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+strict-ca (3.12) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+strict-ca (3.12) | [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+strict-ca (3.12) | http.https://github.com/.extraheader
+strict-ca (3.12) | [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+strict-ca (3.12) | [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+strict-ca (3.12) | [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+strict-ca (3.12) | [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+strict-ca (3.12)	Complete job	﻿2026-10-31T15:30:38.5846522Z Cleaning up orphan processes
+strict-ca (3.12) | ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
