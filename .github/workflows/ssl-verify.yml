@@ -1,0 +1,20 @@
+name: ssl-verify
+on: workflow_dispatch
+permissions:
+  contents: read
+
+jobs:
+  strict-ca:
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.12', '3.13', '3.14', '3.15']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          allow-prereleases: true
+      - run: pip install -q requests truststore
+      - run: bash ssl-verify/strict-ca.sh
