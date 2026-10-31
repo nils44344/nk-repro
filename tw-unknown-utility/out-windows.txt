@@ -1,0 +1,59 @@
+== Sat Oct 31 22:04:07 IST 2026 node v24.14.0
+added 66 packages in 27s
++-- @tailwindcss/cli@4.3.3
++-- @tailwindcss/vite@4.3.3
++-- @vitejs/plugin-vue@6.0.10
++-- tailwindcss@4.3.3
+######## cause 1: custom colour not in @theme
+-- border-border, no @theme
+≈ tailwindcss v4.3.3
+Error:
+┌
+-- border-border with @theme inline
+≈ tailwindcss v4.3.3
+border-color: inherit
+-- border-border from tailwind.config.js via @config
+≈ tailwindcss v4.3.3
+border-color: inherit
+######## cause 2: file without Tailwind (CSS module / component style)
+-- font-bold in a file without @import
+≈ tailwindcss v4.3.3
+Error:
+┌
+-- same with @reference
+≈ tailwindcss v4.3.3
+font-weight: var(--font-weight-bold, 700)
+######## cause 3: v3 utilities removed in v4
+-- @apply bg-opacity-50
+≈ tailwindcss v4.3.3
+Error:
+┌
+-- @apply text-opacity-50
+≈ tailwindcss v4.3.3
+Error:
+┌
+-- @apply flex-shrink-0
+≈ tailwindcss v4.3.3
+.x {
+-- @apply flex-grow
+≈ tailwindcss v4.3.3
+.x {
+-- @apply overflow-ellipsis
+≈ tailwindcss v4.3.3
+.x {
+-- @apply decoration-slice
+≈ tailwindcss v4.3.3
+.x {
+-- @apply shadow-sm
+≈ tailwindcss v4.3.3
+.x {
+######## Vite + Vue SFC <style> with @apply
+-- vite build, Vue <style> without @reference
+error during build:
+Build failed with 1 error:
+[plugin @tailwindcss/vite:generate:build] <work>/src/App.vue?vue&type=style&index=0&scoped=e1d6a330&lang.css
+-- vite build, Vue <style> with @reference "../main.css"
+error during build:
+Build failed with 1 error:
+grep: dist/assets/*.css: No such file or directory
+== done
