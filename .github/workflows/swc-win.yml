@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        swc: ['1.15.47', '1.16.13', '1.16.18']
+        swc: ['1.15.47', '1.16.18', '1.16.21']
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
