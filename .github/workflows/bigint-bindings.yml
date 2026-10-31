@@ -1,0 +1,16 @@
+name: bigint-bindings
+on: workflow_dispatch
+permissions:
+  contents: read
+
+jobs:
+  run:
+    strategy:
+      fail-fast: false
+      matrix:
+        image: ['node:24', 'node:24-slim', 'node:26']
+    runs-on: ubuntu-latest
+    container: ${{ matrix.image }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: W=/tmp/work bash bigint-bindings/run.sh
