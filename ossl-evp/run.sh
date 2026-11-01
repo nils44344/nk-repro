@@ -29,6 +29,8 @@ if [ "${CRA:-0}" = 1 ]; then
   rm -rf node_modules package-lock.json; npm install $Q 2>&1 | tail -1
   echo "webpack in tree: $(npm ls webpack 2>/dev/null | grep -o 'webpack@[0-9.]*' | sort -u | tr '\n' ' ')"
   echo "-- react-scripts build with overrides webpack 4.47.0"; npx react-scripts build > ov.log 2>&1; echo "   exit $?"; grep -v "^s*at " ov.log | grep -v "^s*$" | tail -8 | cut -c1-200
+  grep -m1 -A3 "The react-scripts package provided by Create React App requires" ov.log | cut -c1-200
+  echo "-- same, SKIP_PREFLIGHT_CHECK=true"; SKIP_PREFLIGHT_CHECK=true npx react-scripts build 2>&1 | r 3
   cd ..
 fi
 echo "== done"
