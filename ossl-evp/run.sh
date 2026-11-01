@@ -33,4 +33,11 @@ if [ "${CRA:-0}" = 1 ]; then
   echo "-- same, SKIP_PREFLIGHT_CHECK=true"; SKIP_PREFLIGHT_CHECK=true npx react-scripts build 2>&1 | r 3
   cd ..
 fi
+if [ "${CRA:-0}" = 1 ]; then
+  echo "######## react-scripts 5.0.1"; mkdir -p cra5 && cd cra5 && npm init -y >/dev/null
+  npm install react@18 react-dom@18 react-scripts@5.0.1 $Q 2>&1 | tail -1; cp -r ../cra/src ../cra/public .
+  echo "webpack in tree: $(npm ls webpack 2>/dev/null | grep -o "webpack@[0-9.]*" | sort -u | tr "
+" " ")"
+  echo "-- react-scripts 5 build"; npx react-scripts build 2>&1 | r 3; cd ..
+fi
 echo "== done"
