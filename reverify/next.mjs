@@ -25,8 +25,9 @@ const latest = sh('npm view next dist-tags.latest').trim();
 const aLatest = advisories(latest);
 
 const checks = [
-  check('16.3.7 is still flagged by npm audit (the post counted 6 advisories)', () => `16.3.7: ${a1637} advisories`, () => a1637 === 6),
-  check('16.3.8 is not flagged by npm audit', () => `16.3.8: ${a1638} advisories`, () => a1638 === 0),
+  // Post (updated 24 Oct): every 16.3 release is affected by the Oct 14 RCEs; npm audit flags 16.3.7 and 16.3.8 (10 and 3 then).
+  check('16.3.7 is flagged by npm audit', () => `16.3.7: ${a1637} advisories`, () => a1637 > 0),
+  check('16.3.8 is flagged by npm audit (Oct 14 advisories, no 16.3 backport)', () => `16.3.8: ${a1638} advisories`, () => a1638 > 0),
   check('`npm i next@16.3` still resolves to 16.3.8 (no newer 16.3 patch)', () => `newest 16.3.x: ${newest16_3}`, () => newest16_3 === '16.3.8'),
   check(`next@latest (${latest}) is not flagged by npm audit`, () => `${latest}: ${aLatest} advisories`, () => aLatest === 0),
 ];
