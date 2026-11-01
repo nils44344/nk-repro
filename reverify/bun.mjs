@@ -68,7 +68,7 @@ const checks = [];
       const dir = join(other + '/', 'nk-bun-other-drive');
       mkdirSync(dir, { recursive: true });
       copyFileSync(bunExe, join(dir, 'bun.exe'));
-      checks.push(check(`Windows, Bun on another drive (${other}) than TEMP (${tempDrive}): bun --bun run silently stays on Node`, () => run(d, `"${join(dir, 'bun.exe')}" --bun run n`), (o) => /\bundefined\b/.test(o)));
+      checks.push(check(`Windows, Bun on another drive (${other}) than TEMP (${tempDrive}): bun --bun run runs in Bun (fixed in 1.4.4; stayed on Node up to 1.4.3)`, () => run(d, `"${join(dir, 'bun.exe')}" --bun run n`), (o) => /\bobject\b/.test(o)));
     }
   }
 }
