@@ -24,7 +24,7 @@ echo "-- no config"; npx jest 2>&1 | f 3
 echo '{ "presets": [["@babel/preset-env", { "targets": { "node": "current" } }]] }' > babel.config.json
 echo "-- with babel.config.json preset-env"; npx jest 2>&1 | f 3
 rm babel.config.json; npm pkg set type=module
-echo "-- type=module, no babel, plain"; npx jest 2>&1 | f 3
+echo "-- type=module, no babel, plain"; npx jest 2>&1 | f 5
 echo "-- type=module, NODE_OPTIONS=--experimental-vm-modules"; NODE_OPTIONS=--experimental-vm-modules npx jest 2>&1 | f 3
 cd ..
 
@@ -33,8 +33,9 @@ rm -rf t && mkdir t && cd t && echo '{"type":"commonjs"}' > package.json
 npm install -D typescript@6 @types/node $Q 2>&1 | tail -1; echo "tsc $(npx tsc -v)"
 mkdir -p src && echo "import { sep } from 'node:path'; console.log('ok', sep);" > src/index.ts
 for M in esnext nodenext commonjs; do
-  printf '{ "compilerOptions": { "module": "%s", "moduleResolution": "%s", "target": "es2022", "outDir": "dist", "types": ["node"] } }\n' $M $([ $M = nodenext ] && echo nodenext || echo bundler) > tsconfig.json
-  [ $M = commonjs ] && sed -i 's/"bundler"/"node10"/' tsconfig.json
+  R=$([ $M = nodenext ] && echo '"moduleResolution": "nodenext", ' || ([ $M = esnext ] && echo '"moduleResolution": "bundler", '))
+  printf '{ "compilerOptions": { "module": "%s", %s"target": "es2022", "rootDir": "src", "outDir": "dist", "types": ["node"] } }
+' $M "$R" > tsconfig.json
   rm -rf dist; npx tsc 2>&1 | head -2 | cut -c1-160
   echo "-- module=$M emits: $(head -c 50 dist/index.js | tr '\n' ' ')"; node dist/index.js 2>&1 | f 2
 done
