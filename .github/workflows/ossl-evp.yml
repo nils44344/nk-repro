@@ -1,5 +1,8 @@
 name: ossl-evp
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      nodes: { required: false, default: "[16, 18, 20, 22, 24, 26]" }
 permissions:
   contents: read
 
@@ -9,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node: [16, 18, 20, 22, 24, 26]
+        node: ${{ fromJSON(inputs.nodes || '[16, 18, 20, 22, 24, 26]') }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
