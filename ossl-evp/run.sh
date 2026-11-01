@@ -35,6 +35,7 @@ if [ "${CRA:-0}" = 1 ]; then
 fi
 if [ "${CRA:-0}" = 1 ]; then
   echo "######## react-scripts 5.0.1"; mkdir -p cra5 && cd cra5 && npm init -y >/dev/null
+  npm pkg delete type  # a real CRA app has no "type"; npm 11 init adds "commonjs", which webpack 5 obeys
   npm install react@18 react-dom@18 react-scripts@5.0.1 $Q 2>&1 | tail -1; cp -r ../cra/src ../cra/public .
   echo "webpack in tree: $(npm ls webpack 2>/dev/null | grep -o "webpack@[0-9.]*" | sort -u | tr '
 ' ' ')"
