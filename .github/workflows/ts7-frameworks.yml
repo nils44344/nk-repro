@@ -1,5 +1,8 @@
 name: ts7-frameworks
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      fws: { required: false, default: '["next", "angular", "vue", "nest", "nuxt", "svelte", "astro"]' }
 permissions:
   contents: read
 jobs:
@@ -7,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        fw: [next, angular, vue, nest, nuxt, svelte, astro]
+        fw: ${{ fromJSON(inputs.fws || '["next", "angular", "vue", "nest", "nuxt", "svelte", "astro"]') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

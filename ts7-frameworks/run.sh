@@ -26,5 +26,7 @@ run() { $CMD > out.log 2>&1; local c=$?; sed 's/\x1b\[[0-9;]*m//g' out.log | gre
 echo "-- as generated: $CMD"; run
 npm install -D typescript@7 --legacy-peer-deps $Q 2>&1 | tail -1; echo "-- plain typescript $(v typescript)"; run
 npm install -D "@typescript/native@npm:typescript@7" "typescript@npm:@typescript/typescript6@^6.0.2" --legacy-peer-deps $Q 2>&1 | tail -1
-echo "-- side-by-side: typescript (compat) $(v typescript), tsc $(npx tsc --version)"; run
+[ $FW = svelte ] && { npx svelte-kit sync >/dev/null 2>&1; CMD="npx svelte-check --tsgo"; }
+[ $FW = astro ] && { echo "   @astrojs/check present: $(v @astrojs/check)"; npm install -D @astrojs/check --legacy-peer-deps $Q 2>&1 | tail -1; echo "   after reinstall: $(v @astrojs/check)"; }
+echo "-- side-by-side: typescript (compat) $(v typescript), tsc $(npx tsc --version), cmd: $CMD"; run
 echo "== done"
