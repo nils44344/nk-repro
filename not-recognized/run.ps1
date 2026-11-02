@@ -19,9 +19,9 @@ npm install vite --force --no-audit --no-fund --loglevel=error 2>&1 | Out-Null; 
 npm install -g cowsay --prefix "$W\gtemp" --no-audit --no-fund --loglevel=error 2>&1 | Select-Object -Last 1
 "-- cowsay hi"; C "cowsay hi"; "-- full path"; C "`"$W\gtemp\cowsay.cmd`" hi" | Select-Object -First 1
 "######## 5. NODE_ENV=... in a script"
-npm pkg set scripts.env="NODE_ENV=development node -e `"console.log('NODE_ENV='+process.env.NODE_ENV)`""
+Set-Content env.js "console.log('NODE_ENV=' + process.env.NODE_ENV)"; npm pkg set scripts.env="NODE_ENV=development node env.js"
 "-- npm run env"; C "npm run env" | Select-String "not recognized|NODE_ENV="
 npm install -D cross-env --no-audit --no-fund --loglevel=error 2>&1 | Out-Null
-npm pkg set scripts.env="cross-env NODE_ENV=development node -e `"console.log('NODE_ENV='+process.env.NODE_ENV)`""
+npm pkg set scripts.env="cross-env NODE_ENV=development node env.js"
 $cev = (Get-Content node_modules\cross-env\package.json -Raw | ConvertFrom-Json).version; "-- with cross-env $cev"; C "npm run env" | Select-String "not recognized|NODE_ENV="
 "== done"
