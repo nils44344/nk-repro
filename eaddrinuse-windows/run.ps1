@@ -22,7 +22,7 @@ $pyout6 = cmd /c "python -c ""import socket; s=socket.socket(socket.AF_INET6); s
 "-- Python holding 3002, a second Python binds it:"
 $h = Start-Process python -ArgumentList "-c `"import socket,time; s=socket.socket(); s.bind(('0.0.0.0',3002)); s.listen(); time.sleep(60)`"" -PassThru -WindowStyle Hidden; Start-Sleep 2
 $o = cmd /c "python -c ""import socket; s=socket.socket(); s.bind(('0.0.0.0',3002)); print('bound without error')"" 2>&1"; "   $(($o | Select-String 'OSError|bound' | Select-Object -First 1))"
-"-- Python holding 3002, node listens on it:"; node srv.js 3002
+"-- Python holding 3002, node listens on it:"; $j = Start-Job { node "$using:PWD\srv.js" 3002 }; Wait-Job $j -Timeout 5 | Out-Null; "   $((Receive-Job $j) -join ' ')"; Stop-Job $j; Get-Process node -EA 0 | Where-Object { (Get-NetTCPConnection -OwningProcess $_.Id -LocalPort 3002 -State Listen -EA 0) } | Stop-Process -Force
 "######## 3. npx kill-port"
 npx -y kill-port 3001 2>&1 | Select-Object -Last 1; Start-Sleep 1; "   port 3001 free: $(-not (Get-NetTCPConnection -LocalPort 3001 -State Listen -EA 0))"
 "######## 4. reserved port ranges"
