@@ -16,7 +16,9 @@ Stop-Process -Id $pid1 -Force; Start-Sleep 1
 "-- taskkill:"; $pid2 = (Get-NetTCPConnection -LocalPort 3000 -State Listen | Select-Object -First 1).OwningProcess; taskkill /PID $pid2 /F
 "######## 2. Python on the busy port"
 $c = Start-Bg 3001; Start-Sleep 2
-$pyout = cmd /c "python -c ""import socket; s=socket.socket(); s.bind(('0.0.0.0',3001)); s.listen()"" 2>&1"; ($pyout | Select-String "OSError" | Select-Object -First 1) -replace '^','   ' 
+$pyout = cmd /c "python -c ""import socket; s=socket.socket(); s.bind(('0.0.0.0',3001)); s.listen(); print('python bound 0.0.0.0:3001 without error')"" 2>&1"; "   python: $(($pyout | Select-Object -Last 1))"
+$pyout6 = cmd /c "python -c ""import socket; s=socket.socket(socket.AF_INET6); s.bind(('::',3001)); s.listen(); print('python bound [::]:3001 without error')"" 2>&1"; "   python (IPv6 ::): $(($pyout6 | Select-Object -Last 1))"
+"   node holds: $((netstat -ano | findstr ':3001' | findstr LISTENING | ForEach-Object { ($_ -split '\s+')[2] }) -join ' ')"
 "######## 3. npx kill-port"
 npx -y kill-port 3001 2>&1 | Select-Object -Last 1; Start-Sleep 1; "   port 3001 free: $(-not (Get-NetTCPConnection -LocalPort 3001 -State Listen -EA 0))"
 "######## 4. reserved port ranges"
