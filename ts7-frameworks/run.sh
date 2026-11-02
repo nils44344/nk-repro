@@ -25,8 +25,9 @@ echo "versions: typescript $(v typescript) | next $(v next) @angular/core $(v @a
 run() { $CMD > out.log 2>&1; local c=$?; sed 's/\x1b\[[0-9;]*m//g' out.log | grep -aiE "error|not supported|does not|not defined|reading|requires|expose|cannot|✓|compiled|built|found 0|0 errors" | grep -v "^\s*at " | head -4 | cut -c1-220; echo "   exit $c"; }
 echo "-- as generated: $CMD"; run
 npm install -D typescript@7 --legacy-peer-deps $Q 2>&1 | tail -1; echo "-- plain typescript $(v typescript)"; run
-npm install -D "@typescript/native@npm:typescript@7" "typescript@npm:@typescript/typescript6@^6.0.2" --legacy-peer-deps $Q 2>&1 | tail -1
+# the fix as the post gives it: no --legacy-peer-deps (with it, npm skips peers and @astrojs/check fails to load)
+rm -rf node_modules package-lock.json; npm pkg delete devDependencies.typescript
+npm install -D "@typescript/native@npm:typescript@7" "typescript@npm:@typescript/typescript6@^6.0.2" $Q 2>&1 | grep -E "ERESOLVE|added" | head -1
 [ $FW = svelte ] && { npx svelte-kit sync >/dev/null 2>&1; CMD="npx svelte-check --tsgo"; }
-[ $FW = astro ] && { echo "   @astrojs/check present: $(v @astrojs/check)"; npm install -D @astrojs/check --legacy-peer-deps $Q 2>&1 | tail -1; echo "   after reinstall: $(v @astrojs/check)"; }
 echo "-- side-by-side: typescript (compat) $(v typescript), tsc $(npx tsc --version), cmd: $CMD"; run
 echo "== done"
