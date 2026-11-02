@@ -1,0 +1,19 @@
+name: ts7-frameworks
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  run:
+    strategy:
+      fail-fast: false
+      matrix:
+        fw: [next, angular, vue, nest, nuxt, svelte, astro]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: W=$RUNNER_TEMP/work FW=${{ matrix.fw }} bash ts7-frameworks/run.sh
