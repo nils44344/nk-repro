@@ -7,7 +7,7 @@ Q="--no-audit --no-fund --loglevel=error"
 export HOME=$W/home; mkdir -p $HOME   # throwaway cache home (~/.cache/puppeteer)
 echo "== $(date) node $(node -v), system chrome: $(google-chrome --version 2>/dev/null)"
 cat > t.cjs <<'J'
-const p = require("puppeteer"); const opt = process.env.OPT ? JSON.parse(process.env.OPT) : {};
+const p = require("puppeteer"); const opt = { args: ["--no-sandbox"], ...(process.env.OPT ? JSON.parse(process.env.OPT) : {}) }; // --no-sandbox: Ubuntu 24.04 runners block the sandbox of a downloaded Chrome
 p.launch(opt).then(async b => { console.log("launched " + await b.version()); await b.close(); }).catch(e => console.log("ERR " + e.message.split("\n").slice(0,2).join(" | ").slice(0,220)));
 J
 pr() { rm -rf $1; mkdir $1 && cd $1 && npm init -y >/dev/null; cp ../t.cjs .; }
