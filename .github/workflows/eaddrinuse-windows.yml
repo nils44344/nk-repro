@@ -12,6 +12,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-      - run: & "$env:GITHUB_WORKSPACE/eaddrinuse-windows/run.ps1"
+      - run: '& "$env:GITHUB_WORKSPACE/eaddrinuse-windows/run.ps1"'
         shell: pwsh
         working-directory: ${{ runner.temp }}
