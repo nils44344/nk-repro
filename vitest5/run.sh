@@ -32,7 +32,7 @@ test('slow poll', async () => { await expect.poll(() => new Promise((r) => setTi
 T
 echo 'export default { test: { globals: true } };' > vitest.config.js
 echo "test('global', () => { expect(1).toBe(1); });" > sub/g.test.js
-r() { env -u CI npx vitest run "$@" 2>&1 | sed 's/\x1b\[[0-9;]*m//g' | grep -aE "✓|×|FAIL|Error|AssertionError|not awaited|outside of the module|not at the top level|not defined|didn't resolve|Obsolete|mismatched|written|removed|Tests +[0-9]" | grep -v "^\s*at " | head -${N:-4} | cut -c1-200; }
+r() { env -u CI -u GITHUB_ACTIONS -u RUNNER_OS npx vitest run "$@" 2>&1 | sed 's/\x1b\[[0-9;]*m//g' | grep -aE "✓|×|FAIL|Error|AssertionError|not awaited|outside of the module|not at the top level|not defined|didn't resolve|Obsolete|mismatched|written|removed|Tests +[0-9]" | grep -v "^\s*at " | head -${N:-4} | cut -c1-200; }
 r_ci() { CI=true npx vitest run "$@" 2>&1 | sed 's/[[0-9;]*m//g' | grep -aE "Obsolete|mismatched|×|✓|Tests +[0-9]" | head -${N:-4} | cut -c1-200; }
 for V in 4.1.11 5; do
   npm install -D vitest@$V $Q 2>&1 | tail -1; rm -rf t/__snapshots__/.v5 2>/dev/null
