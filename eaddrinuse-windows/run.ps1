@@ -12,11 +12,11 @@ $pid1 = (Get-NetTCPConnection -LocalPort 3000 -State Listen | Select-Object -Fir
 "-- Get-NetTCPConnection OwningProcess: $pid1 (started server PID $($a.Id)) match=$($pid1 -eq $a.Id)"
 $ns = (netstat -ano | findstr ":3000" | findstr LISTENING | Select-Object -First 1); "-- netstat line: $($ns.Trim())"
 Stop-Process -Id $pid1 -Force; Start-Sleep 1
-"-- after Stop-Process:"; $b = Start-Bg 3000; Start-Sleep 2; (Invoke-WebRequest http://localhost:3000 -UseBasicParsing).Content
+"-- after Stop-Process:"; $b = Start-Bg 3000; Start-Sleep 2; "   localhost:3000 -> $(curl.exe -s http://localhost:3000/)"
 "-- taskkill:"; $pid2 = (Get-NetTCPConnection -LocalPort 3000 -State Listen | Select-Object -First 1).OwningProcess; taskkill /PID $pid2 /F
 "######## 2. Python on the busy port"
 $c = Start-Bg 3001; Start-Sleep 2
-python -c "import socket; s=socket.socket(); s.bind(('0.0.0.0',3001)); s.listen()" 2>&1 | Select-String "OSError|Error" | Select-Object -First 1 | ForEach-Object { "   $_" }
+$pyout = cmd /c "python -c ""import socket; s=socket.socket(); s.bind(('0.0.0.0',3001)); s.listen()"" 2>&1"; ($pyout | Select-String "OSError" | Select-Object -First 1) -replace '^','   ' 
 "######## 3. npx kill-port"
 npx -y kill-port 3001 2>&1 | Select-Object -Last 1; Start-Sleep 1; "   port 3001 free: $(-not (Get-NetTCPConnection -LocalPort 3001 -State Listen -EA 0))"
 "######## 4. reserved port ranges"
