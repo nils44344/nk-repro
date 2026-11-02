@@ -1,0 +1,19 @@
+name: supabase-cli-3
+on:
+  workflow_dispatch:
+    inputs:
+      cli: { required: false, default: "3" }
+permissions:
+  contents: read
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: W=$RUNNER_TEMP/work CLI=${{ inputs.cli || '3' }} bash supabase-cli-3/run.sh
