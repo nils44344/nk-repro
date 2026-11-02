@@ -14,7 +14,9 @@ pr() { rm -rf $1; mkdir $1 && cd $1 && npm init -y >/dev/null; cp ../t.cjs .; }
 echo "######## 1. download skipped"
 pr a; npm install puppeteer --ignore-scripts $Q 2>&1 | tail -1; echo "puppeteer $(node -p 'require("./node_modules/puppeteer/package.json").version')"
 echo "-- --ignore-scripts"; node t.cjs
-npx puppeteer browsers install chrome 2>&1 | grep -aoE "chrome@[0-9.]+" | head -1; echo "-- after npx puppeteer browsers install chrome"; node t.cjs; cd ..
+npx puppeteer browsers install chrome 2>&1 | grep -aoE "chrome@[0-9.]+" | head -1; echo "-- after npx puppeteer browsers install chrome"; node t.cjs
+echo "-- 5. same cache (only chrome installed by hand), headless: 'shell'"; OPT='{"headless":"shell"}' node t.cjs
+npx puppeteer browsers install chrome-headless-shell >/dev/null 2>&1; echo "-- after browsers install chrome-headless-shell"; OPT='{"headless":"shell"}' node t.cjs; cd ..
 rm -rf $HOME/.cache/puppeteer
 pr n12; npx -y npm@12 install puppeteer $Q 2>&1 | grep -aE "install-scripts   puppeteer" | head -1 | cut -c1-120; echo "-- npm 12 default"; node t.cjs
 npx -y npm@12 install-scripts approve puppeteer >/dev/null 2>&1; npx -y npm@12 rebuild $Q >/dev/null 2>&1; echo "-- after approve + rebuild"; node t.cjs; cd ..
@@ -26,7 +28,7 @@ echo "######## 3. installed in one cache, run from another"
 rm -rf $HOME/.cache/puppeteer; pr c; PUPPETEER_CACHE_DIR=$W/othercache npm install puppeteer $Q 2>&1 | tail -1; echo "-- installed with PUPPETEER_CACHE_DIR, run without"; node t.cjs
 echo 'const {join}=require("path"); module.exports={cacheDirectory: join(__dirname, ".cache", "puppeteer")};' > .puppeteerrc.cjs; rm -rf node_modules; npm install $Q 2>&1 | tail -1
 echo "-- with .puppeteerrc.cjs (project cache), no env vars"; node t.cjs; cd ..
-echo "######## 5. headless shell not installed"
+echo "######## 5b. normal npm install downloads the shell too"
 cd c; echo "-- headless: 'shell'"; OPT='{"headless":"shell"}' node t.cjs; cd ..
 echo "######## 6. system Chrome"
 rm -rf $HOME/.cache/puppeteer; pr s; npm install puppeteer --ignore-scripts $Q 2>&1 | tail -1
