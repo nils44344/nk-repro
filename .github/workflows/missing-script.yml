@@ -1,0 +1,19 @@
+name: missing-script
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  run:
+    strategy:
+      fail-fast: false
+      matrix:
+        npm: ['', '12']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: W=$RUNNER_TEMP/work NPM=${{ matrix.npm }} SCAFFOLD=${{ matrix.npm == '' && '1' || '0' }} bash missing-script/run.sh
