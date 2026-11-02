@@ -1,0 +1,17 @@
+name: eaddrinuse-windows
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  run:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: & "$env:GITHUB_WORKSPACE/eaddrinuse-windows/run.ps1"
+        shell: pwsh
+        working-directory: ${{ runner.temp }}
