@@ -2,8 +2,8 @@
 # Vite "Failed to load PostCSS config": CommonJS config in a "type": "module" project, a missing plugin,
 # a stray config in a parent folder (found with the post's one-liner), and the fixes.
 set +e
-W=${W:-$(pwd)/work}; mkdir -p "$W"; cd "$W" || exit 1
 HERE=$(cd "$(dirname "$0")" && pwd)
+W=${W:-$(pwd)/work}; mkdir -p "$W"; cd "$W" || exit 1
 Q="--no-audit --no-fund --loglevel=error"
 echo "== $(date) node $(node -v)"
 mkdir -p parent/app && cd parent/app && npm init -y >/dev/null && npm pkg set type=module
@@ -20,8 +20,10 @@ echo "######## 2. plugin not installed"
 echo 'export default { plugins: { "postcss-nesting": {} } };' > postcss.config.js; echo "-- postcss-nesting in config, not installed"; b
 npm install -D postcss-nesting $Q 2>&1 | tail -1; echo "-- after installing it"; b; rm postcss.config.js
 echo "######## 3. stray config in the parent folder"
-echo 'module.exports = { plugins: { tailwindcss: {} } };' > ../postcss.config.cjs; echo "-- no config in app/"; b
+for VV in 8.3.0 8.3.5; do npm install -D vite@$VV $Q >/dev/null 2>&1; for F in postcss.config.js postcss.config.cjs; do
+  echo 'module.exports = { plugins: { tailwindcss: {} } };' > ../$F; echo "-- vite $VV, ../$F, none in app/"; b; rm ../$F; done; done
+echo 'module.exports = { plugins: { tailwindcss: {} } };' > ../postcss.config.js
 echo "-- the post's finder one-liner, run from app/:"; bash "$HERE/find-postcss-config.sh" 2>&1 | head -3 | cut -c1-200
 echo 'export default { css: { postcss: {} } };' > vite.config.js; echo "-- inline css.postcss in vite.config.js, stray file still there"; b
-rm vite.config.js ../postcss.config.cjs; echo "-- stray file removed"; b
+rm vite.config.js ../postcss.config.js; echo "-- stray file removed"; b
 echo "== done"
