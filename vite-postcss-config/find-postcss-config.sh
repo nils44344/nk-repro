@@ -1,0 +1,1 @@
+node -e "const fs=require('fs'),p=require('path');let d=process.cwd();for(;;){for(const f of fs.readdirSync(d))if(/^(postcss\.config\.(c|m)?(js|ts)|\.postcssrc(\.(json|ya?ml|js|cjs|mjs))?)$/.test(f))console.log(p.join(d,f));const u=p.dirname(d);if(u===d)break;d=u}"
