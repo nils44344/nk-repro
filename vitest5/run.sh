@@ -32,7 +32,8 @@ test('slow poll', async () => { await expect.poll(() => new Promise((r) => setTi
 T
 echo 'export default { test: { globals: true } };' > vitest.config.js
 echo "test('global', () => { expect(1).toBe(1); });" > sub/g.test.js
-r() { npx vitest run "$@" 2>&1 | sed 's/\x1b\[[0-9;]*m//g' | grep -aE "✓|×|FAIL|Error|AssertionError|not awaited|outside of the module|not at the top level|not defined|didn't resolve|Obsolete|mismatched|written|removed|Tests +[0-9]" | grep -v "^\s*at " | head -${N:-4} | cut -c1-200; }
+r() { env -u CI npx vitest run "$@" 2>&1 | sed 's/\x1b\[[0-9;]*m//g' | grep -aE "✓|×|FAIL|Error|AssertionError|not awaited|outside of the module|not at the top level|not defined|didn't resolve|Obsolete|mismatched|written|removed|Tests +[0-9]" | grep -v "^\s*at " | head -${N:-4} | cut -c1-200; }
+r_ci() { CI=true npx vitest run "$@" 2>&1 | sed 's/[[0-9;]*m//g' | grep -aE "Obsolete|mismatched|×|✓|Tests +[0-9]" | head -${N:-4} | cut -c1-200; }
 for V in 4.1.11 5; do
   npm install -D vitest@$V $Q 2>&1 | tail -1; rm -rf t/__snapshots__/.v5 2>/dev/null
   echo; echo "######## vitest $(npx vitest --version)"
@@ -41,7 +42,7 @@ for V in 4.1.11 5; do
   echo "-- 3 vi.mock in a function"; r t/hoist.test.js
   echo "-- 4 config in parent folder, run from sub/"; (cd sub && N=3 r)
   echo "-- 5 test.each title"; N=3 r t/each.test.js
-  [ $V != 4.1.11 ] && { echo "-- 5 CI=true with the v4 snapshot"; git -C . status >/dev/null 2>&1; cp t/__snapshots__/each.test.js.snap.v4 t/__snapshots__/each.test.js.snap; CI=true N=4 r t/each.test.js; echo "-- 5 -u"; N=3 r t/each.test.js -u; }
+  [ $V != 4.1.11 ] && { echo "-- 5 CI=true with the v4 snapshot"; git -C . status >/dev/null 2>&1; cp t/__snapshots__/each.test.js.snap.v4 t/__snapshots__/each.test.js.snap; N=4 r_ci t/each.test.js; echo "-- 5 -u"; N=3 r t/each.test.js -u; }
   [ $V = 4.1.11 ] && cp t/__snapshots__/each.test.js.snap t/__snapshots__/each.test.js.snap.v4
   echo "-- 6 slow expect.poll"; r t/poll.test.js
 done
