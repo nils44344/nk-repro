@@ -13,3 +13,5 @@ jobs:
         with:
           node-version: 24
       - run: W=$RUNNER_TEMP/work bash vite-postcss-config/run.sh
+      - name: same, project outside the home folder
+        run: W=/tmp/work bash vite-postcss-config/run.sh
