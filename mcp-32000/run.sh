@@ -34,13 +34,10 @@ echo "-- server printing to stdout (before connect and during the tool call)"; L
 echo "######## claude mcp list (throwaway HOME, no login)"
 export HOME=$W/home CLAUDE_CONFIG_DIR=$W/home/.claude DISABLE_AUTOUPDATER=1; mkdir -p $CLAUDE_CONFIG_DIR
 npm install -g @anthropic-ai/claude-code $Q 2>&1 | tail -1; echo "claude $(claude --version 2>&1 | tail -1)"
-cat > .mcp.json <<J
-{ "mcpServers": {
-  "crash": { "command": "node", "args": ["$W/crash.mjs"] },
-  "nokey": { "command": "node", "args": ["$W/ok.mjs"], "env": { "NEED_KEY": "1" } },
-  "withkey": { "command": "node", "args": ["$W/ok.mjs"], "env": { "NEED_KEY": "1", "DEMO_API_KEY": "x" } },
-  "missing": { "command": "nonexistent-command-xyz" },
-  "loud": { "command": "node", "args": ["$W/ok.mjs"], "env": { "LOUD": "1" } } } }
-J
+claude mcp add -s user crash -- node $W/crash.mjs >/dev/null
+claude mcp add -s user nokey -e NEED_KEY=1 -- node $W/ok.mjs >/dev/null
+claude mcp add -s user withkey -e NEED_KEY=1 -e DEMO_API_KEY=x -- node $W/ok.mjs >/dev/null
+claude mcp add -s user missing -- nonexistent-command-xyz >/dev/null
+claude mcp add -s user loud -e LOUD=1 -- node $W/ok.mjs >/dev/null
 timeout 120 claude mcp list 2>&1 | grep -aE "crash|nokey|withkey|missing|loud|Connected|Failed|trust|approve" | head -8 | cut -c1-150
 echo "== done"
