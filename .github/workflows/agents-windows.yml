@@ -1,0 +1,25 @@
+name: agents-windows
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  run:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { node: 24, npm: '' }
+          - { node: 24, npm: '12' }
+          - { node: 26, npm: '' }
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: |
+          $env:ORIG_USERPROFILE = $env:USERPROFILE; $env:ORIG_APPDATA = $env:APPDATA; $env:ORIG_LOCALAPPDATA = $env:LOCALAPPDATA; $env:NPM = '${{ matrix.npm }}'
+          & "$env:GITHUB_WORKSPACE/agents-windows/run.ps1"
+        shell: pwsh
