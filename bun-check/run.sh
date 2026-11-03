@@ -11,7 +11,8 @@ run() { # $1 repo $2 commit $3 dir $4 extra args
   git clone -q https://github.com/$1 $3 && cd $3 && git checkout -q $2 && (bun install >/dev/null 2>&1 || npm install --no-audit --no-fund --loglevel=error >/dev/null 2>&1)
   echo "-- $1 @ $2"; echo "   tsc 6.0.3 $4: $(tm $TSC6 $4 --noEmit)"
   echo "   tsc 7.0.2 $4: $(tm $TSC7 $4 --noEmit)"; grep -oE "^[^(]+\([0-9]+,[0-9]+\): error TS[0-9]+" out.txt | sort > ../tsc7-$3.txt
-  echo "   bun check $4: $(tm bun check $4)"; grep -oE "^[^(]+\([0-9]+,[0-9]+\): error TS[0-9]+|^[^ :]+:[0-9]+:[0-9]+ - error TS[0-9]+" out.txt | sed -E 's/:([0-9]+):([0-9]+) - /(\1,\2): /' | sort > ../bun-$3.txt
+  if [ "$3" = hono ]; then cd $W; echo "   bun check -b -p hono (from the parent; Hono has its own \"check\" script): $(tm bun check -b -p hono)"; grep -aE "Found [0-9]+ errors|checked [0-9]+ files" out.txt | tail -1 | sed 's/^/      /'; cp out.txt hono/out.txt; cd hono
+  else echo "   bun check $4: $(tm bun check $4)"; fi; grep -oE "^[^(]+\([0-9]+,[0-9]+\): error TS[0-9]+|^[^ :]+:[0-9]+:[0-9]+ - error TS[0-9]+" out.txt | sed -E 's/:([0-9]+):([0-9]+) - /(\1,\2): /' | sort > ../bun-$3.txt
   echo "   tsc 7 vs bun check, same error lines: $(diff -q ../tsc7-$3.txt ../bun-$3.txt >/dev/null && echo yes || echo "no ($(diff ../tsc7-$3.txt ../bun-$3.txt | grep -c '^[<>]') lines differ)")"
   cd $W; }
 run colinhacks/zod 680d19f zod ""
