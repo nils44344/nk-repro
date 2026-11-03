@@ -11,7 +11,7 @@
   "npm:@google/genai@latest": "2.32.0",
   "npm:next@latest": "16.4.4",
   "npm:wrangler@latest": "4.156.2",
-  "npm:@anthropic-ai/claude-code@latest": "2.1.316",
+  "npm:@anthropic-ai/claude-code@latest": "2.1.317",
   "npm:@supabase/supabase-js@latest": "2.118.0",
   "npm:supabase@latest": "3.0.0",
   "npm:@prisma/client@latest": "7.10.1",
