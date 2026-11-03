@@ -5,7 +5,7 @@ set +e
 W=${W:-$(pwd)/work}; mkdir -p "$W"; cd "$W" || exit 1
 echo "== $(date -u) node $(node -v)"
 echo '{"type":"module"}' > package.json; echo '{"name":"demo"}' > data.json
-o() { node "$1" 2>&1 | grep -aE "ReferenceError|Error|^ok|^dir|^file|demo|function" | grep -v "^\s*at " | head -2 | cut -c1-140; }
+o() { node "$1" 2>&1 | grep -aE "ReferenceError|TypeError|^ok|^dir |^file |demo" | head -1 | cut -c1-140; }
 echo 'const fs = require("node:fs"); console.log("ok");' > a.js; echo "-- require: $(o a.js)"
 echo 'console.log(__dirname);' > b.js; echo "-- __dirname: $(o b.js)"
 echo 'console.log(__filename);' > c.js; echo "-- __filename: $(o c.js)"
