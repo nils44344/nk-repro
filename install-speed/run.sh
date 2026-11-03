@@ -5,7 +5,8 @@ set +e
 W=${W:-$(pwd)/work}; mkdir -p "$W"; HERE=$(cd "$(dirname "$0")" && pwd); ROUNDS=${ROUNDS:-3}
 npm install -g pnpm@12.5.1 yarn@1.22.22 --no-audit --no-fund --loglevel=error >/dev/null 2>&1
 echo "== $(date -u) $(uname -s) node $(node -v) npm $(npm -v) pnpm $(pnpm -v) bun $(bun -v) yarn $(yarn -v), $(nproc 2>/dev/null || echo $NUMBER_OF_PROCESSORS) cpus"
-t() { local s=$(date +%s.%N); "$@" > last.log 2>&1; local c=$?; local e=$(date +%s.%N); printf '%.2f' $(echo "$e - $s" | bc); [ $c = 0 ] || printf '(exit %s)' $c; }
+now() { node -e 'console.log(Date.now())'; }
+t() { local s=$(now); "$@" > last.log 2>&1; local c=$?; local e=$(now); node -e "process.stdout.write(((${e}-${s})/1000).toFixed(2))"; [ $c = 0 ] || { printf '(exit %s: %s)' $c "$(grep -m1 -aiE 'err|error' last.log | cut -c1-90)"; }; }
 cmd() { case $1 in
   npm) echo "npm install --no-audit --no-fund --cache $C" ;;
   pnpm) echo "pnpm install --store-dir $C/store --cache-dir $C/cache" ;;
@@ -18,7 +19,7 @@ for r in $(seq 1 $ROUNDS); do
     [ $tool = pnpm ] && printf 'allowBuilds:\n  esbuild: true\n  workerd: true\n  sharp: true\n' > $D/pnpm-workspace.yaml
     [ $tool = bun ] && node -e 'const f=process.argv[1],p=require(f);p.trustedDependencies=["esbuild","workerd","sharp"];require("fs").writeFileSync(f,JSON.stringify(p,null,2))' $D/package.json
     cd $D; c=$(t $(cmd $tool)); rm -rf node_modules; w=$(t $(cmd $tool)); n=$(t $(cmd $tool))
-    sz=$(du -sm $C 2>/dev/null | cut -f1); echo "round $r $tool: cold $c s | warm $w s | no change $n s | cache ${sz} MB"; cd $W
+    sz=$(du -sm $C 2>/dev/null | cut -f1); nm=$(ls node_modules 2>/dev/null | wc -l); echo "round $r $tool: cold $c s | warm $w s | no change $n s | cache ${sz:-0} MB | node_modules entries $nm"; cd $W
   done
   order=("${order[@]:1}" "${order[0]}")
 done
