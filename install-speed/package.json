@@ -1,0 +1,41 @@
+{
+  "name": "nilaykabariya",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && pagefind --site dist",
+    "preview": "astro preview",
+    "astro": "astro",
+    "deploy": "npm run build && wrangler deploy && node scripts/indexnow.mjs && (python D:/tools/gsc/gsc.py submit sc-domain:nilaykabariya.blog https://nilaykabariya.blog/sitemap-index.xml || echo sitemap submit skipped)",
+    "check": "astro check",
+    "subscribers": "node scripts/subscribers.mjs",
+    "newsletter": "node scripts/newsletter.mjs"
+  },
+  "dependencies": {
+    "@astrojs/markdown-satteri": "^0.4.1",
+    "@astrojs/mdx": "^8.0.1",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "@fontsource/caveat": "^5.3.0",
+    "@fontsource/fraunces": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@resvg/resvg-js": "^2.6.2",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.3",
+    "satori": "^0.33.4",
+    "tailwindcss": "^4.3.3"
+  },
+  "allowScripts": {
+    "esbuild": true
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "^0.133.0",
+    "pagefind": "^1.5.2",
+    "wrangler": "^4.136.2"
+  }
+}
