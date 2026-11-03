@@ -44,7 +44,7 @@ echo "######## Kit $(v @sveltejs/kit), Vite $(v vite)"; b; serve
 echo "######## Way 1: npm install -D @sveltejs/kit@latest"
 npm install -D @sveltejs/kit@latest $Q 2>&1 | grep -aE "code E|Found:|peer @sveltejs" | head -3 | sed 's/^/   /'
 echo "######## Way 2: sv migrate sveltekit-3 --tasks all"
-npx -y sv@${SV:-1.1.1} migrate sveltekit-3 --tasks all < /dev/null > m.log 2>&1; echo "   exit $?: $(sed 's/\x1b\[[0-9;]*m//g' m.log | grep -aiE 'applied|success|error|failed' | tail -2 | tr '\n' ' ' | cut -c1-200)"
+npx -y sv@${SV:-1.1.1} migrate sveltekit-3 --tasks all --no-git-check --confirm --install npm < /dev/null > m.log 2>&1; echo "   exit $?"; sed 's/\[[0-9;]*m//g' m.log | grep -av '^\s*$' | grep -aiE 'task|applied|success|error|warn' | head -14 | cut -c1-170 | sed 's/^/   log: /' 
 npm install $Q > /dev/null 2>&1
 echo "   now: Kit $(v @sveltejs/kit), Vite $(v vite), svelte $(v svelte), TS $(v typescript), adapter-auto $(v @sveltejs/adapter-auto) | svelte.config.js exists: $([ -f svelte.config.js ] && echo yes || echo no) | MIGRATION_TASKS.md: $([ -f MIGRATION_TASKS.md ] && echo yes || echo no)"
 echo "   +page.svelte now: $(grep -oE 'href=[^>]*' src/routes/+page.svelte | head -1)"
