@@ -9,7 +9,7 @@ now() { node -e 'console.log(Date.now())'; }
 t() { local s=$(now); "$@" > last.log 2>&1; local c=$?; local e=$(now); node -e "process.stdout.write(((${e}-${s})/1000).toFixed(2))"; [ $c = 0 ] || { printf '(exit %s: %s)' $c "$(grep -m1 -aiE 'err|error' last.log | cut -c1-90)"; }; }
 cmd() { case $1 in
   npm) echo "npm install --no-audit --no-fund --cache $C" ;;
-  pnpm) echo "pnpm install --store-dir $C/store --cache-dir $C/cache" ;;
+  pnpm) echo "pnpm install --store-dir $C/store" ;;
   bun) echo "env BUN_INSTALL_CACHE_DIR=$C bun install" ;;
   yarn) echo "yarn install --cache-folder $C --non-interactive" ;; esac; }
 order=(npm pnpm bun yarn)
