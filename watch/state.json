@@ -6,7 +6,7 @@
   "npm:bun@latest": "1.4.4",
   "npm:openai@latest": "7.50.0",
   "npm:npm@latest": "12.2.1",
-  "npm:@anthropic-ai/sdk@latest": "1.4.0",
+  "npm:@anthropic-ai/sdk@latest": "1.5.0",
   "npm:tailwindcss@latest": "4.3.4",
   "npm:@google/genai@latest": "2.32.0",
   "npm:next@latest": "16.4.5",
@@ -17,7 +17,7 @@
   "npm:@prisma/client@latest": "7.10.1",
   "node:current": "v27.0.0-alpha.0.0.0",
   "node:lts": "v26.13.0 (Lithium)",
-  "npm:@angular/cli@latest": "22.2.5",
+  "npm:@angular/cli@latest": "22.2.6",
   "npm:nuxt@latest": "4.6.4",
   "npm:@swc/core@latest": "1.16.21",
   "npm:create-react-router@latest": "8.5.1",
@@ -32,6 +32,6 @@
   "pypi:tensorflow": "2.21.0",
   "pypi:sentencepiece": "0.2.2",
   "pypi:pywinpty": "3.1.2 +cp315-win",
-  "npm:remix@latest": "3.1.0",
+  "npm:remix@latest": "3.2.0",
   "npm:typescript@rc": "7.0.1-rc"
 }
