@@ -37,3 +37,15 @@ jobs:
         with:
           python-version: '3.14'
       - run: python py315/msvc.py "pyyaml==6.0.1" "msgpack==1.0.7" "regex==2023.12.25"
+
+  # sentencepiece 0.2.3 (5 Nov 2026) ships cp315 Windows wheels: install with no compiling allowed, then use it.
+  wheel:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.15'
+      - run: python -m pip install --only-binary=:all: --no-cache-dir sentencepiece
+      - run: python -c "import sys, sentencepiece as s; print(sys.version.split()[0], 'sentencepiece', s.__version__)"
+      - run: python -m pip install --only-binary=:all: --no-cache-dir "sentencepiece==0.2.2"
+        continue-on-error: true
