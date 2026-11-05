@@ -45,7 +45,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.15'
-      - run: python -m pip install --only-binary=:all: --no-cache-dir sentencepiece
+      - run: 'python -m pip install --only-binary=:all: --no-cache-dir sentencepiece'
       - run: python -c "import sys, sentencepiece as s; print(sys.version.split()[0], 'sentencepiece', s.__version__)"
-      - run: python -m pip install --only-binary=:all: --no-cache-dir "sentencepiece==0.2.2"
+      - run: 'python -m pip install --only-binary=:all: --no-cache-dir sentencepiece==0.2.2'
         continue-on-error: true
