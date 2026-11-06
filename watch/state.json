@@ -4,7 +4,7 @@
   "npm:vite@latest": "8.3.6",
   "npm:vite@beta": "8.3.0-beta.1",
   "npm:bun@latest": "1.4.4",
-  "npm:openai@latest": "7.52.0",
+  "npm:openai@latest": "7.53.0",
   "npm:npm@latest": "12.2.2",
   "npm:@anthropic-ai/sdk@latest": "1.6.0",
   "npm:tailwindcss@latest": "4.3.4",
