@@ -1,0 +1,6 @@
+apiVersion: 'v1beta' | gemini-flash-latest | ERR 503 | This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+apiVersion: 'v1beta' | gemini-flash-lite-latest | OK | modelVersion=gemini-3.5-flash-lite
+apiVersion: 'v1beta' | gemini-3.1-pro-preview | ERR 429 | You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.g
+GOOGLE_GENAI_API_VERSION=beta | gemini-flash-latest | ERR 503 | This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+GOOGLE_GENAI_API_VERSION=beta | gemini-flash-lite-latest | OK | modelVersion=gemini-3.5-flash-lite
+GOOGLE_GENAI_API_VERSION=beta | gemini-3.1-pro-preview | ERR 429 | You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.g
