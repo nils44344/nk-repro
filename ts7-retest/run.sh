@@ -22,6 +22,11 @@ echo "== ts-jest"; npx jest 2>&1 | grep -iE "typescript|error|pass|fail" | head 
 echo "== typescript-eslint"; npx eslint src 2>&1 | head -4
 echo "== ts-node"; npx ts-node src/index.ts 2>&1 | grep -E "Error|^3" | head -3
 echo "== typedoc"; npx typedoc src/index.ts --out docs 2>&1 | grep -iE "error|generated" | head -3
+echo "== alternatives on plain TypeScript 7 (before side-by-side)"
+npm install -D tsx --no-audit --no-fund --loglevel=error >/dev/null 2>&1
+echo "tsx $(npm ls tsx --depth=0 2>/dev/null | grep -o 'tsx@[0-9.]*'): $(npx tsx src/index.ts 2>&1 | head -1)"
+echo "node $(node -v) src/index.ts: $(node src/index.ts 2>&1 | grep -vi warning | head -1)"
+echo "ts-node latest on npm: $(npm view ts-node version)"
 echo "== npm install @typescript/native (the name in the ts-jest message)"
 npm install -D @typescript/native --no-audit --no-fund 2>&1 | grep -E "code|404" | head -3
 echo "== side-by-side aliases"
