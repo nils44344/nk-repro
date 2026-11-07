@@ -1,8 +1,8 @@
 #!/bin/bash
 # Re-test TS7 tool compatibility with latest tool versions (29 Oct 2026)
-export NODE_EXTRA_CA_CERTS=D:/tools/ca-bundle-win.pem
+[ -f D:/tools/ca-bundle-win.pem ] && export NODE_EXTRA_CA_CERTS=D:/tools/ca-bundle-win.pem
 set +e
-W=D:/nk-ts7r/p; rm -rf $W; mkdir -p $W/src $W/test; cd $W
+W=${W:-D:/nk-ts7r/p}; rm -rf $W; mkdir -p $W/src $W/test; cd $W
 echo 'export const add = (a: number, b: number): number => a + b; console.log(add(1, 2));' > src/index.ts
 echo 'import { add } from "../src/index"; test("add", () => { expect(add(1, 2)).toBe(3); });' > test/add.test.ts
 echo '{"compilerOptions":{"target":"es2022","module":"commonjs","strict":true,"esModuleInterop":true,"types":["jest","node"]},"include":["src","test"]}' > tsconfig.json
@@ -13,10 +13,11 @@ export default tseslint.config(...tseslint.configs.recommendedTypeChecked, { lan
 E2
 npm init -y >/dev/null
 echo "== strict install, typescript 7.0.2 + latest tools"
-npm install -D typescript@7.0.2 ts-jest@29.4.15 jest@30.5.2 @types/jest @types/node typescript-eslint@8.72.1 eslint@10 ts-node@10.9.2 typedoc@0.28.20 --no-audit --no-fund 2>&1 | grep -E "code|ERESOLVE|peer typescript|Could not resolve" | head -6
+npm install -D typescript@${TS:-7.0.2} ts-jest@${TOOLS:-29.4.15} jest@30.5.2 @types/jest @types/node typescript-eslint@${TOOLS:-8.72.1} eslint@10 ts-node@${TOOLS:-10.9.2} typedoc@${TOOLS:-0.28.20} --no-audit --no-fund 2>&1 | grep -E "code|ERESOLVE|peer typescript|Could not resolve" | head -6
 echo "== legacy-peer-deps install"
-npm install -D typescript@7.0.2 ts-jest@29.4.15 jest@30.5.2 @types/jest @types/node typescript-eslint@8.72.1 eslint@10 ts-node@10.9.2 typedoc@0.28.20 --legacy-peer-deps --no-audit --no-fund --loglevel=error 2>&1 | tail -2
+npm install -D typescript@${TS:-7.0.2} ts-jest@${TOOLS:-29.4.15} jest@30.5.2 @types/jest @types/node typescript-eslint@${TOOLS:-8.72.1} eslint@10 ts-node@${TOOLS:-10.9.2} typedoc@${TOOLS:-0.28.20} --legacy-peer-deps --no-audit --no-fund --loglevel=error 2>&1 | tail -2
 npx tsc --version
+npm ls ts-jest typescript-eslint ts-node typedoc --depth=0 2>/dev/null | tail -5
 echo "== ts-jest"; npx jest 2>&1 | grep -iE "typescript|error|pass|fail" | head -6
 echo "== typescript-eslint"; npx eslint src 2>&1 | head -4
 echo "== ts-node"; npx ts-node src/index.ts 2>&1 | grep -E "Error|^3" | head -3
@@ -24,10 +25,15 @@ echo "== typedoc"; npx typedoc src/index.ts --out docs 2>&1 | grep -iE "error|ge
 echo "== npm install @typescript/native (the name in the ts-jest message)"
 npm install -D @typescript/native --no-audit --no-fund 2>&1 | grep -E "code|404" | head -3
 echo "== side-by-side aliases"
-npm install -D "@typescript/native@npm:typescript@7.0.2" "typescript@npm:@typescript/typescript6@^6.0.2" --legacy-peer-deps --no-audit --no-fund --loglevel=error 2>&1 | tail -2
+npm install -D "@typescript/native@npm:typescript@${TS:-7.0.2}" "typescript@npm:@typescript/typescript6@^6.0.2" --legacy-peer-deps --no-audit --no-fund --loglevel=error 2>&1 | tail -2
 rm -rf node_modules; npm install --no-audit --no-fund --loglevel=error 2>&1 | tail -3
 echo "tsc from @typescript/native: $(node node_modules/@typescript/native/bin/tsc --version)"
 echo "== ts-jest"; npx jest 2>&1 | grep -iE "typescript|error|pass|fail|Tests:" | head -6
 echo "== typescript-eslint"; npx eslint src 2>&1 | head -4; echo "eslint exit $?"
 echo "== ts-node"; npx ts-node src/index.ts 2>&1 | head -2
 echo "== typedoc"; npx typedoc src/index.ts --out docs 2>&1 | grep -iE "error|generated" | head -3
+echo "== after side-by-side: tsc"; npx tsc --version; npx tsc -p . --noEmit && echo "tsc --noEmit OK"
+echo "== after side-by-side: ts-jest"; npx jest 2>&1 | grep -E "Tests:|FAIL|PASS" | head -3
+echo "== after side-by-side: typescript-eslint"; npx eslint src && echo "eslint OK"
+echo "== after side-by-side: ts-node"; npx ts-node src/index.ts 2>&1 | head -2
+echo "== after side-by-side: typedoc"; npx typedoc src/index.ts --out docs 2>&1 | grep -iE "error|generated" | head -2

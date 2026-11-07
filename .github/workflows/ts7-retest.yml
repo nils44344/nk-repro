@@ -1,0 +1,24 @@
+name: ts7-retest
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  run:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        tools: [pinned, latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: "run (tools: ${{ matrix.tools }})"
+        shell: bash
+        run: |
+          if [ "${{ matrix.tools }}" = latest ]; then export TOOLS=latest; fi
+          W="$RUNNER_TEMP/work" bash ts7-retest/run.sh
