@@ -3,7 +3,7 @@
 # warm (cache + lockfile, node_modules deleted), no change. Separate cache per tool and round; rotating order.
 set +e
 W=${W:-$(pwd)/work}; mkdir -p "$W"; HERE=$(cd "$(dirname "$0")" && pwd); ROUNDS=${ROUNDS:-3}
-npm install -g pnpm@12.5.1 yarn@1.22.22 --no-audit --no-fund --loglevel=error >/dev/null 2>&1
+npm install -g pnpm@12.18.0 yarn@1.22.22 --no-audit --no-fund --loglevel=error >/dev/null 2>&1
 echo "== $(date -u) $(uname -s) node $(node -v) npm $(npm -v) pnpm $(pnpm -v) bun $(bun -v) yarn $(yarn -v), $(nproc 2>/dev/null || echo $NUMBER_OF_PROCESSORS) cpus"
 now() { node -e 'console.log(Date.now())'; }
 t() { local s=$(now); "$@" > last.log 2>&1; local c=$?; local e=$(now); node -e "process.stdout.write(((${e}-${s})/1000).toFixed(2))"; [ $c = 0 ] || { printf '(exit %s: %s)' $c "$(grep -m1 -aiE 'err|error' last.log | cut -c1-90)"; }; }
