@@ -66,7 +66,7 @@ Building wheels for collected packages: pyyaml
 Failed to build pyyaml
 
 [notice] A new release of pip is available: 26.1.1 -> 26.3
-[notice] To update, run: D:\nk-scratch\msvc\v\Scripts\python.exe -m pip install --upgrade pip
+[notice] To update, run: v\Scripts\python.exe -m pip install --upgrade pip
 error: failed-wheel-build-for-install
 
 Failed to build installable wheels for some pyproject.toml based projects
