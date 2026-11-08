@@ -1,0 +1,5 @@
+# 8 Nov 2026 22:31 IST, curl from Windows 11, temperature 0.2, max_tokens 1
+2023-06-01 | claude-haiku-4-5 | HTTP200 | ok, model=claude-haiku-4-5-20251001
+2023-06-01 | claude-haiku-5-5 | HTTP400 | `temperature` is deprecated for this model.
+2026-10-21 | claude-haiku-4-5 | HTTP400 | temperature: Extra inputs are not permitted
+2026-10-21 | claude-haiku-5-5 | HTTP400 | temperature: Extra inputs are not permitted
