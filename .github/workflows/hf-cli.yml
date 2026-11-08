@@ -11,3 +11,4 @@ jobs:
         with:
           python-version: '3.13'
       - run: W=$RUNNER_TEMP/work bash hf-cli/run.sh
+      - run: W=$RUNNER_TEMP/work2 bash hf-cli/click.sh
