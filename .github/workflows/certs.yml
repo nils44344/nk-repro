@@ -10,6 +10,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [windows-latest, ubuntu-latest]
+        node: ['24.14.0', '26']
     runs-on: ${{ matrix.os }}
     defaults:
       run:
@@ -20,5 +21,7 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
-          node-version: '24.14.0'
+          node-version: ${{ matrix.node }}
+      - if: matrix.node == '26'
+        run: npm install -g npm@12 --no-audit --no-fund --loglevel=error
       - run: bash certs/run.sh
