@@ -1,0 +1,14 @@
+# The same job on pull_request, for comparison with prt-demo.yml.
+name: pr-demo
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled]
+permissions:
+  contents: read
+jobs:
+  meta:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "event=${{ github.event_name }} base=${{ github.base_ref }} head_repo=${{ github.event.pull_request.head.repo.full_name }}"
+          date -u

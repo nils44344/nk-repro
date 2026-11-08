@@ -1,0 +1,15 @@
+# pull_request_target default block (GitHub, enforced 2 Dec 2026; brownouts 9 and 16 Nov 16:00-18:00 UTC).
+# Prints only event metadata; never checks out or runs PR code.
+name: prt-demo
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, labeled]
+permissions:
+  contents: read
+jobs:
+  meta:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "event=${{ github.event_name }} base=${{ github.base_ref }} head_repo=${{ github.event.pull_request.head.repo.full_name }}"
+          date -u
