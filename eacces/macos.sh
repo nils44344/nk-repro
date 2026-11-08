@@ -2,6 +2,10 @@
 # npm install -g on macOS (8 Nov 2026): does it hit EACCES with the nodejs.org installer, Homebrew, or nvm?
 # GitHub's macos-latest runner, user "runner" (not root). Each case uses its own node binary by full path.
 set -u
+# The runner presets an npm prefix (env / ~/.npmrc). Clear it so each case uses the install's own defaults.
+env | grep -i "npm_config" | sed 's/=.*/=<set>/' || true
+unset NPM_CONFIG_PREFIX npm_config_prefix
+export NPM_CONFIG_USERCONFIG=/tmp/empty-npmrc; : > /tmp/empty-npmrc
 NODE_V=${NODE_V:-24.15.0}
 echo "macOS $(sw_vers -productVersion) $(uname -m), user $(whoami), $(date -u +%F)"
 
@@ -13,7 +17,7 @@ ls -ld /usr/local/lib/node_modules
 /usr/local/bin/npm config get prefix
 /usr/local/bin/npm install -g cowsay 2>&1 | grep -E "^npm error (code|syscall|path|errno)|added" | head -6
 echo "--- fix A: a prefix of your own"
-mkdir -p ~/.npm-global && /usr/local/bin/npm config set prefix ~/.npm-global
+mkdir -p ~/.npm-global && /usr/local/bin/npm config set prefix ~/.npm-global && cat /tmp/empty-npmrc
 /usr/local/bin/npm install -g cowsay 2>&1 | grep -E "^npm error code|added" | head -2
 ls ~/.npm-global/bin/cowsay && echo "PATH needs: ~/.npm-global/bin"
 /usr/local/bin/npm config delete prefix
