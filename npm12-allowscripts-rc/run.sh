@@ -17,3 +17,13 @@ try "no config" "" ""
 try "user .npmrc: allow-scripts=@anthropic-ai/claude-code" "allow-scripts=@anthropic-ai/claude-code" ""
 try "global npmrc: allow-scripts=@anthropic-ai/claude-code" "" "allow-scripts=@anthropic-ai/claude-code"
 try "user .npmrc: allowScripts[]=@anthropic-ai/claude-code" "allowScripts[]=@anthropic-ai/claude-code" ""
+
+echo "== child npm install (via npm run / npx), user .npmrc has allow-scripts=@anthropic-ai/claude-code"
+printf 'allow-scripts=@anthropic-ai/claude-code\n' > user.rc; printf '' > global.rc
+cd proj && rm -rf node_modules package-lock.json
+npm pkg set scripts.inst="npm install is-number@7 --no-audit --no-fund" >/dev/null
+echo "   direct npm install:"; npm install is-number@7 --no-audit --no-fund --userconfig ../user.rc 2>&1 | grep -E "EALLOW|added" | head -1 | sed 's/^/      /'
+rm -rf node_modules package-lock.json
+echo "   npm run inst (child npm):"; NPM_CONFIG_USERCONFIG=../user.rc npm run inst 2>&1 | grep -E "EALLOW|added" | head -1 | sed 's/^/      /'
+rm -rf node_modules package-lock.json
+echo "   env npm_config_allow_scripts set:"; npm_config_allow_scripts=@anthropic-ai/claude-code npm install is-number@7 --no-audit --no-fund 2>&1 | grep -E "EALLOW|added" | head -1 | sed 's/^/      /'
