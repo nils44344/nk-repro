@@ -9,7 +9,8 @@ for v in 0.36.0 1.0.0 1.10.0 1.10.1 1.33.0 2.0.0 2.4.0; do
   echo; echo "### huggingface_hub $v   (bin: $(ls v$v/bin | grep -E '^(hf|huggingface-cli)$' | tr '\n' ' '))"
   PATH="$W/v$v/bin:/usr/bin:/bin"
   echo '$ huggingface-cli whoami'; huggingface-cli whoami 2>&1 | head -3; echo "   exit=${PIPESTATUS[0]}"
-  echo '$ hf auth whoami'; hf auth whoami 2>&1 | head -2; echo "   exit=${PIPESTATUS[0]}"
+  echo '$ hf auth whoami'; hf auth whoami > hf.out 2>&1; e=$?; grep -vE '^[[:space:]]*(File |\^|~)' hf.out | tail -2; echo "   exit=$e"
+  echo "   deps: $("$W/v$v/bin/pip" list 2>/dev/null | grep -iE '^(typer|click|typer-slim) ' | tr -s ' ' | paste -sd',')"
 done
 echo; echo "### upgrade in place: 0.36.0 -> 2.4.0"
 rm -rf vup; python -m venv vup; vup/bin/pip install -q "huggingface_hub==0.36.0" >/dev/null 2>&1; ls vup/bin | grep -E '^(hf|huggingface-cli)$' | tr '\n' ' '; echo
