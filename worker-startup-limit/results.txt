@@ -1,0 +1,22 @@
+# wrangler 4.158.0, Workers Paid, deployed from Windows 11, 8 Nov 2026 (IST). Loop size | result
+22:1x 100000000 | Worker Startup Time: 449 ms
+22:1x 150000000 | Worker Startup Time: 678 ms
+22:1x 200000000 | [code: 10021]
+22:1x 175000000 | Worker Startup Time: 800 ms
+22:1x 165000000 | Worker Startup Time: 745 ms
+22:1x 185000000 | Worker Startup Time: 823 ms
+22:1x 192000000 | [code: 10021]
+22:1x 196000000 | Worker Startup Time: 881 ms
+22:1x 200000000 | Worker Startup Time: 893 ms
+22:1x 189000000 | [code: 10021]
+22:19:40 200000000 | Worker Startup Time: 907 ms
+22:20:05 200000000 | Worker Startup Time: 891 ms
+22:20:31 200000000 | Worker Startup Time: 887 ms
+22:20:58 180000000 | Worker Startup Time: 919 ms
+22:21:23 180000000 | Worker Startup Time: 791 ms
+22:21:37 180000000 | Worker Startup Time: 800 ms
+22:21:48 220000000 |    [code: 10021]
+22:22:07 210000000 |    [code: 10021]
+22:22:21 210000000 | Worker Startup Time: 928 ms
+22:22:32 220000000 |    [code: 10021]
+22:22:43 220000000 |    [code: 10021]
