@@ -1,0 +1,10 @@
+name: eacces-macos
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  run:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash eacces/macos.sh
