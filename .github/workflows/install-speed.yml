@@ -24,5 +24,5 @@ jobs:
           node-version: 24
       - uses: oven-sh/setup-bun@v2
         with:
-          bun-version: 1.4.2
+          bun-version: 1.4.4
       - run: W=$RUNNER_TEMP/work ROUNDS=${{ matrix.rounds }} bash install-speed/run.sh
