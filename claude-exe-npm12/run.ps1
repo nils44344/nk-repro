@@ -1,6 +1,8 @@
 # Claude Code's claude.exe after an npm 12 global install on Windows: blocked postinstall, 500-byte placeholder, and each fix.
 $ErrorActionPreference = 'Continue'
-npm install -g npm@12 --no-audit --no-fund --loglevel=error | Out-Null
+$npmMajor = if ($env:NPM_MAJOR) { $env:NPM_MAJOR } else { '12' }
+npm install -g npm@$npmMajor --no-audit --no-fund --loglevel=error | Out-Null
+"claude-code on npm: $(npm view @anthropic-ai/claude-code version)"
 "== $(Get-Date -Format o) node $(node -v) npm $(npm -v) $((Get-CimInstance Win32_OperatingSystem).Caption)"
 function Try-Prefix($name, $extra) {
   $p = "$env:RUNNER_TEMP\$name"; New-Item -ItemType Directory -Force $p | Out-Null
