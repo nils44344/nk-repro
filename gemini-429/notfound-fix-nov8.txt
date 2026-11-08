@@ -1,0 +1,10 @@
+# REST: name | v1 | v1beta
+gemini-3.8-flash | no answer in 45 s (TimeoutError) | no answer in 45 s (TimeoutError)
+gemini-3.5-flash | 200 gemini-3.6-flash | 200 gemini-3.6-flash
+gemini-2.5-flash-lite | 404 This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use mo | 404 This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use mo
+gemini-3-flash-preview | 404 models/gemini-3-flash-preview is not found for API version v1, or is not supported for generateContent. Call M | 200 gemini-3-flash-preview
+gemini-flash-latest | 404 models/gemini-flash-latest is not found for API version v1, or is not supported for generateContent. Call Mode | no answer in 45 s (TimeoutError)
+
+# Which URL each SDK major calls by default (fetch intercepted, request not sent)
+@google/genai 2.x (2.27.0) -> https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent
+@google/genai 3.0 (3.0.0) -> https://generativelanguage.googleapis.com/v1/models/gemini-3.8-flash:generateContent
