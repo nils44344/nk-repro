@@ -1,0 +1,9 @@
+$ gh run list -L 2 --json name,event,conclusion   # test PR #51, 8 Nov 2026
+prt-demo  pull_request_target  success  2026-11-08T17:11:34Z
+pr-demo  pull_request  success  2026-11-08T17:11:34Z
+
+$ gh api .../check-runs/{id}/annotations   # the pull_request_target run
+notice: "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+
+$ gh api repos/nils44344/nk-repro/actions/policies
+{"total_count":0,"policies":[]}
