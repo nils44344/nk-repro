@@ -41,6 +41,10 @@ echo; echo "### python -m openai migrate --help"
 timeout 60 python -m openai migrate --help 2>&1 | head -15
 echo; echo "### openai migrate (in the repo)"
 timeout 300 python -m openai migrate < /dev/null 2>&1 | tail -25
+echo; echo "### openai migrate from openai 2.8.0 (last line with the CLI), in its own venv"
+python -m venv ../v2 && ../v2/bin/pip install -q --disable-pip-version-check "openai==2.8.0"
+../v2/bin/openai --version 2>&1 | head -1
+timeout 300 ../v2/bin/openai migrate < /dev/null 2>&1 | tail -15
 echo; echo "### diff"
 git --no-pager diff --stat; git --no-pager diff | head -60
 echo; echo "### run the migrated file against a local fake API"
