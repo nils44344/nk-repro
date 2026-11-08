@@ -1,0 +1,10 @@
+/ok | ok | cpuTime 0 | 
+/undefined | exception | cpuTime 0 | TypeError: Cannot read properties of undefined (reading 'email')
+/binding | exception | cpuTime 0 | TypeError: Cannot read properties of undefined (reading 'get')
+/not-response | exception | cpuTime 0 | TypeError: Incorrect type for Promise: the Promise did not resolve to 'Response'.
+/relative-fetch | exception | cpuTime 0 | TypeError: Invalid URL: /api/data
+/json-no-body | exception | cpuTime 0 | SyntaxError: Unexpected end of JSON input
+/hang | exception | cpuTime 0 | Error: The Workers runtime canceled this request because it detected that your Worker's code had hung and would never generate a response. Refer to: https://developers.cloudflare.com/workers/observability/errors/
+/burn?ms=5 | exceededCpu | cpuTime 2039 | Error: Worker exceeded CPU time limit.
+/burn?ms=50 | exceededCpu | cpuTime 2039 | Error: Worker exceeded CPU time limit.
+/burn?ms=300 | exceededCpu | cpuTime 2020 | Error: Worker exceeded CPU time limit.

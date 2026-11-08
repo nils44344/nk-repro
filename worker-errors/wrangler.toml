@@ -1,0 +1,7 @@
+name = "nk-startup-limit-test"
+main = "worker.js"
+compatibility_date = "2026-11-01"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+[limits]
+cpu_ms = 10

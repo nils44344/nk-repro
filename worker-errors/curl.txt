@@ -1,0 +1,11 @@
+# curl from Windows 11, 08 Nov 2026 23:33 IST, wrangler 4.158.0, limits.cpu_ms = 10
+/ok | HTTP 200 | ok
+/undefined | HTTP 500 | error code: 1101
+/binding | HTTP 500 | error code: 1101
+/not-response | HTTP 500 | error code: 1101
+/relative-fetch | HTTP 500 | error code: 1101
+/json-no-body | HTTP 500 | error code: 1101
+/hang | HTTP 500 | error code: 1101
+/burn?ms=5 | HTTP 503 | error code: 1102
+/burn?ms=50 | HTTP 503 | error code: 1102
+/burn?ms=300 | HTTP 503 | error code: 1102

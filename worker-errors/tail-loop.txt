@@ -1,0 +1,10 @@
+/loop?n=100000 | ok | cpuTime 2 ms | wallTime 2 ms | 
+/loop?n=1000000 | ok | cpuTime 13 ms | wallTime 13 ms | 
+/loop?n=4000000 | ok | cpuTime 20 ms | wallTime 20 ms | 
+/loop?n=10000000 | ok | cpuTime 69 ms | wallTime 70 ms | 
+/loop?n=50000000 | ok | cpuTime 290 ms | wallTime 292 ms | 
+/loop?n=100000000 | ok | cpuTime 478 ms | wallTime 479 ms | 
+/loop?n=400000000 | exceededCpu | cpuTime 1745 ms | wallTime 1789 ms | Worker exceeded CPU time limit.
+/loop?n=1000000 | ok | cpuTime 10 ms | wallTime 10 ms | 
+/loop?n=10000000 | ok | cpuTime 58 ms | wallTime 58 ms | 
+/now | ok | cpuTime 271 ms | wallTime 272 ms | 

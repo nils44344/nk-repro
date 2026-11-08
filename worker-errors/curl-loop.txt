@@ -1,0 +1,11 @@
+# curl, 08 Nov 2026 23:35 IST, limits.cpu_ms = 10
+/loop?n=100000 | HTTP 200 | looped 100000: 933429
+/loop?n=1000000 | HTTP 200 | looped 1000000: 256782
+/loop?n=4000000 | HTTP 200 | looped 4000000: 370714
+/loop?n=10000000 | HTTP 200 | looped 10000000: 907196
+/loop?n=50000000 | HTTP 200 | looped 50000000: 922688
+/loop?n=100000000 | HTTP 200 | looped 100000000: 863789
+/loop?n=400000000 | HTTP 503 | error code: 1102
+/loop?n=1000000 | HTTP 200 | looped 1000000: 256782
+/loop?n=10000000 | HTTP 200 | looped 10000000: 907196
+/now | HTTP 200 | Date.now() before 1794161155091, after 1794161155091, diff 0 ms, x=922688

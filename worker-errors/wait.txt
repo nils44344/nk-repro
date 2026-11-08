@@ -1,0 +1,1 @@
+scheduler.wait(300): 300 ms; setTimeout(300): 300 ms
