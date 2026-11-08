@@ -15,9 +15,9 @@ Building wheels for collected packages: pyyaml
   exit code: 1
   
   [44 lines of output]
-  C:\Users\NIR\AppData\Local\Temp\pip-build-env-m_17djvh\overlay\Lib\site-packages\wheel\bdist_wheel.py:4: FutureWarning: The 'wheel' package is no longer the canonical location of the 'bdist_wheel' command, and will be removed in a future release. Please update to setuptools v70.1 or later which contains an integrated version of this command.
+  %TEMP%\pip-build-env-m_17djvh\overlay\Lib\site-packages\wheel\bdist_wheel.py:4: FutureWarning: The 'wheel' package is no longer the canonical location of the 'bdist_wheel' command, and will be removed in a future release. Please update to setuptools v70.1 or later which contains an integrated version of this command.
     warn(
-  C:\Users\NIR\AppData\Local\Temp\pip-build-env-m_17djvh\overlay\Lib\site-packages\setuptools\dist.py:765: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+  %TEMP%\pip-build-env-m_17djvh\overlay\Lib\site-packages\setuptools\dist.py:765: SetuptoolsDeprecationWarning: License classifiers are deprecated.
   !!
   
           ********************************************************************************
