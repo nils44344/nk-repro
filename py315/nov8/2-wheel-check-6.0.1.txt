@@ -1,0 +1,7 @@
+WARNING: Cache entry deserialization failed, entry ignored
+WARNING: Cache entry deserialization failed, entry ignored
+ERROR: Could not find a version that satisfies the requirement pyyaml==6.0.1 (from versions: 6.0.3)
+
+[notice] A new release of pip is available: 26.1.1 -> 26.3
+[notice] To update, run: D:\nk-scratch\msvc\v\Scripts\python.exe -m pip install --upgrade pip
+ERROR: No matching distribution found for pyyaml==6.0.1
