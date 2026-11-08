@@ -27,3 +27,5 @@ rm -rf node_modules package-lock.json
 echo "   npm run inst (child npm):"; NPM_CONFIG_USERCONFIG=../user.rc npm run inst 2>&1 | grep -E "EALLOW|added" | head -1 | sed 's/^/      /'
 rm -rf node_modules package-lock.json
 echo "   env npm_config_allow_scripts set:"; npm_config_allow_scripts=@anthropic-ai/claude-code npm install is-number@7 --no-audit --no-fund 2>&1 | grep -E "EALLOW|added" | head -1 | sed 's/^/      /'
+rm -rf node_modules package-lock.json
+echo "   npm exec -- sh -c 'npm install' (how npx runs a CLI that installs):"; NPM_CONFIG_USERCONFIG=../user.rc npm exec -- sh -c 'echo "      child env npm_config_allow_scripts=${npm_config_allow_scripts:-<unset>}"; npm install is-number@7 --no-audit --no-fund 2>&1 | grep -E "EALLOW|added" | head -1 | sed "s/^/      /"'
