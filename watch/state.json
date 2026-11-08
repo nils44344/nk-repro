@@ -28,7 +28,7 @@
   "npm:eslint-plugin-react@latest": "7.37.5",
   "pypi:pyyaml": "6.0.3",
   "pypi:torch": "2.15.0 +cp315-win",
-  "pypi:ormsgpack": "1.13.0 +cp315-win",
+  "pypi:ormsgpack": "1.13.1 +cp315-win",
   "pypi:tensorflow": "2.21.0",
   "pypi:sentencepiece": "0.2.3 +cp315-win",
   "pypi:pywinpty": "3.1.2 +cp315-win",
