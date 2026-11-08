@@ -73,30 +73,30 @@ Collecting zstandard>=0.23.0 (from langsmith<1.0.0,>=0.14.9->langchain-core<2.0.
   │ exit code: 1
   ╰─> [29 lines of output]
       Traceback (most recent call last):
-        File "D:\nk-scratch\lc315\Lib\site-packages\pip\_vendor\pyproject_hooks\_in_process\_in_process.py", line 389, in <module>
+        File "lc315\Lib\site-packages\pip\_vendor\pyproject_hooks\_in_process\_in_process.py", line 389, in <module>
           main()
           ~~~~^^
-        File "D:\nk-scratch\lc315\Lib\site-packages\pip\_vendor\pyproject_hooks\_in_process\_in_process.py", line 373, in main
+        File "lc315\Lib\site-packages\pip\_vendor\pyproject_hooks\_in_process\_in_process.py", line 373, in main
           json_out["return_val"] = hook(**hook_input["kwargs"])
                                    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^
-        File "D:\nk-scratch\lc315\Lib\site-packages\pip\_vendor\pyproject_hooks\_in_process\_in_process.py", line 143, in get_requires_for_build_wheel
+        File "lc315\Lib\site-packages\pip\_vendor\pyproject_hooks\_in_process\_in_process.py", line 143, in get_requires_for_build_wheel
           return hook(config_settings)
-        File "C:\Users\NIR\AppData\Local\Temp\pip-build-env-yfey1wnb\overlay\Lib\site-packages\setuptools\build_meta.py", line 333, in get_requires_for_build_wheel
+        File "%TEMP%\pip-build-env-yfey1wnb\overlay\Lib\site-packages\setuptools\build_meta.py", line 333, in get_requires_for_build_wheel
           return self._get_build_requires(config_settings, requirements=[])
                  ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        File "C:\Users\NIR\AppData\Local\Temp\pip-build-env-yfey1wnb\overlay\Lib\site-packages\setuptools\build_meta.py", line 301, in _get_build_requires
+        File "%TEMP%\pip-build-env-yfey1wnb\overlay\Lib\site-packages\setuptools\build_meta.py", line 301, in _get_build_requires
           self.run_setup()
           ~~~~~~~~~~~~~~^^
-        File "C:\Users\NIR\AppData\Local\Temp\pip-build-env-yfey1wnb\overlay\Lib\site-packages\setuptools\build_meta.py", line 317, in run_setup
+        File "%TEMP%\pip-build-env-yfey1wnb\overlay\Lib\site-packages\setuptools\build_meta.py", line 317, in run_setup
           exec(code, locals())  # noqa: S102 # exec is intentional here
           ~~~~^^^^^^^^^^^^^^^^
         File "<string>", line 128, in <module>
-        File "C:\Users\NIR\AppData\Local\Temp\pip-install-5ruzrbz4\zstandard_71ad6996c2b547bc99a960846ba8f254\setup_zstd.py", line 67, in get_c_extension
+        File "%TEMP%\pip-install-5ruzrbz4\zstandard_71ad6996c2b547bc99a960846ba8f254\setup_zstd.py", line 67, in get_c_extension
           compiler.initialize()
           ~~~~~~~~~~~~~~~~~~~^^
-        File "C:\Users\NIR\AppData\Local\Temp\pip-build-env-yfey1wnb\overlay\Lib\site-packages\setuptools\_distutils\compilers\C\msvc.py", line 354, in initialize
+        File "%TEMP%\pip-build-env-yfey1wnb\overlay\Lib\site-packages\setuptools\_distutils\compilers\C\msvc.py", line 354, in initialize
           vc_env = _get_vc_env(plat_spec)
-        File "C:\Users\NIR\AppData\Local\Temp\pip-build-env-yfey1wnb\overlay\Lib\site-packages\setuptools\_distutils\compilers\C\msvc.py", line 152, in _get_vc_env
+        File "%TEMP%\pip-build-env-yfey1wnb\overlay\Lib\site-packages\setuptools\_distutils\compilers\C\msvc.py", line 152, in _get_vc_env
           raise PlatformError(
           ...<3 lines>...
           )
