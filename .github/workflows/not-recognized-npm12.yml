@@ -1,0 +1,17 @@
+name: not-recognized-npm12
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  run:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install -g npm@12 --no-audit --no-fund --loglevel=error
+      - run: ./not-recognized/run.ps1
+        shell: pwsh
+      - run: ./not-recognized/exec-policy.ps1
+        shell: pwsh
