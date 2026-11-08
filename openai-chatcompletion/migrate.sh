@@ -32,12 +32,15 @@ if __name__ == "__main__":
     print(embed("hi"))
 PY
 git add -A && git commit -qm old
-echo; echo "### the old file on the new SDK"
-python old.py 2>&1 | tail -2
-echo; echo "### openai migrate --help"
-timeout 60 openai migrate --help 2>&1 | head -15
+echo; echo "### the old file on the new SDK (full traceback)"
+python old.py 2>&1 | grep -E "Error|exception|APIRemoved" | cut -c1-200
+echo; echo "### is there an openai command?"
+ls ../v/bin | tr "
+" " "; echo; command -v openai || echo "no openai on PATH"
+echo; echo "### python -m openai migrate --help"
+timeout 60 python -m openai migrate --help 2>&1 | head -15
 echo; echo "### openai migrate (in the repo)"
-timeout 300 openai migrate < /dev/null 2>&1 | tail -25
+timeout 300 python -m openai migrate < /dev/null 2>&1 | tail -25
 echo; echo "### diff"
 git --no-pager diff --stat; git --no-pager diff | head -60
 echo; echo "### run the migrated file against a local fake API"
