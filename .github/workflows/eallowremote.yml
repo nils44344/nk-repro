@@ -1,0 +1,28 @@
+name: eallowremote
+on:
+  workflow_dispatch:
+    inputs:
+      npms:
+        description: 'npm versions, oldest first (the first writes the lockfile, the last runs npm ci and the fixes)'
+        default: '11.20.0 11.21.2 12.0.2 12.1.0 12.2.1 12.2.2'
+permissions:
+  contents: read
+
+jobs:
+  run:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 26
+      - shell: bash
+        env:
+          NPMS: ${{ inputs.npms }}
+        run: W=$RUNNER_TEMP/work bash eallowremote/ci.sh
