@@ -24,4 +24,9 @@ printf '%s\n' 'export default { resolve: { tsconfigPaths: true } }' > vite.confi
 rm -rf dist; npx vite build 2>&1 | sed 's/\x1b\[[0-9;]*m//g' | grep -E "built in|failed to resolve" | head -1
 dev "tsconfigPaths: true"
 npx vitest run 2>&1 | grep -E "Cannot find package|Tests " | head -2
+echo; echo "######## vite $V, each working config: build, dev server, Vitest"
+cfg() { echo "== $1"; printf '%s\n' "$2" > vite.config.js; rm -rf dist; npx vite build 2>&1 | sed 's/\x1b\[[0-9;]*m//g' | grep -E "built in|failed to resolve" | head -1; dev "$1"; npx vitest run 2>&1 | grep -E "Cannot find package|Tests " | head -2; }
+cfg "alias with fileURLToPath" 'import { fileURLToPath } from "node:url"; export default { resolve: { alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) } } }'
+cfg "alias as /src" 'export default { resolve: { alias: { "@": "/src" } } }'
+cfg "vite-tsconfig-paths plugin" 'import tsconfigPaths from "vite-tsconfig-paths"; export default { plugins: [tsconfigPaths()] }'
 echo "== done $(date)"
