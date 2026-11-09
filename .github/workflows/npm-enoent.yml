@@ -12,5 +12,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-      - run: '& "$env:GITHUB_WORKSPACE/npm-enoent/run.ps1"'
+      # every case ends in an error on purpose, so the step's exit code is set to 0 after the script prints "== done"
+      - run: '& "$env:GITHUB_WORKSPACE/npm-enoent/run.ps1"; exit 0'
         shell: pwsh
