@@ -36,7 +36,11 @@ PROBE = r'''
 import importlib, importlib.metadata as m, json, re, sys, traceback
 name = sys.argv[1]
 def norm(n): return re.sub(r"[-_.]+", "-", n).lower()
-res = {"module": None, "import": "none", "error": None}
+res = {"module": None, "import": "none", "error": None, "missing": None, "version": None}
+try:
+    res["version"] = m.version(name)
+except Exception:
+    pass
 try:
     files = [str(f).replace("\\", "/") for f in (m.distribution(name).files or [])]
 except Exception:
@@ -70,6 +74,8 @@ if cands:
         res["import"] = "ok"
     except BaseException as e:
         res["import"] = "fail"
+        if isinstance(e, ModuleNotFoundError) and e.name:
+            res["missing"] = e.name.split(".")[0]
         res["error"] = (type(e).__name__ + ": " + str(e)).splitlines()[0][:300] if str(e) else type(e).__name__
 print("PROBE " + json.dumps(res))
 '''
@@ -94,6 +100,8 @@ def wheel_kind(url):
 def classify(out):
     if "Microsoft Visual C++ 14.0 or greater is required" in out:
         return "needs a C compiler (MSVC)"
+    if "newer than PyO3's maximum supported version" in out:
+        return "Rust extension: its PyO3 does not support this Python yet"
     if re.search(r"can't find Rust compiler|cargo.*not found|Rust (toolchain|compiler)|maturin failed|PyO3", out, re.I):
         return "Rust build failed"
     if "No matching distribution found" in out:
@@ -103,6 +111,14 @@ def classify(out):
     if re.search(r"Failed building wheel|failed to build|metadata-generation-failed|subprocess-exited-with-error", out, re.I):
         return "build from source failed"
     return "install failed"
+
+
+def failed_builds(out):
+    """Names of the projects pip could not build."""
+    found = set(re.findall(r"Failed to build '([^']+)'", out)) | set(re.findall(r"Failed building wheel for ([A-Za-z0-9_.-]+)", out))
+    for group in re.findall(r"based projects \(([^)]*)\)", out):
+        found |= {x.strip() for x in group.split(",") if x.strip()}
+    return sorted({norm(x) for x in found})[:6]
 
 
 def error_lines(out):
@@ -126,7 +142,7 @@ def test(interp, pkg):
     """One fresh venv: install, then import. Returns a dict with status ok | install-fail | import-fail | timeout."""
     t0 = time.time()
     res = {"status": "install-fail", "version": None, "kind": None, "source_builds": [], "module": None,
-           "reason": None, "error": []}
+           "reason": None, "error": [], "failed_builds": []}
     with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as d:
         v = os.path.join(d, "v")
         mk = subprocess.run([interp, "-m", "venv", v], capture_output=True, text=True)
@@ -158,6 +174,7 @@ def test(interp, pkg):
         res["source_builds"].sort()
         if r.returncode:
             res["reason"], res["error"] = classify(out), error_lines(out)
+            res["failed_builds"] = failed_builds(out)
         else:
             try:
                 p = subprocess.run([py, "-c", PROBE, pkg], capture_output=True, text=True, errors="replace",
@@ -168,8 +185,12 @@ def test(interp, pkg):
             except subprocess.TimeoutExpired:
                 probe = {"module": None, "import": "fail", "error": f"import took over {IMPORT_TIMEOUT}s"}
             res["module"] = probe.get("module")
+            res["version"] = res["version"] or probe.get("version")
             if probe.get("import") == "fail":
                 res["status"], res["reason"], res["error"] = "import-fail", "import failed", [probe.get("error") or ""]
+                miss = probe.get("missing")
+                if miss and miss != (res["module"] or "").split(".")[0]:
+                    res["reason"] = f"import needs the module {miss}, which this package does not install"
             else:
                 res["status"] = "ok"
     res["seconds"] = round(time.time() - t0)
@@ -211,7 +232,7 @@ def main():
         r.update(name=p["name"], rank=p["rank"], latest=latest_version(p["name"]))
         if control and (r["status"] != "ok" or r["source_builds"]):
             c = test(control, p["name"])
-            r["control"] = {k: c[k] for k in ("status", "version", "kind", "source_builds", "reason")}
+            r["control"] = {k: c[k] for k in ("status", "version", "kind", "source_builds", "reason", "failed_builds")}
         results.append(r)
         line = f"{r['status']:<13} {p['name']} {r['version'] or ''} [{r['kind'] or '-'}]"
         if r["source_builds"]:

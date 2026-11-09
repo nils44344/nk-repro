@@ -17,7 +17,7 @@ STATUSES = {"ok", "install-fail", "import-fail", "timeout"}
 VERDICT_TEXT = {"ready": "Ready: a wheel installs and the package imports",
                 "builds": "Works only by compiling from source on the runner",
                 "fails": "Fails on 3.15, works on 3.14",
-                "fails-both": "Fails on 3.15 and on 3.14 (not a 3.15 problem)",
+                "fails-both": "Same failure on 3.14 (not a 3.15 problem)",
                 "fails-unknown": "Fails on 3.15 (no 3.14 result)"}
 REPO = os.environ.get("GITHUB_REPOSITORY", "nils44344/nk-repro")
 
@@ -56,14 +56,15 @@ def entry(r, meta):
     st = r.get("status") if r.get("status") in STATUSES else "install-fail"
     e = {"status": st, "version": ver(r.get("version")), "kind": kind(r.get("kind")),
          "source_builds": names(r.get("source_builds")), "module": module(r.get("module")),
-         "reason": clean(r.get("reason"), 80) or None,
+         "reason": clean(r.get("reason"), 80) or None, "failed_builds": names(r.get("failed_builds")),
          "error": [clean(x) for x in (r.get("error") if isinstance(r.get("error"), list) else [])[:3] if clean(x)],
          "control": None, "tested": meta["date"], "run": meta["run"], "python": meta["python"]}
     c = r.get("control")
     if isinstance(c, dict):
         e["control"] = {"status": c.get("status") if c.get("status") in STATUSES else "install-fail",
                         "version": ver(c.get("version")), "kind": kind(c.get("kind")),
-                        "source_builds": names(c.get("source_builds")), "python": meta["control_python"]}
+                        "source_builds": names(c.get("source_builds")), "reason": clean(c.get("reason"), 80) or None,
+                        "python": meta["control_python"]}
     e["verdict"] = verdict(e)
     return e
 
@@ -76,8 +77,10 @@ def cell(e):
         return f"ready ({e['version']})"
     if v == "builds":
         return "compiles from source: " + ", ".join(e["source_builds"][:4])
-    tail = {"fails": "; 3.14 works", "fails-both": "; 3.14 fails too", "fails-unknown": ""}[v]
-    return f"**fails**: {e['reason'] or e['status']}{tail}"
+    why = e["reason"] or e["status"]
+    if e.get("failed_builds"):
+        why += " (" + ", ".join(e["failed_builds"][:3]) + ")"
+    return f"**fails**: {why}" if v == "fails" else why
 
 
 def main():
@@ -159,20 +162,29 @@ def main():
     for v, text in list(VERDICT_TEXT.items()) + [("not tested", "Not tested yet")]:
         if any(counts[o].get(v) for o in OS_NAMES):
             L.append(f"| {text} | " + " | ".join(str(counts[o].get(v, 0)) for o in OS_NAMES) + " |")
-    L += ["", "## Not ready", "", "Packages where at least one operating system is not a clean wheel install.", "",
-          "| Rank | Package | " + " | ".join(OS_NAMES.values()) + " |", "|---:|---|" + "---|" * len(OS_NAMES)]
-    rows = [p for p in out if any(e["verdict"] != "ready" for e in p["os"].values())]
-    for p in rows:
-        L.append(f"| {p['rank'] or ''} | `{p['name']}` | " + " | ".join(cell(p["os"].get(o)) for o in OS_NAMES) + " |")
-    if not rows:
-        L.append("| | none | | | |")
+    def table(title, intro, keep):
+        rows = [p for p in out if keep({e["verdict"] for e in p["os"].values()})]
+        L.extend(["", f"## {title}", "", intro, "",
+                  "| Rank | Package | " + " | ".join(OS_NAMES.values()) + " |", "|---:|---|" + "---|" * len(OS_NAMES)])
+        for p in rows:
+            L.append(f"| {p['rank'] or ''} | `{p['name']}` | " + " | ".join(cell(p["os"].get(o)) for o in OS_NAMES) + " |")
+        if not rows:
+            L.append("| | none | | | |")
+
+    table("Fails on 3.15 only", "The same command works on Python 3.14 on at least one operating system where it fails on 3.15.",
+          lambda vs: bool(vs & {"fails", "fails-unknown"}))
+    table("Installs on 3.15 only by compiling", "pip found no 3.15 wheel for the listed packages and built them from source. "
+          "The runners have a C compiler; on a machine without one this install fails.",
+          lambda vs: "builds" in vs and not vs & {"fails", "fails-unknown"})
+    table("Same result on 3.14", "Not a 3.15 problem: the package does not support that operating system, needs a system "
+          "library to build, or cannot be imported without a companion package.",
+          lambda vs: "fails-both" in vs and not vs & {"fails", "fails-unknown", "builds"})
     L += ["", "## Data and history", "",
           "- Every package, with versions, wheel type, error lines and run ids: [latest.json](latest.json).",
           "- What changed and when: [CHANGES.md](CHANGES.md).",
           "- The package list: [packages.txt](packages.txt), the top 500 PyPI projects by downloads plus a few extras.", "",
           "## Check one package yourself", "", "```", "python py315-board/board.py --only pyyaml,torch", "```", "",
-          "Rank is the download rank in packages.txt. \"Compiles from source\" means pip found no wheel for 3.15 and built "
-          "the listed packages on the runner, which has a C compiler; on a machine without one the install fails.", ""]
+          "Rank is the download rank in packages.txt.", ""]
     open(os.path.join(HERE, "README.md"), "w", encoding="utf-8", newline="\n").write("\n".join(L))
     print(f"{len(out)} packages; counts {counts}; {len(changes)} change lines")
 
