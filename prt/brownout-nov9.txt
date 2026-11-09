@@ -1,0 +1,31 @@
+$ date -u
+Mon Nov  9 16:37:06 UTC 2026
+
+$ gh run list -R nils44344/nk-repro -L 2 --json name,event,status,conclusion,databaseId,createdAt --jq '.[] | [.name,.event,.conclusion,.databaseId,.createdAt] | @tsv'
+pr-demo	pull_request	success	42656323568	2026-11-09T16:35:31Z
+prt-demo	pull_request_target	startup_failure	42656319373	2026-11-09T16:35:29Z
+
+$ gh run view 42656319373 -R nils44344/nk-repro
+
+X prt-test-pr prt-demo nils44344/nk-repro#51 · 42656319373
+Triggered via pull_request_target about 1 minute ago
+
+X This run likely failed because of a workflow file issue.
+
+For more information, see: https://github.com/nils44344/nk-repro/actions/runs/42656319373
+
+$ gh api repos/nils44344/nk-repro/actions/runs/42656319373 --jq .check_suite_id
+115532201394
+
+$ gh api repos/nils44344/nk-repro/check-suites/115532201394/check-runs --jq '.total_count'
+0
+
+$ gh api repos/nils44344/nk-repro/actions/runs/42656319373/jobs --jq '.total_count'
+0
+
+$ curl -s https://github.com/nils44344/nk-repro/actions/runs/42656319373 | grep -oE 'Workflows are being blocked[^<]*'
+Workflows are being blocked due to a scheduled brownout of the default `pull_request_target` protection for affected public repositories. This window ends at November 9, 2026 at 18:00:00 UTC. If you need these workflows to run, ask an administrator to explicitly allow `pull_request_target` in an applicable Actions event policy. See 
+
+$ gh run view 42656323568 -R nils44344/nk-repro --json conclusion,event,jobs --jq '{event,conclusion,jobs:[.jobs[]|{name,conclusion}]}'
+{"conclusion":"success","event":"pull_request","jobs":[{"conclusion":"success","name":"meta"}]}
+
