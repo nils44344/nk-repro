@@ -41,9 +41,8 @@ jobs:
           npx --yes "create-next-app@$FRESH" fresh --yes --disable-git > create.log 2>&1 || { tail -20 create.log; exit 1; }
           cd fresh
           echo "===== fresh create-next-app@$FRESH"
-          for p in next react tailwindcss @tailwindcss/postcss sharp typescript; do
-            node -e "try{console.log(process.argv[1], require(process.argv[1]+'/package.json').version)}catch(e){console.log(process.argv[1], 'not installed')}" "$p"
-          done
+          set +e
+          npm ls next react react-dom tailwindcss @tailwindcss/postcss sharp typescript 2>&1 | cut -c1-120
           grep -n '"tailwindcss"\|"@tailwindcss/postcss"\|"next"' package.json
-          npm audit > audit.txt 2>&1; echo "npm audit exit $?"; tail -4 audit.txt
+          npm audit > audit.txt 2>&1; echo "npm audit exit $?"; cat audit.txt | cut -c1-200 | head -40
           s=$(date +%s); npx next build > build.log 2>&1; echo "build exit $? in $(( $(date +%s)-s ))s"; tail -12 build.log
