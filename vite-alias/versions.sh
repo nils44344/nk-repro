@@ -29,4 +29,12 @@ cfg() { echo "== $1"; printf '%s\n' "$2" > vite.config.js; rm -rf dist; npx vite
 cfg "alias with fileURLToPath" 'import { fileURLToPath } from "node:url"; export default { resolve: { alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) } } }'
 cfg "alias as /src" 'export default { resolve: { alias: { "@": "/src" } } }'
 cfg "vite-tsconfig-paths plugin" 'import tsconfigPaths from "vite-tsconfig-paths"; export default { plugins: [tsconfigPaths()] }'
+echo; echo "######## vite $V, no alias: tsconfig without allowJs, then no tsconfig.json (build only)"
+printf '%s\n' 'export default {}' > vite.config.js
+bld() { rm -rf dist; npx vite build 2>&1 | sed 's/\x1b\[[0-9;]*m//g' | grep -E "built in|failed to resolve" | head -1 | cut -c1-140; }
+cp tsconfig.json tsconfig.keep
+echo '{"compilerOptions":{"baseUrl":".","paths":{"@/*":["src/*"]},"module":"esnext","moduleResolution":"bundler"}}' > tsconfig.json
+echo "== tsconfig paths, no allowJs"; bld
+rm tsconfig.json; echo "== no tsconfig.json"; bld
+mv tsconfig.keep tsconfig.json
 echo "== done $(date)"
