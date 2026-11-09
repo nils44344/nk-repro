@@ -44,5 +44,7 @@ jobs:
           set +e
           npm ls next react react-dom tailwindcss @tailwindcss/postcss sharp typescript 2>&1 | cut -c1-120
           grep -n '"tailwindcss"\|"@tailwindcss/postcss"\|"next"' package.json
+          node -e 'const p=require("./package.json");console.log("scripts",JSON.stringify(p.scripts));console.log("devDependencies",JSON.stringify(p.devDependencies))'
+          ls -a | grep -i 'eslint\|biome' || echo "no eslint or biome config file"
           npm audit > audit.txt 2>&1; echo "npm audit exit $?"; cat audit.txt | cut -c1-200 | head -40
           s=$(date +%s); npx next build > build.log 2>&1; echo "build exit $? in $(( $(date +%s)-s ))s"; tail -12 build.log
