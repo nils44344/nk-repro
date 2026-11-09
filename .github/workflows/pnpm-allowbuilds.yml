@@ -11,3 +11,4 @@ jobs:
         with:
           node-version: 24
       - run: W=$RUNNER_TEMP/work bash pnpm-allowbuilds/run.sh
+      - run: W=$RUNNER_TEMP/work3 bash pnpm-allowbuilds/approve.sh
