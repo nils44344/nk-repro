@@ -108,7 +108,9 @@ def classify(out):
 def error_lines(out):
     lines = [l.strip() for l in out.splitlines()
              if re.search(r"error|Error|ERROR|required|not found|No matching|Rust|cargo|link\.exe", l)]
-    return [l[:220] for l in lines[-3:]]
+    generic = r"This error originates from a subprocess|failed-wheel-build-for-install|subprocess-exited-with-error|metadata-generation-failed"
+    specific = [l for l in lines if not re.search(generic, l)]
+    return [l[:220] for l in (specific or lines)[-3:]]
 
 
 def latest_version(pkg):
