@@ -11,6 +11,9 @@ on:
       fresh:
         description: 'create-next-app version for the fresh project'
         default: '16.4.6'
+      v15:
+        description: 'a 15.x version to build with TypeScript 7 and TypeScript 6'
+        default: '15.5.29'
 
 permissions:
   contents: read
@@ -48,3 +51,27 @@ jobs:
           ls -a | grep -i 'eslint\|biome' || echo "no eslint or biome config file"
           npm audit > audit.txt 2>&1; echo "npm audit exit $?"; cat audit.txt | cut -c1-200 | head -40
           s=$(date +%s); npx next build > build.log 2>&1; echo "build exit $? in $(( $(date +%s)-s ))s"; tail -12 build.log
+      - name: TypeScript 7 on the 15.x line
+        env:
+          V15: ${{ inputs.v15 }}
+        run: |
+          set +e
+          cd next-security
+          echo "===== test app, next@$V15, typescript as committed"
+          npm i "next@$V15" --no-fund --no-audit > /dev/null 2>&1
+          npm ls next typescript --depth=0 2>&1 | tail -3
+          npx next build > build.log 2>&1; echo "build exit $?"; grep -i "typescript" build.log | cut -c1-400 | head -4
+          echo "===== test app, next@$V15, typescript@6"
+          npm i typescript@6 --no-fund --no-audit > /dev/null 2>&1
+          npm ls next typescript --depth=0 2>&1 | tail -3
+          npx next build > build.log 2>&1; echo "build exit $?"; tail -6 build.log | cut -c1-200
+          cd "$RUNNER_TEMP"
+          npx --yes "create-next-app@$V15" fresh15 --yes --disable-git > create15.log 2>&1 || { tail -20 create15.log; exit 0; }
+          cd fresh15
+          echo "===== fresh create-next-app@$V15, as generated"
+          npm ls next typescript --depth=0 2>&1 | tail -3
+          npx next build > build.log 2>&1; echo "build exit $?"; tail -4 build.log | cut -c1-200
+          echo "===== fresh create-next-app@$V15, typescript@7.0.2"
+          npm i -D typescript@7.0.2 --no-fund --no-audit > /dev/null 2>&1
+          npm ls next typescript --depth=0 2>&1 | tail -3
+          npx next build > build.log 2>&1; echo "build exit $?"; grep -i "typescript" build.log | cut -c1-400 | head -4; tail -4 build.log | cut -c1-200
