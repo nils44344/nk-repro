@@ -1,5 +1,10 @@
 name: vite-alias
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      vers:
+        description: 'Vite versions for the dev server and Vitest follow-up (versions.sh)'
+        default: '8.3.0 8.3.5 8.3.7'
 permissions:
   contents: read
 
@@ -17,3 +22,7 @@ jobs:
           node-version: 24
       - shell: bash
         run: W=$RUNNER_TEMP/work bash vite-alias/run.sh
+      - shell: bash
+        env:
+          VERS: ${{ inputs.vers }}
+        run: W=$RUNNER_TEMP/work bash vite-alias/versions.sh

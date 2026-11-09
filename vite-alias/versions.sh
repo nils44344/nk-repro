@@ -11,7 +11,7 @@ dev() { # $1 = label; prints the HTTP status for /src/main.js and any resolve er
   sed 's/\x1b\[[0-9;]*m//g' dev.log | grep -E "Failed to resolve import|could not be resolved" | head -1 | cut -c1-160
   if command -v powershell >/dev/null; then powershell -NoProfile -c 'Get-NetTCPConnection -LocalPort 5288 -State Listen -EA 0 | % { Stop-Process -Id $_.OwningProcess -Force }'; else pkill -f "vite --port 5288"; fi; sleep 2
 }
-for V in 8.3.0 8.3.5; do
+for V in ${VERS:-8.3.0 8.3.5}; do
   echo; echo "######## vite $V, no alias, tsconfig paths only"
   npm install -D vite@$V $I 2>&1 | tail -1
   printf '%s\n' 'export default {}' > vite.config.js
@@ -19,7 +19,7 @@ for V in 8.3.0 8.3.5; do
   dev "no alias"
   npx vitest run 2>&1 | grep -E "Cannot find package|Tests " | head -2
 done
-echo; echo "######## vite 8.3.5, resolve.tsconfigPaths: true"
+echo; echo "######## vite $V, resolve.tsconfigPaths: true"
 printf '%s\n' 'export default { resolve: { tsconfigPaths: true } }' > vite.config.js
 rm -rf dist; npx vite build 2>&1 | sed 's/\x1b\[[0-9;]*m//g' | grep -E "built in|failed to resolve" | head -1
 dev "tsconfigPaths: true"
