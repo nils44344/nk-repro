@@ -9,7 +9,7 @@
   "npm:@anthropic-ai/sdk@latest": "1.7.0",
   "npm:tailwindcss@latest": "4.3.5",
   "npm:@google/genai@latest": "3.0.0",
-  "npm:next@latest": "16.4.5",
+  "npm:next@latest": "16.4.6",
   "npm:wrangler@latest": "4.159.0",
   "npm:@anthropic-ai/claude-code@latest": "2.1.321",
   "npm:@supabase/supabase-js@latest": "2.119.0",
