@@ -1,0 +1,49 @@
+# Next.js security post: for each version, install it into the test app, run `npm audit`, then `next build`.
+# Then a fresh create-next-app of one version: installed versions, audit, build.
+name: next-security
+
+on:
+  workflow_dispatch:
+    inputs:
+      versions:
+        description: 'next versions to check in the test app (space separated)'
+        default: '16.4.4 16.4.5 16.4.6 15.5.28 15.5.29'
+      fresh:
+        description: 'create-next-app version for the fresh project'
+        default: '16.4.6'
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Test app, one version at a time
+        env:
+          VERSIONS: ${{ inputs.versions }}
+        run: |
+          echo "node $(node -v), npm $(npm -v), $(date -u +%FT%TZ)"
+          cd next-security
+          for v in $VERSIONS; do bash check.sh "$v" || true; done
+      - name: Fresh create-next-app
+        env:
+          FRESH: ${{ inputs.fresh }}
+        run: |
+          cd "$RUNNER_TEMP"
+          npx --yes "create-next-app@$FRESH" fresh --yes --disable-git > create.log 2>&1 || { tail -20 create.log; exit 1; }
+          cd fresh
+          echo "===== fresh create-next-app@$FRESH"
+          for p in next react tailwindcss @tailwindcss/postcss sharp typescript; do
+            node -e "try{console.log(process.argv[1], require(process.argv[1]+'/package.json').version)}catch(e){console.log(process.argv[1], 'not installed')}" "$p"
+          done
+          grep -n '"tailwindcss"\|"@tailwindcss/postcss"\|"next"' package.json
+          npm audit > audit.txt 2>&1; echo "npm audit exit $?"; tail -4 audit.txt
+          s=$(date +%s); npx next build > build.log 2>&1; echo "build exit $? in $(( $(date +%s)-s ))s"; tail -12 build.log
