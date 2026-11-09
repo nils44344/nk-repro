@@ -7,7 +7,7 @@ W=${W:-$(pwd)/work}; rm -rf "$W"; mkdir -p "$W"; cd "$W" || exit 1
 PY=${PY:-python}
 echo "== $(date -u +%F) $($PY -V)"
 probe() { # $1 label, $2 pip specs
-  rm -rf v && $PY -m venv v && v/bin/pip install -q --disable-pip-version-check $2 respx >/dev/null 2>pip.err || { echo "$1 | install failed: $(tail -1 pip.err)"; return; }
+  rm -rf v && $PY -m venv v && v/bin/pip install -q --disable-pip-version-check $2 >/dev/null 2>pip.err || { echo "$1 | install failed: $(tail -1 pip.err)"; return; }
   v/bin/python - "$1" <<'PY'
 import sys, importlib.util as u, importlib.metadata as md
 label = sys.argv[1]
@@ -15,7 +15,7 @@ def ver(n):
     try: return md.version(n)
     except Exception: return None
 print(f"### {label}")
-print("   installed: httpx", ver("httpx"), "| httpx2", ver("httpx2"), "| respx", ver("respx"))
+print("   installed (SDK alone, no respx): httpx", ver("httpx"), "| httpx2", ver("httpx2"), "| sdk", [ver(n) for n in ("anthropic","huggingface_hub","google-genai") if ver(n)])
 try:
     import httpx; print("   import httpx: ok")
 except Exception as e: print("   import httpx:", type(e).__name__, e)
@@ -29,6 +29,7 @@ probe "google-genai latest" "google-genai"
 probe "google-genai<3" "google-genai<3"
 echo "### respx vs each SDK's client (base URL points at a closed port; a mocked call returns 200, an unmocked one fails to connect)"
 rm -rf v && $PY -m venv v && v/bin/pip install -q anthropic google-genai respx >/dev/null 2>&1
+v/bin/python -c "import anthropic._base_client as b, inspect; src=inspect.getsource(b); print('   anthropic imports:', 'httpx2' if 'import httpx2' in src else ('httpx' if 'import httpx' in src else '?'))"
 v/bin/python - <<'PY'
 import respx, httpx, importlib.metadata as md
 print("   anthropic", md.version("anthropic"), "| google-genai", md.version("google-genai"), "| respx", md.version("respx"))

@@ -41,3 +41,12 @@ m = metadata('sqlalchemy'); print('Requires-Python:', m['Requires-Python'])
 print('greenlet lines:', [r for r in (requires('sqlalchemy') or []) if 'greenlet' in r])
 PY
 echo "== done"
+echo "-- full error text on 2.1 without greenlet:"
+rm -rf v && $PY -m venv v && v/bin/pip install -q "sqlalchemy==2.1.*" aiosqlite >/dev/null 2>&1 && v/bin/python t.py 2>&1 | tail -1; v/bin/python -c "
+import asyncio
+from sqlalchemy.ext.asyncio import create_async_engine
+from sqlalchemy import text
+async def m():
+    e=create_async_engine('sqlite+aiosqlite:///:memory:')
+    async with e.connect() as c: await c.execute(text('select 1'))
+asyncio.run(m())" 2>&1 | tail -4
