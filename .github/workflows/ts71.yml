@@ -1,0 +1,23 @@
+name: ts71
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  run:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: W=$RUNNER_TEMP/p TSV=7.1.0-beta bash ts71/run.sh
+      - run: W=$RUNNER_TEMP/fw TSV=7.1.0-beta bash ts71/frameworks.sh

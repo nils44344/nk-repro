@@ -1,7 +1,7 @@
 #!/bin/bash
 # Which packages throw "Cannot find native binding" when their platform package is missing? (Windows x64, 29 Oct 2026)
-export NODE_EXTRA_CA_CERTS=D:/tools/ca-bundle-win.pem
-cd D:/nk-natb; rm -rf p; mkdir p; cd p; npm init -y >/dev/null
+[ -f D:/tools/ca-bundle-win.pem ] && export NODE_EXTRA_CA_CERTS=D:/tools/ca-bundle-win.pem   # this machine only
+W=${W:-D:/nk-natb}; mkdir -p "$W"; cd "$W" || exit 1; rm -rf p; mkdir p; cd p; npm init -y >/dev/null
 PKGS="rolldown @tailwindcss/oxide lightningcss @rspack/core oxc-parser @swc/core @parcel/watcher esbuild @biomejs/biome"
 npm install $PKGS --no-audit --no-fund --loglevel=error 2>&1 | tail -1
 node -v; npm -v

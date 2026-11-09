@@ -1,9 +1,9 @@
 #!/bin/bash
 # TS 7.1: the framework checks that refused TypeScript 7.0 (Angular build, vue-tsc, svelte-check, astro check).
 # Usage: TSV=7.1.0-beta bash frameworks.sh   (NestJS: see the frameworks post; it uses nest build)
-export NODE_EXTRA_CA_CERTS=D:/tools/ca-bundle-win.pem
+[ -f D:/tools/ca-bundle-win.pem ] && export NODE_EXTRA_CA_CERTS=D:/tools/ca-bundle-win.pem   # this machine only
 set +e
-TSV=${TSV:-beta}; W=D:/nk-ts71/fw; rm -rf $W; mkdir -p $W; cd $W
+TSV=${TSV:-beta}; W=${W:-D:/nk-ts71/fw}; rm -rf $W; mkdir -p $W; cd $W
 I="--no-audit --no-fund --loglevel=error --legacy-peer-deps"
 echo "== $(date) node $(node -v) typescript@$TSV"
 

@@ -1,8 +1,8 @@
 #!/bin/bash
 # TS 7.1 release day: the same 9-tool matrix as ts7-retest, on TSV (default: the beta tag). Usage: TSV=7.1.0 bash run.sh
-export NODE_EXTRA_CA_CERTS=D:/tools/ca-bundle-win.pem
+[ -f D:/tools/ca-bundle-win.pem ] && export NODE_EXTRA_CA_CERTS=D:/tools/ca-bundle-win.pem   # this machine only
 set +e
-TSV=${TSV:-beta}; W=D:/nk-ts71/p; rm -rf $W; mkdir -p $W/src $W/test; cd $W
+TSV=${TSV:-beta}; W=${W:-D:/nk-ts71/p}; rm -rf $W; mkdir -p $W/src $W/test; cd $W
 echo 'export const add = (a: number, b: number): number => a + b; console.log(add(1, 2));' > src/index.ts
 echo 'import { add } from "../src/index"; test("add", () => { expect(add(1, 2)).toBe(3); });' > test/add.test.ts
 echo '{"compilerOptions":{"target":"es2022","module":"commonjs","strict":true,"esModuleInterop":true,"types":["jest","node"]},"include":["src","test"]}' > tsconfig.json
