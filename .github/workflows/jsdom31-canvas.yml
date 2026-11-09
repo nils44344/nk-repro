@@ -18,3 +18,4 @@ jobs:
         with:
           node-version: 24
       - run: W=$RUNNER_TEMP/work bash jsdom31-canvas/run.sh
+      - run: W=$RUNNER_TEMP/work2 bash jsdom31-canvas/load.sh
