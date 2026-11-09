@@ -1,0 +1,35 @@
+name: drafts-nov9
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  sqlalchemy:
+    strategy: { fail-fast: false, matrix: { python: ['3.11', '3.14'] } }
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '${{ matrix.python }}' }
+      - run: W=$RUNNER_TEMP/work bash sqlalchemy-greenlet/run.sh
+  pnpm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 24 }
+      - run: W=$RUNNER_TEMP/work bash pnpm-allowbuilds/versions.sh
+  py310:
+    strategy: { fail-fast: false, matrix: { python: ['3.10', '3.11'] } }
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '${{ matrix.python }}' }
+      - run: W=$RUNNER_TEMP/work bash py310-eol/run.sh
+  httpx2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.13' }
+      - run: W=$RUNNER_TEMP/work bash httpx2/run.sh
