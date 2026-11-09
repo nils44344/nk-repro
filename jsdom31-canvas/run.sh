@@ -24,7 +24,7 @@ for J in 30 31; do
     [ $B != none ] && npm i $B $Q >/dev/null 2>&1
     jv=$(node -p "require('jsdom/package.json').version")
     bv=$([ $B != none ] && node -p "require('$B/package.json').version" 2>/dev/null || echo -)
-    printf 'jsdom %-7s | backend %-17s %-8s | %s\n' "$jv" "$B" "$bv" "$(node ../probe.cjs 2>&1 | tail -1 | cut -c1-150)"
+    printf 'jsdom %-7s | backend %-17s %-8s | %s\n' "$jv" "$B" "$bv" "$(cp ../probe.cjs . && node probe.cjs 2>&1 | grep -m1 -E "getContext|Error" | cut -c1-170)"
     cd ..
   done
 done
