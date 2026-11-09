@@ -1,0 +1,102 @@
+# Python 3.15 readiness board: plain pip install + import of the top 500 PyPI packages on clean Windows, Linux
+# and macOS runners, daily. Results are committed to py315-board/ (latest.json, README.md, CHANGES.md).
+# The test jobs install third-party packages, so they get a read-only token and no credentials; only the
+# publish job can write, and it only reads the JSON the test jobs produced.
+name: py315-board
+
+on:
+  schedule:
+    - cron: '30 20 * * *'
+  workflow_dispatch:
+    inputs:
+      only:
+        description: 'Comma-separated packages for a trial run (nothing is published)'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: py315-board
+  cancel-in-progress: false
+
+jobs:
+  test:
+    if: ${{ !inputs.only }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+        shard: [0, 1, 2, 3, 4, 5]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        id: control
+        with:
+          python-version: '3.14'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.15'
+      - run: python py315-board/board.py --shard ${{ matrix.shard }}/6 --os ${{ matrix.os }} --out board-out
+        env:
+          CONTROL_PY: ${{ steps.control.outputs.python-path }}
+          PYTHONUTF8: '1'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: board-${{ matrix.os }}-${{ matrix.shard }}
+          path: board-out/*.json
+          retention-days: 14
+
+  trial:
+    if: ${{ inputs.only }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        id: control
+        with:
+          python-version: '3.14'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.15'
+      - run: python py315-board/board.py --only "$ONLY" --os ${{ matrix.os }} --out board-out
+        shell: bash
+        env:
+          ONLY: ${{ inputs.only }}
+          CONTROL_PY: ${{ steps.control.outputs.python-path }}
+          PYTHONUTF8: '1'
+      - run: cat board-out/*.json
+        shell: bash
+
+  publish:
+    needs: test
+    if: ${{ !cancelled() && !inputs.only }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: board-*
+          path: board-in
+          merge-multiple: true
+      - run: python3 py315-board/merge.py board-in
+      - name: Commit the results
+        run: |
+          git config user.name "nk-board"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add py315-board/latest.json py315-board/README.md py315-board/CHANGES.md
+          git diff --cached --quiet || (git commit -m "py315-board: $(date -u +%F)" && git pull --rebase --autostash -q && git push)
