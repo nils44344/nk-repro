@@ -45,4 +45,11 @@ echo "-- with allowScripts for @prisma/client, @prisma/engines and prisma in pac
 node -e 'const fs=require("fs");const p=JSON.parse(fs.readFileSync("package.json","utf8"));p.allowScripts={"@prisma/client":true,"@prisma/engines":true,"prisma":true};fs.writeFileSync("package.json",JSON.stringify(p,null,2))'
 rm -rf node_modules; node "$CLI" ci --no-audit --no-fund 2>&1 | strip | grep -E "^added|npm error|npm warn install-scripts" | sed -E 's/ in [0-9]+(ms|s|m)$//' | cut -c1-200
 gen; echo "node app.cjs -> $(app)"
+echo "######## 5: the fix, \"postinstall\": \"prisma generate\" in the project's own scripts (no allowScripts)"
+cp "$SRC/package.json" package.json
+node -e 'const fs=require("fs");const p=JSON.parse(fs.readFileSync("package.json","utf8"));p.scripts={postinstall:"prisma generate"};fs.writeFileSync("package.json",JSON.stringify(p,null,2))'
+echo "-- npm $(npm -v) ci"; rm -rf node_modules; npm ci --no-audit --no-fund 2>&1 | strip | grep -E "Generated Prisma Client|npm error" | sed -E 's/ in [0-9]+(ms|s)$//; s/ to .*//' | head -2
+gen; echo "node app.cjs -> $(app)"
+echo "-- npm $NPM12 ci"; rm -rf node_modules; node "$CLI" ci --no-audit --no-fund 2>&1 | strip | grep -E "Generated Prisma Client|npm error" | sed -E 's/ in [0-9]+(ms|s)$//; s/ to .*//' | head -2
+gen; echo "node app.cjs -> $(app)"
 echo "== done"
