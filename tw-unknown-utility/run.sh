@@ -41,5 +41,7 @@ printf '<template><h1 class="title">hi</h1></template>\n<style scoped>\n.title {
 echo 'import { defineConfig } from "vite"; import vue from "@vitejs/plugin-vue"; import tailwindcss from "@tailwindcss/vite"; export default defineConfig({ plugins: [vue(), tailwindcss()] });' > vite.config.js
 echo "-- vite build, Vue <style> without @reference"; npx vite build 2>&1 | sed 's/\x1b\[[0-9;]*m//g' | grep -E "Cannot apply|plugin|built in|error" | head -3 | cut -c1-220
 printf '<template><h1 class="title">hi</h1></template>\n<style scoped>\n@reference "../main.css";\n.title { @apply font-bold text-xl; }\n</style>\n' > src/App.vue
-echo "-- vite build, Vue <style> with @reference \"../main.css\""; npx vite build 2>&1 | sed 's/\x1b\[[0-9;]*m//g' | grep -E "Cannot apply|built in|error" | head -2; grep -o "\.title\[data-v-[a-z0-9]*\]{[^}]*}" dist/assets/*.css | head -1
+echo "-- vite build, Vue <style> with @reference \"../main.css\" (wrong: the path is resolved from the component file)"; rm -rf dist; npx vite build 2>&1 | sed 's/\x1b\[[0-9;]*m//g' | grep -E "Cannot apply|Can't resolve|built in" | head -2 | cut -c1-220
+printf '<template><h1 class="title">hi</h1></template>\n<style scoped>\n@reference "./main.css";\n.title { @apply font-bold text-xl; }\n</style>\n' > src/App.vue
+echo "-- vite build, Vue <style> with @reference \"./main.css\""; rm -rf dist; npx vite build 2>&1 | sed 's/\x1b\[[0-9;]*m//g' | grep -E "Cannot apply|Can't resolve|built in" | sed -E 's/ in [0-9.]+ ?m?s$//' | head -2; grep -o "\.title\[data-v-[a-z0-9]*\]{[^}]*}" dist/assets/*.css 2>/dev/null | head -1
 echo "== done"
