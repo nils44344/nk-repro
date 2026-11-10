@@ -17,7 +17,7 @@ for v in 0.137.0 1.1.0; do
   mkdir -p "ts$v"; cd "ts$v" || exit 1
   cp "$HERE/calls.ts" t.ts; cp "$HERE/tsconfig.json" .
   npm init -y >/dev/null; npm pkg set type=module >/dev/null
-  npm i "@anthropic-ai/sdk@$v" typescript@5 tsx --no-audit --no-fund --loglevel=error 2>&1 | tail -1
+  npm i "@anthropic-ai/sdk@$v" typescript@5 tsx @types/node@24 --no-audit --no-fund --loglevel=error 2>&1 | tail -1
   echo "== tsc -p ."; npx tsc -p . 2>&1 | head -20
   echo "== tsx t.ts"; npx tsx t.ts 2>&1 | head -40
   cd ..
