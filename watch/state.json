@@ -8,7 +8,7 @@
   "npm:npm@latest": "12.2.2",
   "npm:@anthropic-ai/sdk@latest": "1.8.0",
   "npm:tailwindcss@latest": "4.3.5",
-  "npm:@google/genai@latest": "3.0.0",
+  "npm:@google/genai@latest": "3.1.0",
   "npm:next@latest": "16.4.6",
   "npm:wrangler@latest": "4.160.0",
   "npm:@anthropic-ai/claude-code@latest": "2.1.322",
