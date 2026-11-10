@@ -2,7 +2,7 @@
 
 Plain `pip install <package>` in a fresh venv, then `import`, for 504 PyPI packages on clean GitHub runners. Anything that is not a clean wheel install is repeated on Python 3.14 to show whether the problem is specific to 3.15. Re-run daily by [the workflow](../.github/workflows/py315-board.yml).
 
-Last run: 2026-11-09, [run log](https://github.com/nils44344/nk-repro/actions/runs/42703037142). Interpreters: macOS 3.15.2 (control 3.14.10); Linux 3.15.2 (control 3.14.10); Windows 3.15.2 (control 3.14.10).
+Last run: 2026-11-10, [run log](https://github.com/nils44344/nk-repro/actions/runs/42745645969). Interpreters: macOS 3.15.2 (control 3.14.10); Linux 3.15.2 (control 3.14.10); Windows 3.15.2 (control 3.14.10).
 
 | | Windows | Linux | macOS |
 |---|---:|---:|---:|
