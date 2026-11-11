@@ -1,0 +1,24 @@
+# Chat Completions-style arguments passed to client.responses.create(): what the openai Python SDK does with each
+# (sdk_args.py runs against a local server, so no API key is needed). api_errors.sh needs a key and is not run here.
+name: openai-responses-params
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  sdk:
+    strategy:
+      fail-fast: false
+      matrix:
+        openai: ['3.37.0', 'latest']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+      - run: |
+          if [ "${{ matrix.openai }}" = latest ]; then pip install -q openai; else pip install -q "openai==${{ matrix.openai }}"; fi
+          python -c "import openai, sys; print('python', sys.version.split()[0], 'openai', openai.__version__)"
+          python openai-responses-params/sdk_args.py
