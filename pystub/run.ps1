@@ -19,3 +19,14 @@ python --version 2>&1 | Select-Object -First 1
 $env:PATH = "$wa;$real;C:\Windows\System32;C:\Windows"
 python --version 2>&1 | Select-Object -First 1
 "exit $LASTEXITCODE"
+"== pip: Python folder on PATH, but not its Scripts folder (cmd)"
+$env:PATH = "$real;C:\Windows\System32;C:\Windows"
+cmd /c "pip --version 2>&1"
+"exit $LASTEXITCODE"
+"== python -m pip / py -m pip with the same PATH"
+cmd /c "python -m pip --version 2>&1"
+cmd /c "C:\Windows\py.exe -3.12 -m pip --version 2>&1"
+"== Scripts folder added to PATH"
+$env:PATH = "$real;$real\Scripts;C:\Windows\System32;C:\Windows"
+cmd /c "pip --version 2>&1"
+"Scripts holds: " + ((Get-ChildItem "$real\Scripts" -Filter 'pip*.exe' | Select-Object -ExpandProperty Name) -join ', ')
