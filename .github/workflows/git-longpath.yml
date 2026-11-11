@@ -1,0 +1,19 @@
+# git "Filename too long" on Windows: core.longpaths on clone and the rescue of a failed clone.
+name: git-longpath
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  win:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: bash git-longpath/run.sh
