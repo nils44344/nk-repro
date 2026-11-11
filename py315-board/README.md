@@ -2,13 +2,13 @@
 
 Plain `pip install <package>` in a fresh venv, then `import`, for 504 PyPI packages on clean GitHub runners. Anything that is not a clean wheel install is repeated on Python 3.14 to show whether the problem is specific to 3.15. Re-run daily by [the workflow](../.github/workflows/py315-board.yml).
 
-Last run: 2026-11-10, [run log](https://github.com/nils44344/nk-repro/actions/runs/42745645969). Interpreters: macOS 3.15.2 (control 3.14.10); Linux 3.15.2 (control 3.14.10); Windows 3.15.2 (control 3.14.10).
+Last run: 2026-11-11, [run log](https://github.com/nils44344/nk-repro/actions/runs/42934173012). Interpreters: macOS 3.15.2 (control 3.14.10); Linux 3.15.2 (control 3.14.10); Windows 3.15.2 (control 3.14.10).
 
 | | Windows | Linux | macOS |
 |---|---:|---:|---:|
-| Ready: a wheel installs and the package imports | 458 | 459 | 456 |
-| Works only by compiling from source on the runner | 24 | 25 | 25 |
-| Fails on 3.15, works on 3.14 | 7 | 7 | 7 |
+| Ready: a wheel installs and the package imports | 458 | 459 | 457 |
+| Works only by compiling from source on the runner | 25 | 25 | 25 |
+| Fails on 3.15, works on 3.14 | 6 | 7 | 6 |
 | Same failure on 3.14 (not a 3.15 problem) | 15 | 13 | 16 |
 
 ## Fails on 3.15 only
@@ -18,7 +18,7 @@ The same command works on Python 3.14 on at least one operating system where it 
 | Rank | Package | Windows | Linux | macOS |
 |---:|---|---|---|---|
 | 285 | `onnxruntime` | **fails**: no matching version | **fails**: no matching version | **fails**: no matching version |
-| 295 | `litellm` | **fails**: Rust extension: its PyO3 does not support this Python yet (fastuuid, pydantic-core, tiktoken) | **fails**: Rust extension: its PyO3 does not support this Python yet (fastuuid, pydantic-core, tiktoken) | **fails**: Rust extension: its PyO3 does not support this Python yet (fastuuid, pydantic-core, tiktoken) |
+| 295 | `litellm` | compiles from source: pyyaml | **fails**: Rust extension: its PyO3 does not support this Python yet (fastuuid, pydantic-core, tiktoken) | compiles from source: pyyaml |
 | 334 | `fastuuid` | **fails**: Rust extension: its PyO3 does not support this Python yet (fastuuid) | **fails**: Rust extension: its PyO3 does not support this Python yet (fastuuid) | **fails**: Rust extension: its PyO3 does not support this Python yet (fastuuid) |
 | 410 | `deepdiff` | **fails**: Rust extension: its PyO3 does not support this Python yet (cachebox) | **fails**: Rust extension: its PyO3 does not support this Python yet (cachebox) | **fails**: Rust extension: its PyO3 does not support this Python yet (cachebox) |
 | 486 | `ddtrace` | **fails**: build from source failed (ddtrace) | **fails**: build from source failed (ddtrace) | **fails**: build from source failed (ddtrace) |
@@ -55,7 +55,6 @@ pip found no 3.15 wheel for the listed packages and built them from source. The 
 | 467 | `fastapi-cli` | compiles from source: pyyaml | compiles from source: pyyaml | compiles from source: pyyaml |
 | 480 | `tree-sitter` | compiles from source: tree-sitter | compiles from source: tree-sitter | compiles from source: tree-sitter |
 | 482 | `moto` | compiles from source: pyyaml | compiles from source: pyyaml | compiles from source: pyyaml |
-| 500 | `poetry` | ready (2.5.1) | ready (2.5.1) | compiles from source: xattr |
 |  | `jupyterlab` | compiles from source: pyyaml | compiles from source: pyyaml | compiles from source: pyyaml |
 
 ## Same result on 3.14
