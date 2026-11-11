@@ -1,0 +1,28 @@
+# "No matching distribution found for torch": Python versions, 32-bit, free-threaded and PyTorch index URLs on Windows.
+name: torch-nomatch
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  win:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { python: '3.14', arch: x64, indexes: '1' }
+          - { python: '3.14', arch: x86, indexes: '' }
+          - { python: '3.14t', arch: x64, indexes: '' }
+          - { python: '3.15', arch: x64, indexes: '' }
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          architecture: ${{ matrix.arch }}
+      - run: INDEXES=${{ matrix.indexes }} bash torch-nomatch/run.sh
