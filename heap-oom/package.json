@@ -1,0 +1,9 @@
+{
+  "name": "heap-oom-repro",
+  "private": true,
+  "scripts": {
+    "limit-linux-syntax": "NODE_OPTIONS=--max-old-space-size=1024 node limit.js",
+    "limit-cross-env": "cross-env NODE_OPTIONS=--max-old-space-size=1024 node limit.js"
+  },
+  "devDependencies": { "cross-env": "10.1.0" }
+}

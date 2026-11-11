@@ -1,0 +1,21 @@
+# "JavaScript heap out of memory": heap limits and how --max-old-space-size / NODE_OPTIONS reach child processes.
+name: heap-oom
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  run:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: ['24', '26']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: bash heap-oom/run.sh
