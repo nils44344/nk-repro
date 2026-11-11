@@ -1,0 +1,54 @@
+# PyYAML 6.0.3 on Python 3.15 for Windows (no cp315 wheel): does PYYAML_FORCE_LIBYAML=0 install it with no C compiler?
+# The runner has Build Tools, so the "no compiler" steps hide them: DISTUTILS_USE_SDK=1 makes setuptools skip its
+# Visual Studio search and use cl.exe from PATH, which is not there.
+name: pyyaml-pure
+on: workflow_dispatch
+permissions:
+  contents: read
+
+jobs:
+  win315:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.15'
+      - name: 1. Default install (Build Tools present)
+        run: |
+          python -m venv v1
+          v1\Scripts\python -m pip install --no-cache-dir pyyaml 2>&1 | Select-String -Pattern "pyyaml|Successfully|ERROR|error:"
+          v1\Scripts\python -c "import sys, yaml; print(sys.version.split()[0], 'pyyaml', yaml.__version__, 'with_libyaml', yaml.__with_libyaml__)"
+      - name: 2. No compiler, plain install (expected to fail)
+        continue-on-error: true
+        env:
+          DISTUTILS_USE_SDK: '1'
+          MSSdk: '1'
+        run: |
+          if (Get-Command cl.exe -ErrorAction SilentlyContinue) { 'cl.exe IS on PATH' } else { 'cl.exe not on PATH' }
+          python -m venv v2
+          v2\Scripts\python -m pip install --no-cache-dir pyyaml 2>&1 | Select-String -Pattern "pyyaml|Successfully|ERROR|error:"
+          v2\Scripts\python -c "import yaml; print('pyyaml', yaml.__version__)"
+      - name: 3. No compiler, PYYAML_FORCE_LIBYAML=0
+        env:
+          DISTUTILS_USE_SDK: '1'
+          MSSdk: '1'
+          PYYAML_FORCE_LIBYAML: '0'
+        run: |
+          python -m venv v3
+          v3\Scripts\python -m pip install --no-cache-dir pyyaml 2>&1 | Select-String -Pattern "pyyaml|Successfully|ERROR|error:"
+          v3\Scripts\python -c "import sys, yaml; print(sys.version.split()[0], 'pyyaml', yaml.__version__, 'with_libyaml', yaml.__with_libyaml__); print(yaml.safe_load('a: [1, 2]\nb: {c: x}'))"
+      - name: 4. No compiler, pdfmd-cli with PYYAML_FORCE_LIBYAML=0
+        continue-on-error: true
+        env:
+          DISTUTILS_USE_SDK: '1'
+          MSSdk: '1'
+          PYYAML_FORCE_LIBYAML: '0'
+        run: |
+          python -m venv v4
+          v4\Scripts\python -m pip install --no-cache-dir pdfmd-cli 2>&1 | Select-String -Pattern "Successfully|ERROR|error:|Building wheel|from source"
+          v4\Scripts\python -m pip show pdfmd-cli | Select-String -Pattern "^(Name|Version):"
+          'Commands in Scripts:'; Get-ChildItem v4\Scripts -Filter 'pdfmd*' | ForEach-Object Name
+          Get-ChildItem v4\Scripts -Filter 'pdfmd*.exe' | Select-Object -First 1 | ForEach-Object { & $_.FullName --help 2>&1 | Select-Object -First 3 }
