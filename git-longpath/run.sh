@@ -6,7 +6,7 @@ echo "== git $(git --version)"
 echo "== core.longpaths already set anywhere:"; git config --show-origin --get-all core.longpaths || echo "(not set)"
 powershell -NoProfile -Command "'LongPathsEnabled = ' + (Get-ItemProperty 'HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem').LongPathsEnabled" 2>/dev/null
 # source repo with one file whose full path in a clone at $W/cX is about 290 characters
-REL="node_modules/@some-scope/a-rather-long-package-name-for-testing/dist/esm/components/generated/very/deeply/nested/folder/structure/that/keeps/going/an-equally-long-file-name-for-the-generated-component-module-x.js"
+REL="node_modules/@some-scope/a-rather-long-package-name-for-testing/dist/esm/components/generated/very/deeply/nested/folder/structure/that/keeps/going/and-going-a-little-further-than-most-tools-expect-it-to-go-on-windows/an-equally-long-file-name-for-the-generated-component-module-x.js"
 git -c core.longpaths=true init -q src && cd src
 git config user.email t@e.st; git config user.name t; git config core.longpaths true
 mkdir -p "$(dirname "$REL")" && echo "export default 1" > "$REL" && git add -A && git commit -qm one && cd ..
