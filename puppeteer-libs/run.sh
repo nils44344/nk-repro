@@ -12,6 +12,7 @@ echo "puppeteer $(node -p 'require("./node_modules/puppeteer/package.json").vers
 cat > t.cjs <<'J'
 require("puppeteer").launch({args:["--no-sandbox"]}).then(async b=>{console.log("launched "+await b.version());await b.close()}).catch(e=>console.log("ERR "+e.message.split("\n").slice(0,3).join(" | ").slice(0,400)))
 J
+find $HOME/.cache/puppeteer -maxdepth 3 | head; echo "-- installing Chrome explicitly"; npx puppeteer browsers install chrome 2>&1 | tail -3
 echo "-- 1. launch on the bare image"; node t.cjs
 CH=$(node -e 'Promise.resolve(require("puppeteer").executablePath()).then(console.log)')
 echo "-- 2. missing libraries (ldd $CH)"
