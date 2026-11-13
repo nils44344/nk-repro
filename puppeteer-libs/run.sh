@@ -7,12 +7,13 @@ W=${W:-/tmp/work}; mkdir -p $W; cd $W || exit 1
 echo "== $(date) $(. /etc/os-release; echo $PRETTY_NAME) node $(node -v) user $(id -un)"
 mkdir t && cd t && npm init -y >/dev/null
 npm install puppeteer --no-audit --no-fund --loglevel=error 2>&1 | tail -1
+npm -v; ls $HOME/.cache/puppeteer 2>/dev/null || (echo "no browser from install; running browsers install chrome"; npx puppeteer browsers install chrome 2>&1 | tail -1)
 echo "puppeteer $(node -p 'require("./node_modules/puppeteer/package.json").version')"
 cat > t.cjs <<'J'
 require("puppeteer").launch({args:["--no-sandbox"]}).then(async b=>{console.log("launched "+await b.version());await b.close()}).catch(e=>console.log("ERR "+e.message.split("\n").slice(0,3).join(" | ").slice(0,400)))
 J
 echo "-- 1. launch on the bare image"; node t.cjs
-CH=$(node -e 'console.log(require("puppeteer").executablePath())')
+CH=$(node -e 'Promise.resolve(require("puppeteer").executablePath()).then(console.log)')
 echo "-- 2. missing libraries (ldd $CH)"
 ldd "$CH" | grep "not found" | awk '{print $1}' | sort -u | tee missing.txt
 apt-get update -qq >/dev/null 2>&1; apt-get install -y -qq apt-file >/dev/null 2>&1; apt-file update >/dev/null 2>&1
