@@ -1,0 +1,17 @@
+name: puppeteer-libs
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  run:
+    strategy:
+      fail-fast: false
+      matrix:
+        image: ['node:24-bookworm-slim', 'node:24-trixie-slim']
+    runs-on: ubuntu-latest
+    container: ${{ matrix.image }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: bash puppeteer-libs/run.sh
