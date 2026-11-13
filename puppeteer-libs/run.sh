@@ -17,6 +17,7 @@ J
 find $HOME/.cache/puppeteer -maxdepth 3 | head; echo "-- installing Chrome explicitly"; npx puppeteer browsers install chrome 2>&1 | grep -a -v "^    at" | head -8
 echo "-- 1. launch on the bare image"; node t.cjs
 CH=$(node -e 'Promise.resolve(require("puppeteer").executablePath()).then(console.log)')
+echo "-- 1b. Chrome run by hand"; "$CH" --headless --no-sandbox about:blank 2>&1 | head -2
 echo "-- 2. missing libraries (ldd $CH)"
 ldd "$CH" | grep "not found" | awk '{print $1}' | sort -u | tee missing.txt
 apt-get update -qq >/dev/null 2>&1; apt-get install -y -qq apt-file >/dev/null 2>&1; apt-file update >/dev/null 2>&1
