@@ -5,6 +5,8 @@ set +e
 export DEBIAN_FRONTEND=noninteractive
 W=${W:-/tmp/work}; mkdir -p $W; cd $W || exit 1
 echo "== $(date) $(. /etc/os-release; echo $PRETTY_NAME) node $(node -v) user $(id -un)"
+apt-get update -qq >/dev/null 2>&1; apt-get install -y -qq unzip ca-certificates >/dev/null 2>&1; echo "unzip: $(command -v unzip)"
+rm -rf $HOME/.cache/puppeteer
 mkdir t && cd t && npm init -y >/dev/null
 npm install puppeteer --no-audit --no-fund --loglevel=error 2>&1 | tail -1
 npm -v; ls $HOME/.cache/puppeteer 2>/dev/null || (echo "no browser from install; running browsers install chrome"; npx puppeteer browsers install chrome 2>&1 | tail -1)
