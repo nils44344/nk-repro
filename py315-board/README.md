@@ -2,13 +2,13 @@
 
 Plain `pip install <package>` in a fresh venv, then `import`, for 504 PyPI packages on clean GitHub runners. Anything that is not a clean wheel install is repeated on Python 3.14 to show whether the problem is specific to 3.15. Re-run daily by [the workflow](../.github/workflows/py315-board.yml).
 
-Last run: 2026-11-12, [run log](https://github.com/nils44344/nk-repro/actions/runs/43138110303). Interpreters: macOS 3.15.2 (control 3.14.10); Linux 3.15.2 (control 3.14.10); Windows 3.15.2 (control 3.14.10).
+Last run: 2026-11-13, [run log](https://github.com/nils44344/nk-repro/actions/runs/43344467175). Interpreters: macOS 3.15.2 (control 3.14.10); Linux 3.15.2 (control 3.14.10); Windows 3.15.2 (control 3.14.10).
 
 | | Windows | Linux | macOS |
 |---|---:|---:|---:|
-| Ready: a wheel installs and the package imports | 458 | 459 | 457 |
-| Works only by compiling from source on the runner | 25 | 26 | 25 |
-| Fails on 3.15, works on 3.14 | 6 | 6 | 6 |
+| Ready: a wheel installs and the package imports | 458 | 460 | 458 |
+| Works only by compiling from source on the runner | 26 | 26 | 25 |
+| Fails on 3.15, works on 3.14 | 5 | 5 | 5 |
 | Same failure on 3.14 (not a 3.15 problem) | 15 | 13 | 16 |
 
 ## Fails on 3.15 only
@@ -20,7 +20,6 @@ The same command works on Python 3.14 on at least one operating system where it 
 | 285 | `onnxruntime` | **fails**: no matching version | **fails**: no matching version | **fails**: no matching version |
 | 334 | `fastuuid` | **fails**: Rust extension: its PyO3 does not support this Python yet (fastuuid) | **fails**: Rust extension: its PyO3 does not support this Python yet (fastuuid) | **fails**: Rust extension: its PyO3 does not support this Python yet (fastuuid) |
 | 410 | `deepdiff` | **fails**: Rust extension: its PyO3 does not support this Python yet (cachebox) | **fails**: Rust extension: its PyO3 does not support this Python yet (cachebox) | **fails**: Rust extension: its PyO3 does not support this Python yet (cachebox) |
-| 486 | `ddtrace` | **fails**: build from source failed (ddtrace) | **fails**: build from source failed (ddtrace) | **fails**: build from source failed (ddtrace) |
 | 494 | `confluent-kafka` | **fails**: build from source failed (confluent-kafka) | **fails**: build from source failed (confluent-kafka) | **fails**: build from source failed (confluent-kafka) |
 |  | `tensorflow` | **fails**: no matching version | **fails**: no matching version | **fails**: no matching version |
 
@@ -55,6 +54,7 @@ pip found no 3.15 wheel for the listed packages and built them from source. The 
 | 467 | `fastapi-cli` | compiles from source: pyyaml | compiles from source: pyyaml | compiles from source: pyyaml |
 | 480 | `tree-sitter` | compiles from source: tree-sitter | compiles from source: tree-sitter | compiles from source: tree-sitter |
 | 482 | `moto` | compiles from source: pyyaml | compiles from source: pyyaml | compiles from source: pyyaml |
+| 486 | `ddtrace` | compiles from source: ddtrace | ready (4.17.0) | ready (4.17.0) |
 |  | `jupyterlab` | compiles from source: pyyaml | compiles from source: pyyaml | compiles from source: pyyaml |
 
 ## Same result on 3.14
@@ -66,7 +66,7 @@ Not a 3.15 problem: the package does not support that operating system, needs a 
 | 105 | `soupsieve` | import needs the module bs4, which this package does not install | import needs the module bs4, which this package does not install | import needs the module bs4, which this package does not install |
 | 120 | `uvloop` | build from source failed (uvloop) | ready (0.23.0) | ready (0.23.0) |
 | 168 | `httpx-sse` | import needs the module httpx, which this package does not install | import needs the module httpx, which this package does not install | import needs the module httpx, which this package does not install |
-| 170 | `psycopg` | ready (3.3.8) | ready (3.3.8) | import failed |
+| 170 | `psycopg` | ready (3.3.9) | ready (3.3.9) | import failed |
 | 181 | `psycopg-binary` | import failed | import failed | import failed |
 | 234 | `ptyprocess` | import needs the module fcntl, which this package does not install | ready (0.7.0) | ready (0.7.0) |
 | 246 | `opentelemetry-util-http` | import failed | import failed | import failed |
