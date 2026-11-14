@@ -1,8 +1,11 @@
 {
   "name": "nk-claude-themes",
   "version": "1.1.0",
-  "description": "81 free custom colour themes for the Claude Code terminal CLI: originals plus credited community ports. Unofficial, not affiliated with Anthropic.",
-  "author": { "name": "Nilay Kabariya", "url": "https://nilaykabariya.blog" },
+  "description": "81 free custom colour themes for the Claude Code terminal CLI. Browse them with previews at https://nilaykabariya.blog/claude-code-themes. Unofficial, not affiliated with Anthropic.",
+  "author": {
+    "name": "Nilay Kabariya",
+    "url": "https://nilaykabariya.blog"
+  },
   "homepage": "https://nilaykabariya.blog/claude-code-themes",
   "repository": "https://github.com/nils44344/nk-repro"
 }

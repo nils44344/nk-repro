@@ -2,7 +2,7 @@
 
 Custom colour themes for the Claude Code terminal CLI, in the format from the official docs
 (https://code.claude.com/docs/en/terminal-config.md#create-a-custom-theme): one JSON file per theme in `~/.claude/themes/`, fields `name`, `base`, `overrides`.
-Each theme sets 24 tokens. Gallery with previews, copy and download buttons: https://nilaykabariya.blog/claude-code-themes
+Each theme sets 24 tokens. **Browse all themes with previews, copy and download buttons: https://nilaykabariya.blog/claude-code-themes**
 
 Unofficial and not affiliated with Anthropic.
 
