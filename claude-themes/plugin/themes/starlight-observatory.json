@@ -1,0 +1,30 @@
+{
+  "name": "Starlight Observatory",
+  "base": "dark",
+  "overrides": {
+    "claude": "#ffd86b",
+    "claudeShimmer": "#f4dd9f",
+    "text": "#dfe7ff",
+    "inactive": "#7d849a",
+    "subtle": "#585f74",
+    "suggestion": "#9fc2ff",
+    "permission": "#ffe49a",
+    "success": "#7ef0b8",
+    "error": "#ff8aa0",
+    "warning": "#ffe49a",
+    "promptBorder": "#6a5d3d",
+    "planMode": "#7fb2ff",
+    "autoAccept": "#c9a8ff",
+    "bashBorder": "#ffb38a",
+    "diffAdded": "#234244",
+    "diffRemoved": "#472c41",
+    "diffAddedDimmed": "#162933",
+    "diffRemovedDimmed": "#291d31",
+    "diffAddedWord": "#427e6c",
+    "diffRemovedWord": "#874d62",
+    "userMessageBackground": "#151a2f",
+    "selectionBg": "#514836",
+    "rate_limit_fill": "#ffd86b",
+    "rate_limit_empty": "#20253a"
+  }
+}

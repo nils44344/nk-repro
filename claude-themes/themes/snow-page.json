@@ -1,0 +1,30 @@
+{
+  "name": "Snow Page",
+  "base": "light",
+  "overrides": {
+    "claude": "#222222",
+    "claudeShimmer": "#1f1f1f",
+    "text": "#1a1a1a",
+    "inactive": "#727272",
+    "subtle": "#a5a5a5",
+    "suggestion": "#444444",
+    "permission": "#8a6a14",
+    "success": "#2e7d4a",
+    "error": "#c0392b",
+    "warning": "#8a6a14",
+    "promptBorder": "#999999",
+    "planMode": "#2a5f9a",
+    "autoAccept": "#6a3f9a",
+    "bashBorder": "#555555",
+    "diffAdded": "#c9dcd0",
+    "diffRemoved": "#ebc8c4",
+    "diffAddedDimmed": "#dfeae3",
+    "diffRemovedDimmed": "#f2dfdd",
+    "diffAddedWord": "#94bca2",
+    "diffRemovedWord": "#dc968e",
+    "userMessageBackground": "#efefef",
+    "selectionBg": "#b9b9b9",
+    "rate_limit_fill": "#222222",
+    "rate_limit_empty": "#dfdfdf"
+  }
+}

@@ -1,4 +1,4 @@
-# Claude Code themes (58 originals)
+# Claude Code themes (81 themes)
 
 Custom colour themes for the Claude Code terminal CLI, in the format from the official docs
 (https://code.claude.com/docs/en/terminal-config.md#create-a-custom-theme): one JSON file per theme in `~/.claude/themes/`, fields `name`, `base`, `overrides`.
@@ -78,6 +78,29 @@ Then run `/theme` inside Claude Code and pick one. New files in the folder show 
 | Typewriter | light | Objects | Calm, Light | 14.7:1 / 4.6:1 | Cream paper, black ribbon ink and the red half of the ribbon. |
 | Vaporwave Mall | dark | Retro screens | Playful, Bold, Dark | 15.1:1 / 5.5:1 | An empty mall at 3 am: pink, cyan and mint over purple glass. |
 | Vinyl Record | dark | Objects | Warm, Bold, Dark | 15.6:1 / 6.8:1 | Black grooves, an orange label and a cream paper sleeve. |
+| Catppuccin Mocha (port) | dark | Ports | Soft, Calm, Dark | 11.3:1 / 7.1:1 | The Catppuccin Mocha palette mapped onto every Claude Code colour. |
+| Dracula (port) | dark | Ports | Bold, Cool, Dark | 13.4:1 / 4.5:1 | The Dracula palette mapped onto every Claude Code colour. |
+| Carrom Board | light | Games | Warm, Soft, Light | 10.6:1 / 4.5:1 | Polished plywood, a red queen and powdered strikers. |
+| Chess Club | light | Games | Calm, Light | 12.9:1 / 4.5:1 | Cream and green squares, a walnut board and quiet concentration. |
+| Flamingo Lagoon | light | Animals | Playful, Soft, Light | 13.4:1 / 4.5:1 | Coral-pink wings standing in clear turquoise water. |
+| Fog Morning | light | Weather and seasons | Soft, Calm, Light | 11.3:1 / 4.5:1 | Grey-blue mist over a valley before the sun burns it off. |
+| Fox in Snow | light | Animals | Cool, Playful, Light | 14.0:1 / 4.5:1 | A red fox crossing a white field: one hot orange against pale blue shadow. |
+| Graphite | dark | Monochrome | Calm, Dark | 13.9:1 / 6.9:1 | Pencil greys with white as the only accent. |
+| Jaipur Terracotta | light | Cities | Warm, Soft, Light | 12.9:1 / 4.6:1 | Rose sandstone, arched windows and a hot afternoon. |
+| Kerala Backwater | light | Cities | Calm, Cool, Light | 12.9:1 / 4.5:1 | Coconut-palm green, still water and a slow houseboat. |
+| Koi Pond | dark | Animals | Calm, Warm, Dark | 14.7:1 / 6.2:1 | Orange koi turning slowly under green water. |
+| Ludo Board | light | Games | Playful, Bold, Light | 15.2:1 / 4.5:1 | Four home corners, red, green, yellow and blue, and a dice roll. |
+| Moon Landing | dark | Space | Calm, Cool, Dark | 13.7:1 / 7.0:1 | Grey regolith, black sky and one bright blue marble overhead. |
+| Mumbai Local at Night | dark | Cities | Bold, Warm, Dark | 14.5:1 / 6.5:1 | Yellow platform signs and window light on a late suburban train. |
+| Opal | light | Materials | Soft, Playful, Light | 14.2:1 / 4.5:1 | Milk-white stone with blue, pink and green fire inside. |
+| Peacock Feather | dark | Animals | Bold, Cool, Dark | 14.9:1 / 6.5:1 | Eye-spot teal, deep blue and a thread of gold from a fanned tail. |
+| Rainbow After Rain | light | Weather and seasons | Playful, Bold, Light | 15.1:1 / 4.5:1 | Every spectrum colour on a washed-clean white sky. |
+| Red Planet Dusk | dark | Space | Warm, Bold, Dark | 13.6:1 / 6.2:1 | Rust dust, a thin blue sunset and rover tracks. |
+| Sepia Library | light | Monochrome | Warm, Calm, Light | 13.0:1 / 4.7:1 | Brown ink on aged paper in a quiet reading room. |
+| Snow Page | light | Monochrome | Calm, Light | 16.7:1 / 4.8:1 | A white page, black type and nothing else competing. |
+| Starlight Observatory | dark | Space | Calm, Cool, Dark | 15.8:1 / 8.7:1 | A dome open to a deep-blue night and gold stars. |
+| Thunderstorm | dark | Weather and seasons | Cool, Bold, Dark | 14.5:1 / 7.5:1 | Slate clouds and the white-yellow crack of lightning. |
+| Winter Window | dark | Weather and seasons | Warm, Calm, Dark | 15.3:1 / 7.4:1 | A lit window glowing amber in a blue winter evening. |
 
 ## How they are made and checked
 

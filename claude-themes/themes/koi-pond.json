@@ -1,0 +1,30 @@
+{
+  "name": "Koi Pond",
+  "base": "dark",
+  "overrides": {
+    "claude": "#ff7a3d",
+    "claudeShimmer": "#f6a47a",
+    "text": "#e5f1ec",
+    "inactive": "#84928e",
+    "subtle": "#5f6f6b",
+    "suggestion": "#ffb27a",
+    "permission": "#ffd36b",
+    "success": "#67d99a",
+    "error": "#ff6b6b",
+    "warning": "#ffd36b",
+    "promptBorder": "#6e4329",
+    "planMode": "#5bc0de",
+    "autoAccept": "#d0a2f0",
+    "bashBorder": "#ff7a3d",
+    "diffAdded": "#234c3a",
+    "diffRemoved": "#4c3331",
+    "diffAddedDimmed": "#19372c",
+    "diffRemovedDimmed": "#2f2a27",
+    "diffAddedWord": "#3a7c5b",
+    "diffRemovedWord": "#8b4745",
+    "userMessageBackground": "#1c2e2b",
+    "selectionBg": "#563a26",
+    "rate_limit_fill": "#ff7a3d",
+    "rate_limit_empty": "#273835"
+  }
+}

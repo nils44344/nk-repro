@@ -1,0 +1,30 @@
+{
+  "name": "Ludo Board",
+  "base": "light",
+  "overrides": {
+    "claude": "#dc3030",
+    "claudeShimmer": "#9a2c30",
+    "text": "#1f2430",
+    "inactive": "#727376",
+    "subtle": "#aaabab",
+    "suggestion": "#a86200",
+    "permission": "#976e09",
+    "success": "#278539",
+    "error": "#c92a2a",
+    "warning": "#976e09",
+    "promptBorder": "#f1a19d",
+    "planMode": "#1a76c9",
+    "autoAccept": "#9c36b5",
+    "bashBorder": "#c84d0a",
+    "diffAdded": "#cde6cb",
+    "diffRemoved": "#f1c6c1",
+    "diffAddedDimmed": "#e4f1df",
+    "diffRemovedDimmed": "#f7dfd9",
+    "diffAddedWord": "#97ce9d",
+    "diffRemovedWord": "#e38f8c",
+    "userMessageBackground": "#f4f2ec",
+    "selectionBg": "#f6c0bb",
+    "rate_limit_fill": "#dc3030",
+    "rate_limit_empty": "#e4e3de"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Opal",
+  "base": "light",
+  "overrides": {
+    "claude": "#5b68d1",
+    "claudeShimmer": "#47519b",
+    "text": "#232638",
+    "inactive": "#71727c",
+    "subtle": "#a7a9b1",
+    "suggestion": "#b34d90",
+    "permission": "#946a17",
+    "success": "#268062",
+    "error": "#c94159",
+    "warning": "#946a17",
+    "promptBorder": "#bac2fd",
+    "planMode": "#2378af",
+    "autoAccept": "#9e51bb",
+    "bashBorder": "#b35a2e",
+    "diffAdded": "#c8e4dc",
+    "diffRemoved": "#efcad2",
+    "diffAddedDimmed": "#deedea",
+    "diffRemovedDimmed": "#f3e0e5",
+    "diffAddedWord": "#94ccba",
+    "diffRemovedWord": "#e69baa",
+    "userMessageBackground": "#edeef1",
+    "selectionBg": "#cfd4fc",
+    "rate_limit_fill": "#5b68d1",
+    "rate_limit_empty": "#dee0e4"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Mumbai Local at Night",
+  "base": "dark",
+  "overrides": {
+    "claude": "#ffc928",
+    "claudeShimmer": "#f7d367",
+    "text": "#e9e6dc",
+    "inactive": "#898885",
+    "subtle": "#656564",
+    "suggestion": "#ffc928",
+    "permission": "#ffb02e",
+    "success": "#6fd08c",
+    "error": "#ff6b5e",
+    "warning": "#ffb02e",
+    "promptBorder": "#725e20",
+    "planMode": "#5ab0ff",
+    "autoAccept": "#d4a5f0",
+    "bashBorder": "#ff7a3d",
+    "diffAdded": "#2a4335",
+    "diffRemoved": "#512c2c",
+    "diffAddedDimmed": "#202e29",
+    "diffRemovedDimmed": "#352224",
+    "diffAddedWord": "#427353",
+    "diffRemovedWord": "#8e423d",
+    "userMessageBackground": "#232528",
+    "selectionBg": "#5a4c1e",
+    "rate_limit_fill": "#ffc928",
+    "rate_limit_empty": "#2e2f31"
+  }
+}

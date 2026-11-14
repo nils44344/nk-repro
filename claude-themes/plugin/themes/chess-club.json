@@ -1,0 +1,30 @@
+{
+  "name": "Chess Club",
+  "base": "light",
+  "overrides": {
+    "claude": "#516d2c",
+    "claudeShimmer": "#435123",
+    "text": "#2a1d12",
+    "inactive": "#6e6356",
+    "subtle": "#a49885",
+    "suggestion": "#516d2c",
+    "permission": "#7f6212",
+    "success": "#397034",
+    "error": "#b3261e",
+    "warning": "#7f6212",
+    "promptBorder": "#b4bd8a",
+    "planMode": "#345c8a",
+    "autoAccept": "#6a3f8a",
+    "bashBorder": "#9d502c",
+    "diffAdded": "#c5cba9",
+    "diffRemoved": "#dfb29f",
+    "diffAddedDimmed": "#d8d6b9",
+    "diffRemovedDimmed": "#e7c9b4",
+    "diffAddedWord": "#97b083",
+    "diffRemovedWord": "#d08172",
+    "userMessageBackground": "#e5d9c3",
+    "selectionBg": "#c7caa0",
+    "rate_limit_fill": "#516d2c",
+    "rate_limit_empty": "#d7cbb6"
+  }
+}

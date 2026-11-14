@@ -5,6 +5,7 @@ Every colour a theme uses is derived from the spec below, so the checks in valid
 import json, os, re
 import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from batch3_specs import B3
+from batch4_specs import B4
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -50,7 +51,7 @@ S = [
  ('aurora-night-train','Aurora Night Train','dark','#0a1020','#e6eefc','#5ef2c0','#66f2a8','#ff6b8a','#ffd36b','#6ab7ff','#c08bff','#5ef2c0','#ffd36b','#ff9a6b',['Cool','Playful','Dark'],'Places and hours','A night train through the north: green and violet light over deep blue.',{'live':True}),
  ('marble-and-brass','Marble and Brass','light','#f4f4f2','#25272b','#9a7424','#2f7a55','#b3362f','#8c6a12','#2a6f8c','#6f56a8','#2a6f8c','#8c6a12','#a05a2c',['Calm','Cool','Light'],'Materials','Cool grey marble with a brass accent: a quiet, formal light theme.',{}),
  ('ink-and-indigo','Ink and Indigo','light','#f5f2ea','#1b2250','#2b3a9c','#2c7a56','#b23a3a','#946a12','#1f6f95','#7a4aa0','#2b3a9c','#946a12','#b0502a',['Cool','Calm','Light'],'Textiles','Block-printed indigo on unbleached cotton.',{}),
-] + B3
+] + B3 + B4
 
 H = {  # the five hand-written themes: meta only
  'chai-at-midnight': (['Warm','Calm','Dark'],'Food and drink','Warm amber on cocoa, the colour of the last chai.'),

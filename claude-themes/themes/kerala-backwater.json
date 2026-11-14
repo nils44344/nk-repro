@@ -1,0 +1,30 @@
+{
+  "name": "Kerala Backwater",
+  "base": "light",
+  "overrides": {
+    "claude": "#1d7f53",
+    "claudeShimmer": "#1a6341",
+    "text": "#14301f",
+    "inactive": "#637367",
+    "subtle": "#9bab9e",
+    "suggestion": "#1d7f53",
+    "permission": "#8a6a14",
+    "success": "#1d7f35",
+    "error": "#b3402a",
+    "warning": "#8a6a14",
+    "promptBorder": "#91c5aa",
+    "planMode": "#1d6f95",
+    "autoAccept": "#6a4a9a",
+    "bashBorder": "#ad5626",
+    "diffAdded": "#bcdcc1",
+    "diffRemoved": "#dfc7ba",
+    "diffAddedDimmed": "#d3e8d5",
+    "diffRemovedDimmed": "#e6ddd1",
+    "diffAddedWord": "#86c093",
+    "diffRemovedWord": "#cf9787",
+    "userMessageBackground": "#e3ece2",
+    "selectionBg": "#b0d6c0",
+    "rate_limit_fill": "#1d7f53",
+    "rate_limit_empty": "#d4ded3"
+  }
+}

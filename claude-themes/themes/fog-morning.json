@@ -1,0 +1,30 @@
+{
+  "name": "Fog Morning",
+  "base": "light",
+  "overrides": {
+    "claude": "#53707c",
+    "claudeShimmer": "#455a64",
+    "text": "#2b3238",
+    "inactive": "#686c6f",
+    "subtle": "#a3a7ab",
+    "suggestion": "#53707c",
+    "permission": "#84691c",
+    "success": "#3c7858",
+    "error": "#b4473f",
+    "warning": "#84691c",
+    "promptBorder": "#abbbc3",
+    "planMode": "#3f6f95",
+    "autoAccept": "#6f5a9a",
+    "bashBorder": "#9a5c38",
+    "diffAdded": "#c2d4cd",
+    "diffRemoved": "#ddc3c3",
+    "diffAddedDimmed": "#d6e0de",
+    "diffRemovedDimmed": "#e4d7d8",
+    "diffAddedWord": "#96b6a6",
+    "diffRemovedWord": "#cf9894",
+    "userMessageBackground": "#e2e6e8",
+    "selectionBg": "#c1ccd2",
+    "rate_limit_fill": "#53707c",
+    "rate_limit_empty": "#d5d8db"
+  }
+}

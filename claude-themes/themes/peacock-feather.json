@@ -1,0 +1,30 @@
+{
+  "name": "Peacock Feather",
+  "base": "dark",
+  "overrides": {
+    "claude": "#22d3c5",
+    "claudeShimmer": "#67dfd4",
+    "text": "#e6f4f1",
+    "inactive": "#819597",
+    "subtle": "#5b7176",
+    "suggestion": "#f4c542",
+    "permission": "#f4c542",
+    "success": "#7be495",
+    "error": "#ff7a7a",
+    "warning": "#f4c542",
+    "promptBorder": "#116868",
+    "planMode": "#4aa8ff",
+    "autoAccept": "#b48cff",
+    "bashBorder": "#ff9a5a",
+    "diffAdded": "#224f44",
+    "diffRemoved": "#47373f",
+    "diffAddedDimmed": "#153938",
+    "diffRemovedDimmed": "#292d35",
+    "diffAddedWord": "#408260",
+    "diffRemovedWord": "#874f54",
+    "userMessageBackground": "#162f38",
+    "selectionBg": "#0e5658",
+    "rate_limit_fill": "#22d3c5",
+    "rate_limit_empty": "#213942"
+  }
+}

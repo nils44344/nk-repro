@@ -1,0 +1,30 @@
+{
+  "name": "Sepia Library",
+  "base": "light",
+  "overrides": {
+    "claude": "#7a4a21",
+    "claudeShimmer": "#5e3a1b",
+    "text": "#2a1d10",
+    "inactive": "#6f6455",
+    "subtle": "#a59885",
+    "suggestion": "#7a4a21",
+    "permission": "#7a5a10",
+    "success": "#3f6f3a",
+    "error": "#9a2f26",
+    "warning": "#7a5a10",
+    "promptBorder": "#bb9f7f",
+    "planMode": "#2f5f7a",
+    "autoAccept": "#5a3a7a",
+    "bashBorder": "#8a5a2a",
+    "diffAdded": "#c6c8a9",
+    "diffRemoved": "#dab5a1",
+    "diffAddedDimmed": "#dad5b9",
+    "diffRemovedDimmed": "#e5cbb5",
+    "diffAddedWord": "#98aa83",
+    "diffRemovedWord": "#c48676",
+    "userMessageBackground": "#e7dac3",
+    "selectionBg": "#cdb699",
+    "rate_limit_fill": "#7a4a21",
+    "rate_limit_empty": "#d9ccb5"
+  }
+}

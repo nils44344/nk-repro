@@ -1,0 +1,30 @@
+{
+  "name": "Winter Window",
+  "base": "dark",
+  "overrides": {
+    "claude": "#ffb54d",
+    "claudeShimmer": "#f6c888",
+    "text": "#e6ecf6",
+    "inactive": "#858c98",
+    "subtle": "#606774",
+    "suggestion": "#ffb54d",
+    "permission": "#ffe08a",
+    "success": "#7ee0a0",
+    "error": "#ff7f7f",
+    "warning": "#ffe08a",
+    "promptBorder": "#6e5634",
+    "planMode": "#7fb2ff",
+    "autoAccept": "#c9a8ff",
+    "bashBorder": "#ff9461",
+    "diffAdded": "#294642",
+    "diffRemoved": "#4d313c",
+    "diffAddedDimmed": "#1d3034",
+    "diffRemovedDimmed": "#302531",
+    "diffAddedWord": "#467b62",
+    "diffRemovedWord": "#8b4d53",
+    "userMessageBackground": "#1d2533",
+    "selectionBg": "#564630",
+    "rate_limit_fill": "#ffb54d",
+    "rate_limit_empty": "#28303d"
+  }
+}

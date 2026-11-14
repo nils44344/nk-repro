@@ -1,0 +1,30 @@
+{
+  "name": "Thunderstorm",
+  "base": "dark",
+  "overrides": {
+    "claude": "#8fb4ff",
+    "claudeShimmer": "#aac5fb",
+    "text": "#dbe4f3",
+    "inactive": "#808692",
+    "subtle": "#5d626e",
+    "suggestion": "#8fb4ff",
+    "permission": "#ffe27a",
+    "success": "#7ae0a8",
+    "error": "#ff7b8a",
+    "warning": "#ffe27a",
+    "promptBorder": "#435377",
+    "planMode": "#6fd0ff",
+    "autoAccept": "#c1a0ff",
+    "bashBorder": "#ff9a6b",
+    "diffAdded": "#29443e",
+    "diffRemoved": "#4e2e39",
+    "diffAddedDimmed": "#1e2e2e",
+    "diffRemovedDimmed": "#31222b",
+    "diffAddedWord": "#457a62",
+    "diffRemovedWord": "#8c4955",
+    "userMessageBackground": "#1e222b",
+    "selectionBg": "#364360",
+    "rate_limit_fill": "#8fb4ff",
+    "rate_limit_empty": "#282c36"
+  }
+}

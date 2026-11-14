@@ -1,0 +1,30 @@
+{
+  "name": "Rainbow After Rain",
+  "base": "light",
+  "overrides": {
+    "claude": "#7b4dff",
+    "claudeShimmer": "#5a3ebc",
+    "text": "#1d2340",
+    "inactive": "#6f7281",
+    "subtle": "#a7aab6",
+    "suggestion": "#bd5711",
+    "permission": "#976e09",
+    "success": "#188553",
+    "error": "#ce4145",
+    "warning": "#976e09",
+    "promptBorder": "#c2aeff",
+    "planMode": "#1878bc",
+    "autoAccept": "#b63bc9",
+    "bashBorder": "#bd5711",
+    "diffAdded": "#c7e9db",
+    "diffRemoved": "#f6ced1",
+    "diffAddedDimmed": "#dff2ec",
+    "diffRemovedDimmed": "#f9e4e6",
+    "diffAddedWord": "#8ed4b5",
+    "diffRemovedWord": "#f09fa2",
+    "userMessageBackground": "#f1f2f5",
+    "selectionBg": "#d5c8ff",
+    "rate_limit_fill": "#7b4dff",
+    "rate_limit_empty": "#e1e3e8"
+  }
+}

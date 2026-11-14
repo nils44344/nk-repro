@@ -1,0 +1,30 @@
+{
+  "name": "Graphite",
+  "base": "dark",
+  "overrides": {
+    "claude": "#ffffff",
+    "claudeShimmer": "#f6f6f6",
+    "text": "#e6e6e6",
+    "inactive": "#8a8a8a",
+    "subtle": "#686868",
+    "suggestion": "#cfcfcf",
+    "permission": "#f0d36b",
+    "success": "#8fd694",
+    "error": "#ff7a7a",
+    "warning": "#f0d36b",
+    "promptBorder": "#767676",
+    "planMode": "#7fb2e5",
+    "autoAccept": "#c9a8e8",
+    "bashBorder": "#d9d9d9",
+    "diffAdded": "#364737",
+    "diffRemoved": "#563333",
+    "diffAddedDimmed": "#29322a",
+    "diffRemovedDimmed": "#3a2727",
+    "diffAddedWord": "#547857",
+    "diffRemovedWord": "#914c4c",
+    "userMessageBackground": "#282828",
+    "selectionBg": "#5f5f5f",
+    "rate_limit_fill": "#ffffff",
+    "rate_limit_empty": "#323232"
+  }
+}

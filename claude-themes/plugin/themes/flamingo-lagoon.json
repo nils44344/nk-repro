@@ -1,0 +1,30 @@
+{
+  "name": "Flamingo Lagoon",
+  "base": "light",
+  "overrides": {
+    "claude": "#b24e43",
+    "claudeShimmer": "#883e3b",
+    "text": "#3a1f2b",
+    "inactive": "#7b6970",
+    "subtle": "#b3a1a7",
+    "suggestion": "#b24e43",
+    "permission": "#946611",
+    "success": "#287b5b",
+    "error": "#c2332f",
+    "warning": "#946611",
+    "promptBorder": "#f7b4ae",
+    "planMode": "#23788d",
+    "autoAccept": "#8a4fb0",
+    "bashBorder": "#b24e43",
+    "diffAdded": "#ccd9d2",
+    "diffRemoved": "#eebfc0",
+    "diffAddedDimmed": "#e2e3e1",
+    "diffRemovedDimmed": "#f5d6d8",
+    "diffAddedWord": "#96c0ae",
+    "diffRemovedWord": "#de8e8d",
+    "userMessageBackground": "#f3e6e9",
+    "selectionBg": "#f9c8c5",
+    "rate_limit_fill": "#b24e43",
+    "rate_limit_empty": "#e6d7db"
+  }
+}

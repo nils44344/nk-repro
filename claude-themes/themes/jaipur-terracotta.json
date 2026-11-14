@@ -1,0 +1,30 @@
+{
+  "name": "Jaipur Terracotta",
+  "base": "light",
+  "overrides": {
+    "claude": "#b84238",
+    "claudeShimmer": "#8c352e",
+    "text": "#3a1e1a",
+    "inactive": "#7a6661",
+    "subtle": "#b29c97",
+    "suggestion": "#b84238",
+    "permission": "#8a5a14",
+    "success": "#2d784f",
+    "error": "#b3261e",
+    "warning": "#8a5a14",
+    "promptBorder": "#e09f97",
+    "planMode": "#2a6f8a",
+    "autoAccept": "#7a3f8a",
+    "bashBorder": "#b84238",
+    "diffAdded": "#cacfc0",
+    "diffRemoved": "#e8b6b0",
+    "diffAddedDimmed": "#e0dbd0",
+    "diffRemovedDimmed": "#f1cec7",
+    "diffAddedWord": "#95b39a",
+    "diffRemovedWord": "#d6847d",
+    "userMessageBackground": "#f1dfd9",
+    "selectionBg": "#e9b8b0",
+    "rate_limit_fill": "#b84238",
+    "rate_limit_empty": "#e4d1cb"
+  }
+}

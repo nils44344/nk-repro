@@ -1,0 +1,30 @@
+{
+  "name": "Moon Landing",
+  "base": "dark",
+  "overrides": {
+    "claude": "#e8e6df",
+    "claudeShimmer": "#e6e5df",
+    "text": "#e2e2e0",
+    "inactive": "#878788",
+    "subtle": "#646566",
+    "suggestion": "#b9c7e0",
+    "permission": "#f0d36b",
+    "success": "#8fd694",
+    "error": "#ff7a6b",
+    "warning": "#f0d36b",
+    "promptBorder": "#6b6a6a",
+    "planMode": "#7fb2e5",
+    "autoAccept": "#c9a8e8",
+    "bashBorder": "#e0a07a",
+    "diffAdded": "#344639",
+    "diffRemoved": "#533131",
+    "diffAddedDimmed": "#27312c",
+    "diffRemovedDimmed": "#372627",
+    "diffAddedWord": "#537758",
+    "diffRemovedWord": "#904b45",
+    "userMessageBackground": "#25262a",
+    "selectionBg": "#565656",
+    "rate_limit_fill": "#e8e6df",
+    "rate_limit_empty": "#2f3034"
+  }
+}

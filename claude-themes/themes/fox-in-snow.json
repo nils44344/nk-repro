@@ -1,0 +1,30 @@
+{
+  "name": "Fox in Snow",
+  "base": "light",
+  "overrides": {
+    "claude": "#bf4e1b",
+    "claudeShimmer": "#874023",
+    "text": "#1e2733",
+    "inactive": "#6c7279",
+    "subtle": "#a3a8ae",
+    "suggestion": "#bf4e1b",
+    "permission": "#8c6a12",
+    "success": "#2e7d5b",
+    "error": "#c0392b",
+    "warning": "#8c6a12",
+    "promptBorder": "#e8b097",
+    "planMode": "#3b6ea5",
+    "autoAccept": "#6a4a9c",
+    "bashBorder": "#bf4e1b",
+    "diffAdded": "#c4dad4",
+    "diffRemoved": "#e6c6c4",
+    "diffAddedDimmed": "#dae7e5",
+    "diffRemovedDimmed": "#eddcdd",
+    "diffAddedWord": "#91baaa",
+    "diffRemovedWord": "#d9948e",
+    "userMessageBackground": "#e9edf0",
+    "selectionBg": "#ecc8b8",
+    "rate_limit_fill": "#bf4e1b",
+    "rate_limit_empty": "#dadee2"
+  }
+}

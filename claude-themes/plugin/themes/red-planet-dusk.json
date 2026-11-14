@@ -1,0 +1,30 @@
+{
+  "name": "Red Planet Dusk",
+  "base": "dark",
+  "overrides": {
+    "claude": "#ff6a3d",
+    "claudeShimmer": "#fc9270",
+    "text": "#f6dccf",
+    "inactive": "#9a8177",
+    "subtle": "#785e56",
+    "suggestion": "#ff9a6b",
+    "permission": "#ffcb5c",
+    "success": "#9bd67a",
+    "error": "#ff7d6a",
+    "warning": "#ffcb5c",
+    "promptBorder": "#7f3520",
+    "planMode": "#7fc3d8",
+    "autoAccept": "#d9a0e0",
+    "bashBorder": "#ff6a3d",
+    "diffAdded": "#454026",
+    "diffRemoved": "#612d24",
+    "diffAddedDimmed": "#392b1a",
+    "diffRemovedDimmed": "#482019",
+    "diffAddedWord": "#627443",
+    "diffRemovedWord": "#99493d",
+    "userMessageBackground": "#381f1a",
+    "selectionBg": "#6a2c1b",
+    "rate_limit_fill": "#ff6a3d",
+    "rate_limit_empty": "#422923"
+  }
+}

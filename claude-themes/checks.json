@@ -109,6 +109,17 @@
   "cvdSafeClaim": false,
   "problems": []
  },
+ "carrom-board": {
+  "tokens": 24,
+  "textContrast": 10.6,
+  "minReadable": 4.5,
+  "diffText": 7.0,
+  "statusDeltaE": 43,
+  "addedRemovedDeltaE": 22,
+  "cvdDeltaE": 7,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
  "cassette-tape": {
   "tokens": 24,
   "textContrast": 12.3,
@@ -150,6 +161,17 @@
   "statusDeltaE": 56,
   "addedRemovedDeltaE": 28,
   "cvdDeltaE": 14,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "chess-club": {
+  "tokens": 24,
+  "textContrast": 12.9,
+  "minReadable": 4.5,
+  "diffText": 8.6,
+  "statusDeltaE": 40,
+  "addedRemovedDeltaE": 22,
+  "cvdDeltaE": 0,
   "cvdSafeClaim": false,
   "problems": []
  },
@@ -219,6 +241,28 @@
   "cvdSafeClaim": false,
   "problems": []
  },
+ "flamingo-lagoon": {
+  "tokens": 24,
+  "textContrast": 13.4,
+  "minReadable": 4.5,
+  "diffText": 9.1,
+  "statusDeltaE": 46,
+  "addedRemovedDeltaE": 23,
+  "cvdDeltaE": 8,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "fog-morning": {
+  "tokens": 24,
+  "textContrast": 11.3,
+  "minReadable": 4.5,
+  "diffText": 7.8,
+  "statusDeltaE": 44,
+  "addedRemovedDeltaE": 17,
+  "cvdDeltaE": 9,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
  "football-floodlights": {
   "tokens": 24,
   "textContrast": 16.1,
@@ -230,6 +274,17 @@
   "cvdSafeClaim": false,
   "problems": []
  },
+ "fox-in-snow": {
+  "tokens": 24,
+  "textContrast": 14.0,
+  "minReadable": 4.5,
+  "diffText": 9.5,
+  "statusDeltaE": 49,
+  "addedRemovedDeltaE": 20,
+  "cvdDeltaE": 5,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
  "glacier": {
   "tokens": 24,
   "textContrast": 13.2,
@@ -238,6 +293,17 @@
   "statusDeltaE": 49,
   "addedRemovedDeltaE": 23,
   "cvdDeltaE": 5,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "graphite": {
+  "tokens": 24,
+  "textContrast": 13.9,
+  "minReadable": 6.9,
+  "diffText": 8.0,
+  "statusDeltaE": 44,
+  "addedRemovedDeltaE": 26,
+  "cvdDeltaE": 10,
   "cvdSafeClaim": false,
   "problems": []
  },
@@ -285,6 +351,17 @@
   "cvdSafeClaim": false,
   "problems": []
  },
+ "jaipur-terracotta": {
+  "tokens": 24,
+  "textContrast": 12.9,
+  "minReadable": 4.6,
+  "diffText": 8.5,
+  "statusDeltaE": 41,
+  "addedRemovedDeltaE": 22,
+  "cvdDeltaE": 0,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
  "jewel-box": {
   "tokens": 24,
   "textContrast": 15.1,
@@ -307,6 +384,17 @@
   "cvdSafeClaim": false,
   "problems": []
  },
+ "kerala-backwater": {
+  "tokens": 24,
+  "textContrast": 12.9,
+  "minReadable": 4.5,
+  "diffText": 8.8,
+  "statusDeltaE": 42,
+  "addedRemovedDeltaE": 22,
+  "cvdDeltaE": 6,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
  "kite-festival": {
   "tokens": 24,
   "textContrast": 16.3,
@@ -315,6 +403,17 @@
   "statusDeltaE": 29,
   "addedRemovedDeltaE": 25,
   "cvdDeltaE": 5,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "koi-pond": {
+  "tokens": 24,
+  "textContrast": 14.7,
+  "minReadable": 6.2,
+  "diffText": 8.4,
+  "statusDeltaE": 62,
+  "addedRemovedDeltaE": 31,
+  "cvdDeltaE": 19,
   "cvdSafeClaim": false,
   "problems": []
  },
@@ -348,6 +447,17 @@
   "statusDeltaE": 35,
   "addedRemovedDeltaE": 15,
   "cvdDeltaE": 6,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "ludo-board": {
+  "tokens": 24,
+  "textContrast": 15.2,
+  "minReadable": 4.5,
+  "diffText": 10.0,
+  "statusDeltaE": 54,
+  "addedRemovedDeltaE": 28,
+  "cvdDeltaE": 7,
   "cvdSafeClaim": false,
   "problems": []
  },
@@ -406,6 +516,28 @@
   "cvdSafeClaim": false,
   "problems": []
  },
+ "moon-landing": {
+  "tokens": 24,
+  "textContrast": 13.7,
+  "minReadable": 7.0,
+  "diffText": 7.8,
+  "statusDeltaE": 44,
+  "addedRemovedDeltaE": 26,
+  "cvdDeltaE": 16,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "mumbai-local-night": {
+  "tokens": 24,
+  "textContrast": 14.5,
+  "minReadable": 6.5,
+  "diffText": 8.6,
+  "statusDeltaE": 53,
+  "addedRemovedDeltaE": 31,
+  "cvdDeltaE": 21,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
  "nautical-chart": {
   "tokens": 24,
   "textContrast": 13.4,
@@ -450,6 +582,17 @@
   "cvdSafeClaim": false,
   "problems": []
  },
+ "opal": {
+  "tokens": 24,
+  "textContrast": 14.2,
+  "minReadable": 4.5,
+  "diffText": 10.0,
+  "statusDeltaE": 56,
+  "addedRemovedDeltaE": 25,
+  "cvdDeltaE": 13,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
  "paper-lantern": {
   "tokens": 24,
   "textContrast": 14.5,
@@ -458,6 +601,17 @@
   "statusDeltaE": 42,
   "addedRemovedDeltaE": 22,
   "cvdDeltaE": 8,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "peacock-feather": {
+  "tokens": 24,
+  "textContrast": 14.9,
+  "minReadable": 6.5,
+  "diffText": 8.2,
+  "statusDeltaE": 64,
+  "addedRemovedDeltaE": 28,
+  "cvdDeltaE": 11,
   "cvdSafeClaim": false,
   "problems": []
  },
@@ -494,6 +648,17 @@
   "cvdSafeClaim": false,
   "problems": []
  },
+ "rainbow-after-rain": {
+  "tokens": 24,
+  "textContrast": 15.1,
+  "minReadable": 4.5,
+  "diffText": 10.7,
+  "statusDeltaE": 53,
+  "addedRemovedDeltaE": 28,
+  "cvdDeltaE": 12,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
  "rasgulla-at-dawn": {
   "tokens": 24,
   "textContrast": 12.8,
@@ -502,6 +667,17 @@
   "statusDeltaE": 39,
   "addedRemovedDeltaE": 21,
   "cvdDeltaE": 4,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "red-planet-dusk": {
+  "tokens": 24,
+  "textContrast": 13.6,
+  "minReadable": 6.2,
+  "diffText": 8.0,
+  "statusDeltaE": 47,
+  "addedRemovedDeltaE": 25,
+  "cvdDeltaE": 8,
   "cvdSafeClaim": false,
   "problems": []
  },
@@ -560,6 +736,17 @@
   "cvdSafeClaim": false,
   "problems": []
  },
+ "sepia-library": {
+  "tokens": 24,
+  "textContrast": 13.0,
+  "minReadable": 4.7,
+  "diffText": 8.7,
+  "statusDeltaE": 39,
+  "addedRemovedDeltaE": 17,
+  "cvdDeltaE": 9,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
  "skate-park-concrete": {
   "tokens": 24,
   "textContrast": 12.2,
@@ -579,6 +766,28 @@
   "statusDeltaE": 45,
   "addedRemovedDeltaE": 25,
   "cvdDeltaE": 12,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "snow-page": {
+  "tokens": 24,
+  "textContrast": 16.7,
+  "minReadable": 4.8,
+  "diffText": 11.3,
+  "statusDeltaE": 49,
+  "addedRemovedDeltaE": 21,
+  "cvdDeltaE": 4,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "starlight-observatory": {
+  "tokens": 24,
+  "textContrast": 15.8,
+  "minReadable": 8.7,
+  "diffText": 8.8,
+  "statusDeltaE": 50,
+  "addedRemovedDeltaE": 28,
+  "cvdDeltaE": 11,
   "cvdSafeClaim": false,
   "problems": []
  },
@@ -626,6 +835,17 @@
   "cvdSafeClaim": false,
   "problems": []
  },
+ "thunderstorm": {
+  "tokens": 24,
+  "textContrast": 14.5,
+  "minReadable": 7.5,
+  "diffText": 8.2,
+  "statusDeltaE": 54,
+  "addedRemovedDeltaE": 29,
+  "cvdDeltaE": 11,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
  "typewriter": {
   "tokens": 24,
   "textContrast": 14.7,
@@ -656,6 +876,17 @@
   "statusDeltaE": 55,
   "addedRemovedDeltaE": 29,
   "cvdDeltaE": 16,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "winter-window": {
+  "tokens": 24,
+  "textContrast": 15.3,
+  "minReadable": 7.4,
+  "diffText": 8.6,
+  "statusDeltaE": 49,
+  "addedRemovedDeltaE": 27,
+  "cvdDeltaE": 12,
   "cvdSafeClaim": false,
   "problems": []
  }

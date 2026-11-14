@@ -1,0 +1,30 @@
+{
+  "name": "Carrom Board",
+  "base": "light",
+  "overrides": {
+    "claude": "#8a1c1c",
+    "claudeShimmer": "#6e1f18",
+    "text": "#3a2410",
+    "inactive": "#705e43",
+    "subtle": "#ab946e",
+    "suggestion": "#8a1c1c",
+    "permission": "#7a5200",
+    "success": "#2e6d3e",
+    "error": "#a32020",
+    "warning": "#7a5200",
+    "promptBorder": "#c38469",
+    "planMode": "#1f4f7a",
+    "autoAccept": "#5a2f7a",
+    "bashBorder": "#8a1c1c",
+    "diffAdded": "#c2c08f",
+    "diffRemoved": "#dda985",
+    "diffAddedDimmed": "#d8cb9a",
+    "diffRemovedDimmed": "#e6bf95",
+    "diffAddedWord": "#90a474",
+    "diffRemovedWord": "#c87961",
+    "userMessageBackground": "#e8d0a0",
+    "selectionBg": "#d2a07e",
+    "rate_limit_fill": "#8a1c1c",
+    "rate_limit_empty": "#dbc396"
+  }
+}

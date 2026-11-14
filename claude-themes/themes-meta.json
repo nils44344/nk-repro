@@ -780,6 +780,297 @@
     },
     "minRead": 4.5
   },
+  "fox-in-snow": {
+    "bg": "#f4f7fa",
+    "moods": [
+      "Cool",
+      "Playful",
+      "Light"
+    ],
+    "collection": "Animals",
+    "idea": "A red fox crossing a white field: one hot orange against pale blue shadow.",
+    "cvd": false,
+    "live": false,
+    "port": null,
+    "minRead": 4.5
+  },
+  "peacock-feather": {
+    "bg": "#06202a",
+    "moods": [
+      "Bold",
+      "Cool",
+      "Dark"
+    ],
+    "collection": "Animals",
+    "idea": "Eye-spot teal, deep blue and a thread of gold from a fanned tail.",
+    "cvd": false,
+    "live": false,
+    "port": null,
+    "minRead": 4.5
+  },
+  "flamingo-lagoon": {
+    "bg": "#fdf0f3",
+    "moods": [
+      "Playful",
+      "Soft",
+      "Light"
+    ],
+    "collection": "Animals",
+    "idea": "Coral-pink wings standing in clear turquoise water.",
+    "cvd": false,
+    "live": false,
+    "port": null,
+    "minRead": 4.5
+  },
+  "koi-pond": {
+    "bg": "#0d1f1c",
+    "moods": [
+      "Calm",
+      "Warm",
+      "Dark"
+    ],
+    "collection": "Animals",
+    "idea": "Orange koi turning slowly under green water.",
+    "cvd": false,
+    "live": false,
+    "port": null,
+    "minRead": 4.5
+  },
+  "thunderstorm": {
+    "bg": "#10131c",
+    "moods": [
+      "Cool",
+      "Bold",
+      "Dark"
+    ],
+    "collection": "Weather and seasons",
+    "idea": "Slate clouds and the white-yellow crack of lightning.",
+    "cvd": false,
+    "live": false,
+    "port": null,
+    "minRead": 4.5
+  },
+  "fog-morning": {
+    "bg": "#eceff1",
+    "moods": [
+      "Soft",
+      "Calm",
+      "Light"
+    ],
+    "collection": "Weather and seasons",
+    "idea": "Grey-blue mist over a valley before the sun burns it off.",
+    "cvd": false,
+    "live": false,
+    "port": null,
+    "minRead": 4.5
+  },
+  "rainbow-after-rain": {
+    "bg": "#fcfdff",
+    "moods": [
+      "Playful",
+      "Bold",
+      "Light"
+    ],
+    "collection": "Weather and seasons",
+    "idea": "Every spectrum colour on a washed-clean white sky.",
+    "cvd": false,
+    "live": false,
+    "port": null,
+    "minRead": 4.5
+  },
+  "winter-window": {
+    "bg": "#0e1624",
+    "moods": [
+      "Warm",
+      "Calm",
+      "Dark"
+    ],
+    "collection": "Weather and seasons",
+    "idea": "A lit window glowing amber in a blue winter evening.",
+    "cvd": false,
+    "live": false,
+    "port": null,
+    "minRead": 4.5
+  },
+  "moon-landing": {
+    "bg": "#17181c",
+    "moods": [
+      "Calm",
+      "Cool",
+      "Dark"
+    ],
+    "collection": "Space",
+    "idea": "Grey regolith, black sky and one bright blue marble overhead.",
+    "cvd": false,
+    "live": false,
+    "port": null,
+    "minRead": 4.5
+  },
+  "red-planet-dusk": {
+    "bg": "#2a110c",
+    "moods": [
+      "Warm",
+      "Bold",
+      "Dark"
+    ],
+    "collection": "Space",
+    "idea": "Rust dust, a thin blue sunset and rover tracks.",
+    "cvd": false,
+    "live": false,
+    "port": null,
+    "minRead": 4.5
+  },
+  "starlight-observatory": {
+    "bg": "#060b1f",
+    "moods": [
+      "Calm",
+      "Cool",
+      "Dark"
+    ],
+    "collection": "Space",
+    "idea": "A dome open to a deep-blue night and gold stars.",
+    "cvd": false,
+    "live": false,
+    "port": null,
+    "minRead": 4.5
+  },
+  "chess-club": {
+    "bg": "#efe3cc",
+    "moods": [
+      "Calm",
+      "Light"
+    ],
+    "collection": "Games",
+    "idea": "Cream and green squares, a walnut board and quiet concentration.",
+    "cvd": false,
+    "live": false,
+    "port": null,
+    "minRead": 4.5
+  },
+  "ludo-board": {
+    "bg": "#fffdf6",
+    "moods": [
+      "Playful",
+      "Bold",
+      "Light"
+    ],
+    "collection": "Games",
+    "idea": "Four home corners, red, green, yellow and blue, and a dice roll.",
+    "cvd": false,
+    "live": false,
+    "port": null,
+    "minRead": 4.5
+  },
+  "carrom-board": {
+    "bg": "#f1d9a8",
+    "moods": [
+      "Warm",
+      "Soft",
+      "Light"
+    ],
+    "collection": "Games",
+    "idea": "Polished plywood, a red queen and powdered strikers.",
+    "cvd": false,
+    "live": false,
+    "port": null,
+    "minRead": 4.5
+  },
+  "mumbai-local-night": {
+    "bg": "#14161a",
+    "moods": [
+      "Bold",
+      "Warm",
+      "Dark"
+    ],
+    "collection": "Cities",
+    "idea": "Yellow platform signs and window light on a late suburban train.",
+    "cvd": false,
+    "live": false,
+    "port": null,
+    "minRead": 4.5
+  },
+  "jaipur-terracotta": {
+    "bg": "#fbe9e3",
+    "moods": [
+      "Warm",
+      "Soft",
+      "Light"
+    ],
+    "collection": "Cities",
+    "idea": "Rose sandstone, arched windows and a hot afternoon.",
+    "cvd": false,
+    "live": false,
+    "port": null,
+    "minRead": 4.5
+  },
+  "kerala-backwater": {
+    "bg": "#eef6ec",
+    "moods": [
+      "Calm",
+      "Cool",
+      "Light"
+    ],
+    "collection": "Cities",
+    "idea": "Coconut-palm green, still water and a slow houseboat.",
+    "cvd": false,
+    "live": false,
+    "port": null,
+    "minRead": 4.5
+  },
+  "graphite": {
+    "bg": "#1a1a1a",
+    "moods": [
+      "Calm",
+      "Dark"
+    ],
+    "collection": "Monochrome",
+    "idea": "Pencil greys with white as the only accent.",
+    "cvd": false,
+    "live": false,
+    "port": null,
+    "minRead": 4.5
+  },
+  "snow-page": {
+    "bg": "#fafafa",
+    "moods": [
+      "Calm",
+      "Light"
+    ],
+    "collection": "Monochrome",
+    "idea": "A white page, black type and nothing else competing.",
+    "cvd": false,
+    "live": false,
+    "port": null,
+    "minRead": 4.5
+  },
+  "sepia-library": {
+    "bg": "#f1e4cc",
+    "moods": [
+      "Warm",
+      "Calm",
+      "Light"
+    ],
+    "collection": "Monochrome",
+    "idea": "Brown ink on aged paper in a quiet reading room.",
+    "cvd": false,
+    "live": false,
+    "port": null,
+    "minRead": 4.5
+  },
+  "opal": {
+    "bg": "#f8f9fb",
+    "moods": [
+      "Soft",
+      "Playful",
+      "Light"
+    ],
+    "collection": "Materials",
+    "idea": "Milk-white stone with blue, pink and green fire inside.",
+    "cvd": false,
+    "live": false,
+    "port": null,
+    "minRead": 4.5
+  },
   "chai-at-midnight": {
     "bg": "#16100c",
     "moods": [
