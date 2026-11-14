@@ -10,6 +10,7 @@
     "idea": "Syrup gold, rose water and cream: a sweet shop opening at first light.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "lavender-field-5pm": {
@@ -24,6 +25,7 @@
     "idea": "Pastel lilac with sage and dusk-blue: long shadows over a field, nothing shouting.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "candy-floss-arcade": {
@@ -37,6 +39,7 @@
     "idea": "Spun sugar pink and bubble-gum blue on a fairground-bright white.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "jewel-box": {
@@ -50,6 +53,7 @@
     "idea": "Emerald velvet lining with ruby, sapphire, amber and amethyst set into it.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "rose-quartz-notebook": {
@@ -63,6 +67,7 @@
     "idea": "A stone-pink paper notebook with a dark-plum pen and one gold-edged page.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "neon-rickshaw": {
@@ -76,6 +81,7 @@
     "idea": "A night-market auto rickshaw wired with tube lights, magenta first.",
     "cvd": false,
     "live": true,
+    "port": null,
     "minRead": 4.5
   },
   "steel-mill-4am": {
@@ -89,6 +95,7 @@
     "idea": "Cold rolled steel greys in the dark, and sparks of orange where metal meets metal.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "pit-lane": {
@@ -101,6 +108,7 @@
     "idea": "Tarmac black, race-flag red and signal yellow: everything reads at a glance at speed.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "bandhani-night": {
@@ -114,6 +122,7 @@
     "idea": "Tie-dyed indigo cloth: dye-red and saffron dots on a deep night-blue ground.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "sakura-night": {
@@ -127,6 +136,7 @@
     "idea": "Blossom pink falling on a plum-dark evening.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "low-glare-night": {
@@ -140,6 +150,7 @@
     "idea": "Made for late hours: warm browns and muted tones with almost no blue light, so the screen does not glare.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "high-contrast-chalk": {
@@ -152,6 +163,7 @@
     "idea": "Pure black and white with bright chalk colours: every readable colour is at least 7:1.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 7.0
   },
   "safe-signals": {
@@ -165,6 +177,7 @@
     "idea": "Built on the Okabe-Ito colour-blind-safe palette: success, error and warning stay apart under red-green colour blindness, and added and removed lines are blue and orange.",
     "cvd": true,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "sea-glass-noon": {
@@ -178,6 +191,7 @@
     "idea": "Daylight through a green glass bottle on a windowsill. The daytime half of a pair.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "sea-glass-midnight": {
@@ -191,6 +205,7 @@
     "idea": "The same bottle by moonlight. The night half of the pair, same hues, same roles.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "diwali-diya": {
@@ -204,6 +219,7 @@
     "idea": "A row of clay lamps in a dark maroon room: flame yellow, saffron and ember.",
     "cvd": false,
     "live": true,
+    "port": null,
     "minRead": 4.5
   },
   "holi-morning": {
@@ -217,6 +233,7 @@
     "idea": "Powder colours thrown on a white morning: magenta, teal, blue and orange all at once.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "mogra-evening": {
@@ -230,6 +247,7 @@
     "idea": "Jasmine white and leaf green on a warm evening veranda.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "cricket-pitch": {
@@ -243,6 +261,7 @@
     "idea": "Mown-grass cream, ball red and whites: a Sunday match.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "old-radio": {
@@ -256,6 +275,7 @@
     "idea": "A walnut cabinet, a glowing amber dial and cloth-speaker beige.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "mehendi-green": {
@@ -269,6 +289,7 @@
     "idea": "Fresh henna paste green, drying to terracotta.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "gulmohar-summer": {
@@ -282,6 +303,7 @@
     "idea": "Gulmohar blossom, orange-red over a hot white afternoon.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "aurora-night-train": {
@@ -295,6 +317,7 @@
     "idea": "A night train through the north: green and violet light over deep blue.",
     "cvd": false,
     "live": true,
+    "port": null,
     "minRead": 4.5
   },
   "marble-and-brass": {
@@ -308,6 +331,7 @@
     "idea": "Cool grey marble with a brass accent: a quiet, formal light theme.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "ink-and-indigo": {
@@ -321,6 +345,7 @@
     "idea": "Block-printed indigo on unbleached cotton.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "football-floodlights": {
@@ -333,6 +358,7 @@
     "idea": "Stadium floodlights over night-green turf: white-yellow light and bright touchlines.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "tennis-clay-court": {
@@ -346,6 +372,7 @@
     "idea": "Red clay, white lines and an optic-yellow ball.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "kabaddi-mat": {
@@ -359,6 +386,7 @@
     "idea": "Yellow match mat, blue boundary and the dust of a fast raid.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "badminton-hall": {
@@ -372,6 +400,7 @@
     "idea": "Shuttlecock white, a green court and the quiet of an indoor hall.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "swimming-lane": {
@@ -385,6 +414,7 @@
     "idea": "Deep pool blue, white lane ropes and the glitter of water.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "boxing-ring-night": {
@@ -397,6 +427,7 @@
     "idea": "A red corner, a blue corner and one hard light over the canvas.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "skate-park-concrete": {
@@ -410,6 +441,7 @@
     "idea": "Grey concrete bowls covered in sticker-bright yellow, cyan and pink.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "basketball-dusk": {
@@ -423,6 +455,7 @@
     "idea": "A hardwood court at dusk, a ball-orange accent and the squeak of the last game.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "typewriter": {
@@ -435,6 +468,7 @@
     "idea": "Cream paper, black ribbon ink and the red half of the ribbon.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "vinyl-record": {
@@ -448,6 +482,7 @@
     "idea": "Black grooves, an orange label and a cream paper sleeve.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "cassette-tape": {
@@ -461,6 +496,7 @@
     "idea": "Beige plastic shell, a red stripe and a teal label.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "matchbox": {
@@ -474,6 +510,7 @@
     "idea": "Cardboard brown, a red striking strip and one yellow flame.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "polaroid-summer": {
@@ -487,6 +524,7 @@
     "idea": "An instant photo gone slightly warm: faded coral, teal and sun yellow in a white border.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "nautical-chart": {
@@ -500,6 +538,7 @@
     "idea": "Parchment chart, navy ink, brass dividers and a red buoy.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "snow-globe": {
@@ -513,6 +552,7 @@
     "idea": "Deep blue glass, white snow settling and one small gold light.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "firefly-night": {
@@ -526,6 +566,7 @@
     "idea": "Fireflies over a dark field: sparks of yellow-green that pulse.",
     "cvd": false,
     "live": true,
+    "port": null,
     "minRead": 4.5
   },
   "lava-lamp": {
@@ -539,6 +580,7 @@
     "idea": "Slow blobs of hot pink and orange rising through a violet room.",
     "cvd": false,
     "live": true,
+    "port": null,
     "minRead": 4.5
   },
   "candle-flicker": {
@@ -552,6 +594,7 @@
     "idea": "One candle in a brown room: a warm flame that never quite holds still.",
     "cvd": false,
     "live": true,
+    "port": null,
     "minRead": 4.5
   },
   "disco-floor": {
@@ -565,6 +608,7 @@
     "idea": "Magenta, mint, cyan and yellow tiles flashing under a dark ceiling.",
     "cvd": false,
     "live": true,
+    "port": null,
     "minRead": 4.5
   },
   "phosphor-green": {
@@ -578,6 +622,7 @@
     "idea": "A 1980s green-screen monitor: phosphor glow on black.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "amber-1982": {
@@ -591,6 +636,7 @@
     "idea": "An amber-screen terminal in a dim office, the year the manual was printed.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "blueprint": {
@@ -604,6 +650,7 @@
     "idea": "White ink on blueprint blue.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "vaporwave-mall": {
@@ -617,6 +664,7 @@
     "idea": "An empty mall at 3 am: pink, cyan and mint over purple glass.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "newsprint": {
@@ -629,6 +677,7 @@
     "idea": "Grey newsprint, black type and one red headline.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "desert-noon": {
@@ -642,6 +691,7 @@
     "idea": "Bleached sand, hard sun and one long blue shadow.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "glacier": {
@@ -655,6 +705,7 @@
     "idea": "Ice-blue light on fresh white snow.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "cherry-cola": {
@@ -668,6 +719,7 @@
     "idea": "Dark cola red, fizz-white and a cherry on top.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "black-and-gold": {
@@ -681,6 +733,51 @@
     "idea": "Matte black and old gold: an auction-house evening.",
     "cvd": false,
     "live": false,
+    "port": null,
+    "minRead": 4.5
+  },
+  "dracula-port": {
+    "bg": "#282a36",
+    "moods": [
+      "Bold",
+      "Cool",
+      "Dark"
+    ],
+    "collection": "Ports",
+    "idea": "The Dracula palette mapped onto every Claude Code colour.",
+    "cvd": false,
+    "live": false,
+    "port": {
+      "project": "Dracula",
+      "source": "https://draculatheme.com/contribute",
+      "repo": "https://github.com/dracula/dracula-theme",
+      "licence": "MIT",
+      "licenceUrl": "https://raw.githubusercontent.com/dracula/dracula-theme/main/LICENSE",
+      "copyright": "Copyright (c) 2023 Dracula Theme",
+      "read": "2026-11-14"
+    },
+    "minRead": 4.5
+  },
+  "catppuccin-mocha-port": {
+    "bg": "#1e1e2e",
+    "moods": [
+      "Soft",
+      "Calm",
+      "Dark"
+    ],
+    "collection": "Ports",
+    "idea": "The Catppuccin Mocha palette mapped onto every Claude Code colour.",
+    "cvd": false,
+    "live": false,
+    "port": {
+      "project": "Catppuccin",
+      "source": "https://catppuccin.com/palette",
+      "repo": "https://github.com/catppuccin/catppuccin",
+      "licence": "MIT",
+      "licenceUrl": "https://raw.githubusercontent.com/catppuccin/catppuccin/main/LICENSE",
+      "copyright": "Copyright (c) 2021 Catppuccin",
+      "read": "2026-11-14"
+    },
     "minRead": 4.5
   },
   "chai-at-midnight": {
@@ -694,6 +791,7 @@
     "idea": "Warm amber on cocoa, the colour of the last chai.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "monsoon-surat": {
@@ -707,6 +805,7 @@
     "idea": "Rain-washed teals for long debugging evenings in Surat.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "paper-lantern": {
@@ -720,6 +819,7 @@
     "idea": "Cream paper and a vermilion lantern: a light theme that does not burn your eyes.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "terminal-mango": {
@@ -733,6 +833,7 @@
     "idea": "Hot mango on near-black: loud accent, quiet everything else.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   },
   "kite-festival": {
@@ -746,6 +847,7 @@
     "idea": "Magenta, cyan and violet against a bright Uttarayan sky.",
     "cvd": false,
     "live": false,
+    "port": null,
     "minRead": 4.5
   }
 }

@@ -1,0 +1,30 @@
+{
+  "name": "Marble and Brass",
+  "base": "light",
+  "overrides": {
+    "claude": "#8b6820",
+    "claudeShimmer": "#675124",
+    "text": "#25272b",
+    "inactive": "#6d6e70",
+    "subtle": "#a5a6a6",
+    "suggestion": "#2a6f8c",
+    "permission": "#8c6a12",
+    "success": "#2f7a55",
+    "error": "#b3362f",
+    "warning": "#8c6a12",
+    "promptBorder": "#ccba95",
+    "planMode": "#2a6f8c",
+    "autoAccept": "#6f56a8",
+    "bashBorder": "#a05a2c",
+    "diffAdded": "#c5d7cc",
+    "diffRemoved": "#e3c3bf",
+    "diffAddedDimmed": "#dae4de",
+    "diffRemovedDimmed": "#ebd9d7",
+    "diffAddedWord": "#92b7a4",
+    "diffRemovedWord": "#d2918d",
+    "userMessageBackground": "#eaeae8",
+    "selectionBg": "#d9ceb4",
+    "rate_limit_fill": "#8b6820",
+    "rate_limit_empty": "#dbdbda"
+  }
+}

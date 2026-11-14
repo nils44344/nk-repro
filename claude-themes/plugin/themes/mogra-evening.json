@@ -1,0 +1,30 @@
+{
+  "name": "Mogra Evening",
+  "base": "light",
+  "overrides": {
+    "claude": "#3f7d5a",
+    "claudeShimmer": "#38664b",
+    "text": "#2c3a2e",
+    "inactive": "#6e736c",
+    "subtle": "#acb1a8",
+    "suggestion": "#3f7d5a",
+    "permission": "#916d13",
+    "success": "#2f7d4f",
+    "error": "#b23a48",
+    "warning": "#916d13",
+    "promptBorder": "#a6c2ae",
+    "planMode": "#2b7a8a",
+    "autoAccept": "#8a5ea8",
+    "bashBorder": "#b2563a",
+    "diffAdded": "#cadccc",
+    "diffRemoved": "#e8c8c7",
+    "diffAddedDimmed": "#e0eade",
+    "diffRemovedDimmed": "#f1dfdb",
+    "diffAddedWord": "#95bca1",
+    "diffRemovedWord": "#d5969a",
+    "userMessageBackground": "#f1f0e9",
+    "selectionBg": "#c3d4c5",
+    "rate_limit_fill": "#3f7d5a",
+    "rate_limit_empty": "#e2e3db"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Tennis Clay Court",
+  "base": "light",
+  "overrides": {
+    "claude": "#b23a0a",
+    "claudeShimmer": "#88300d",
+    "text": "#3a1d12",
+    "inactive": "#745e52",
+    "subtle": "#ad9383",
+    "suggestion": "#476e00",
+    "permission": "#875800",
+    "success": "#2a7034",
+    "error": "#b3261e",
+    "warning": "#875800",
+    "promptBorder": "#d99472",
+    "planMode": "#1e5fa8",
+    "autoAccept": "#6a3fa0",
+    "bashBorder": "#b23a0a",
+    "diffAdded": "#c5c5a6",
+    "diffRemoved": "#e3ad9c",
+    "diffAddedDimmed": "#dad0b6",
+    "diffRemovedDimmed": "#ebc3b0",
+    "diffAddedWord": "#92ac81",
+    "diffRemovedWord": "#d27d70",
+    "userMessageBackground": "#ebd2bf",
+    "selectionBg": "#e2ac8f",
+    "rate_limit_fill": "#b23a0a",
+    "rate_limit_empty": "#dec5b2"
+  }
+}

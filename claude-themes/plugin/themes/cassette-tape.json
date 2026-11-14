@@ -1,0 +1,30 @@
+{
+  "name": "Cassette Tape",
+  "base": "light",
+  "overrides": {
+    "claude": "#b23b23",
+    "claudeShimmer": "#82321f",
+    "text": "#2a2218",
+    "inactive": "#6a6357",
+    "subtle": "#a29a89",
+    "suggestion": "#1c6e7e",
+    "permission": "#885d00",
+    "success": "#267051",
+    "error": "#b83729",
+    "warning": "#885d00",
+    "promptBorder": "#e39d85",
+    "planMode": "#1c6e7e",
+    "autoAccept": "#7a4aa0",
+    "bashBorder": "#b23b23",
+    "diffAdded": "#bdcbb3",
+    "diffRemoved": "#e1b7a4",
+    "diffAddedDimmed": "#d3d6c0",
+    "diffRemovedDimmed": "#e6cbb8",
+    "diffAddedWord": "#8bb094",
+    "diffRemovedWord": "#d58b7a",
+    "userMessageBackground": "#e2d9c6",
+    "selectionBg": "#e6b49e",
+    "rate_limit_fill": "#b23b23",
+    "rate_limit_empty": "#d5ccb9"
+  }
+}

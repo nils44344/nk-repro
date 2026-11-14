@@ -1,0 +1,30 @@
+{
+  "name": "Lavender Field, 5 pm",
+  "base": "light",
+  "overrides": {
+    "claude": "#7c4dcc",
+    "claudeShimmer": "#613f9b",
+    "text": "#2f2540",
+    "inactive": "#736c7c",
+    "subtle": "#aaa3b4",
+    "suggestion": "#5668c4",
+    "permission": "#946611",
+    "success": "#3e7a56",
+    "error": "#b83a56",
+    "warning": "#946611",
+    "promptBorder": "#bfa7e6",
+    "planMode": "#2b7887",
+    "autoAccept": "#9f4dac",
+    "bashBorder": "#b83a56",
+    "diffAdded": "#cad5d4",
+    "diffRemoved": "#e6c1d0",
+    "diffAddedDimmed": "#dee2e6",
+    "diffRemovedDimmed": "#edd7e4",
+    "diffAddedWord": "#9ab7aa",
+    "diffRemovedWord": "#d692a5",
+    "userMessageBackground": "#ece7f2",
+    "selectionBg": "#d1c0ed",
+    "rate_limit_fill": "#7c4dcc",
+    "rate_limit_empty": "#ded9e5"
+  }
+}

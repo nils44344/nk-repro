@@ -1,0 +1,30 @@
+{
+  "name": "Cricket Pitch",
+  "base": "light",
+  "overrides": {
+    "claude": "#b3202a",
+    "claudeShimmer": "#7f2525",
+    "text": "#1f2d1c",
+    "inactive": "#6c7165",
+    "subtle": "#a5aa9b",
+    "suggestion": "#b3202a",
+    "permission": "#9a6600",
+    "success": "#2e7d32",
+    "error": "#c62828",
+    "warning": "#9a6600",
+    "promptBorder": "#d89693",
+    "planMode": "#1565c0",
+    "autoAccept": "#6a1b9a",
+    "bashBorder": "#b3202a",
+    "diffAdded": "#c7d9bd",
+    "diffRemoved": "#eac0b7",
+    "diffAddedDimmed": "#dde6d1",
+    "diffRemovedDimmed": "#f0d9ce",
+    "diffAddedWord": "#92ba8e",
+    "diffRemovedWord": "#de8b85",
+    "userMessageBackground": "#ececdf",
+    "selectionBg": "#e3b6b0",
+    "rate_limit_fill": "#b3202a",
+    "rate_limit_empty": "#ddded0"
+  }
+}

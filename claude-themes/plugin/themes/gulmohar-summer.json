@@ -1,0 +1,30 @@
+{
+  "name": "Gulmohar Summer",
+  "base": "light",
+  "overrides": {
+    "claude": "#d23f1e",
+    "claudeShimmer": "#9a341d",
+    "text": "#33201a",
+    "inactive": "#7b706a",
+    "subtle": "#b1a7a0",
+    "suggestion": "#c1501b",
+    "permission": "#9c6500",
+    "success": "#2f7d3a",
+    "error": "#b3261e",
+    "warning": "#9c6500",
+    "promptBorder": "#eda693",
+    "planMode": "#0b7a8a",
+    "autoAccept": "#8e3ba8",
+    "bashBorder": "#d23f1e",
+    "diffAdded": "#cddcc6",
+    "diffRemoved": "#ebc3bb",
+    "diffAddedDimmed": "#e4eada",
+    "diffRemovedDimmed": "#f4dcd4",
+    "diffAddedWord": "#97bc96",
+    "diffRemovedWord": "#d78c84",
+    "userMessageBackground": "#f5efe7",
+    "selectionBg": "#f3c2b3",
+    "rate_limit_fill": "#d23f1e",
+    "rate_limit_empty": "#e7e0d8"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Chai at Midnight",
+  "base": "dark",
+  "overrides": {
+    "claude": "#f2a65a",
+    "claudeShimmer": "#ffd29a",
+    "text": "#f3e6d3",
+    "inactive": "#8a7866",
+    "subtle": "#6d5d4e",
+    "suggestion": "#e8b86d",
+    "permission": "#d9a05b",
+    "success": "#9bc77a",
+    "error": "#ef6a5b",
+    "warning": "#f2c14e",
+    "promptBorder": "#7a5a3a",
+    "planMode": "#7fb7a4",
+    "autoAccept": "#c9a0dc",
+    "bashBorder": "#e07a5f",
+    "diffAdded": "#25361c",
+    "diffRemoved": "#43211c",
+    "diffAddedDimmed": "#1d2a16",
+    "diffRemovedDimmed": "#341a16",
+    "diffAddedWord": "#4a6b34",
+    "diffRemovedWord": "#8a3a30",
+    "userMessageBackground": "#241a13",
+    "selectionBg": "#4a3522",
+    "rate_limit_fill": "#f2a65a",
+    "rate_limit_empty": "#3a2d22"
+  }
+}

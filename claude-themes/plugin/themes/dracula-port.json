@@ -1,0 +1,30 @@
+{
+  "name": "Dracula (port)",
+  "base": "dark",
+  "overrides": {
+    "claude": "#bd93f9",
+    "claudeShimmer": "#d2b6f7",
+    "text": "#f8f8f2",
+    "inactive": "#9a9b9d",
+    "subtle": "#77787d",
+    "suggestion": "#8be9fd",
+    "permission": "#ffb86c",
+    "success": "#50fa7b",
+    "error": "#ff5555",
+    "warning": "#f1fa8c",
+    "promptBorder": "#645484",
+    "planMode": "#8be9fd",
+    "autoAccept": "#ff79c6",
+    "bashBorder": "#ffb86c",
+    "diffAdded": "#325c47",
+    "diffRemoved": "#60353e",
+    "diffAddedDimmed": "#2d453f",
+    "diffRemovedDimmed": "#46303a",
+    "diffAddedWord": "#3c9258",
+    "diffRemovedWord": "#984046",
+    "userMessageBackground": "#373843",
+    "selectionBg": "#554a70",
+    "rate_limit_fill": "#bd93f9",
+    "rate_limit_empty": "#41434d"
+  }
+}

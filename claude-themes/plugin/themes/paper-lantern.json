@@ -1,0 +1,30 @@
+{
+  "name": "Paper Lantern",
+  "base": "light",
+  "overrides": {
+    "claude": "#c2410c",
+    "claudeShimmer": "#ea6a2a",
+    "text": "#2b2118",
+    "inactive": "#8a7a68",
+    "subtle": "#a89885",
+    "suggestion": "#9a3412",
+    "permission": "#b45309",
+    "success": "#2f7d32",
+    "error": "#b91c1c",
+    "warning": "#a16207",
+    "promptBorder": "#d6c3a4",
+    "planMode": "#0f766e",
+    "autoAccept": "#7e22ce",
+    "bashBorder": "#c2410c",
+    "diffAdded": "#dcefd2",
+    "diffRemoved": "#f6d6cf",
+    "diffAddedDimmed": "#ebf5e5",
+    "diffRemovedDimmed": "#faeae6",
+    "diffAddedWord": "#a8d49a",
+    "diffRemovedWord": "#eba79b",
+    "userMessageBackground": "#f1e8d6",
+    "selectionBg": "#ecd9b3",
+    "rate_limit_fill": "#c2410c",
+    "rate_limit_empty": "#e6d9c0"
+  }
+}

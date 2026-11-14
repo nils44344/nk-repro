@@ -120,6 +120,17 @@
   "cvdSafeClaim": false,
   "problems": []
  },
+ "catppuccin-mocha-port": {
+  "tokens": 24,
+  "textContrast": 11.3,
+  "minReadable": 7.1,
+  "diffText": 6.1,
+  "statusDeltaE": 33,
+  "addedRemovedDeltaE": 23,
+  "cvdDeltaE": 5,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
  "chai-at-midnight": {
   "tokens": 24,
   "textContrast": 15.3,
@@ -183,6 +194,17 @@
   "statusDeltaE": 48,
   "addedRemovedDeltaE": 30,
   "cvdDeltaE": 14,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "dracula-port": {
+  "tokens": 24,
+  "textContrast": 13.4,
+  "minReadable": 4.5,
+  "diffText": 7.1,
+  "statusDeltaE": 51,
+  "addedRemovedDeltaE": 42,
+  "cvdDeltaE": 7,
   "cvdSafeClaim": false,
   "problems": []
  },

@@ -1,0 +1,30 @@
+{
+  "name": "Polaroid Summer",
+  "base": "light",
+  "overrides": {
+    "claude": "#be523d",
+    "claudeShimmer": "#8a443a",
+    "text": "#2a2a33",
+    "inactive": "#737273",
+    "subtle": "#adabaa",
+    "suggestion": "#be523d",
+    "permission": "#996911",
+    "success": "#308157",
+    "error": "#cd4242",
+    "warning": "#996911",
+    "promptBorder": "#f4b6a7",
+    "planMode": "#3575b0",
+    "autoAccept": "#9857b2",
+    "bashBorder": "#be523d",
+    "diffAdded": "#cee4d2",
+    "diffRemoved": "#f3cbc6",
+    "diffAddedDimmed": "#e4eee1",
+    "diffRemovedDimmed": "#f8e1db",
+    "diffAddedWord": "#9cccae",
+    "diffRemovedWord": "#e99c99",
+    "userMessageBackground": "#f2f0e9",
+    "selectionBg": "#f7cdc0",
+    "rate_limit_fill": "#be523d",
+    "rate_limit_empty": "#e4e1dc"
+  }
+}

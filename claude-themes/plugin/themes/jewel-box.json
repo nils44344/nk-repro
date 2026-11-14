@@ -1,0 +1,30 @@
+{
+  "name": "Jewel Box",
+  "base": "dark",
+  "overrides": {
+    "claude": "#2ee6a6",
+    "claudeShimmer": "#6febbf",
+    "text": "#e8f3ee",
+    "inactive": "#85948f",
+    "subtle": "#5f706b",
+    "suggestion": "#6fd6ff",
+    "permission": "#ffc145",
+    "success": "#5fe3a1",
+    "error": "#ff4d6d",
+    "warning": "#ffc145",
+    "promptBorder": "#196f52",
+    "planMode": "#5b8cff",
+    "autoAccept": "#b583ff",
+    "bashBorder": "#ff7a90",
+    "diffAdded": "#1f4e3a",
+    "diffRemoved": "#4a2b30",
+    "diffAddedDimmed": "#16382c",
+    "diffRemovedDimmed": "#2d2526",
+    "diffAddedWord": "#35815e",
+    "diffRemovedWord": "#8a3745",
+    "userMessageBackground": "#1a2e29",
+    "selectionBg": "#165b44",
+    "rate_limit_fill": "#2ee6a6",
+    "rate_limit_empty": "#263833"
+  }
+}

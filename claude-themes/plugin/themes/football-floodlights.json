@@ -1,0 +1,30 @@
+{
+  "name": "Football Floodlights",
+  "base": "dark",
+  "overrides": {
+    "claude": "#e8f26a",
+    "claudeShimmer": "#ebf398",
+    "text": "#f1f6ee",
+    "inactive": "#89948a",
+    "subtle": "#626f64",
+    "suggestion": "#9be564",
+    "permission": "#ffd24d",
+    "success": "#4ade80",
+    "error": "#ff5c5c",
+    "warning": "#ffd24d",
+    "promptBorder": "#637234",
+    "planMode": "#6ec5ff",
+    "autoAccept": "#d0b8ff",
+    "bashBorder": "#ff9f43",
+    "diffAdded": "#194b2b",
+    "diffRemoved": "#4a2d24",
+    "diffAddedDimmed": "#12351f",
+    "diffRemovedDimmed": "#2c251b",
+    "diffAddedWord": "#2a7d48",
+    "diffRemovedWord": "#893d38",
+    "userMessageBackground": "#1a2b20",
+    "selectionBg": "#4d5c2b",
+    "rate_limit_fill": "#e8f26a",
+    "rate_limit_empty": "#26362b"
+  }
+}

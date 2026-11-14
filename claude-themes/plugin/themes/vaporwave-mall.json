@@ -1,0 +1,30 @@
+{
+  "name": "Vaporwave Mall",
+  "base": "dark",
+  "overrides": {
+    "claude": "#ff71ce",
+    "claudeShimmer": "#fb9bdf",
+    "text": "#f3e8ff",
+    "inactive": "#9286a6",
+    "subtle": "#6d6185",
+    "suggestion": "#01cdfe",
+    "permission": "#fffb96",
+    "success": "#05ffa1",
+    "error": "#ff6b8b",
+    "warning": "#fffb96",
+    "promptBorder": "#763675",
+    "planMode": "#01cdfe",
+    "autoAccept": "#b967ff",
+    "bashBorder": "#ff9a76",
+    "diffAdded": "#164953",
+    "diffRemoved": "#56274f",
+    "diffAddedDimmed": "#182e47",
+    "diffRemovedDimmed": "#3b1c45",
+    "diffAddedWord": "#10876e",
+    "diffRemovedWord": "#923f64",
+    "userMessageBackground": "#2a1e48",
+    "selectionBg": "#5f2c66",
+    "rate_limit_fill": "#ff71ce",
+    "rate_limit_empty": "#352952"
+  }
+}

@@ -95,8 +95,8 @@ meta = {}
 for sp in S:
     t = build(sp)
     json.dump(t, open(os.path.join(HERE, 'themes', sp[0] + '.json'), 'w'), indent=2)
-    meta[sp[0]] = {"bg": sp[3], "moods": sp[14], "collection": sp[15], "idea": sp[16], "cvd": bool(sp[17].get('cvd')), "live": bool(sp[17].get('live')), "minRead": sp[17].get('min_read', 4.5)}
+    meta[sp[0]] = {"bg": sp[3], "moods": sp[14], "collection": sp[15], "idea": sp[16], "cvd": bool(sp[17].get('cvd')), "live": bool(sp[17].get('live')), "port": sp[17].get('port'), "minRead": sp[17].get('min_read', 4.5)}
 for slug, (m, c, i) in H.items():
-    meta[slug] = {"bg": NOM[slug], "moods": m, "collection": c, "idea": i, "cvd": False, "live": False, "minRead": 4.5}
+    meta[slug] = {"bg": NOM[slug], "moods": m, "collection": c, "idea": i, "cvd": False, "live": False, "port": None, "minRead": 4.5}
 json.dump(meta, open(os.path.join(HERE, 'themes-meta.json'), 'w'), indent=2)
 print(len(meta), 'themes in meta;', len(S), 'generated')

@@ -1,0 +1,30 @@
+{
+  "name": "Catppuccin Mocha (port)",
+  "base": "dark",
+  "overrides": {
+    "claude": "#cba6f7",
+    "claudeShimmer": "#ccb7f6",
+    "text": "#cdd6f4",
+    "inactive": "#81859d",
+    "subtle": "#606479",
+    "suggestion": "#89b4fa",
+    "permission": "#fab387",
+    "success": "#a6e3a1",
+    "error": "#f38ba8",
+    "warning": "#f9e2af",
+    "promptBorder": "#63547e",
+    "planMode": "#94e2d5",
+    "autoAccept": "#f5c2e7",
+    "bashBorder": "#fab387",
+    "diffAdded": "#3f4d4a",
+    "diffRemoved": "#553a4e",
+    "diffAddedDimmed": "#30383d",
+    "diffRemovedDimmed": "#3c2d3f",
+    "diffAddedWord": "#628068",
+    "diffRemovedWord": "#8d576d",
+    "userMessageBackground": "#2a2b3c",
+    "selectionBg": "#52476a",
+    "rate_limit_fill": "#cba6f7",
+    "rate_limit_empty": "#333446"
+  }
+}

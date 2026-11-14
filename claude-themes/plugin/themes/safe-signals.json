@@ -1,0 +1,30 @@
+{
+  "name": "Safe Signals",
+  "base": "dark",
+  "overrides": {
+    "claude": "#56b4e9",
+    "claudeShimmer": "#8ac9ec",
+    "text": "#eceff3",
+    "inactive": "#8b8e93",
+    "subtle": "#666a6e",
+    "suggestion": "#56b4e9",
+    "permission": "#e69f00",
+    "success": "#2bbf94",
+    "error": "#f07a35",
+    "warning": "#f0e442",
+    "promptBorder": "#2e566f",
+    "planMode": "#56b4e9",
+    "autoAccept": "#cc79a7",
+    "bashBorder": "#e69f00",
+    "diffAdded": "#243d4e",
+    "diffRemoved": "#4b3b15",
+    "diffAddedDimmed": "#1d2c38",
+    "diffRemovedDimmed": "#312b19",
+    "diffAddedWord": "#356683",
+    "diffRemovedWord": "#815e0e",
+    "userMessageBackground": "#23272c",
+    "selectionBg": "#28475a",
+    "rate_limit_fill": "#56b4e9",
+    "rate_limit_empty": "#2e3237"
+  }
+}

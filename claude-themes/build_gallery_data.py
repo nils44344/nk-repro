@@ -17,7 +17,7 @@ json.dump(order, open(order_file, 'w'), indent=1)
 themes = []
 for s in order:
     t = json.load(open(os.path.join(H, 'themes', s + '.json'))); m = meta[s]; c = chk[s]
-    themes.append({"slug": s, "name": t["name"], "base": t["base"], "bg": m["bg"], "moods": m["moods"], "collection": m["collection"], "live": m.get("live", False), "idea": m["idea"],
+    themes.append({"slug": s, "name": t["name"], "base": t["base"], "bg": m["bg"], "moods": m["moods"], "collection": m["collection"], "live": m.get("live", False), "port": m.get("port"), "idea": m["idea"],
                    "checks": {k: c[k] for k in ("textContrast", "minReadable", "diffText", "statusDeltaE", "addedRemovedDeltaE", "cvdDeltaE", "cvdSafeClaim")},
                    "listed": ["2.1.319", "2.1.325"] if s in FIVE else ["2.1.325"], "overrides": t["overrides"]})
 json.dump({"themes": themes, "testedDate": "2026-11-14", "batch": BATCH}, open(out_path, 'w'), indent=1)

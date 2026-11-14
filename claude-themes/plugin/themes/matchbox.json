@@ -1,0 +1,30 @@
+{
+  "name": "Matchbox",
+  "base": "dark",
+  "overrides": {
+    "claude": "#ffae00",
+    "claudeShimmer": "#fac048",
+    "text": "#f2e2cf",
+    "inactive": "#918479",
+    "subtle": "#6c6159",
+    "suggestion": "#ff8c3a",
+    "permission": "#ffd24d",
+    "success": "#9bd17a",
+    "error": "#ff5a3c",
+    "warning": "#ffd24d",
+    "promptBorder": "#76500a",
+    "planMode": "#7fb9c9",
+    "autoAccept": "#d4a5e0",
+    "bashBorder": "#ff5a3c",
+    "diffAdded": "#394029",
+    "diffRemoved": "#56251b",
+    "diffAddedDimmed": "#2b2b1e",
+    "diffRemovedDimmed": "#3a1c16",
+    "diffAddedWord": "#5a7245",
+    "diffRemovedWord": "#913727",
+    "userMessageBackground": "#29211d",
+    "selectionBg": "#5f410b",
+    "rate_limit_fill": "#ffae00",
+    "rate_limit_empty": "#342b27"
+  }
+}

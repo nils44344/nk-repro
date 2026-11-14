@@ -1,0 +1,30 @@
+{
+  "name": "Badminton Hall",
+  "base": "light",
+  "overrides": {
+    "claude": "#0a8151",
+    "claudeShimmer": "#0d6540",
+    "text": "#12301f",
+    "inactive": "#65746b",
+    "subtle": "#9eaca3",
+    "suggestion": "#0a8151",
+    "permission": "#916900",
+    "success": "#1b7f3b",
+    "error": "#c0392b",
+    "warning": "#916900",
+    "promptBorder": "#8bc9af",
+    "planMode": "#1565c0",
+    "autoAccept": "#7b3fa0",
+    "bashBorder": "#be4c00",
+    "diffAdded": "#c0dbc8",
+    "diffRemoved": "#e6c6c0",
+    "diffAddedDimmed": "#d8e8dc",
+    "diffRemovedDimmed": "#edddd8",
+    "diffAddedWord": "#88bc98",
+    "diffRemovedWord": "#d9958b",
+    "userMessageBackground": "#e9eee9",
+    "selectionBg": "#aed8c6",
+    "rate_limit_fill": "#0a8151",
+    "rate_limit_empty": "#d9e0da"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Phosphor Green",
+  "base": "dark",
+  "overrides": {
+    "claude": "#39ff6a",
+    "claudeShimmer": "#66fc89",
+    "text": "#b9f5c3",
+    "inactive": "#698f70",
+    "subtle": "#4b6950",
+    "suggestion": "#8affb0",
+    "permission": "#ffd24d",
+    "success": "#5dff8f",
+    "error": "#ff6b57",
+    "warning": "#ffd24d",
+    "promptBorder": "#1b7130",
+    "planMode": "#4de1d0",
+    "autoAccept": "#a6a6ff",
+    "bashBorder": "#ff9a4d",
+    "diffAdded": "#1c4c2a",
+    "diffRemoved": "#472a1e",
+    "diffAddedDimmed": "#12321b",
+    "diffRemovedDimmed": "#2a1f15",
+    "diffAddedWord": "#32894c",
+    "diffRemovedWord": "#884132",
+    "userMessageBackground": "#132317",
+    "selectionBg": "#165a27",
+    "rate_limit_fill": "#39ff6a",
+    "rate_limit_empty": "#1c2e20"
+  }
+}

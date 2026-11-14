@@ -1,0 +1,11 @@
+{
+  "name": "nk-themes",
+  "owner": { "name": "Nilay Kabariya", "url": "https://nilaykabariya.blog" },
+  "plugins": [
+    {
+      "name": "nk-claude-themes",
+      "source": "./claude-themes/plugin",
+      "description": "60 free custom colour themes for the Claude Code terminal CLI (originals plus credited community ports). Unofficial, not affiliated with Anthropic."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Steel Mill, 4 am",
+  "base": "dark",
+  "overrides": {
+    "claude": "#ff8a3d",
+    "claudeShimmer": "#f2a878",
+    "text": "#d9e0e6",
+    "inactive": "#7f868b",
+    "subtle": "#5e6369",
+    "suggestion": "#8fb8d6",
+    "permission": "#f2c14e",
+    "success": "#7fc8a0",
+    "error": "#ff6b5e",
+    "warning": "#f2c14e",
+    "promptBorder": "#714529",
+    "planMode": "#6fb4d8",
+    "autoAccept": "#a7a9e0",
+    "bashBorder": "#ff8a3d",
+    "diffAdded": "#2c413c",
+    "diffRemoved": "#502d2d",
+    "diffAddedDimmed": "#202e2d",
+    "diffRemovedDimmed": "#332325",
+    "diffAddedWord": "#48705e",
+    "diffRemovedWord": "#8d433e",
+    "userMessageBackground": "#20252a",
+    "selectionBg": "#593a26",
+    "rate_limit_fill": "#ff8a3d",
+    "rate_limit_empty": "#2a2f34"
+  }
+}

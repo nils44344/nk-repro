@@ -1,0 +1,30 @@
+{
+  "name": "Nautical Chart",
+  "base": "light",
+  "overrides": {
+    "claude": "#1d4e89",
+    "claudeShimmer": "#1a3f6e",
+    "text": "#14233b",
+    "inactive": "#676c70",
+    "subtle": "#9ea09c",
+    "suggestion": "#846613",
+    "permission": "#846613",
+    "success": "#2b784a",
+    "error": "#b3402a",
+    "warning": "#846613",
+    "promptBorder": "#93a5b4",
+    "planMode": "#1d4e89",
+    "autoAccept": "#6b4a8a",
+    "bashBorder": "#b3402a",
+    "diffAdded": "#c3d1b6",
+    "diffRemoved": "#e2bfab",
+    "diffAddedDimmed": "#d9ddc6",
+    "diffRemovedDimmed": "#ead4c0",
+    "diffAddedWord": "#90b392",
+    "diffRemovedWord": "#d2937e",
+    "userMessageBackground": "#e8e2d0",
+    "selectionBg": "#b3bdc0",
+    "rate_limit_fill": "#1d4e89",
+    "rate_limit_empty": "#d8d4c5"
+  }
+}
