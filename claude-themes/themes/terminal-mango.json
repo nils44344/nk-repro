@@ -1,0 +1,30 @@
+{
+  "name": "Terminal Mango",
+  "base": "dark",
+  "overrides": {
+    "claude": "#ffb000",
+    "claudeShimmer": "#ffd666",
+    "text": "#f2f2f2",
+    "inactive": "#7d7d7d",
+    "subtle": "#5c5c5c",
+    "suggestion": "#ff7a45",
+    "permission": "#ffcc33",
+    "success": "#7ee081",
+    "error": "#ff5d5d",
+    "warning": "#ffd23f",
+    "promptBorder": "#8a5a00",
+    "planMode": "#3ddc97",
+    "autoAccept": "#ff6ec7",
+    "bashBorder": "#ff7a45",
+    "diffAdded": "#17361c",
+    "diffRemoved": "#401a1a",
+    "diffAddedDimmed": "#112614",
+    "diffRemovedDimmed": "#2d1313",
+    "diffAddedWord": "#2f8a3c",
+    "diffRemovedWord": "#b53a3a",
+    "userMessageBackground": "#1b1b1b",
+    "selectionBg": "#5a3d00",
+    "rate_limit_fill": "#ffb000",
+    "rate_limit_empty": "#2b2b2b"
+  }
+}

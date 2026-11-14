@@ -1,0 +1,30 @@
+{
+  "name": "Kite Festival",
+  "base": "light",
+  "overrides": {
+    "claude": "#d6246e",
+    "claudeShimmer": "#f2569a",
+    "text": "#1a1c2c",
+    "inactive": "#7a7f95",
+    "subtle": "#9aa0b8",
+    "suggestion": "#0e7490",
+    "permission": "#6d28d9",
+    "success": "#15803d",
+    "error": "#c81e1e",
+    "warning": "#b45309",
+    "promptBorder": "#c9cdf0",
+    "planMode": "#0e7490",
+    "autoAccept": "#6d28d9",
+    "bashBorder": "#d6246e",
+    "diffAdded": "#d6f3e0",
+    "diffRemoved": "#fbdada",
+    "diffAddedDimmed": "#e8f8ee",
+    "diffRemovedDimmed": "#fdeaea",
+    "diffAddedWord": "#9edcb4",
+    "diffRemovedWord": "#f2a3a3",
+    "userMessageBackground": "#eef0ff",
+    "selectionBg": "#d9dcff",
+    "rate_limit_fill": "#d6246e",
+    "rate_limit_empty": "#e2e4f6"
+  }
+}

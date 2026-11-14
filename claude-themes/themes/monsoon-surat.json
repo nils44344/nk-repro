@@ -1,0 +1,30 @@
+{
+  "name": "Monsoon, Surat",
+  "base": "dark",
+  "overrides": {
+    "claude": "#6fd3c6",
+    "claudeShimmer": "#a8efe5",
+    "text": "#dbeceb",
+    "inactive": "#6f8b8c",
+    "subtle": "#546d6f",
+    "suggestion": "#8fc7e8",
+    "permission": "#7fb6d9",
+    "success": "#8fd694",
+    "error": "#f0776c",
+    "warning": "#e9c46a",
+    "promptBorder": "#2f6f73",
+    "planMode": "#6fd3c6",
+    "autoAccept": "#b6a6e8",
+    "bashBorder": "#ef9a6e",
+    "diffAdded": "#143a2b",
+    "diffRemoved": "#3d1c22",
+    "diffAddedDimmed": "#10281f",
+    "diffRemovedDimmed": "#2c1418",
+    "diffAddedWord": "#2a7a55",
+    "diffRemovedWord": "#a03a46",
+    "userMessageBackground": "#13232a",
+    "selectionBg": "#1f4048",
+    "rate_limit_fill": "#6fd3c6",
+    "rate_limit_empty": "#1d3236"
+  }
+}
