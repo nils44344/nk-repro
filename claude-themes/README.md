@@ -30,5 +30,9 @@ palettes were designed for. All five pass: no unknown tokens, no invalid colours
 **Also checked:** all 24 tokens the themes use appear as strings inside the installed Claude Code 2.1.319 binary (`grep -a` over the executable), so
 that version knows every token. Documented version note: custom themes need a recent Claude Code; the docs do not state the minimum version.
 
-**Not yet checked:** opening `/theme` in a real terminal and looking at the five themes on screen. Until that is done, the previews are
-mock-ups of how the tokens map, not screenshots.
+**Loaded in the real CLI:** on 14 Nov 2026 I started Claude Code 2.1.325 with a throwaway config folder (`CLAUDE_CONFIG_DIR`) holding these five files
+and `"theme": "custom:chai-at-midnight"`. The `/theme` picker listed all five (Chai at Midnight, Kite Festival, Monsoon, Surat, Paper Lantern,
+Terminal Mango) under the built-ins, marked `custom`, with Chai at Midnight selected, and showed its diff preview.
+
+**Not yet checked:** how each palette looks on screen (the check was read as text, not as a screenshot). Until a screenshot exists, the clip is a
+mock-up of how the tokens map, not a recording of the CLI.

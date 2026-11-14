@@ -1,0 +1,127 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:Georgia,'Times New Roman',serif}
+#bg{position:absolute;inset:0}
+#wipe{position:absolute;left:0;right:0;top:0;height:100%;transform:translateY(100%)}
+.abs{position:absolute}
+#kicker{left:72px;top:96px;font:600 30px 'Segoe UI',Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase}
+#count{right:72px;top:96px;font:600 30px 'Segoe UI',Arial,sans-serif;letter-spacing:.12em}
+#title{left:72px;top:190px;width:936px;font:700 124px/1.0 Georgia,serif;letter-spacing:-.01em}
+#mood{left:72px;top:470px;width:900px;font:italic 400 44px/1.25 Georgia,serif}
+#term{left:60px;top:640px;width:960px;height:960px;border-radius:26px;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.35)}
+#bar{height:62px;display:flex;align-items:center;gap:14px;padding:0 26px}
+.dot{width:20px;height:20px;border-radius:50%}
+#body{padding:30px 38px;font:500 34px/1.5 Consolas,'Cascadia Mono','Courier New',monospace;white-space:pre;position:relative;height:898px}
+.ln{height:51px;padding:0 10px;margin:0 -10px;border-radius:6px;overflow:hidden}
+#cap{left:72px;bottom:118px;width:936px;font:600 36px/1.3 'Segoe UI',Arial,sans-serif;letter-spacing:.01em}
+#foot{left:72px;bottom:56px;font:500 24px 'Segoe UI',Arial,sans-serif;opacity:.7}
+#intro,#outro{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 80px}
+#intro h1{font:700 150px/1.0 Georgia,serif;letter-spacing:-.02em}
+#intro p{font:italic 400 52px/1.3 Georgia,serif;margin-top:40px}
+#outro h2{font:700 108px/1.05 Georgia,serif}
+#outro code{display:block;margin-top:56px;font:500 36px/1.5 Consolas,monospace;padding:34px 38px;border-radius:20px;white-space:pre}
+#outro p{font:600 34px/1.4 'Segoe UI',Arial,sans-serif;margin-top:44px;letter-spacing:.02em}
+</style></head><body><div id="stage">
+<div id="bg"></div>
+<div id="intro"><h1 id="i1"></h1><p id="i2"></p></div>
+<div id="main" style="opacity:0">
+ <div id="kicker" class="abs">Claude Code themes</div><div id="count" class="abs"></div>
+ <div id="title" class="abs"></div><div id="mood" class="abs"></div>
+ <div id="term" class="abs"><div id="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div id="body"></div></div>
+ <div id="cap" class="abs"></div><div id="foot" class="abs">preview mock-up drawn from the theme files</div>
+</div>
+<div id="wipe"></div>
+<div id="outro" style="opacity:0"><h2 id="o1"></h2><code id="o2"></code><p id="o3"></p></div>
+</div>
+<script src="themes-data.js"></script>
+<script>
+const ORDER=['chai-at-midnight','monsoon-surat','paper-lantern','terminal-mango','kite-festival'];
+const MOOD={'chai-at-midnight':['A late-night terminal.','Warm amber on cocoa, like the last chai.'],
+'monsoon-surat':['Rain on the glass.','Washed teals for long debugging evenings.'],
+'paper-lantern':['Cream paper, red lantern.','A light theme that does not burn your eyes.'],
+'terminal-mango':['Hot mango on black.','Loud accent, quiet everything else.'],
+'kite-festival':['Uttarayan, in a terminal.','Magenta, cyan and violet against a bright sky.']};
+const INTRO=2.2,SEG=4.4,N=5,OUT0=INTRO+SEG*N,END=OUT0+3.8;
+const E=x=>x<0?0:x>1?1:x, ease=x=>1-Math.pow(1-E(x),3), ease2=x=>{x=E(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2};
+function lines(th){const o=th.overrides;return [
+ {t:'✻ Welcome to Claude Code',c:o.claude,a:0.0},
+ {t:'> fix the failing canvas test',c:o.text,bg:o.userMessageBackground,a:0.35},
+ {t:'● Reading src/canvas.test.ts…',c:o.inactive,a:0.7},
+ {t:'● Update(src/canvas.test.ts)',c:o.claude,a:1.0},
+ {t:'  - const c = el.getContext("2d")',c:o.text,bg:o.diffRemoved,w:o.diffRemovedWord,a:1.25},
+ {t:'  + import "@napi-rs/canvas"',c:o.text,bg:o.diffAdded,w:o.diffAddedWord,a:1.5},
+ {t:'  + const c = el.getContext("2d")',c:o.text,bg:o.diffAdded,a:1.7},
+ {t:'? Allow this edit?  Yes / No',c:o.permission,a:2.0},
+ {t:'$ npm test',c:o.bashBorder,a:2.3},
+ {t:'✓ 12 passed',c:o.success,a:2.55},
+ {t:'✗ 1 failed: timeout in setup',c:o.error,a:2.75},
+ {t:'▲ retry with a longer timeout?',c:o.warning,a:2.95},
+ {t:'plan mode ▸▸',c:o.planMode,a:3.1,inline:{t:'   accept edits ▸▸',c:o.autoAccept}},
+];}
+function render(t){
+ const S=document.getElementById('stage');
+ // intro / outro
+ const intro=document.getElementById('intro'),outro=document.getElementById('outro'),main=document.getElementById('main'),bg=document.getElementById('bg'),wipe=document.getElementById('wipe');
+ const first=window.THEMES[ORDER[0]];
+ if(t<INTRO){
+  bg.style.background='#0e0e12';intro.style.opacity=1;main.style.opacity=0;outro.style.opacity=0;wipe.style.transform='translateY(100%)';
+  const a=ease(t/0.7),b=ease((t-0.5)/0.7);
+  const i1=document.getElementById('i1'),i2=document.getElementById('i2');
+  i1.innerHTML='Five themes.<br>One <span style="color:'+first.overrides.claude+'">terminal</span>.';i1.style.color='#f4efe6';i1.style.opacity=a;i1.style.transform='translateY('+(40*(1-a))+'px)';
+  i2.textContent='I made them for Claude Code. Pick yours.';i2.style.color='#9aa0b4';i2.style.opacity=b;i2.style.transform='translateY('+(30*(1-b))+'px)';
+  return;
+ }
+ intro.style.opacity=0;
+ if(t>=OUT0){
+  const u=t-OUT0, last=window.THEMES[ORDER[4]];
+  bg.style.background='#0e0e12';main.style.opacity=0;wipe.style.transform='translateY(100%)';outro.style.opacity=1;
+  const a=ease(u/0.6),b=ease((u-0.4)/0.6),c=ease((u-0.9)/0.6);
+  const o1=document.getElementById('o1'),o2=document.getElementById('o2'),o3=document.getElementById('o3');
+  o1.innerHTML='Free.<br>Five JSON files.';o1.style.color='#f4efe6';o1.style.opacity=a;o1.style.transform='translateY('+(40*(1-a))+'px)';
+  o2.textContent='cp themes/*.json ~/.claude/themes/\n/theme   → pick one';o2.style.background='#1b1b24';o2.style.color='#ffb000';o2.style.opacity=b;
+  o3.innerHTML='github.com/nils44344/nk-repro<br><span style="opacity:.7">folder: claude-themes</span>';o3.style.color='#9aa0b4';o3.style.opacity=c;
+  return;
+ }
+ const u=t-INTRO, idx=Math.min(N-1,Math.floor(u/SEG)), lt=u-idx*SEG;
+ const slug=ORDER[idx], th=window.THEMES[slug], o=th.overrides, nb=window.BGS[slug];
+ const dark=th.base==='dark';
+ // page background = nominal bg, slightly lifted for the page vs terminal
+ const pageBg=nb;
+ bg.style.background=pageBg;main.style.opacity=1;outro.style.opacity=0;
+ const ink=dark?o.text:o.text, accent=o.claude;
+ document.getElementById('kicker').style.color=accent;
+ const cnt=document.getElementById('count');cnt.textContent=(idx+1)+' / 5';cnt.style.color=o.inactive;
+ const ti=document.getElementById('title');ti.textContent=th.name;ti.style.color=ink;
+ const tin=ease(lt/0.55);ti.style.opacity=tin;ti.style.transform='translateY('+(36*(1-tin))+'px)';
+ const md=document.getElementById('mood');md.textContent=MOOD[slug][1];md.style.color=o.inactive;const min=ease((lt-0.2)/0.55);md.style.opacity=min;md.style.transform='translateY('+(24*(1-min))+'px)';
+ const term=document.getElementById('term');term.style.background=nb==='#faf5ea'?'#fffdf7':(dark?shade(nb,10):'#ffffff');
+ term.style.border='2px solid '+o.promptBorder;
+ const tin2=ease((lt-0.1)/0.6);term.style.opacity=tin2;term.style.transform='translateY('+(60*(1-tin2))+'px) scale('+(0.97+0.03*tin2)+')';
+ const bar=document.getElementById('bar');bar.style.background=dark?shade(nb,18):shade(nb,-6);
+ [...bar.children].forEach((d,i)=>d.style.background=[o.error,o.warning,o.success][i]);
+ const body=document.getElementById('body');
+ // build lines once per theme idx
+ if(body.dataset.s!==slug){body.dataset.s=slug;body.innerHTML='';lines(th).forEach((l,i)=>{const d=document.createElement('div');d.className='ln';d.id='l'+i;body.appendChild(d)});}
+ lines(th).forEach((l,i)=>{const d=document.getElementById('l'+i);const p=(lt-0.55-l.a*0.55)/0.28;
+   const full=l.t, n=Math.floor(full.length*E(p));
+   let html=esc(full.slice(0,n));
+   if(l.inline&&p>=1){html+='<span style="color:'+l.inline.c+'">'+esc(l.inline.t)+'</span>';}
+   d.innerHTML=html;d.style.color=l.c;d.style.background=l.bg||'transparent';d.style.opacity=p>0?1:0;});
+ // usage meter
+ const fill=Math.round(8*E((lt-2.4)/0.9)*0.62);let m='usage ';for(let k=0;k<8;k++)m+=k<fill?'█':'░';
+ const mm=document.getElementById('foot');
+ document.getElementById('cap').innerHTML='<span style="color:'+o.rate_limit_fill+'">'+m+'</span> &nbsp;<span style="color:'+o.inactive+'">'+MOOD[slug][0]+'</span>';
+ document.getElementById('foot').style.color=o.inactive;
+ // wipe between themes
+ const w=ease2((lt-(SEG-0.45))/0.45);
+ if(idx<N-1&&lt>SEG-0.45){wipe.style.background=window.THEMES[ORDER[idx+1]].overrides.claude;wipe.style.transform='translateY('+(100-100*w)+'%)';}
+ else if(idx>0&&lt<0.45){wipe.style.background=window.THEMES[ORDER[idx]].overrides.claude;const w2=ease2(lt/0.45);wipe.style.transform='translateY(-'+(100*w2)+'%)';}
+ else wipe.style.transform='translateY(100%)';
+ if(idx===N-1&&lt>SEG-0.45){wipe.style.background='#0e0e12';wipe.style.transform='translateY('+(100-100*w)+'%)';}
+ if(idx===0&&lt<0.45){const w3=ease2(lt/0.45);wipe.style.background=o.claude;wipe.style.transform='translateY(-'+(100*w3)+'%)';}
+}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function shade(hex,p){hex=hex.replace('#','');let r=parseInt(hex.slice(0,2),16),g=parseInt(hex.slice(2,4),16),b=parseInt(hex.slice(4,6),16);const f=p/100;const m=v=>Math.max(0,Math.min(255,Math.round(f>=0?v+(255-v)*f:v*(1+f))));return '#'+[m(r),m(g),m(b)].map(v=>v.toString(16).padStart(2,'0')).join('')}
+window.render=render;window.END=END;render(5);
+</script></body></html>
