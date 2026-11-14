@@ -1,4 +1,4 @@
-# Claude Code themes (22 originals)
+# Claude Code themes (30 originals)
 
 Custom colour themes for the Claude Code terminal CLI, in the format from the official docs
 (https://code.claude.com/docs/en/terminal-config.md#create-a-custom-theme): one JSON file per theme in `~/.claude/themes/`, fields `name`, `base`, `overrides`.
@@ -47,7 +47,7 @@ Then run `/theme` inside Claude Code and pick one. New files in the folder show 
 
 - `build_themes.py` derives the 17 newer themes from a compact palette spec (background, text, accent and six status/mode colours), fitting every readable colour to its contrast target. The first five are hand-written JSON.
 - `validate.py` checks every theme and writes `checks.json`: only documented tokens and `#rrggbb` colours; WCAG contrast of every readable token against the design background (a theme cannot set the terminal's own background); text readable on the added/removed diff lines; success, error and warning clearly different (CIE76 delta-E); added vs removed backgrounds different; and the same colour distance after simulating deuteranopia and protanopia. Only `safe-signals` is built and claimed to pass the colour-blind check; for the others it is reported, not claimed.
-- Listed in the real `/theme` picker: all 22 on Claude Code 2.1.325 (throwaway config folder via `CLAUDE_CONFIG_DIR`; counted: 7 built-ins + 22 custom + "New custom theme…"), and the first five on 2.1.319 on the owner's own terminal.
+- Listed in the real `/theme` picker: all 30 on Claude Code 2.1.325 (throwaway config folder via `CLAUDE_CONFIG_DIR`; counted: 7 built-ins + 30 custom + "New custom theme…"), and the first five on 2.1.319 on the owner's own terminal.
 - Not checked: screenshots of each palette in a live session. The gallery previews are drawn from the theme colours.
 
 Themes are grouped by mood and colour family only.

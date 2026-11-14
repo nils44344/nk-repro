@@ -1,4 +1,15 @@
 {
+ "aurora-night-train": {
+  "tokens": 24,
+  "textContrast": 16.2,
+  "minReadable": 7.0,
+  "diffText": 8.9,
+  "statusDeltaE": 66,
+  "addedRemovedDeltaE": 35,
+  "cvdDeltaE": 16,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
  "bandhani-night": {
   "tokens": 24,
   "textContrast": 14.7,
@@ -32,6 +43,17 @@
   "cvdSafeClaim": false,
   "problems": []
  },
+ "cricket-pitch": {
+  "tokens": 24,
+  "textContrast": 13.3,
+  "minReadable": 4.5,
+  "diffText": 8.8,
+  "statusDeltaE": 49,
+  "addedRemovedDeltaE": 25,
+  "cvdDeltaE": 8,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
  "diwali-diya": {
   "tokens": 24,
   "textContrast": 15.9,
@@ -40,6 +62,17 @@
   "statusDeltaE": 48,
   "addedRemovedDeltaE": 30,
   "cvdDeltaE": 14,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "gulmohar-summer": {
+  "tokens": 24,
+  "textContrast": 14.8,
+  "minReadable": 4.5,
+  "diffText": 9.6,
+  "statusDeltaE": 43,
+  "addedRemovedDeltaE": 22,
+  "cvdDeltaE": 11,
   "cvdSafeClaim": false,
   "problems": []
  },
@@ -62,6 +95,17 @@
   "statusDeltaE": 43,
   "addedRemovedDeltaE": 27,
   "cvdDeltaE": 11,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "ink-and-indigo": {
+  "tokens": 24,
+  "textContrast": 13.5,
+  "minReadable": 4.6,
+  "diffText": 9.2,
+  "statusDeltaE": 45,
+  "addedRemovedDeltaE": 20,
+  "cvdDeltaE": 12,
   "cvdSafeClaim": false,
   "problems": []
  },
@@ -109,6 +153,39 @@
   "cvdSafeClaim": false,
   "problems": []
  },
+ "marble-and-brass": {
+  "tokens": 24,
+  "textContrast": 13.6,
+  "minReadable": 4.6,
+  "diffText": 9.1,
+  "statusDeltaE": 48,
+  "addedRemovedDeltaE": 19,
+  "cvdDeltaE": 11,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "mehendi-green": {
+  "tokens": 24,
+  "textContrast": 13.4,
+  "minReadable": 5.2,
+  "diffText": 7.7,
+  "statusDeltaE": 36,
+  "addedRemovedDeltaE": 22,
+  "cvdDeltaE": 10,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "mogra-evening": {
+  "tokens": 24,
+  "textContrast": 11.5,
+  "minReadable": 4.6,
+  "diffText": 7.7,
+  "statusDeltaE": 52,
+  "addedRemovedDeltaE": 20,
+  "cvdDeltaE": 9,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
  "monsoon-surat": {
   "tokens": 24,
   "textContrast": 15.0,
@@ -128,6 +205,17 @@
   "statusDeltaE": 73,
   "addedRemovedDeltaE": 46,
   "cvdDeltaE": 24,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "old-radio": {
+  "tokens": 24,
+  "textContrast": 13.1,
+  "minReadable": 5.7,
+  "diffText": 8.0,
+  "statusDeltaE": 38,
+  "addedRemovedDeltaE": 21,
+  "cvdDeltaE": 12,
   "cvdSafeClaim": false,
   "problems": []
  },

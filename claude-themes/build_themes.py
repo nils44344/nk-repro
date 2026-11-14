@@ -40,6 +40,14 @@ S = [
  ('sea-glass-midnight','Sea Glass, Midnight','dark','#07191d','#d6efec','#5fd6d0','#7fe0a0','#ff8070','#f2cf72','#6bb8f0','#b79cf0','#5fd6d0','#f2cf72','#ff9a70',['Cool','Calm','Dark'],'Day and night','The same bottle by moonlight. The night half of the pair, same hues, same roles.',{}),
  ('diwali-diya','Diwali Diya','dark','#220d0d','#fbeccd','#ffb400','#9be07a','#ff6a5a','#ffd25a','#7fd3c8','#ff8fb1','#ff9a3c','#ffd25a','#ff6a3c',['Warm','Bold','Dark'],'Festivals','A row of clay lamps in a dark maroon room: flame yellow, saffron and ember.',{}),
  ('holi-morning','Holi Morning','light','#fffdf7','#261c33','#d81b60','#00897b','#c62828','#b26a00','#1e88e5','#8e24aa','#f4511e','#ef6c00','#d81b60',['Playful','Bold','Light'],'Festivals','Powder colours thrown on a white morning: magenta, teal, blue and orange all at once.',{}),
+ ('mogra-evening','Mogra Evening','light','#fbfaf3','#2c3a2e','#3f7d5a','#2f7d4f','#b23a48','#9a7414','#2b7a8a','#8a5ea8','#3f7d5a','#9a7414','#b2563a',['Soft','Calm','Light'],'Places and hours','Jasmine white and leaf green on a warm evening veranda.',{}),
+ ('cricket-pitch','Cricket Pitch','light','#f7f6e9','#1f2d1c','#b3202a','#2e7d32','#c62828','#a06a00','#1565c0','#6a1b9a','#b3202a','#a06a00','#b3202a',['Playful','Bold','Light'],'Games','Mown-grass cream, ball red and whites: a Sunday match.',{}),
+ ('old-radio','Old Radio','dark','#1c1410','#e9d9bc','#e8a33d','#9bbf7a','#e0705a','#ecc25b','#7fb3b0','#c79ad0','#d9a066','#ecc25b','#e8793d',['Warm','Calm','Dark'],'Machines and arcades','A walnut cabinet, a glowing amber dial and cloth-speaker beige.',{}),
+ ('mehendi-green','Mehendi Green','dark','#141c14','#e6e2cf','#d9703a','#9fcf7a','#ef7b63','#e5c15d','#6fbfa5','#c99fd6','#e0925a','#e5c15d','#d9703a',['Warm','Calm','Dark'],'Festivals','Fresh henna paste green, drying to terracotta.',{}),
+ ('gulmohar-summer','Gulmohar Summer','light','#fffaf2','#33201a','#d6401f','#2f7d3a','#b3261e','#9c6500','#0b7a8a','#8e3ba8','#c9531c','#9c6500','#d6401f',['Bold','Warm','Light'],'Places and hours','Gulmohar blossom, orange-red over a hot white afternoon.',{}),
+ ('aurora-night-train','Aurora Night Train','dark','#0a1020','#e6eefc','#5ef2c0','#66f2a8','#ff6b8a','#ffd36b','#6ab7ff','#c08bff','#5ef2c0','#ffd36b','#ff9a6b',['Cool','Playful','Dark'],'Places and hours','A night train through the north: green and violet light over deep blue.',{}),
+ ('marble-and-brass','Marble and Brass','light','#f4f4f2','#25272b','#9a7424','#2f7a55','#b3362f','#8c6a12','#2a6f8c','#6f56a8','#2a6f8c','#8c6a12','#a05a2c',['Calm','Cool','Light'],'Materials','Cool grey marble with a brass accent: a quiet, formal light theme.',{}),
+ ('ink-and-indigo','Ink and Indigo','light','#f5f2ea','#1b2250','#2b3a9c','#2c7a56','#b23a3a','#946a12','#1f6f95','#7a4aa0','#2b3a9c','#946a12','#b0502a',['Cool','Calm','Light'],'Textiles','Block-printed indigo on unbleached cotton.',{}),
 ]
 
 H = {  # the five hand-written themes: meta only

@@ -1,0 +1,30 @@
+{
+  "name": "Old Radio",
+  "base": "dark",
+  "overrides": {
+    "claude": "#e8a33d",
+    "claudeShimmer": "#e8b669",
+    "text": "#e9d9bc",
+    "inactive": "#8d806f",
+    "subtle": "#6a5f51",
+    "suggestion": "#d9a066",
+    "permission": "#ecc25b",
+    "success": "#9bbf7a",
+    "error": "#e0705a",
+    "warning": "#ecc25b",
+    "promptBorder": "#6e4d22",
+    "planMode": "#7fb3b0",
+    "autoAccept": "#c79ad0",
+    "bashBorder": "#e8793d",
+    "diffAdded": "#3a3d29",
+    "diffRemoved": "#4f2c23",
+    "diffAddedDimmed": "#2d2a1e",
+    "diffRemovedDimmed": "#37211a",
+    "diffAddedWord": "#5c6a45",
+    "diffRemovedWord": "#824436",
+    "userMessageBackground": "#2a221c",
+    "selectionBg": "#593f1e",
+    "rate_limit_fill": "#e8a33d",
+    "rate_limit_empty": "#352c25"
+  }
+}

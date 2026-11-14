@@ -1,0 +1,30 @@
+{
+  "name": "Mehendi Green",
+  "base": "dark",
+  "overrides": {
+    "claude": "#d9703a",
+    "claudeShimmer": "#de986e",
+    "text": "#e6e2cf",
+    "inactive": "#88897b",
+    "subtle": "#64675b",
+    "suggestion": "#e0925a",
+    "permission": "#e5c15d",
+    "success": "#9fcf7a",
+    "error": "#ef7b63",
+    "warning": "#e5c15d",
+    "promptBorder": "#633e23",
+    "planMode": "#6fbfa5",
+    "autoAccept": "#c99fd6",
+    "bashBorder": "#d9703a",
+    "diffAdded": "#35472c",
+    "diffRemoved": "#4d3529",
+    "diffAddedDimmed": "#263321",
+    "diffRemovedDimmed": "#33291f",
+    "diffAddedWord": "#5a7647",
+    "diffRemovedWord": "#864d3d",
+    "userMessageBackground": "#232a21",
+    "selectionBg": "#4f351f",
+    "rate_limit_fill": "#d9703a",
+    "rate_limit_empty": "#2d342a"
+  }
+}

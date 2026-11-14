@@ -1,0 +1,30 @@
+{
+  "name": "Aurora Night Train",
+  "base": "dark",
+  "overrides": {
+    "claude": "#5ef2c0",
+    "claudeShimmer": "#8ef1d5",
+    "text": "#e6eefc",
+    "inactive": "#838a99",
+    "subtle": "#5e6474",
+    "suggestion": "#5ef2c0",
+    "permission": "#ffd36b",
+    "success": "#66f2a8",
+    "error": "#ff6b8a",
+    "warning": "#ffd36b",
+    "promptBorder": "#2c6a60",
+    "planMode": "#6ab7ff",
+    "autoAccept": "#c08bff",
+    "bashBorder": "#ff9a6b",
+    "diffAdded": "#204641",
+    "diffRemoved": "#4a283c",
+    "diffAddedDimmed": "#162d32",
+    "diffRemovedDimmed": "#2c1d2f",
+    "diffAddedWord": "#388164",
+    "diffRemovedWord": "#893f57",
+    "userMessageBackground": "#19202f",
+    "selectionBg": "#235450",
+    "rate_limit_fill": "#5ef2c0",
+    "rate_limit_empty": "#242b3a"
+  }
+}

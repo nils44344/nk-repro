@@ -202,6 +202,102 @@
     "cvd": false,
     "minRead": 4.5
   },
+  "mogra-evening": {
+    "bg": "#fbfaf3",
+    "moods": [
+      "Soft",
+      "Calm",
+      "Light"
+    ],
+    "collection": "Places and hours",
+    "idea": "Jasmine white and leaf green on a warm evening veranda.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "cricket-pitch": {
+    "bg": "#f7f6e9",
+    "moods": [
+      "Playful",
+      "Bold",
+      "Light"
+    ],
+    "collection": "Games",
+    "idea": "Mown-grass cream, ball red and whites: a Sunday match.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "old-radio": {
+    "bg": "#1c1410",
+    "moods": [
+      "Warm",
+      "Calm",
+      "Dark"
+    ],
+    "collection": "Machines and arcades",
+    "idea": "A walnut cabinet, a glowing amber dial and cloth-speaker beige.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "mehendi-green": {
+    "bg": "#141c14",
+    "moods": [
+      "Warm",
+      "Calm",
+      "Dark"
+    ],
+    "collection": "Festivals",
+    "idea": "Fresh henna paste green, drying to terracotta.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "gulmohar-summer": {
+    "bg": "#fffaf2",
+    "moods": [
+      "Bold",
+      "Warm",
+      "Light"
+    ],
+    "collection": "Places and hours",
+    "idea": "Gulmohar blossom, orange-red over a hot white afternoon.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "aurora-night-train": {
+    "bg": "#0a1020",
+    "moods": [
+      "Cool",
+      "Playful",
+      "Dark"
+    ],
+    "collection": "Places and hours",
+    "idea": "A night train through the north: green and violet light over deep blue.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "marble-and-brass": {
+    "bg": "#f4f4f2",
+    "moods": [
+      "Calm",
+      "Cool",
+      "Light"
+    ],
+    "collection": "Materials",
+    "idea": "Cool grey marble with a brass accent: a quiet, formal light theme.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "ink-and-indigo": {
+    "bg": "#f5f2ea",
+    "moods": [
+      "Cool",
+      "Calm",
+      "Light"
+    ],
+    "collection": "Textiles",
+    "idea": "Block-printed indigo on unbleached cotton.",
+    "cvd": false,
+    "minRead": 4.5
+  },
   "chai-at-midnight": {
     "bg": "#16100c",
     "moods": [

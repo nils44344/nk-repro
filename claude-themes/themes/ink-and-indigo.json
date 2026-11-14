@@ -1,0 +1,30 @@
+{
+  "name": "Ink and Indigo",
+  "base": "light",
+  "overrides": {
+    "claude": "#2b3a9c",
+    "claudeShimmer": "#253281",
+    "text": "#1b2250",
+    "inactive": "#696c7d",
+    "subtle": "#a2a3af",
+    "suggestion": "#2b3a9c",
+    "permission": "#8e6611",
+    "success": "#2c7a56",
+    "error": "#b23a3a",
+    "warning": "#8e6611",
+    "promptBorder": "#9a9fc7",
+    "planMode": "#1f6f95",
+    "autoAccept": "#7a4aa0",
+    "bashBorder": "#b0502a",
+    "diffAdded": "#c5d5c6",
+    "diffRemoved": "#e4c2bc",
+    "diffAddedDimmed": "#dbe2d7",
+    "diffRemovedDimmed": "#ecd8d1",
+    "diffAddedWord": "#90b6a0",
+    "diffRemovedWord": "#d2928e",
+    "userMessageBackground": "#eae8e2",
+    "selectionBg": "#b8bbd3",
+    "rate_limit_fill": "#2b3a9c",
+    "rate_limit_empty": "#dbd9d8"
+  }
+}
