@@ -1,0 +1,30 @@
+{
+  "name": "Kabaddi Mat",
+  "base": "light",
+  "overrides": {
+    "claude": "#1b6ca8",
+    "claudeShimmer": "#215574",
+    "text": "#2b2a14",
+    "inactive": "#74715a",
+    "subtle": "#aea98c",
+    "suggestion": "#af5800",
+    "permission": "#8a6d00",
+    "success": "#2e7d32",
+    "error": "#c0392b",
+    "warning": "#8a6d00",
+    "promptBorder": "#98b8c1",
+    "planMode": "#1b6ca8",
+    "autoAccept": "#7b3fa0",
+    "bashBorder": "#af5800",
+    "diffAdded": "#cddaaf",
+    "diffRemoved": "#efc6aa",
+    "diffAddedDimmed": "#e4e7c1",
+    "diffRemovedDimmed": "#f6dcbe",
+    "diffAddedWord": "#96ba84",
+    "diffRemovedWord": "#de947d",
+    "userMessageBackground": "#f4edcc",
+    "selectionBg": "#bbcdc8",
+    "rate_limit_fill": "#1b6ca8",
+    "rate_limit_empty": "#e6debf"
+  }
+}

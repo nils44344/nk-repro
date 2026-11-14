@@ -1,0 +1,30 @@
+{
+  "name": "Black and Gold",
+  "base": "dark",
+  "overrides": {
+    "claude": "#d4af37",
+    "claudeShimmer": "#dec46e",
+    "text": "#f2ead3",
+    "inactive": "#8a8679",
+    "subtle": "#636057",
+    "suggestion": "#d4af37",
+    "permission": "#f0d060",
+    "success": "#8fd694",
+    "error": "#ff6b5e",
+    "warning": "#f0d060",
+    "promptBorder": "#5b4d1d",
+    "planMode": "#7fb3d5",
+    "autoAccept": "#c9a0dc",
+    "bashBorder": "#e08a3c",
+    "diffAdded": "#2b3c2c",
+    "diffRemoved": "#4a2421",
+    "diffAddedDimmed": "#1c251d",
+    "diffRemovedDimmed": "#2d1817",
+    "diffAddedWord": "#4d7050",
+    "diffRemovedWord": "#8a3d36",
+    "userMessageBackground": "#1b1b19",
+    "selectionBg": "#473c18",
+    "rate_limit_fill": "#d4af37",
+    "rate_limit_empty": "#272623"
+  }
+}

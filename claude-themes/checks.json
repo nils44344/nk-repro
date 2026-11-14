@@ -1,12 +1,34 @@
 {
- "aurora-night-train": {
+ "amber-1982": {
   "tokens": 24,
+  "textContrast": 14.2,
+  "minReadable": 6.9,
+  "diffText": 8.2,
+  "statusDeltaE": 40,
+  "addedRemovedDeltaE": 31,
+  "cvdDeltaE": 8,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "aurora-night-train": {
+  "tokens": 29,
   "textContrast": 16.2,
   "minReadable": 7.0,
   "diffText": 8.9,
   "statusDeltaE": 66,
   "addedRemovedDeltaE": 35,
   "cvdDeltaE": 16,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "badminton-hall": {
+  "tokens": 24,
+  "textContrast": 13.3,
+  "minReadable": 4.6,
+  "diffText": 9.0,
+  "statusDeltaE": 47,
+  "addedRemovedDeltaE": 23,
+  "cvdDeltaE": 9,
   "cvdSafeClaim": false,
   "problems": []
  },
@@ -21,6 +43,61 @@
   "cvdSafeClaim": false,
   "problems": []
  },
+ "basketball-dusk": {
+  "tokens": 24,
+  "textContrast": 14.4,
+  "minReadable": 5.7,
+  "diffText": 8.5,
+  "statusDeltaE": 57,
+  "addedRemovedDeltaE": 36,
+  "cvdDeltaE": 15,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "black-and-gold": {
+  "tokens": 24,
+  "textContrast": 16.4,
+  "minReadable": 7.0,
+  "diffText": 9.8,
+  "statusDeltaE": 47,
+  "addedRemovedDeltaE": 29,
+  "cvdDeltaE": 21,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "blueprint": {
+  "tokens": 24,
+  "textContrast": 12.3,
+  "minReadable": 5.6,
+  "diffText": 6.6,
+  "statusDeltaE": 52,
+  "addedRemovedDeltaE": 23,
+  "cvdDeltaE": 14,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "boxing-ring-night": {
+  "tokens": 24,
+  "textContrast": 16.6,
+  "minReadable": 5.6,
+  "diffText": 10.1,
+  "statusDeltaE": 72,
+  "addedRemovedDeltaE": 39,
+  "cvdDeltaE": 18,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "candle-flicker": {
+  "tokens": 29,
+  "textContrast": 14.7,
+  "minReadable": 7.1,
+  "diffText": 8.6,
+  "statusDeltaE": 41,
+  "addedRemovedDeltaE": 24,
+  "cvdDeltaE": 19,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
  "candy-floss-arcade": {
   "tokens": 24,
   "textContrast": 14.5,
@@ -28,6 +105,17 @@
   "diffText": 9.9,
   "statusDeltaE": 45,
   "addedRemovedDeltaE": 31,
+  "cvdDeltaE": 8,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "cassette-tape": {
+  "tokens": 24,
+  "textContrast": 12.3,
+  "minReadable": 4.5,
+  "diffText": 8.6,
+  "statusDeltaE": 42,
+  "addedRemovedDeltaE": 22,
   "cvdDeltaE": 8,
   "cvdSafeClaim": false,
   "problems": []
@@ -43,6 +131,17 @@
   "cvdSafeClaim": false,
   "problems": []
  },
+ "cherry-cola": {
+  "tokens": 24,
+  "textContrast": 15.6,
+  "minReadable": 5.8,
+  "diffText": 9.2,
+  "statusDeltaE": 56,
+  "addedRemovedDeltaE": 28,
+  "cvdDeltaE": 14,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
  "cricket-pitch": {
   "tokens": 24,
   "textContrast": 13.3,
@@ -54,14 +153,69 @@
   "cvdSafeClaim": false,
   "problems": []
  },
- "diwali-diya": {
+ "desert-noon": {
   "tokens": 24,
+  "textContrast": 12.5,
+  "minReadable": 4.6,
+  "diffText": 8.2,
+  "statusDeltaE": 43,
+  "addedRemovedDeltaE": 22,
+  "cvdDeltaE": 5,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "disco-floor": {
+  "tokens": 29,
+  "textContrast": 17.5,
+  "minReadable": 5.9,
+  "diffText": 9.8,
+  "statusDeltaE": 77,
+  "addedRemovedDeltaE": 45,
+  "cvdDeltaE": 22,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "diwali-diya": {
+  "tokens": 29,
   "textContrast": 15.9,
   "minReadable": 6.5,
   "diffText": 9.1,
   "statusDeltaE": 48,
   "addedRemovedDeltaE": 30,
   "cvdDeltaE": 14,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "firefly-night": {
+  "tokens": 29,
+  "textContrast": 16.2,
+  "minReadable": 7.5,
+  "diffText": 9.1,
+  "statusDeltaE": 60,
+  "addedRemovedDeltaE": 31,
+  "cvdDeltaE": 14,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "football-floodlights": {
+  "tokens": 24,
+  "textContrast": 16.1,
+  "minReadable": 5.8,
+  "diffText": 9.2,
+  "statusDeltaE": 71,
+  "addedRemovedDeltaE": 38,
+  "cvdDeltaE": 15,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "glacier": {
+  "tokens": 24,
+  "textContrast": 13.2,
+  "minReadable": 4.6,
+  "diffText": 9.0,
+  "statusDeltaE": 49,
+  "addedRemovedDeltaE": 23,
+  "cvdDeltaE": 5,
   "cvdSafeClaim": false,
   "problems": []
  },
@@ -120,6 +274,17 @@
   "cvdSafeClaim": false,
   "problems": []
  },
+ "kabaddi-mat": {
+  "tokens": 24,
+  "textContrast": 13.5,
+  "minReadable": 4.6,
+  "diffText": 9.2,
+  "statusDeltaE": 47,
+  "addedRemovedDeltaE": 22,
+  "cvdDeltaE": 8,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
  "kite-festival": {
   "tokens": 24,
   "textContrast": 16.3,
@@ -128,6 +293,17 @@
   "statusDeltaE": 29,
   "addedRemovedDeltaE": 25,
   "cvdDeltaE": 5,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "lava-lamp": {
+  "tokens": 29,
+  "textContrast": 15.9,
+  "minReadable": 6.6,
+  "diffText": 8.9,
+  "statusDeltaE": 62,
+  "addedRemovedDeltaE": 30,
+  "cvdDeltaE": 24,
   "cvdSafeClaim": false,
   "problems": []
  },
@@ -164,6 +340,17 @@
   "cvdSafeClaim": false,
   "problems": []
  },
+ "matchbox": {
+  "tokens": 24,
+  "textContrast": 14.5,
+  "minReadable": 6.0,
+  "diffText": 8.5,
+  "statusDeltaE": 48,
+  "addedRemovedDeltaE": 30,
+  "cvdDeltaE": 24,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
  "mehendi-green": {
   "tokens": 24,
   "textContrast": 13.4,
@@ -197,14 +384,36 @@
   "cvdSafeClaim": false,
   "problems": []
  },
- "neon-rickshaw": {
+ "nautical-chart": {
   "tokens": 24,
+  "textContrast": 13.4,
+  "minReadable": 4.6,
+  "diffText": 9.2,
+  "statusDeltaE": 43,
+  "addedRemovedDeltaE": 19,
+  "cvdDeltaE": 5,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "neon-rickshaw": {
+  "tokens": 29,
   "textContrast": 18.2,
   "minReadable": 5.8,
   "diffText": 10.1,
   "statusDeltaE": 73,
   "addedRemovedDeltaE": 46,
   "cvdDeltaE": 24,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "newsprint": {
+  "tokens": 24,
+  "textContrast": 14.7,
+  "minReadable": 5.3,
+  "diffText": 9.4,
+  "statusDeltaE": 46,
+  "addedRemovedDeltaE": 23,
+  "cvdDeltaE": 3,
   "cvdSafeClaim": false,
   "problems": []
  },
@@ -230,6 +439,17 @@
   "cvdSafeClaim": false,
   "problems": []
  },
+ "phosphor-green": {
+  "tokens": 24,
+  "textContrast": 15.3,
+  "minReadable": 6.8,
+  "diffText": 8.0,
+  "statusDeltaE": 64,
+  "addedRemovedDeltaE": 38,
+  "cvdDeltaE": 21,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
  "pit-lane": {
   "tokens": 24,
   "textContrast": 17.4,
@@ -238,6 +458,17 @@
   "statusDeltaE": 78,
   "addedRemovedDeltaE": 43,
   "cvdDeltaE": 22,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "polaroid-summer": {
+  "tokens": 24,
+  "textContrast": 13.6,
+  "minReadable": 4.5,
+  "diffText": 9.6,
+  "statusDeltaE": 47,
+  "addedRemovedDeltaE": 24,
+  "cvdDeltaE": 9,
   "cvdSafeClaim": false,
   "problems": []
  },
@@ -307,6 +538,28 @@
   "cvdSafeClaim": false,
   "problems": []
  },
+ "skate-park-concrete": {
+  "tokens": 24,
+  "textContrast": 12.2,
+  "minReadable": 5.0,
+  "diffText": 7.0,
+  "statusDeltaE": 75,
+  "addedRemovedDeltaE": 39,
+  "cvdDeltaE": 12,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "snow-globe": {
+  "tokens": 24,
+  "textContrast": 15.5,
+  "minReadable": 7.8,
+  "diffText": 8.2,
+  "statusDeltaE": 45,
+  "addedRemovedDeltaE": 25,
+  "cvdDeltaE": 12,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
  "steel-mill-4am": {
   "tokens": 24,
   "textContrast": 13.5,
@@ -318,6 +571,28 @@
   "cvdSafeClaim": false,
   "problems": []
  },
+ "swimming-lane": {
+  "tokens": 24,
+  "textContrast": 15.2,
+  "minReadable": 6.6,
+  "diffText": 8.2,
+  "statusDeltaE": 63,
+  "addedRemovedDeltaE": 24,
+  "cvdDeltaE": 27,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "tennis-clay-court": {
+  "tokens": 24,
+  "textContrast": 11.7,
+  "minReadable": 4.5,
+  "diffText": 7.9,
+  "statusDeltaE": 43,
+  "addedRemovedDeltaE": 23,
+  "cvdDeltaE": 4,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
  "terminal-mango": {
   "tokens": 24,
   "textContrast": 17.0,
@@ -326,6 +601,39 @@
   "statusDeltaE": 62,
   "addedRemovedDeltaE": 37,
   "cvdDeltaE": 15,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "typewriter": {
+  "tokens": 24,
+  "textContrast": 14.7,
+  "minReadable": 4.6,
+  "diffText": 9.6,
+  "statusDeltaE": 49,
+  "addedRemovedDeltaE": 21,
+  "cvdDeltaE": 7,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "vaporwave-mall": {
+  "tokens": 24,
+  "textContrast": 15.1,
+  "minReadable": 5.5,
+  "diffText": 8.4,
+  "statusDeltaE": 61,
+  "addedRemovedDeltaE": 41,
+  "cvdDeltaE": 11,
+  "cvdSafeClaim": false,
+  "problems": []
+ },
+ "vinyl-record": {
+  "tokens": 24,
+  "textContrast": 15.6,
+  "minReadable": 6.8,
+  "diffText": 9.3,
+  "statusDeltaE": 55,
+  "addedRemovedDeltaE": 29,
+  "cvdDeltaE": 16,
   "cvdSafeClaim": false,
   "problems": []
  }

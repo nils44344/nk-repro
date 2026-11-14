@@ -1,0 +1,30 @@
+{
+  "name": "Amber 1982",
+  "base": "dark",
+  "overrides": {
+    "claude": "#ffb000",
+    "claudeShimmer": "#ffbd34",
+    "text": "#ffd596",
+    "inactive": "#947a53",
+    "subtle": "#6c583a",
+    "suggestion": "#ffc247",
+    "permission": "#ffe066",
+    "success": "#9de06a",
+    "error": "#ff6a3d",
+    "warning": "#ffe066",
+    "promptBorder": "#714d01",
+    "planMode": "#7fd3c8",
+    "autoAccept": "#e0a3ff",
+    "bashBorder": "#ff8a3d",
+    "diffAdded": "#333e1b",
+    "diffRemoved": "#502411",
+    "diffAddedDimmed": "#242710",
+    "diffRemovedDimmed": "#33180a",
+    "diffAddedWord": "#587636",
+    "diffRemovedWord": "#8d3c21",
+    "userMessageBackground": "#23190c",
+    "selectionBg": "#593c01",
+    "rate_limit_fill": "#ffb000",
+    "rate_limit_empty": "#2e2314"
+  }
+}

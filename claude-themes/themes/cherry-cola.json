@@ -1,0 +1,30 @@
+{
+  "name": "Cherry Cola",
+  "base": "dark",
+  "overrides": {
+    "claude": "#ff4b5c",
+    "claudeShimmer": "#fe818a",
+    "text": "#fbe4e0",
+    "inactive": "#988282",
+    "subtle": "#735d5e",
+    "suggestion": "#ff8a6b",
+    "permission": "#ffd36b",
+    "success": "#86e0a0",
+    "error": "#ff7a7a",
+    "warning": "#ffd36b",
+    "promptBorder": "#79242e",
+    "planMode": "#7fc3ff",
+    "autoAccept": "#e2a3ff",
+    "bashBorder": "#ff4b5c",
+    "diffAdded": "#383d32",
+    "diffRemoved": "#59272b",
+    "diffAddedDimmed": "#2c2622",
+    "diffRemovedDimmed": "#3e1a1e",
+    "diffAddedWord": "#527558",
+    "diffRemovedWord": "#934447",
+    "userMessageBackground": "#2e191e",
+    "selectionBg": "#621e26",
+    "rate_limit_fill": "#ff4b5c",
+    "rate_limit_empty": "#392428"
+  }
+}

@@ -6,9 +6,10 @@
       "Warm",
       "Light"
     ],
-    "collection": "Places and hours",
+    "collection": "Food and drink",
     "idea": "Syrup gold, rose water and cream: a sweet shop opening at first light.",
     "cvd": false,
+    "live": false,
     "minRead": 4.5
   },
   "lavender-field-5pm": {
@@ -22,6 +23,7 @@
     "collection": "Places and hours",
     "idea": "Pastel lilac with sage and dusk-blue: long shadows over a field, nothing shouting.",
     "cvd": false,
+    "live": false,
     "minRead": 4.5
   },
   "candy-floss-arcade": {
@@ -34,6 +36,7 @@
     "collection": "Machines and arcades",
     "idea": "Spun sugar pink and bubble-gum blue on a fairground-bright white.",
     "cvd": false,
+    "live": false,
     "minRead": 4.5
   },
   "jewel-box": {
@@ -46,6 +49,7 @@
     "collection": "Materials",
     "idea": "Emerald velvet lining with ruby, sapphire, amber and amethyst set into it.",
     "cvd": false,
+    "live": false,
     "minRead": 4.5
   },
   "rose-quartz-notebook": {
@@ -58,6 +62,7 @@
     "collection": "Materials",
     "idea": "A stone-pink paper notebook with a dark-plum pen and one gold-edged page.",
     "cvd": false,
+    "live": false,
     "minRead": 4.5
   },
   "neon-rickshaw": {
@@ -70,6 +75,7 @@
     "collection": "Machines and arcades",
     "idea": "A night-market auto rickshaw wired with tube lights, magenta first.",
     "cvd": false,
+    "live": true,
     "minRead": 4.5
   },
   "steel-mill-4am": {
@@ -82,6 +88,7 @@
     "collection": "Places and hours",
     "idea": "Cold rolled steel greys in the dark, and sparks of orange where metal meets metal.",
     "cvd": false,
+    "live": false,
     "minRead": 4.5
   },
   "pit-lane": {
@@ -93,6 +100,7 @@
     "collection": "Machines and arcades",
     "idea": "Tarmac black, race-flag red and signal yellow: everything reads at a glance at speed.",
     "cvd": false,
+    "live": false,
     "minRead": 4.5
   },
   "bandhani-night": {
@@ -105,6 +113,7 @@
     "collection": "Textiles",
     "idea": "Tie-dyed indigo cloth: dye-red and saffron dots on a deep night-blue ground.",
     "cvd": false,
+    "live": false,
     "minRead": 4.5
   },
   "sakura-night": {
@@ -117,6 +126,7 @@
     "collection": "Places and hours",
     "idea": "Blossom pink falling on a plum-dark evening.",
     "cvd": false,
+    "live": false,
     "minRead": 4.5
   },
   "low-glare-night": {
@@ -129,6 +139,7 @@
     "collection": "Made for a need",
     "idea": "Made for late hours: warm browns and muted tones with almost no blue light, so the screen does not glare.",
     "cvd": false,
+    "live": false,
     "minRead": 4.5
   },
   "high-contrast-chalk": {
@@ -140,6 +151,7 @@
     "collection": "Made for a need",
     "idea": "Pure black and white with bright chalk colours: every readable colour is at least 7:1.",
     "cvd": false,
+    "live": false,
     "minRead": 7.0
   },
   "safe-signals": {
@@ -152,6 +164,7 @@
     "collection": "Made for a need",
     "idea": "Built on the Okabe-Ito colour-blind-safe palette: success, error and warning stay apart under red-green colour blindness, and added and removed lines are blue and orange.",
     "cvd": true,
+    "live": false,
     "minRead": 4.5
   },
   "sea-glass-noon": {
@@ -164,6 +177,7 @@
     "collection": "Day and night",
     "idea": "Daylight through a green glass bottle on a windowsill. The daytime half of a pair.",
     "cvd": false,
+    "live": false,
     "minRead": 4.5
   },
   "sea-glass-midnight": {
@@ -176,6 +190,7 @@
     "collection": "Day and night",
     "idea": "The same bottle by moonlight. The night half of the pair, same hues, same roles.",
     "cvd": false,
+    "live": false,
     "minRead": 4.5
   },
   "diwali-diya": {
@@ -188,6 +203,7 @@
     "collection": "Festivals",
     "idea": "A row of clay lamps in a dark maroon room: flame yellow, saffron and ember.",
     "cvd": false,
+    "live": true,
     "minRead": 4.5
   },
   "holi-morning": {
@@ -200,6 +216,7 @@
     "collection": "Festivals",
     "idea": "Powder colours thrown on a white morning: magenta, teal, blue and orange all at once.",
     "cvd": false,
+    "live": false,
     "minRead": 4.5
   },
   "mogra-evening": {
@@ -212,6 +229,7 @@
     "collection": "Places and hours",
     "idea": "Jasmine white and leaf green on a warm evening veranda.",
     "cvd": false,
+    "live": false,
     "minRead": 4.5
   },
   "cricket-pitch": {
@@ -221,9 +239,10 @@
       "Bold",
       "Light"
     ],
-    "collection": "Games",
+    "collection": "Sports",
     "idea": "Mown-grass cream, ball red and whites: a Sunday match.",
     "cvd": false,
+    "live": false,
     "minRead": 4.5
   },
   "old-radio": {
@@ -233,9 +252,10 @@
       "Calm",
       "Dark"
     ],
-    "collection": "Machines and arcades",
+    "collection": "Objects",
     "idea": "A walnut cabinet, a glowing amber dial and cloth-speaker beige.",
     "cvd": false,
+    "live": false,
     "minRead": 4.5
   },
   "mehendi-green": {
@@ -248,6 +268,7 @@
     "collection": "Festivals",
     "idea": "Fresh henna paste green, drying to terracotta.",
     "cvd": false,
+    "live": false,
     "minRead": 4.5
   },
   "gulmohar-summer": {
@@ -260,6 +281,7 @@
     "collection": "Places and hours",
     "idea": "Gulmohar blossom, orange-red over a hot white afternoon.",
     "cvd": false,
+    "live": false,
     "minRead": 4.5
   },
   "aurora-night-train": {
@@ -272,6 +294,7 @@
     "collection": "Places and hours",
     "idea": "A night train through the north: green and violet light over deep blue.",
     "cvd": false,
+    "live": true,
     "minRead": 4.5
   },
   "marble-and-brass": {
@@ -284,6 +307,7 @@
     "collection": "Materials",
     "idea": "Cool grey marble with a brass accent: a quiet, formal light theme.",
     "cvd": false,
+    "live": false,
     "minRead": 4.5
   },
   "ink-and-indigo": {
@@ -296,6 +320,367 @@
     "collection": "Textiles",
     "idea": "Block-printed indigo on unbleached cotton.",
     "cvd": false,
+    "live": false,
+    "minRead": 4.5
+  },
+  "football-floodlights": {
+    "bg": "#0a1c10",
+    "moods": [
+      "Bold",
+      "Dark"
+    ],
+    "collection": "Sports",
+    "idea": "Stadium floodlights over night-green turf: white-yellow light and bright touchlines.",
+    "cvd": false,
+    "live": false,
+    "minRead": 4.5
+  },
+  "tennis-clay-court": {
+    "bg": "#f4dcc8",
+    "moods": [
+      "Warm",
+      "Bold",
+      "Light"
+    ],
+    "collection": "Sports",
+    "idea": "Red clay, white lines and an optic-yellow ball.",
+    "cvd": false,
+    "live": false,
+    "minRead": 4.5
+  },
+  "kabaddi-mat": {
+    "bg": "#fff7d6",
+    "moods": [
+      "Playful",
+      "Bold",
+      "Light"
+    ],
+    "collection": "Sports",
+    "idea": "Yellow match mat, blue boundary and the dust of a fast raid.",
+    "cvd": false,
+    "live": false,
+    "minRead": 4.5
+  },
+  "badminton-hall": {
+    "bg": "#f4f8f4",
+    "moods": [
+      "Cool",
+      "Calm",
+      "Light"
+    ],
+    "collection": "Sports",
+    "idea": "Shuttlecock white, a green court and the quiet of an indoor hall.",
+    "cvd": false,
+    "live": false,
+    "minRead": 4.5
+  },
+  "swimming-lane": {
+    "bg": "#031d3d",
+    "moods": [
+      "Cool",
+      "Bold",
+      "Dark"
+    ],
+    "collection": "Sports",
+    "idea": "Deep pool blue, white lane ropes and the glitter of water.",
+    "cvd": false,
+    "live": false,
+    "minRead": 4.5
+  },
+  "boxing-ring-night": {
+    "bg": "#140707",
+    "moods": [
+      "Bold",
+      "Dark"
+    ],
+    "collection": "Sports",
+    "idea": "A red corner, a blue corner and one hard light over the canvas.",
+    "cvd": false,
+    "live": false,
+    "minRead": 4.5
+  },
+  "skate-park-concrete": {
+    "bg": "#26282b",
+    "moods": [
+      "Playful",
+      "Cool",
+      "Dark"
+    ],
+    "collection": "Sports",
+    "idea": "Grey concrete bowls covered in sticker-bright yellow, cyan and pink.",
+    "cvd": false,
+    "live": false,
+    "minRead": 4.5
+  },
+  "basketball-dusk": {
+    "bg": "#2a160b",
+    "moods": [
+      "Warm",
+      "Bold",
+      "Dark"
+    ],
+    "collection": "Sports",
+    "idea": "A hardwood court at dusk, a ball-orange accent and the squeak of the last game.",
+    "cvd": false,
+    "live": false,
+    "minRead": 4.5
+  },
+  "typewriter": {
+    "bg": "#f2eee3",
+    "moods": [
+      "Calm",
+      "Light"
+    ],
+    "collection": "Objects",
+    "idea": "Cream paper, black ribbon ink and the red half of the ribbon.",
+    "cvd": false,
+    "live": false,
+    "minRead": 4.5
+  },
+  "vinyl-record": {
+    "bg": "#0d0d0f",
+    "moods": [
+      "Warm",
+      "Bold",
+      "Dark"
+    ],
+    "collection": "Objects",
+    "idea": "Black grooves, an orange label and a cream paper sleeve.",
+    "cvd": false,
+    "live": false,
+    "minRead": 4.5
+  },
+  "cassette-tape": {
+    "bg": "#ece3cf",
+    "moods": [
+      "Playful",
+      "Warm",
+      "Light"
+    ],
+    "collection": "Objects",
+    "idea": "Beige plastic shell, a red stripe and a teal label.",
+    "cvd": false,
+    "live": false,
+    "minRead": 4.5
+  },
+  "matchbox": {
+    "bg": "#1a1210",
+    "moods": [
+      "Warm",
+      "Bold",
+      "Dark"
+    ],
+    "collection": "Objects",
+    "idea": "Cardboard brown, a red striking strip and one yellow flame.",
+    "cvd": false,
+    "live": false,
+    "minRead": 4.5
+  },
+  "polaroid-summer": {
+    "bg": "#fdfaf3",
+    "moods": [
+      "Soft",
+      "Playful",
+      "Light"
+    ],
+    "collection": "Objects",
+    "idea": "An instant photo gone slightly warm: faded coral, teal and sun yellow in a white border.",
+    "cvd": false,
+    "live": false,
+    "minRead": 4.5
+  },
+  "nautical-chart": {
+    "bg": "#f3ecd8",
+    "moods": [
+      "Calm",
+      "Cool",
+      "Light"
+    ],
+    "collection": "Objects",
+    "idea": "Parchment chart, navy ink, brass dividers and a red buoy.",
+    "cvd": false,
+    "live": false,
+    "minRead": 4.5
+  },
+  "snow-globe": {
+    "bg": "#0c1a33",
+    "moods": [
+      "Cool",
+      "Soft",
+      "Dark"
+    ],
+    "collection": "Objects",
+    "idea": "Deep blue glass, white snow settling and one small gold light.",
+    "cvd": false,
+    "live": false,
+    "minRead": 4.5
+  },
+  "firefly-night": {
+    "bg": "#08120d",
+    "moods": [
+      "Playful",
+      "Calm",
+      "Dark"
+    ],
+    "collection": "Live",
+    "idea": "Fireflies over a dark field: sparks of yellow-green that pulse.",
+    "cvd": false,
+    "live": true,
+    "minRead": 4.5
+  },
+  "lava-lamp": {
+    "bg": "#1a0b2e",
+    "moods": [
+      "Playful",
+      "Bold",
+      "Dark"
+    ],
+    "collection": "Live",
+    "idea": "Slow blobs of hot pink and orange rising through a violet room.",
+    "cvd": false,
+    "live": true,
+    "minRead": 4.5
+  },
+  "candle-flicker": {
+    "bg": "#1c120a",
+    "moods": [
+      "Warm",
+      "Calm",
+      "Dark"
+    ],
+    "collection": "Live",
+    "idea": "One candle in a brown room: a warm flame that never quite holds still.",
+    "cvd": false,
+    "live": true,
+    "minRead": 4.5
+  },
+  "disco-floor": {
+    "bg": "#12071f",
+    "moods": [
+      "Playful",
+      "Bold",
+      "Dark"
+    ],
+    "collection": "Live",
+    "idea": "Magenta, mint, cyan and yellow tiles flashing under a dark ceiling.",
+    "cvd": false,
+    "live": true,
+    "minRead": 4.5
+  },
+  "phosphor-green": {
+    "bg": "#07130a",
+    "moods": [
+      "Calm",
+      "Cool",
+      "Dark"
+    ],
+    "collection": "Retro screens",
+    "idea": "A 1980s green-screen monitor: phosphor glow on black.",
+    "cvd": false,
+    "live": false,
+    "minRead": 4.5
+  },
+  "amber-1982": {
+    "bg": "#120b02",
+    "moods": [
+      "Warm",
+      "Calm",
+      "Dark"
+    ],
+    "collection": "Retro screens",
+    "idea": "An amber-screen terminal in a dim office, the year the manual was printed.",
+    "cvd": false,
+    "live": false,
+    "minRead": 4.5
+  },
+  "blueprint": {
+    "bg": "#0c2a5c",
+    "moods": [
+      "Cool",
+      "Calm",
+      "Dark"
+    ],
+    "collection": "Materials",
+    "idea": "White ink on blueprint blue.",
+    "cvd": false,
+    "live": false,
+    "minRead": 4.5
+  },
+  "vaporwave-mall": {
+    "bg": "#1b0f3a",
+    "moods": [
+      "Playful",
+      "Bold",
+      "Dark"
+    ],
+    "collection": "Retro screens",
+    "idea": "An empty mall at 3 am: pink, cyan and mint over purple glass.",
+    "cvd": false,
+    "live": false,
+    "minRead": 4.5
+  },
+  "newsprint": {
+    "bg": "#efece4",
+    "moods": [
+      "Calm",
+      "Light"
+    ],
+    "collection": "Materials",
+    "idea": "Grey newsprint, black type and one red headline.",
+    "cvd": false,
+    "live": false,
+    "minRead": 4.5
+  },
+  "desert-noon": {
+    "bg": "#fff3d6",
+    "moods": [
+      "Warm",
+      "Bold",
+      "Light"
+    ],
+    "collection": "Places and hours",
+    "idea": "Bleached sand, hard sun and one long blue shadow.",
+    "cvd": false,
+    "live": false,
+    "minRead": 4.5
+  },
+  "glacier": {
+    "bg": "#eef7fb",
+    "moods": [
+      "Cool",
+      "Calm",
+      "Light"
+    ],
+    "collection": "Places and hours",
+    "idea": "Ice-blue light on fresh white snow.",
+    "cvd": false,
+    "live": false,
+    "minRead": 4.5
+  },
+  "cherry-cola": {
+    "bg": "#1f0a0f",
+    "moods": [
+      "Bold",
+      "Warm",
+      "Dark"
+    ],
+    "collection": "Food and drink",
+    "idea": "Dark cola red, fizz-white and a cherry on top.",
+    "cvd": false,
+    "live": false,
+    "minRead": 4.5
+  },
+  "black-and-gold": {
+    "bg": "#0b0b0b",
+    "moods": [
+      "Bold",
+      "Calm",
+      "Dark"
+    ],
+    "collection": "Materials",
+    "idea": "Matte black and old gold: an auction-house evening.",
+    "cvd": false,
+    "live": false,
     "minRead": 4.5
   },
   "chai-at-midnight": {
@@ -305,9 +690,10 @@
       "Calm",
       "Dark"
     ],
-    "collection": "Places and hours",
+    "collection": "Food and drink",
     "idea": "Warm amber on cocoa, the colour of the last chai.",
     "cvd": false,
+    "live": false,
     "minRead": 4.5
   },
   "monsoon-surat": {
@@ -320,6 +706,7 @@
     "collection": "Places and hours",
     "idea": "Rain-washed teals for long debugging evenings in Surat.",
     "cvd": false,
+    "live": false,
     "minRead": 4.5
   },
   "paper-lantern": {
@@ -332,6 +719,7 @@
     "collection": "Festivals",
     "idea": "Cream paper and a vermilion lantern: a light theme that does not burn your eyes.",
     "cvd": false,
+    "live": false,
     "minRead": 4.5
   },
   "terminal-mango": {
@@ -344,6 +732,7 @@
     "collection": "Machines and arcades",
     "idea": "Hot mango on near-black: loud accent, quiet everything else.",
     "cvd": false,
+    "live": false,
     "minRead": 4.5
   },
   "kite-festival": {
@@ -356,6 +745,7 @@
     "collection": "Festivals",
     "idea": "Magenta, cyan and violet against a bright Uttarayan sky.",
     "cvd": false,
+    "live": false,
     "minRead": 4.5
   }
 }

@@ -1,0 +1,30 @@
+{
+  "name": "Newsprint",
+  "base": "light",
+  "overrides": {
+    "claude": "#c1121f",
+    "claudeShimmer": "#87151d",
+    "text": "#1a1a1a",
+    "inactive": "#6b6a67",
+    "subtle": "#9e9c97",
+    "suggestion": "#234a8a",
+    "permission": "#7a5a00",
+    "success": "#2b6b3a",
+    "error": "#b3141e",
+    "warning": "#7a5a00",
+    "promptBorder": "#da8a8b",
+    "planMode": "#234a8a",
+    "autoAccept": "#5b3a7a",
+    "bashBorder": "#8a3a14",
+    "diffAdded": "#c0cdbb",
+    "diffRemoved": "#dfb4b1",
+    "diffAddedDimmed": "#d6dbce",
+    "diffRemovedDimmed": "#e7cec8",
+    "diffAddedWord": "#8dac8f",
+    "diffRemovedWord": "#d07c7d",
+    "userMessageBackground": "#e4e2da",
+    "selectionBg": "#e1aba9",
+    "rate_limit_fill": "#c1121f",
+    "rate_limit_empty": "#d5d3cc"
+  }
+}

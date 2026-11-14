@@ -1,0 +1,30 @@
+{
+  "name": "Glacier",
+  "base": "light",
+  "overrides": {
+    "claude": "#09779e",
+    "claudeShimmer": "#0b5d7c",
+    "text": "#0f2d3d",
+    "inactive": "#61727b",
+    "subtle": "#99aab3",
+    "suggestion": "#09779e",
+    "permission": "#8c6a12",
+    "success": "#1d7f53",
+    "error": "#c0392b",
+    "warning": "#8c6a12",
+    "promptBorder": "#87c1d6",
+    "planMode": "#2d5fd0",
+    "autoAccept": "#6d4fb8",
+    "bashBorder": "#b45327",
+    "diffAdded": "#bcddd4",
+    "diffRemoved": "#e2c6c5",
+    "diffAddedDimmed": "#d3e9e6",
+    "diffRemovedDimmed": "#e8dcde",
+    "diffAddedWord": "#86c0aa",
+    "diffRemovedWord": "#d6948f",
+    "userMessageBackground": "#e3edf2",
+    "selectionBg": "#aad3e2",
+    "rate_limit_fill": "#09779e",
+    "rate_limit_empty": "#d3dfe4"
+  }
+}

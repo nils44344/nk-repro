@@ -1,0 +1,30 @@
+{
+  "name": "Swimming Lane",
+  "base": "dark",
+  "overrides": {
+    "claude": "#00e5ff",
+    "claudeShimmer": "#50ebff",
+    "text": "#e6f6ff",
+    "inactive": "#8094a8",
+    "subtle": "#596f87",
+    "suggestion": "#00e5ff",
+    "permission": "#ffe08a",
+    "success": "#5eead4",
+    "error": "#ff7a85",
+    "warning": "#ffe08a",
+    "promptBorder": "#026d8b",
+    "planMode": "#60a5fa",
+    "autoAccept": "#c4b5fd",
+    "bashBorder": "#ffa56b",
+    "diffAdded": "#194e61",
+    "diffRemoved": "#453550",
+    "diffAddedDimmed": "#0f3851",
+    "diffRemovedDimmed": "#262a47",
+    "diffAddedWord": "#308488",
+    "diffRemovedWord": "#864d62",
+    "userMessageBackground": "#132c4b",
+    "selectionBg": "#025977",
+    "rate_limit_fill": "#00e5ff",
+    "rate_limit_empty": "#1e3754"
+  }
+}

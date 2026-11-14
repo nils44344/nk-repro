@@ -1,0 +1,30 @@
+{
+  "name": "Desert Noon",
+  "base": "light",
+  "overrides": {
+    "claude": "#a55a05",
+    "claudeShimmer": "#80490a",
+    "text": "#3b2a14",
+    "inactive": "#796c58",
+    "subtle": "#b5a78c",
+    "suggestion": "#a55a05",
+    "permission": "#8a5a00",
+    "success": "#3f7d2a",
+    "error": "#b3261e",
+    "warning": "#8a5a00",
+    "promptBorder": "#eebb78",
+    "planMode": "#1d6fa5",
+    "autoAccept": "#8a4a9a",
+    "bashBorder": "#c2410c",
+    "diffAdded": "#d1d7ad",
+    "diffRemoved": "#ebbea6",
+    "diffAddedDimmed": "#e6e4c0",
+    "diffRemovedDimmed": "#f4d6bc",
+    "diffAddedWord": "#9fb880",
+    "diffRemovedWord": "#d78876",
+    "userMessageBackground": "#f5e9cc",
+    "selectionBg": "#f4ce98",
+    "rate_limit_fill": "#a55a05",
+    "rate_limit_empty": "#e7dbbf"
+  }
+}

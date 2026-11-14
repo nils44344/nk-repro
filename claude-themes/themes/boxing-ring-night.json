@@ -1,0 +1,30 @@
+{
+  "name": "Boxing Ring Night",
+  "base": "dark",
+  "overrides": {
+    "claude": "#ff3b30",
+    "claudeShimmer": "#fc786e",
+    "text": "#f5e9e0",
+    "inactive": "#90837e",
+    "subtle": "#6a5d59",
+    "suggestion": "#ff9f1a",
+    "permission": "#ffcc33",
+    "success": "#5be37d",
+    "error": "#ff5a50",
+    "warning": "#ffcc33",
+    "promptBorder": "#721c17",
+    "planMode": "#4da3ff",
+    "autoAccept": "#ff9ad5",
+    "bashBorder": "#ff3b30",
+    "diffAdded": "#253c23",
+    "diffRemoved": "#511d1a",
+    "diffAddedDimmed": "#1d2416",
+    "diffRemovedDimmed": "#351311",
+    "diffAddedWord": "#387542",
+    "diffRemovedWord": "#8e322d",
+    "userMessageBackground": "#241716",
+    "selectionBg": "#5a1713",
+    "rate_limit_fill": "#ff3b30",
+    "rate_limit_empty": "#2f2221"
+  }
+}

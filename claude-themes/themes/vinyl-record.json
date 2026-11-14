@@ -1,0 +1,30 @@
+{
+  "name": "Vinyl Record",
+  "base": "dark",
+  "overrides": {
+    "claude": "#ff6a3d",
+    "claudeShimmer": "#f89573",
+    "text": "#ece6d8",
+    "inactive": "#88847e",
+    "subtle": "#625f5b",
+    "suggestion": "#f2c14e",
+    "permission": "#f2c14e",
+    "success": "#8fd694",
+    "error": "#ff6b6b",
+    "warning": "#f2c14e",
+    "promptBorder": "#6e3221",
+    "planMode": "#6fb4d8",
+    "autoAccept": "#c7a2e8",
+    "bashBorder": "#ff6a3d",
+    "diffAdded": "#2c3d2f",
+    "diffRemoved": "#4c2527",
+    "diffAddedDimmed": "#1e2720",
+    "diffRemovedDimmed": "#2f1a1c",
+    "diffAddedWord": "#4e7252",
+    "diffRemovedWord": "#8b3e3f",
+    "userMessageBackground": "#1d1c1d",
+    "selectionBg": "#56291d",
+    "rate_limit_fill": "#ff6a3d",
+    "rate_limit_empty": "#282727"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Snow Globe",
+  "base": "dark",
+  "overrides": {
+    "claude": "#9fd3ff",
+    "claudeShimmer": "#b9deff",
+    "text": "#eaf3ff",
+    "inactive": "#8691a3",
+    "subtle": "#606c81",
+    "suggestion": "#9fd3ff",
+    "permission": "#ffe49a",
+    "success": "#8ff0b8",
+    "error": "#ff8aa0",
+    "warning": "#ffe49a",
+    "promptBorder": "#476485",
+    "planMode": "#8ab4ff",
+    "autoAccept": "#d2b8ff",
+    "bashBorder": "#ffb38a",
+    "diffAdded": "#2b4d53",
+    "diffRemoved": "#4b374f",
+    "diffAddedDimmed": "#1d3644",
+    "diffRemovedDimmed": "#2e2a42",
+    "diffAddedWord": "#4e8576",
+    "diffRemovedWord": "#8a546c",
+    "userMessageBackground": "#1c2941",
+    "selectionBg": "#385270",
+    "rate_limit_fill": "#9fd3ff",
+    "rate_limit_empty": "#27344b"
+  }
+}

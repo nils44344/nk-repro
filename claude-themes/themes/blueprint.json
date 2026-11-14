@@ -1,0 +1,30 @@
+{
+  "name": "Blueprint",
+  "base": "dark",
+  "overrides": {
+    "claude": "#8fd0ff",
+    "claudeShimmer": "#aedcff",
+    "text": "#e8f1ff",
+    "inactive": "#8597b6",
+    "subtle": "#60769a",
+    "suggestion": "#b3e0ff",
+    "permission": "#ffe28a",
+    "success": "#7ef0b0",
+    "error": "#ff8a8a",
+    "warning": "#ffe28a",
+    "promptBorder": "#406c9d",
+    "planMode": "#5aa8ff",
+    "autoAccept": "#d2b8ff",
+    "bashBorder": "#ffb38a",
+    "diffAdded": "#275a70",
+    "diffRemoved": "#4b4368",
+    "diffAddedDimmed": "#1b4467",
+    "diffRemovedDimmed": "#2e3762",
+    "diffAddedWord": "#458d86",
+    "diffRemovedWord": "#8a5c74",
+    "userMessageBackground": "#1b3867",
+    "selectionBg": "#335c8d",
+    "rate_limit_fill": "#8fd0ff",
+    "rate_limit_empty": "#264270"
+  }
+}

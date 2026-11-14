@@ -1,0 +1,30 @@
+{
+  "name": "Skate Park Concrete",
+  "base": "dark",
+  "overrides": {
+    "claude": "#ffdd00",
+    "claudeShimmer": "#f7e152",
+    "text": "#e8e9ea",
+    "inactive": "#919294",
+    "subtle": "#707174",
+    "suggestion": "#38bdf8",
+    "permission": "#ffb020",
+    "success": "#4ade80",
+    "error": "#ff5c7a",
+    "warning": "#ffb020",
+    "promptBorder": "#7d701a",
+    "planMode": "#38bdf8",
+    "autoAccept": "#c084fc",
+    "bashBorder": "#fb923c",
+    "diffAdded": "#2f543f",
+    "diffRemoved": "#5e3640",
+    "diffAddedDimmed": "#2b4036",
+    "diffRemovedDimmed": "#442f36",
+    "diffAddedWord": "#388356",
+    "diffRemovedWord": "#974354",
+    "userMessageBackground": "#343638",
+    "selectionBg": "#675e1e",
+    "rate_limit_fill": "#ffdd00",
+    "rate_limit_empty": "#3d3f42"
+  }
+}

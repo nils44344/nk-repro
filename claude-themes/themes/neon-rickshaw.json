@@ -25,6 +25,11 @@
     "userMessageBackground": "#1a1a23",
     "selectionBg": "#54153e",
     "rate_limit_fill": "#ff2fa3",
-    "rate_limit_empty": "#26262e"
+    "rate_limit_empty": "#26262e",
+    "warningShimmer": "#faeba6",
+    "permissionShimmer": "#faeba6",
+    "promptBorderShimmer": "#da2a8d",
+    "inactiveShimmer": "#c0c0ca",
+    "fastModeShimmer": "#92eeff"
   }
 }

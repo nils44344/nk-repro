@@ -1,0 +1,30 @@
+{
+  "name": "Typewriter",
+  "base": "light",
+  "overrides": {
+    "claude": "#a8281f",
+    "claudeShimmer": "#77241e",
+    "text": "#1c1c1c",
+    "inactive": "#6d6b68",
+    "subtle": "#a19e97",
+    "suggestion": "#2a5a7a",
+    "permission": "#8a6400",
+    "success": "#2f6f3f",
+    "error": "#b3261e",
+    "warning": "#8a6400",
+    "promptBorder": "#d1958b",
+    "planMode": "#2a5a7a",
+    "autoAccept": "#5a3a7a",
+    "bashBorder": "#8a3a1a",
+    "diffAdded": "#c3d0bc",
+    "diffRemoved": "#e2bab0",
+    "diffAddedDimmed": "#d9ddce",
+    "diffRemovedDimmed": "#e9d2c7",
+    "diffAddedWord": "#90ae91",
+    "diffRemovedWord": "#d1867d",
+    "userMessageBackground": "#e7e4d9",
+    "selectionBg": "#dcb3a8",
+    "rate_limit_fill": "#a8281f",
+    "rate_limit_empty": "#d8d5cb"
+  }
+}

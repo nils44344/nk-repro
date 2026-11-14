@@ -1,0 +1,30 @@
+{
+  "name": "Basketball Dusk",
+  "base": "dark",
+  "overrides": {
+    "claude": "#ff7a1a",
+    "claudeShimmer": "#fea05b",
+    "text": "#fbe8d3",
+    "inactive": "#9d8a79",
+    "subtle": "#796657",
+    "suggestion": "#ff9a3c",
+    "permission": "#ffd03b",
+    "success": "#7ed957",
+    "error": "#ff5c5c",
+    "warning": "#ffd03b",
+    "promptBorder": "#7f3e11",
+    "planMode": "#4fb3ff",
+    "autoAccept": "#e0a3ff",
+    "bashBorder": "#ff7a1a",
+    "diffAdded": "#3e451d",
+    "diffRemoved": "#612820",
+    "diffAddedDimmed": "#352f15",
+    "diffRemovedDimmed": "#482016",
+    "diffAddedWord": "#547831",
+    "diffRemovedWord": "#993a35",
+    "userMessageBackground": "#392519",
+    "selectionBg": "#6a3410",
+    "rate_limit_fill": "#ff7a1a",
+    "rate_limit_empty": "#432f23"
+  }
+}
