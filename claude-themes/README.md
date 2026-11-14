@@ -27,5 +27,8 @@ measures WCAG contrast of the readable tokens (text, accent, status colours) aga
 (`nominal-backgrounds.json`). A Claude Code theme cannot set the terminal's own background, so these are the backgrounds the
 palettes were designed for. All five pass: no unknown tokens, no invalid colours, every readable token at 4.5:1 or better.
 
-**Not yet checked:** loading the files in a real Claude Code CLI and looking at the result. Until that is done, treat the previews as
+**Also checked:** all 24 tokens the themes use appear as strings inside the installed Claude Code 2.1.319 binary (`grep -a` over the executable), so
+that version knows every token. Documented version note: custom themes need a recent Claude Code; the docs do not state the minimum version.
+
+**Not yet checked:** opening `/theme` in a real terminal and looking at the five themes on screen. Until that is done, the previews are
 mock-ups of how the tokens map, not screenshots.
