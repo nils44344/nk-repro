@@ -1,0 +1,30 @@
+{
+  "name": "Holi Morning",
+  "base": "light",
+  "overrides": {
+    "claude": "#d81b60",
+    "claudeShimmer": "#9a1b50",
+    "text": "#261c33",
+    "inactive": "#78727a",
+    "subtle": "#ada8ad",
+    "suggestion": "#cd4419",
+    "permission": "#bf5600",
+    "success": "#008476",
+    "error": "#c62828",
+    "warning": "#a76400",
+    "promptBorder": "#ed97b3",
+    "planMode": "#1a78ca",
+    "autoAccept": "#8e24aa",
+    "bashBorder": "#d81b60",
+    "diffAdded": "#c2e1d9",
+    "diffRemoved": "#f0c6c1",
+    "diffAddedDimmed": "#deeee7",
+    "diffRemovedDimmed": "#f7dfda",
+    "diffAddedWord": "#80c3b9",
+    "diffRemovedWord": "#e18e8b",
+    "userMessageBackground": "#f4f2ed",
+    "selectionBg": "#f3b9ca",
+    "rate_limit_fill": "#d81b60",
+    "rate_limit_empty": "#e5e2df"
+  }
+}

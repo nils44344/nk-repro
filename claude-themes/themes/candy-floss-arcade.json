@@ -1,0 +1,30 @@
+{
+  "name": "Candy Floss Arcade",
+  "base": "light",
+  "overrides": {
+    "claude": "#d32282",
+    "claudeShimmer": "#98216a",
+    "text": "#2a1f3d",
+    "inactive": "#776d7e",
+    "subtle": "#aea4b3",
+    "suggestion": "#b64d71",
+    "permission": "#c8420e",
+    "success": "#0f834b",
+    "error": "#d72f2f",
+    "warning": "#a26100",
+    "promptBorder": "#f197c8",
+    "planMode": "#1a74c5",
+    "autoAccept": "#9c36b5",
+    "bashBorder": "#d32282",
+    "diffAdded": "#c6e1d5",
+    "diffRemoved": "#f7c2c6",
+    "diffAddedDimmed": "#e0eae6",
+    "diffRemovedDimmed": "#fbdadf",
+    "diffAddedWord": "#88caac",
+    "diffRemovedWord": "#ef8f92",
+    "userMessageBackground": "#f4eaf2",
+    "selectionBg": "#f6b6d9",
+    "rate_limit_fill": "#d32282",
+    "rate_limit_empty": "#e5dbe4"
+  }
+}

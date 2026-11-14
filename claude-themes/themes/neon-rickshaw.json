@@ -1,0 +1,30 @@
+{
+  "name": "Neon Rickshaw",
+  "base": "dark",
+  "overrides": {
+    "claude": "#ff2fa3",
+    "claudeShimmer": "#fc74c3",
+    "text": "#f5f5ff",
+    "inactive": "#8b8b94",
+    "subtle": "#63636c",
+    "suggestion": "#2fe6ff",
+    "permission": "#ffe14d",
+    "success": "#39ff88",
+    "error": "#ff4d4d",
+    "warning": "#ffe14d",
+    "promptBorder": "#6c194c",
+    "planMode": "#2fe6ff",
+    "autoAccept": "#b36bff",
+    "bashBorder": "#ff9a2f",
+    "diffAdded": "#15452e",
+    "diffRemoved": "#4a1b21",
+    "diffAddedDimmed": "#102a21",
+    "diffRemovedDimmed": "#2c131a",
+    "diffAddedWord": "#22844d",
+    "diffRemovedWord": "#892d31",
+    "userMessageBackground": "#1a1a23",
+    "selectionBg": "#54153e",
+    "rate_limit_fill": "#ff2fa3",
+    "rate_limit_empty": "#26262e"
+  }
+}

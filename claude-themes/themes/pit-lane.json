@@ -1,0 +1,30 @@
+{
+  "name": "Pit Lane",
+  "base": "dark",
+  "overrides": {
+    "claude": "#e6332e",
+    "claudeShimmer": "#ea7673",
+    "text": "#f2f2f2",
+    "inactive": "#8b8b8b",
+    "subtle": "#646464",
+    "suggestion": "#ffd60a",
+    "permission": "#ffd60a",
+    "success": "#2fd16a",
+    "error": "#ff4638",
+    "warning": "#ffd60a",
+    "promptBorder": "#620a08",
+    "planMode": "#4aa8ff",
+    "autoAccept": "#f2f2f2",
+    "bashBorder": "#ff4638",
+    "diffAdded": "#153c23",
+    "diffRemoved": "#4c1c18",
+    "diffAddedDimmed": "#112619",
+    "diffRemovedDimmed": "#2f1513",
+    "diffAddedWord": "#1e6f3c",
+    "diffRemovedWord": "#8b2b23",
+    "userMessageBackground": "#1d1d1d",
+    "selectionBg": "#4d0b09",
+    "rate_limit_fill": "#e6332e",
+    "rate_limit_empty": "#282828"
+  }
+}

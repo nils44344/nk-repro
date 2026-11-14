@@ -1,0 +1,265 @@
+{
+  "rasgulla-at-dawn": {
+    "bg": "#fff8ec",
+    "moods": [
+      "Soft",
+      "Warm",
+      "Light"
+    ],
+    "collection": "Places and hours",
+    "idea": "Syrup gold, rose water and cream: a sweet shop opening at first light.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "lavender-field-5pm": {
+    "bg": "#f6f1fb",
+    "moods": [
+      "Soft",
+      "Calm",
+      "Cool",
+      "Light"
+    ],
+    "collection": "Places and hours",
+    "idea": "Pastel lilac with sage and dusk-blue: long shadows over a field, nothing shouting.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "candy-floss-arcade": {
+    "bg": "#fff5fb",
+    "moods": [
+      "Playful",
+      "Bold",
+      "Light"
+    ],
+    "collection": "Machines and arcades",
+    "idea": "Spun sugar pink and bubble-gum blue on a fairground-bright white.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "jewel-box": {
+    "bg": "#0b1f1a",
+    "moods": [
+      "Bold",
+      "Cool",
+      "Dark"
+    ],
+    "collection": "Materials",
+    "idea": "Emerald velvet lining with ruby, sapphire, amber and amethyst set into it.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "rose-quartz-notebook": {
+    "bg": "#fbf3f3",
+    "moods": [
+      "Soft",
+      "Calm",
+      "Light"
+    ],
+    "collection": "Materials",
+    "idea": "A stone-pink paper notebook with a dark-plum pen and one gold-edged page.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "neon-rickshaw": {
+    "bg": "#0a0a12",
+    "moods": [
+      "Bold",
+      "Playful",
+      "Dark"
+    ],
+    "collection": "Machines and arcades",
+    "idea": "A night-market auto rickshaw wired with tube lights, magenta first.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "steel-mill-4am": {
+    "bg": "#12171c",
+    "moods": [
+      "Cool",
+      "Calm",
+      "Dark"
+    ],
+    "collection": "Places and hours",
+    "idea": "Cold rolled steel greys in the dark, and sparks of orange where metal meets metal.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "pit-lane": {
+    "bg": "#0d0d0d",
+    "moods": [
+      "Bold",
+      "Dark"
+    ],
+    "collection": "Machines and arcades",
+    "idea": "Tarmac black, race-flag red and signal yellow: everything reads at a glance at speed.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "bandhani-night": {
+    "bg": "#101640",
+    "moods": [
+      "Warm",
+      "Playful",
+      "Dark"
+    ],
+    "collection": "Textiles",
+    "idea": "Tie-dyed indigo cloth: dye-red and saffron dots on a deep night-blue ground.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "sakura-night": {
+    "bg": "#1b1220",
+    "moods": [
+      "Soft",
+      "Calm",
+      "Dark"
+    ],
+    "collection": "Places and hours",
+    "idea": "Blossom pink falling on a plum-dark evening.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "low-glare-night": {
+    "bg": "#14110e",
+    "moods": [
+      "Calm",
+      "Warm",
+      "Dark"
+    ],
+    "collection": "Made for a need",
+    "idea": "Made for late hours: warm browns and muted tones with almost no blue light, so the screen does not glare.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "high-contrast-chalk": {
+    "bg": "#000000",
+    "moods": [
+      "Bold",
+      "Dark"
+    ],
+    "collection": "Made for a need",
+    "idea": "Pure black and white with bright chalk colours: every readable colour is at least 7:1.",
+    "cvd": false,
+    "minRead": 7.0
+  },
+  "safe-signals": {
+    "bg": "#14181d",
+    "moods": [
+      "Calm",
+      "Cool",
+      "Dark"
+    ],
+    "collection": "Made for a need",
+    "idea": "Built on the Okabe-Ito colour-blind-safe palette: success, error and warning stay apart under red-green colour blindness, and added and removed lines are blue and orange.",
+    "cvd": true,
+    "minRead": 4.5
+  },
+  "sea-glass-noon": {
+    "bg": "#f1faf8",
+    "moods": [
+      "Cool",
+      "Calm",
+      "Light"
+    ],
+    "collection": "Day and night",
+    "idea": "Daylight through a green glass bottle on a windowsill. The daytime half of a pair.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "sea-glass-midnight": {
+    "bg": "#07191d",
+    "moods": [
+      "Cool",
+      "Calm",
+      "Dark"
+    ],
+    "collection": "Day and night",
+    "idea": "The same bottle by moonlight. The night half of the pair, same hues, same roles.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "diwali-diya": {
+    "bg": "#220d0d",
+    "moods": [
+      "Warm",
+      "Bold",
+      "Dark"
+    ],
+    "collection": "Festivals",
+    "idea": "A row of clay lamps in a dark maroon room: flame yellow, saffron and ember.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "holi-morning": {
+    "bg": "#fffdf7",
+    "moods": [
+      "Playful",
+      "Bold",
+      "Light"
+    ],
+    "collection": "Festivals",
+    "idea": "Powder colours thrown on a white morning: magenta, teal, blue and orange all at once.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "chai-at-midnight": {
+    "bg": "#16100c",
+    "moods": [
+      "Warm",
+      "Calm",
+      "Dark"
+    ],
+    "collection": "Places and hours",
+    "idea": "Warm amber on cocoa, the colour of the last chai.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "monsoon-surat": {
+    "bg": "#0d1618",
+    "moods": [
+      "Cool",
+      "Calm",
+      "Dark"
+    ],
+    "collection": "Places and hours",
+    "idea": "Rain-washed teals for long debugging evenings in Surat.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "paper-lantern": {
+    "bg": "#faf5ea",
+    "moods": [
+      "Warm",
+      "Soft",
+      "Light"
+    ],
+    "collection": "Festivals",
+    "idea": "Cream paper and a vermilion lantern: a light theme that does not burn your eyes.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "terminal-mango": {
+    "bg": "#101010",
+    "moods": [
+      "Bold",
+      "Warm",
+      "Dark"
+    ],
+    "collection": "Machines and arcades",
+    "idea": "Hot mango on near-black: loud accent, quiet everything else.",
+    "cvd": false,
+    "minRead": 4.5
+  },
+  "kite-festival": {
+    "bg": "#fbfbff",
+    "moods": [
+      "Playful",
+      "Bold",
+      "Light"
+    ],
+    "collection": "Festivals",
+    "idea": "Magenta, cyan and violet against a bright Uttarayan sky.",
+    "cvd": false,
+    "minRead": 4.5
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Bandhani Night",
+  "base": "dark",
+  "overrides": {
+    "claude": "#ff6b57",
+    "claudeShimmer": "#fb9885",
+    "text": "#f3ecda",
+    "inactive": "#8d8c95",
+    "subtle": "#66677b",
+    "suggestion": "#ffd166",
+    "permission": "#ffd166",
+    "success": "#8fd9a8",
+    "error": "#ff7a7a",
+    "warning": "#ffd166",
+    "promptBorder": "#703849",
+    "planMode": "#7fc4ff",
+    "autoAccept": "#e7a8ff",
+    "bashBorder": "#ff6b57",
+    "diffAdded": "#2e4559",
+    "diffRemoved": "#4e304f",
+    "diffAddedDimmed": "#212f4e",
+    "diffRemovedDimmed": "#312448",
+    "diffAddedWord": "#507874",
+    "diffRemovedWord": "#8c4a5e",
+    "userMessageBackground": "#20254b",
+    "selectionBg": "#583047",
+    "rate_limit_fill": "#ff6b57",
+    "rate_limit_empty": "#2b3052"
+  }
+}

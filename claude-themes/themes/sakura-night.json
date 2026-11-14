@@ -1,0 +1,30 @@
+{
+  "name": "Sakura Night",
+  "base": "dark",
+  "overrides": {
+    "claude": "#ff9fc0",
+    "claudeShimmer": "#fab7d0",
+    "text": "#f1e4ee",
+    "inactive": "#918691",
+    "subtle": "#6c626e",
+    "suggestion": "#ffc0d6",
+    "permission": "#f2d28b",
+    "success": "#9ad9b0",
+    "error": "#ff7f8f",
+    "warning": "#f2d28b",
+    "promptBorder": "#764a60",
+    "planMode": "#8fd0e0",
+    "autoAccept": "#c8a2ff",
+    "bashBorder": "#ff9fc0",
+    "diffAdded": "#394243",
+    "diffRemoved": "#562e3d",
+    "diffAddedDimmed": "#2c2c33",
+    "diffRemovedDimmed": "#3b2130",
+    "diffAddedWord": "#5a7668",
+    "diffRemovedWord": "#924b5a",
+    "userMessageBackground": "#2a212e",
+    "selectionBg": "#5f3c50",
+    "rate_limit_fill": "#ff9fc0",
+    "rate_limit_empty": "#352b39"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Rose Quartz Notebook",
+  "base": "light",
+  "overrides": {
+    "claude": "#b04e68",
+    "claudeShimmer": "#874154",
+    "text": "#3a2a30",
+    "inactive": "#776c70",
+    "subtle": "#b2a7a9",
+    "suggestion": "#a0526b",
+    "permission": "#8f6a1d",
+    "success": "#4a7a5b",
+    "error": "#b3363f",
+    "warning": "#8f6a1d",
+    "promptBorder": "#dbaab5",
+    "planMode": "#3c7881",
+    "autoAccept": "#7b5aa6",
+    "bashBorder": "#b04e68",
+    "diffAdded": "#d1d7cf",
+    "diffRemoved": "#e8c2c4",
+    "diffAddedDimmed": "#e4e4e0",
+    "diffRemovedDimmed": "#f1d9da",
+    "diffAddedWord": "#a4b9a9",
+    "diffRemovedWord": "#d69195",
+    "userMessageBackground": "#f1e9e9",
+    "selectionBg": "#e6c2ca",
+    "rate_limit_fill": "#b04e68",
+    "rate_limit_empty": "#e4dbdc"
+  }
+}

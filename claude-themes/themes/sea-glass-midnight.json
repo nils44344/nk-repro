@@ -1,0 +1,30 @@
+{
+  "name": "Sea Glass, Midnight",
+  "base": "dark",
+  "overrides": {
+    "claude": "#5fd6d0",
+    "claudeShimmer": "#89dfda",
+    "text": "#d6efec",
+    "inactive": "#798f8f",
+    "subtle": "#566a6c",
+    "suggestion": "#5fd6d0",
+    "permission": "#f2cf72",
+    "success": "#7fe0a0",
+    "error": "#ff8070",
+    "warning": "#f2cf72",
+    "promptBorder": "#2a6565",
+    "planMode": "#6bb8f0",
+    "autoAccept": "#b79cf0",
+    "bashBorder": "#ff9a70",
+    "diffAdded": "#24493c",
+    "diffRemoved": "#473433",
+    "diffAddedDimmed": "#17332e",
+    "diffRemovedDimmed": "#2a2729",
+    "diffAddedWord": "#437c5e",
+    "diffRemovedWord": "#884f48",
+    "userMessageBackground": "#15282b",
+    "selectionBg": "#215253",
+    "rate_limit_fill": "#5fd6d0",
+    "rate_limit_empty": "#203336"
+  }
+}

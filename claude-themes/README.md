@@ -1,38 +1,53 @@
-# Claude Code themes (five originals)
+# Claude Code themes (22 originals)
 
-Custom colour themes for the Claude Code terminal CLI, written to the format in the official docs
-(https://code.claude.com/docs/en/terminal-config.md#create-a-custom-theme): one JSON file per theme in `~/.claude/themes/`,
-fields `name`, `base`, `overrides`. Each theme sets 24 tokens (accent, text, status colours, diff colours, message background, selection, usage meter).
+Custom colour themes for the Claude Code terminal CLI, in the format from the official docs
+(https://code.claude.com/docs/en/terminal-config.md#create-a-custom-theme): one JSON file per theme in `~/.claude/themes/`, fields `name`, `base`, `overrides`.
+Each theme sets 24 tokens. Gallery with previews, copy and download buttons: https://nilaykabariya.blog/claude-code-themes
 
-| Theme | Base | Mood |
-|---|---|---|
-| Chai at Midnight | dark | warm amber on cocoa, a late-night terminal |
-| Monsoon, Surat | dark | rain-washed teals |
-| Paper Lantern | light | cream paper, vermilion accent |
-| Terminal Mango | dark | hot mango on near-black |
-| Kite Festival | light | magenta, cyan and violet on white (Uttarayan) |
+Unofficial and not affiliated with Anthropic.
 
 ## Install
+
+The folder may not exist yet, and a first-time install needs one restart of Claude Code.
 
 ```bash
 mkdir -p ~/.claude/themes && cp themes/*.json ~/.claude/themes/
 ```
 
-Then run `/theme` inside Claude Code and pick one. If `~/.claude/themes/` did not exist before, restart Claude Code once.
+Then run `/theme` inside Claude Code and pick one. New files in the folder show up without another restart.
 
-## What was checked
+## The themes
 
-`python validate.py` (this folder) checks every theme against the documented token list, accepts only `#rrggbb` colours and
-measures WCAG contrast of the readable tokens (text, accent, status colours) against a nominal terminal background
-(`nominal-backgrounds.json`). A Claude Code theme cannot set the terminal's own background, so these are the backgrounds the
-palettes were designed for. All five pass: no unknown tokens, no invalid colours, every readable token at 4.5:1 or better.
+| Theme | Base | Collection | Mood | Text / lowest readable contrast | Idea |
+|---|---|---|---|---|---|
+| Bandhani Night | dark | Textiles | Warm, Playful, Dark | 14.7:1 / 6.2:1 | Tie-dyed indigo cloth: dye-red and saffron dots on a deep night-blue ground. |
+| Candy Floss Arcade | light | Machines and arcades | Playful, Bold, Light | 14.5:1 / 4.5:1 | Spun sugar pink and bubble-gum blue on a fairground-bright white. |
+| Chai at Midnight | dark | Places and hours | Warm, Calm, Dark | 15.3:1 / 6.2:1 | Warm amber on cocoa, the colour of the last chai. |
+| Diwali Diya | dark | Festivals | Warm, Bold, Dark | 15.9:1 / 6.5:1 | A row of clay lamps in a dark maroon room: flame yellow, saffron and ember. |
+| High-Contrast Chalk | dark | Made for a need | Bold, Dark | 21.0:1 / 7.1:1 | Pure black and white with bright chalk colours: every readable colour is at least 7:1. |
+| Holi Morning | light | Festivals | Playful, Bold, Light | 15.9:1 / 4.5:1 | Powder colours thrown on a white morning: magenta, teal, blue and orange all at once. |
+| Jewel Box | dark | Materials | Bold, Cool, Dark | 15.1:1 / 5.3:1 | Emerald velvet lining with ruby, sapphire, amber and amethyst set into it. |
+| Kite Festival | light | Festivals | Playful, Bold, Light | 16.3:1 / 4.7:1 | Magenta, cyan and violet against a bright Uttarayan sky. |
+| Lavender Field, 5 pm | light | Places and hours | Soft, Calm, Cool, Light | 12.9:1 / 4.5:1 | Pastel lilac with sage and dusk-blue: long shadows over a field, nothing shouting. |
+| Low-Glare Night | dark | Made for a need | Calm, Warm, Dark | 10.4:1 / 5.8:1 | Made for late hours: warm browns and muted tones with almost no blue light, so the screen does not glare. |
+| Monsoon, Surat | dark | Places and hours | Cool, Calm, Dark | 15.0:1 / 6.6:1 | Rain-washed teals for long debugging evenings in Surat. |
+| Neon Rickshaw | dark | Machines and arcades | Bold, Playful, Dark | 18.2:1 / 5.8:1 | A night-market auto rickshaw wired with tube lights, magenta first. |
+| Paper Lantern | light | Festivals | Warm, Soft, Light | 14.5:1 / 4.5:1 | Cream paper and a vermilion lantern: a light theme that does not burn your eyes. |
+| Pit Lane | dark | Machines and arcades | Bold, Dark | 17.4:1 / 4.5:1 | Tarmac black, race-flag red and signal yellow: everything reads at a glance at speed. |
+| Rasgulla at Dawn | light | Places and hours | Soft, Warm, Light | 12.8:1 / 4.5:1 | Syrup gold, rose water and cream: a sweet shop opening at first light. |
+| Rose Quartz Notebook | light | Materials | Soft, Calm, Light | 12.4:1 / 4.5:1 | A stone-pink paper notebook with a dark-plum pen and one gold-edged page. |
+| Safe Signals | dark | Made for a need | Calm, Cool, Dark | 15.5:1 / 5.8:1 | Built on the Okabe-Ito colour-blind-safe palette: success, error and warning stay apart under red-green colour blindness, and added and removed lines are blue and orange. |
+| Sakura Night | dark | Places and hours | Soft, Calm, Dark | 14.8:1 / 7.5:1 | Blossom pink falling on a plum-dark evening. |
+| Sea Glass, Midnight | dark | Day and night | Cool, Calm, Dark | 14.9:1 / 7.4:1 | The same bottle by moonlight. The night half of the pair, same hues, same roles. |
+| Sea Glass, Noon | light | Day and night | Cool, Calm, Light | 12.3:1 / 4.6:1 | Daylight through a green glass bottle on a windowsill. The daytime half of a pair. |
+| Steel Mill, 4 am | dark | Places and hours | Cool, Calm, Dark | 13.5:1 / 6.5:1 | Cold rolled steel greys in the dark, and sparks of orange where metal meets metal. |
+| Terminal Mango | dark | Machines and arcades | Bold, Warm, Dark | 17.0:1 / 6.3:1 | Hot mango on near-black: loud accent, quiet everything else. |
 
-**Also checked:** all 24 tokens the themes use appear as strings inside the installed Claude Code 2.1.319 binary (`grep -a` over the executable), so
-that version knows every token. Documented version note: custom themes need a recent Claude Code; the docs do not state the minimum version.
+## How they are made and checked
 
-**Loaded in the real CLI:** on 14 Nov 2026 I started Claude Code 2.1.325 with a throwaway config folder (`CLAUDE_CONFIG_DIR`) holding these five files
-and `"theme": "custom:chai-at-midnight"`. The `/theme` picker listed all five (Chai at Midnight, Kite Festival, Monsoon, Surat, Paper Lantern,
-Terminal Mango) under the built-ins, marked `custom`, with Chai at Midnight selected, and showed its diff preview.
+- `build_themes.py` derives the 17 newer themes from a compact palette spec (background, text, accent and six status/mode colours), fitting every readable colour to its contrast target. The first five are hand-written JSON.
+- `validate.py` checks every theme and writes `checks.json`: only documented tokens and `#rrggbb` colours; WCAG contrast of every readable token against the design background (a theme cannot set the terminal's own background); text readable on the added/removed diff lines; success, error and warning clearly different (CIE76 delta-E); added vs removed backgrounds different; and the same colour distance after simulating deuteranopia and protanopia. Only `safe-signals` is built and claimed to pass the colour-blind check; for the others it is reported, not claimed.
+- Listed in the real `/theme` picker: all 22 on Claude Code 2.1.325 (throwaway config folder via `CLAUDE_CONFIG_DIR`; counted: 7 built-ins + 22 custom + "New custom theme…"), and the first five on 2.1.319 on the owner's own terminal.
+- Not checked: screenshots of each palette in a live session. The gallery previews are drawn from the theme colours.
 
-**Not yet checked:** how each palette looks on screen (the check was read as text, not as a screenshot). Until a screenshot exists, the clip is a
-mock-up of how the tokens map, not a recording of the CLI.
+Themes are grouped by mood and colour family only.

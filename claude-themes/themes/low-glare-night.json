@@ -1,0 +1,30 @@
+{
+  "name": "Low-Glare Night",
+  "base": "dark",
+  "overrides": {
+    "claude": "#c9964f",
+    "claudeShimmer": "#caa470",
+    "text": "#cdbfae",
+    "inactive": "#857c72",
+    "subtle": "#5a534b",
+    "suggestion": "#b79a6a",
+    "permission": "#c9a54f",
+    "success": "#8da878",
+    "error": "#c97a6a",
+    "warning": "#c9a54f",
+    "promptBorder": "#5c4628",
+    "planMode": "#8a9f9a",
+    "autoAccept": "#a58fb0",
+    "bashBorder": "#c9843f",
+    "diffAdded": "#313527",
+    "diffRemoved": "#432c26",
+    "diffAddedDimmed": "#24251c",
+    "diffRemovedDimmed": "#2d201b",
+    "diffAddedWord": "#505c43",
+    "diffRemovedWord": "#72483e",
+    "userMessageBackground": "#211d19",
+    "selectionBg": "#4a3922",
+    "rate_limit_fill": "#c9964f",
+    "rate_limit_empty": "#2a2621"
+  }
+}

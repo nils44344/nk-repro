@@ -1,0 +1,30 @@
+{
+  "name": "High-Contrast Chalk",
+  "base": "dark",
+  "overrides": {
+    "claude": "#ffff00",
+    "claudeShimmer": "#ffff59",
+    "text": "#ffffff",
+    "inactive": "#8c8c8c",
+    "subtle": "#616161",
+    "suggestion": "#00e5ff",
+    "permission": "#ffcc00",
+    "success": "#00ff7f",
+    "error": "#ff5f5f",
+    "warning": "#ffcc00",
+    "promptBorder": "#666600",
+    "planMode": "#00e5ff",
+    "autoAccept": "#ff80ff",
+    "bashBorder": "#ff9900",
+    "diffAdded": "#003d1e",
+    "diffRemoved": "#421616",
+    "diffAddedDimmed": "#002111",
+    "diffRemovedDimmed": "#240c0c",
+    "diffAddedWord": "#008040",
+    "diffRemovedWord": "#852c2c",
+    "userMessageBackground": "#121212",
+    "selectionBg": "#4c4c00",
+    "rate_limit_fill": "#ffff00",
+    "rate_limit_empty": "#1f1f1f"
+  }
+}

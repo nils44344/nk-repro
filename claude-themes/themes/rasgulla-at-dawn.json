@@ -1,0 +1,30 @@
+{
+  "name": "Rasgulla at Dawn",
+  "base": "light",
+  "overrides": {
+    "claude": "#be4678",
+    "claudeShimmer": "#903c5d",
+    "text": "#3b2a2a",
+    "inactive": "#796f6a",
+    "subtle": "#b5aaa2",
+    "suggestion": "#a95d19",
+    "permission": "#9a661a",
+    "success": "#497f45",
+    "error": "#c0392b",
+    "warning": "#9a661a",
+    "promptBorder": "#e4a8b9",
+    "planMode": "#297c83",
+    "autoAccept": "#8a5ac2",
+    "bashBorder": "#be4678",
+    "diffAdded": "#d5dec5",
+    "diffRemoved": "#efc6ba",
+    "diffAddedDimmed": "#e8ead7",
+    "diffRemovedDimmed": "#f6ddd1",
+    "diffAddedWord": "#a7c19c",
+    "diffRemovedWord": "#de9588",
+    "userMessageBackground": "#f5eee2",
+    "selectionBg": "#edc3ca",
+    "rate_limit_fill": "#be4678",
+    "rate_limit_empty": "#e7dfd5"
+  }
+}

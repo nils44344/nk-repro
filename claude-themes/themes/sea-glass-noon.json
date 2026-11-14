@@ -1,0 +1,30 @@
+{
+  "name": "Sea Glass, Noon",
+  "base": "light",
+  "overrides": {
+    "claude": "#0e7d7f",
+    "claudeShimmer": "#116467",
+    "text": "#17353a",
+    "inactive": "#637476",
+    "subtle": "#9eafb0",
+    "suggestion": "#0e7d7f",
+    "permission": "#976817",
+    "success": "#2a8050",
+    "error": "#c0392b",
+    "warning": "#976817",
+    "promptBorder": "#8bc8c8",
+    "planMode": "#1d6fa5",
+    "autoAccept": "#7a56b8",
+    "bashBorder": "#b45528",
+    "diffAdded": "#c2dfd1",
+    "diffRemoved": "#e4c8c3",
+    "diffAddedDimmed": "#d8ece3",
+    "diffRemovedDimmed": "#eadfdb",
+    "diffAddedWord": "#90c2a8",
+    "diffRemovedWord": "#d8968d",
+    "userMessageBackground": "#e6f0ee",
+    "selectionBg": "#add9d8",
+    "rate_limit_fill": "#0e7d7f",
+    "rate_limit_empty": "#d7e2e1"
+  }
+}
