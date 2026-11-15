@@ -1,5 +1,7 @@
 # Claude Code themes (81 themes)
 
+> **These themes now have their own repo: https://github.com/nils44344/claude-code-themes** (new installs and updates go there; this folder stays for the existing install line).
+
 Custom colour themes for the Claude Code terminal CLI, in the format from the official docs
 (https://code.claude.com/docs/en/terminal-config.md#create-a-custom-theme): one JSON file per theme in `~/.claude/themes/`, fields `name`, `base`, `overrides`.
 Each theme sets 24 tokens. **Browse all themes with previews, copy and download buttons: https://nilaykabariya.blog/claude-code-themes**
