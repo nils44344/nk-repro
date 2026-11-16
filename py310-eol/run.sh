@@ -1,5 +1,5 @@
 #!/bin/bash
-# Python 3.10 reached end of life on 31 Oct 2026. Which popular packages no longer ship a version for it,
+# Python 3.10 reached end of life on 1 Oct 2026. Which popular packages no longer ship a version for it,
 # and what does pip do: refuse, or quietly install an old release? (9 Nov 2026)
 set +e
 W=${W:-$(pwd)/work}; rm -rf "$W"; mkdir -p "$W"; cd "$W" || exit 1
