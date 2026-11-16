@@ -2,7 +2,7 @@
   "npm:typescript@latest": "7.0.2",
   "npm:prisma@latest": "8.0.0-rc.33",
   "npm:vite@latest": "8.3.8",
-  "npm:vite@beta": "8.3.0-beta.1",
+  "npm:vite@beta": "8.4.0-beta.1",
   "npm:bun@latest": "1.4.4",
   "npm:openai@latest": "7.57.0",
   "npm:npm@latest": "12.2.2",
