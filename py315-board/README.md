@@ -2,7 +2,7 @@
 
 Plain `pip install <package>` in a fresh venv, then `import`, for 504 PyPI packages on clean GitHub runners. Anything that is not a clean wheel install is repeated on Python 3.14 to show whether the problem is specific to 3.15. Re-run daily by [the workflow](../.github/workflows/py315-board.yml).
 
-Last run: 2026-11-15, [run log](https://github.com/nils44344/nk-repro/actions/runs/43656501782). Interpreters: macOS 3.15.2 (control 3.14.10); Linux 3.15.2 (control 3.14.10); Windows 3.15.2 (control 3.14.10).
+Last run: 2026-11-16, [run log](https://github.com/nils44344/nk-repro/actions/runs/43778987082). Interpreters: macOS 3.15.2 (control 3.14.10); Linux 3.15.2 (control 3.14.10); Windows 3.15.2 (control 3.14.10).
 
 | | Windows | Linux | macOS |
 |---|---:|---:|---:|
@@ -64,7 +64,7 @@ Not a 3.15 problem: the package does not support that operating system, needs a 
 | Rank | Package | Windows | Linux | macOS |
 |---:|---|---|---|---|
 | 105 | `soupsieve` | import needs the module bs4, which this package does not install | import needs the module bs4, which this package does not install | import needs the module bs4, which this package does not install |
-| 120 | `uvloop` | Rust build failed (uvloop) | ready (0.23.0) | ready (0.23.0) |
+| 120 | `uvloop` | build from source failed (uvloop) | ready (0.23.0) | ready (0.23.0) |
 | 168 | `httpx-sse` | import needs the module httpx, which this package does not install | import needs the module httpx, which this package does not install | import needs the module httpx, which this package does not install |
 | 170 | `psycopg` | ready (3.3.9) | ready (3.3.9) | import failed |
 | 181 | `psycopg-binary` | import failed | import failed | import failed |
