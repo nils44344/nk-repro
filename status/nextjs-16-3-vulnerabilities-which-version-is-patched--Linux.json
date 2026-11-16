@@ -10,12 +10,12 @@
     {
       "name": "16.3.7 is flagged by npm audit",
       "ok": true,
-      "evidence": "16.3.7: 10 advisories"
+      "evidence": "16.3.7: 11 advisories"
     },
     {
       "name": "16.3.8 is flagged by npm audit (Oct 14 advisories, no 16.3 backport)",
       "ok": true,
-      "evidence": "16.3.8: 3 advisories"
+      "evidence": "16.3.8: 4 advisories"
     },
     {
       "name": "`npm i next@16.3` still resolves to 16.3.8 (no newer 16.3 patch)",

@@ -3,14 +3,14 @@
   "os": "Linux",
   "date": "2026-11-16",
   "versions": {
-    "prisma (latest tag)": "8.0.0-rc.33",
+    "prisma (latest tag)": "8.0.0-rc.34",
     "@prisma/client (latest tag)": "7.10.1"
   },
   "checks": [
     {
       "name": "npm \"latest\" for prisma is still a Prisma 8 release candidate",
       "ok": true,
-      "evidence": "8.0.0-rc.33"
+      "evidence": "8.0.0-rc.34"
     },
     {
       "name": "npm \"latest\" for @prisma/client is still 7.x",
@@ -19,8 +19,8 @@
     },
     {
       "name": "Unpinned `npx -y prisma generate` fails: No command registered for `generate`",
-      "ok": true,
-      "evidence": "✘ [CLI.UNKNOWN_COMMAND] No command registered for `generate` → List every command: prisma --help"
+      "ok": false,
+      "evidence": "✘ [CLI.V7_COMMAND] `prisma generate` is a Prisma 7 command and is not available in Prisma 8 why: Prisma 8 has no client generation step. `contract emit` reads your schema and writes contract.json and contract.d.ts, the contract files the ORM reads to know your data model and its types. To keep using"
     },
     {
       "name": "Fix: `npx -y prisma@7 generate` generates the client",
@@ -28,5 +28,5 @@
       "evidence": "✔ Generated Prisma Client (7.10.1) to ./src/generated/prisma in 21ms Prisma schema loaded from prisma/schema.prisma."
     }
   ],
-  "allHold": true
+  "allHold": false
 }
