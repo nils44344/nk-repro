@@ -30,7 +30,7 @@ const dir = () => {
 const checks = [
   check('npm "latest" for prisma is still a Prisma 8 release candidate', () => latest, (v) => /^8\.\d+\.\d+-rc/.test(v)),
   check('npm "latest" for @prisma/client is still 7.x', () => client, (v) => /^7\./.test(v)),
-  check('Unpinned `npx -y prisma generate` fails: No command registered for `generate`', () => sh('npx -y prisma generate', dir()), (o) => /No command registered for `generate`/.test(o)),
+  check('Unpinned `npx -y prisma generate` fails: No command registered for `generate` (rc.34+: is a Prisma 7 command)', () => sh('npx -y prisma generate', dir()), (o) => /No command registered for `generate`|`prisma generate` is a Prisma 7 command/.test(o)),
   check('Fix: `npx -y prisma@7 generate` generates the client', () => sh('npx -y prisma@7 generate', dir()), (o) => /Generated Prisma Client \(7\./.test(o)),
 ];
 
