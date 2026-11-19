@@ -2,6 +2,15 @@
 
 One line each time a package changes state on an operating system.
 
+## 2026-11-19
+
+- 2026-11-19 Windows: **deepdiff** fails -> ready (9.2.1)
+- 2026-11-19 Linux: **deepdiff** fails -> ready (9.2.1)
+- 2026-11-19 macOS: **deepdiff** fails -> ready (9.2.1)
+- 2026-11-19 Windows: **confluent-kafka** fails -> ready (2.16.2)
+- 2026-11-19 Linux: **confluent-kafka** fails -> ready (2.16.2)
+- 2026-11-19 macOS: **confluent-kafka** fails -> ready (2.16.2)
+
 ## 2026-11-13
 
 - 2026-11-13 Windows: **ddtrace** fails -> builds (4.17.0)

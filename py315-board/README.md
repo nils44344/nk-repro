@@ -2,13 +2,13 @@
 
 Plain `pip install <package>` in a fresh venv, then `import`, for 504 PyPI packages on clean GitHub runners. Anything that is not a clean wheel install is repeated on Python 3.14 to show whether the problem is specific to 3.15. Re-run daily by [the workflow](../.github/workflows/py315-board.yml).
 
-Last run: 2026-11-18, [run log](https://github.com/nils44344/nk-repro/actions/runs/44223962345). Interpreters: macOS 3.15.2 (control 3.14.10); Linux 3.15.2 (control 3.14.10); Windows 3.15.2 (control 3.14.10).
+Last run: 2026-11-19, [run log](https://github.com/nils44344/nk-repro/actions/runs/44440722545). Interpreters: macOS 3.15.2 (control 3.14.10); Linux 3.15.2 (control 3.14.10); Windows 3.15.2 (control 3.14.10).
 
 | | Windows | Linux | macOS |
 |---|---:|---:|---:|
-| Ready: a wheel installs and the package imports | 458 | 460 | 458 |
+| Ready: a wheel installs and the package imports | 460 | 462 | 460 |
 | Works only by compiling from source on the runner | 26 | 26 | 25 |
-| Fails on 3.15, works on 3.14 | 5 | 5 | 5 |
+| Fails on 3.15, works on 3.14 | 3 | 3 | 3 |
 | Same failure on 3.14 (not a 3.15 problem) | 15 | 13 | 16 |
 
 ## Fails on 3.15 only
@@ -19,8 +19,6 @@ The same command works on Python 3.14 on at least one operating system where it 
 |---:|---|---|---|---|
 | 285 | `onnxruntime` | **fails**: no matching version | **fails**: no matching version | **fails**: no matching version |
 | 334 | `fastuuid` | **fails**: Rust extension: its PyO3 does not support this Python yet (fastuuid) | **fails**: Rust extension: its PyO3 does not support this Python yet (fastuuid) | **fails**: Rust extension: its PyO3 does not support this Python yet (fastuuid) |
-| 410 | `deepdiff` | **fails**: Rust extension: its PyO3 does not support this Python yet (cachebox) | **fails**: Rust extension: its PyO3 does not support this Python yet (cachebox) | **fails**: Rust extension: its PyO3 does not support this Python yet (cachebox) |
-| 494 | `confluent-kafka` | **fails**: build from source failed (confluent-kafka) | **fails**: build from source failed (confluent-kafka) | **fails**: build from source failed (confluent-kafka) |
 |  | `tensorflow` | **fails**: no matching version | **fails**: no matching version | **fails**: no matching version |
 
 ## Installs on 3.15 only by compiling
