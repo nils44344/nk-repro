@@ -2,7 +2,7 @@
 
 Plain `pip install <package>` in a fresh venv, then `import`, for 504 PyPI packages on clean GitHub runners. Anything that is not a clean wheel install is repeated on Python 3.14 to show whether the problem is specific to 3.15. Re-run daily by [the workflow](../.github/workflows/py315-board.yml).
 
-Last run: 2026-11-19, [run log](https://github.com/nils44344/nk-repro/actions/runs/44440722545). Interpreters: macOS 3.15.2 (control 3.14.10); Linux 3.15.2 (control 3.14.10); Windows 3.15.2 (control 3.14.10).
+Last run: 2026-11-20, [run log](https://github.com/nils44344/nk-repro/actions/runs/44656594893). Interpreters: macOS 3.15.2 (control 3.14.10); Linux 3.15.2 (control 3.14.10); Windows 3.15.2 (control 3.14.10).
 
 | | Windows | Linux | macOS |
 |---|---:|---:|---:|
@@ -52,7 +52,7 @@ pip found no 3.15 wheel for the listed packages and built them from source. The 
 | 467 | `fastapi-cli` | compiles from source: pyyaml | compiles from source: pyyaml | compiles from source: pyyaml |
 | 480 | `tree-sitter` | compiles from source: tree-sitter | compiles from source: tree-sitter | compiles from source: tree-sitter |
 | 482 | `moto` | compiles from source: pyyaml | compiles from source: pyyaml | compiles from source: pyyaml |
-| 486 | `ddtrace` | compiles from source: ddtrace | ready (4.17.1) | ready (4.17.1) |
+| 486 | `ddtrace` | compiles from source: ddtrace | ready (4.17.2) | ready (4.17.2) |
 |  | `jupyterlab` | compiles from source: pyyaml | compiles from source: pyyaml | compiles from source: pyyaml |
 
 ## Same result on 3.14
