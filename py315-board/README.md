@@ -2,12 +2,12 @@
 
 Plain `pip install <package>` in a fresh venv, then `import`, for 504 PyPI packages on clean GitHub runners. Anything that is not a clean wheel install is repeated on Python 3.14 to show whether the problem is specific to 3.15. Re-run daily by [the workflow](../.github/workflows/py315-board.yml).
 
-Last run: 2026-11-20, [run log](https://github.com/nils44344/nk-repro/actions/runs/44656594893). Interpreters: macOS 3.15.2 (control 3.14.10); Linux 3.15.2 (control 3.14.10); Windows 3.15.2 (control 3.14.10).
+Last run: 2026-11-21, [run log](https://github.com/nils44344/nk-repro/actions/runs/44851522507). Interpreters: macOS 3.15.2 (control 3.14.10); Linux 3.15.2 (control 3.14.10); Windows 3.15.2 (control 3.14.10).
 
 | | Windows | Linux | macOS |
 |---|---:|---:|---:|
-| Ready: a wheel installs and the package imports | 460 | 462 | 460 |
-| Works only by compiling from source on the runner | 26 | 26 | 25 |
+| Ready: a wheel installs and the package imports | 475 | 477 | 475 |
+| Works only by compiling from source on the runner | 11 | 11 | 10 |
 | Fails on 3.15, works on 3.14 | 3 | 3 | 3 |
 | Same failure on 3.14 (not a 3.15 problem) | 15 | 13 | 16 |
 
@@ -27,33 +27,18 @@ pip found no 3.15 wheel for the listed packages and built them from source. The 
 
 | Rank | Package | Windows | Linux | macOS |
 |---:|---|---|---|---|
-| 12 | `pyyaml` | compiles from source: pyyaml | compiles from source: pyyaml | compiles from source: pyyaml |
-| 121 | `huggingface-hub` | compiles from source: pyyaml | compiles from source: pyyaml | compiles from source: pyyaml |
-| 156 | `tokenizers` | compiles from source: pyyaml | compiles from source: pyyaml | compiles from source: pyyaml |
 | 173 | `zstandard` | compiles from source: zstandard | compiles from source: zstandard | compiles from source: zstandard |
-| 198 | `langchain` | compiles from source: pyyaml, zstandard | compiles from source: pyyaml, zstandard | compiles from source: pyyaml, zstandard |
-| 207 | `langchain-core` | compiles from source: pyyaml, zstandard | compiles from source: pyyaml, zstandard | compiles from source: pyyaml, zstandard |
-| 211 | `pre-commit` | compiles from source: pyyaml | compiles from source: pyyaml | compiles from source: pyyaml |
-| 269 | `transformers` | compiles from source: pyyaml | compiles from source: pyyaml | compiles from source: pyyaml |
-| 295 | `litellm` | compiles from source: pyyaml | compiles from source: pyyaml | compiles from source: pyyaml |
+| 198 | `langchain` | compiles from source: zstandard | compiles from source: zstandard | compiles from source: zstandard |
+| 207 | `langchain-core` | compiles from source: zstandard | compiles from source: zstandard | compiles from source: zstandard |
 | 308 | `langsmith` | compiles from source: zstandard | compiles from source: zstandard | compiles from source: zstandard |
-| 310 | `awscli` | compiles from source: pyyaml | compiles from source: pyyaml | compiles from source: pyyaml |
 | 319 | `lz4` | compiles from source: lz4 | compiles from source: lz4 | compiles from source: lz4 |
-| 322 | `kubernetes` | compiles from source: pyyaml | compiles from source: pyyaml | compiles from source: pyyaml |
-| 349 | `jsonschema-path` | compiles from source: pyyaml | compiles from source: pyyaml | compiles from source: pyyaml |
-| 373 | `datasets` | compiles from source: pyyaml | compiles from source: pyyaml | compiles from source: pyyaml |
 | 390 | `psycopg2` | ready (2.9.13) | compiles from source: psycopg2 | build from source failed (psycopg2) |
-| 391 | `responses` | compiles from source: pyyaml | compiles from source: pyyaml | compiles from source: pyyaml |
-| 408 | `fastmcp` | compiles from source: pyyaml | compiles from source: pyyaml | compiles from source: pyyaml |
-| 426 | `langgraph` | compiles from source: pyyaml, zstandard | compiles from source: pyyaml, zstandard | compiles from source: pyyaml, zstandard |
-| 436 | `langgraph-sdk` | compiles from source: pyyaml, zstandard | compiles from source: pyyaml, zstandard | compiles from source: pyyaml, zstandard |
-| 441 | `langgraph-checkpoint` | compiles from source: pyyaml, zstandard | compiles from source: pyyaml, zstandard | compiles from source: pyyaml, zstandard |
+| 426 | `langgraph` | compiles from source: zstandard | compiles from source: zstandard | compiles from source: zstandard |
+| 436 | `langgraph-sdk` | compiles from source: zstandard | compiles from source: zstandard | compiles from source: zstandard |
+| 441 | `langgraph-checkpoint` | compiles from source: zstandard | compiles from source: zstandard | compiles from source: zstandard |
 | 453 | `pyspark` | compiles from source: pyspark | compiles from source: pyspark | compiles from source: pyspark |
-| 467 | `fastapi-cli` | compiles from source: pyyaml | compiles from source: pyyaml | compiles from source: pyyaml |
 | 480 | `tree-sitter` | compiles from source: tree-sitter | compiles from source: tree-sitter | compiles from source: tree-sitter |
-| 482 | `moto` | compiles from source: pyyaml | compiles from source: pyyaml | compiles from source: pyyaml |
 | 486 | `ddtrace` | compiles from source: ddtrace | ready (4.17.2) | ready (4.17.2) |
-|  | `jupyterlab` | compiles from source: pyyaml | compiles from source: pyyaml | compiles from source: pyyaml |
 
 ## Same result on 3.14
 
