@@ -1,0 +1,62 @@
+better-auth 1.7.27 | node v24.14.0 | win32 | 2026-11-22T16:37:34.772Z
+## origin-same
+  ->   HTTP 200 {"token":"neFbBi3JwOA2mSSCW7jRKKinijNLHWSF","user":{"name":"Test","email":"u1795365456549@example.com","emailVerified":false,"createdAt":"2026-11-22T16:37:36.766Z","updatedAt":"2026-11-22T16:37:36.766
+## origin-other-port
+  log  error: Invalid origin: http://localhost:5173
+  ->   HTTP 403 {"message":"Invalid origin","code":"INVALID_ORIGIN"}
+## origin-other-port-trusted
+  ->   HTTP 200 {"token":"CJ56Ske1paZZzAYGd9EkPLYWUpuIiIiL","user":{"name":"Test","email":"u1795365460073@example.com","emailVerified":false,"createdAt":"2026-11-22T16:37:40.194Z","updatedAt":"2026-11-22T16:37:40.194
+## origin-trailing-slash
+  log  error: Invalid origin: http://localhost:5173
+  ->   HTTP 403 {"message":"Invalid origin","code":"INVALID_ORIGIN"}
+## origin-127-vs-localhost
+  log  error: Invalid origin: http://127.0.0.1:3000
+  ->   HTTP 403 {"message":"Invalid origin","code":"INVALID_ORIGIN"}
+## origin-https-prod
+  log  error: Invalid origin: https://app.example.com
+  ->   HTTP 403 {"message":"Invalid origin","code":"INVALID_ORIGIN"}
+## origin-https-prod-trusted
+  ->   HTTP 200 {"token":"SyS27xA53Qr6Nkx4hLtcK7bGLH0SwZR6","user":{"name":"Test","email":"u1795365466366@example.com","emailVerified":false,"createdAt":"2026-11-22T16:37:46.497Z","updatedAt":"2026-11-22T16:37:46.497
+## origin-wildcard
+  ->   HTTP 200 {"token":"RY8RGevT3daw3zbPSHe1aswiVzp6JLPt","user":{"name":"Test","email":"u1795365468372@example.com","emailVerified":false,"createdAt":"2026-11-22T16:37:48.528Z","updatedAt":"2026-11-22T16:37:48.528
+## origin-none-no-cookie
+  ->   HTTP 200 {"token":"Eeq0rS0eGOU1yiaR2iVtcd7HwZE9cO57","user":{"name":"Test","email":"u1795365469971@example.com","emailVerified":false,"createdAt":"2026-11-22T16:37:50.100Z","updatedAt":"2026-11-22T16:37:50.100
+## signout-other-port
+  log  error: Invalid origin: http://localhost:5173
+  ->   HTTP 403 {"message":"Invalid origin","code":"INVALID_ORIGIN"}
+## callbackurl-untrusted
+  log  error: Invalid callbackURL: https://evil.example.net/after
+  ->   HTTP 403 {"message":"Invalid callbackURL","code":"INVALID_CALLBACK_URL"}
+## callbackurl-trusted
+  ->   HTTP 200 {"token":"ywPrZAUC4vRI4Z8WATZhEII1VIgGN7Nz","user":{"name":"Test","email":"u1795365475728@example.com","emailVerified":false,"createdAt":"2026-11-22T16:37:55.890Z","updatedAt":"2026-11-22T16:37:55.890
+## secret-missing-dev
+  ->   HTTP 200 {"token":"hSHo1C17DA4fu1HrJC1xNUxdQtr1ousx","user":{"name":"Test","email":"u1795365477521@example.com","emailVerified":false,"createdAt":"2026-11-22T16:37:57.643Z","updatedAt":"2026-11-22T16:37:57.643
+## secret-missing-prod
+  ->   HANDLER THROW BetterAuthError: You are using the default secret. Please set `BETTER_AUTH_SECRET` in your environment variables or pass `secret` in your auth config.
+## secret-short
+  log  warn: [better-auth] Warning: your BETTER_AUTH_SECRET should be at least 32 characters long for adequate security. Generate one with `npx auth secret` or `openssl rand -base64 32`.
+  log  warn: [better-auth] Warning: your BETTER_AUTH_SECRET appears low-entropy. Use a randomly generated secret for production.
+  ->   HTTP 200 {"token":"ejQAvFMe8f8cnupBc1eHbCAuwZ0ufWUT","user":{"name":"Test","email":"u1795365480577@example.com","emailVerified":false,"createdAt":"2026-11-22T16:38:00.704Z","updatedAt":"2026-11-22T16:38:00.704
+## secret-auth-secret-env
+  ->   HTTP 200 {"token":"FbkMS704w9tU1qeMzQAz5MZfrhvDaQFD","user":{"name":"Test","email":"u1795365482207@example.com","emailVerified":false,"createdAt":"2026-11-22T16:38:02.332Z","updatedAt":"2026-11-22T16:38:02.332
+## secret-better-auth-env-prod
+  log  warn: Rate limiting could not determine a client IP and is falling back to a single shared per-path bucket. Ensure your runtime forwards a trusted client IP header, then set `advanced.ipAddress.ipAddressHeaders` or `advanced.ipAddress.trustedProxies` so the address can be resolved.
+  ->   HTTP 200 {"token":"GPwibR8c2C4uUMsa356HfbNFdqGGOMNp","user":{"name":"Test","email":"u1795365483777@example.com","emailVerified":false,"createdAt":"2026-11-22T16:38:03.907Z","updatedAt":"2026-11-22T16:38:03.907
+## secret-auth-secret-env-prod
+  log  warn: Rate limiting could not determine a client IP and is falling back to a single shared per-path bucket. Ensure your runtime forwards a trusted client IP header, then set `advanced.ipAddress.ipAddressHeaders` or `advanced.ipAddress.trustedProxies` so the address can be resolved.
+  ->   HTTP 200 {"token":"IsOPDBddz8ITc0ufx9KYVkJzDlJW18S4","user":{"name":"Test","email":"u1795365485563@example.com","emailVerified":false,"createdAt":"2026-11-22T16:38:05.683Z","updatedAt":"2026-11-22T16:38:05.683
+## signout-no-origin-cookie
+  ->   HTTP 403 {"message":"Missing or null Origin","code":"MISSING_OR_NULL_ORIGIN"}
+## baseurl-missing-prod
+  log  warn: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+  log  warn: Rate limiting could not determine a client IP and is falling back to a single shared per-path bucket. Ensure your runtime forwards a trusted client IP header, then set `advanced.ipAddress.ipAddressHeaders` or `advanced.ipAddress.trustedProxies` so the address can be resolved.
+  ->   HTTP 200 {"token":"bWZ8sSNt9Lc244nlxdbCEuLNVgszjotQ","user":{"name":"Test","email":"u1795365488736@example.com","emailVerified":false,"createdAt":"2026-11-22T16:38:08.865Z","updatedAt":"2026-11-22T16:38:08.865
+## baseurl-missing
+  log  warn: [better-auth] Base URL is not set. Set the baseURL option or BETTER_AUTH_URL env, or use a dynamic baseURL with allowedHosts for multi-host setups. Without it the origin is derived from the incoming request, and callbacks and redirects may not work correctly.
+  ->   HTTP 200 {"token":"rUkGLO2dQJ5IiC3zKDAPEhXZze0QxbWZ","user":{"name":"Test","email":"u1795365490556@example.com","emailVerified":false,"createdAt":"2026-11-22T16:38:10.703Z","updatedAt":"2026-11-22T16:38:10.703
+## baseurl-env
+  ->   HTTP 200 {"token":"2Q6128ohVWOrb8J1OaVnW3pzE4HyPJqq","user":{"name":"Test","email":"u1795365492202@example.com","emailVerified":false,"createdAt":"2026-11-22T16:38:12.328Z","updatedAt":"2026-11-22T16:38:12.328
+## baseurl-no-protocol
+  ->   HANDLER THROW BetterAuthError: Invalid base URL: localhost:3000. URL must include 'http://' or 'https://'
+## baseurl-path-mismatch
+  ->   HTTP 404 
