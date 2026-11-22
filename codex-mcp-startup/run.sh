@@ -1,6 +1,8 @@
 #!/bin/bash
 # Codex CLI: what each broken MCP server prints at startup ("MCP client ... failed to start", "MCP startup incomplete"),
 # and which config change fixes it. Throwaway CODEX_HOME, invented API key: the model call fails after MCP startup, on purpose.
+# Each case runs `codex exec` with RUST_LOG=warn (its default filter hides stdio startup failures), and on Linux also the
+# interactive TUI inside `script` (a pseudo-terminal), where the "Booting MCP server" / "MCP startup incomplete" lines live.
 set +e
 W=${W:-$(pwd)/work}; mkdir -p "$W"; cd "$W" || exit 1
 Q="--no-audit --no-fund --loglevel=error"
@@ -8,7 +10,9 @@ P=$(command -v cygpath >/dev/null && cygpath -m "$W" || echo "$W")   # path as C
 npm init -y >/dev/null; npm pkg set type=module; npm install @modelcontextprotocol/sdk@1 zod $Q 2>&1 | tail -1
 npm install -g @openai/codex${CODEX:+@$CODEX} $Q 2>&1 | tail -1
 export CODEX_HOME=$W/codexhome OPENAI_API_KEY=sk-invented-test-key-not-real; mkdir -p "$CODEX_HOME"
+printf '%s' "$OPENAI_API_KEY" | codex login --with-api-key >/dev/null 2>&1; echo "login exit $?"
 echo "== $(uname -s) | node $(node -v) | $(codex --version 2>&1 | tail -1) | sdk $(node -p 'require("./node_modules/@modelcontextprotocol/sdk/package.json").version')"
+TUI=$([ "$(uname -s)" = Linux ] && command -v script >/dev/null && echo 1)
 
 echo 'throw new Error("config file not found");' > crash.mjs
 cat > ok.mjs <<'S'
@@ -23,13 +27,20 @@ s.tool("hello", { name: z.string() }, async ({ name }) => ({ content: [{ type: "
 await s.connect(new StdioServerTransport());
 S
 
-# one config per case, so each startup line is unambiguous
-cfg() { printf '%s\n' "$@" > "$CODEX_HOME/config.toml"; }
+strip() { sed -E 's/\x1b\[[0-9;?<>=]*[A-Za-z]//g; s/\x1b\][^\x07]*\x07//g; s/\x1b[()][A-Z0-9]//g; s/\x1b[=>]//g' | tr '\r' '\n'; }
+# one config per case, so each startup line is unambiguous; the work folder is trusted so the TUI skips that prompt
+cfg() { { printf '%s\n' "$@"; printf '\n[projects."%s"]\ntrust_level = "trusted"\n' "$P"; } > "$CODEX_HOME/config.toml"; }
 go() {
-  echo; echo "### $1"; shift
-  ( timeout 90 codex exec --skip-git-repo-check "say hi" < /dev/null 2>&1 ) | sed 's/\x1b\[[0-9;]*m//g' \
-    | grep -avE "^\s*$|^-+$|^(workdir|model|provider|approval|sandbox|reasoning|session id|user|say hi|OpenAI Codex|Reading additional)|responses_websocket|Reconnecting\.\.\.|Falling back from WebSockets" | head -30 | cut -c1-260
-  echo "-- codex mcp list"; timeout 60 codex mcp list 2>&1 | sed 's/\x1b\[[0-9;]*m//g' | head -6 | cut -c1-200
+  local wait=${2:-40}
+  echo; echo "### $1"
+  ( RUST_LOG=warn timeout 120 codex exec --skip-git-repo-check "say hi" < /dev/null > exec.log 2>&1 ); echo "-- codex exec (exit $?), lines naming MCP or demo:"
+  strip < exec.log | grep -aiE "mcp|demo" | grep -av "api.openai.com" | sort -u | head -8 | cut -c1-300
+  if [ -n "$TUI" ]; then
+    rm -f tui.raw
+    sleep "$wait" | timeout "$wait" script -qfec "stty cols 200 rows 50; codex --no-alt-screen 'say hi'" tui.raw > /dev/null 2>&1   # stdin held open, no keys sent
+    echo "-- TUI after ${wait}s, lines naming MCP:"
+    strip < tui.raw | grep -aE "MCP|Booting|startup_timeout_sec|mcp_servers" | sed -E 's/^[[:space:]]+//; s/[[:space:]]+$//' | awk '!seen[$0]++' | head -10 | cut -c1-300
+  fi
 }
 
 cfg '[mcp_servers.demo]' 'command = "node"' "args = [\"$P/ok.mjs\"]"
@@ -50,15 +61,15 @@ go "4. command that doesn't exist"
 cfg '[mcp_servers.demo]' 'command = "node"' "args = [\"$P/ok.mjs\"]" '[mcp_servers.demo.env]' 'LOUD = "1"'
 go "5. server prints a line to stdout before the handshake"
 
-cfg '[mcp_servers.demo]' 'command = "node"' "args = [\"$P/ok.mjs\"]" '[mcp_servers.demo.env]' 'SLOW = "15"'
-go "6. server takes 15 s to start, default startup timeout"
+cfg '[mcp_servers.demo]' 'command = "node"' "args = [\"$P/ok.mjs\"]" '[mcp_servers.demo.env]' 'SLOW = "45"'
+go "6. server takes 45 s to start, no startup_timeout_sec set" 70
 
-cfg '[mcp_servers.demo]' 'command = "node"' "args = [\"$P/ok.mjs\"]" 'startup_timeout_sec = 30' '[mcp_servers.demo.env]' 'SLOW = "15"'
-go "6b. same, startup_timeout_sec = 30"
+cfg '[mcp_servers.demo]' 'command = "node"' "args = [\"$P/ok.mjs\"]" 'startup_timeout_sec = 60' '[mcp_servers.demo.env]' 'SLOW = "45"'
+go "6b. same, startup_timeout_sec = 60" 70
 
 cfg '[mcp_servers.demo]' 'command = "npx"' 'args = ["-y", "@modelcontextprotocol/server-does-not-exist-xyz"]'
 go "7. npx package that doesn't exist"
 
 cfg '[mcp_servers.demo]' 'command = "npx"' 'args = ["-y", "@modelcontextprotocol/server-everything"]'
-go "8. npx -y @modelcontextprotocol/server-everything (control, first download)"
+go "8. npx -y @modelcontextprotocol/server-everything (control, first download)" 60
 echo; echo "== done"
