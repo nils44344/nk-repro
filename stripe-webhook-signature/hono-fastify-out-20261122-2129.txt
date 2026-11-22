@@ -1,0 +1,8 @@
+<claude-code-hint v="1" type="plugin" value="stripe@claude-plugins-official" />
+stripe 23.2.0 hono 4.13.20 fastify 5.12.8 node v24.14.0
+PASS  Hono c.req.text(): invoice.paid
+FAIL  Hono JSON.stringify(await c.req.json()): No signatures found matching the expected signature for payload. Are you passing the raw request body you received from Stripe?
+PASS  Hono constructEventAsync + SubtleCrypto (Workers way): invoice.paid
+FAIL  Hono constructEvent (sync) + SubtleCrypto: SubtleCryptoProvider cannot be used in a synchronous context.
+FAIL  Fastify default JSON parser (req.body): Webhook payload must be provided as a string or a Buffer (https://nodejs.org/api/buffer.html) instance representing the _raw_ request body.Payload was provided as a parsed JavaScript object instead. 
+PASS  Fastify addContentTypeParser parseAs buffer: invoice.paid

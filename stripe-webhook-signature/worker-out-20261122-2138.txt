@@ -1,0 +1,4 @@
+<claude-code-hint v="1" type="plugin" value="stripe@claude-plugins-official" />
+200 FAIL  Worker /sync: SubtleCryptoProvider cannot be used in a synchronous context.
+200 PASS  Worker /async: payment_intent.succeeded
+200 PASS  Worker /async-subtle: payment_intent.succeeded
