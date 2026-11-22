@@ -37,11 +37,13 @@ go() {
   ( RUST_LOG=warn timeout 120 codex exec --skip-git-repo-check "say hi" < /dev/null > exec.log 2>&1 ); echo "-- codex exec (exit $?), lines naming MCP or demo:"
   strip < exec.log | grep -aiE "mcp|demo" | grep -av "api.openai.com" | sort -u | head -8 | cut -c1-300
   if [ -n "$TUI" ]; then
-    tmux new-session -d -s cx -x 200 -y 60 "codex --no-alt-screen 'say hi'"   # a real terminal; no keys are sent
+    tmux new-session -d -s cx -x 240 -y 60 "codex --no-alt-screen 'say hi'"   # a real terminal; no keys are sent
     for s in 2 6; do sleep $s; echo "-- TUI screen at +$s s (status lines):"; tmux capture-pane -p -t cx | grep -aE "MCP|Booting|Starting|Working|demo" | sed -E 's/^\s+//' | cut -c1-200; done
     sleep $((wait - 8))
-    echo "-- TUI screen after ${wait}s (whole scrollback, blank lines removed):"
-    tmux capture-pane -p -t cx -S -300 | grep -avE "^\s*$" | awk '!seen[$0]++' | tail -30 | cut -c1-200
+    echo "-- TUI after ${wait}s, footer:"; tmux capture-pane -p -t cx | grep -aE "warning" | sed -E 's/^.*(⚠)/\1/' | cut -c1-120
+    tmux send-keys -t cx F2; sleep 3   # F2 opens the warnings list named in the footer
+    echo "-- after F2 (blank lines, the 401 line and the input box removed):"
+    tmux capture-pane -p -t cx | grep -avE "^\s*$|401 Unauthorized|^https://api.openai.com|OpenAI Codex \(v|~/work/_temp/work$|Tip:|say hi$|Ask Codex to do anything|for shortcuts" | sed -E 's/\s+$//' | tail -24 | cut -c1-220
     tmux kill-server 2>/dev/null
   fi
 }
