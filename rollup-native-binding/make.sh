@@ -13,4 +13,4 @@ echo "native packages installed: $(ls node_modules/@rollup | tr '\n' ' ')"
 echo "rollup-* entries in package-lock.json: $(grep -c '"node_modules/@rollup/rollup-' package-lock.json)"
 npm run build 2>&1 | grep -E "created|Error|Cannot" | head -2; echo "exit ${PIPESTATUS[0]}"
 cp package.json package-lock.json main.js "$OUT/"
-tar czf "$OUT/node_modules.tgz" node_modules
+tar czf node_modules.tgz node_modules && mv node_modules.tgz "$OUT/"   # relative path: Git Bash tar reads "D:" as a host
