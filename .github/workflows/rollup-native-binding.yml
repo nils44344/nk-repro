@@ -1,0 +1,53 @@
+name: rollup-native-binding
+on:
+  workflow_dispatch:
+    inputs:
+      rollup:
+        description: 'rollup version'
+        default: '4.68.8'
+permissions:
+  contents: read
+
+jobs:
+  make:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: windows-latest, name: windows }
+          - { os: macos-latest, name: macos }
+          - { os: ubuntu-latest, name: ubuntu }
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - env:
+          ROLLUP: ${{ inputs.rollup }}
+          OS_NAME: ${{ matrix.name }}
+        run: cd "$RUNNER_TEMP" && OUT="$RUNNER_TEMP/pack" bash "$GITHUB_WORKSPACE/rollup-native-binding/make.sh"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.name }}
+          path: ${{ runner.temp }}/pack
+
+  use:
+    needs: make
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - uses: actions/download-artifact@v4
+        with:
+          path: ${{ runner.temp }}/packs
+      - run: IN="$RUNNER_TEMP/packs" W="$RUNNER_TEMP/work" bash rollup-native-binding/use.sh
