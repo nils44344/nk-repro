@@ -1,0 +1,196 @@
+== Linux x86_64 | node v24.22.3 | npm 11.19.1 | /bin/sh -> /usr/bin/dash | vite 8.3.8
+
+### 1. no install
+
+$ npm run build
+> vite build
+sh: 1: vite: not found
+exit 127
+
+### 2. control: npm ci
+
+$ npm ci --no-audit --no-fund
+added 15 packages in 490ms
+exit 0
+
+$ npm run build
+> vite build
+vite v8.3.8 building client environment for production...
+✓ built in 58ms
+exit 0
+
+### 3. NODE_ENV=production npm ci
+
+$ NODE_ENV=production npm ci --no-audit --no-fund
+up to date in 234ms
+exit 0
+
+$ ls node_modules/.bin 2>&1 | head -3
+exit 0
+
+$ npm run build
+> vite build
+sh: 1: vite: not found
+exit 127
+
+### 4. npm ci --omit=dev
+
+$ npm ci --omit=dev --no-audit --no-fund
+up to date in 205ms
+exit 0
+
+$ npm run build
+> vite build
+sh: 1: vite: not found
+exit 127
+
+### 5. NODE_ENV=production npm ci --include=dev
+
+$ NODE_ENV=production npm ci --include=dev --no-audit --no-fund
+added 15 packages in 496ms
+exit 0
+
+$ npm run build
+> vite build
+vite v8.3.8 building client environment for production...
+✓ built in 62ms
+exit 0
+
+### 6. omit=dev in .npmrc
+
+$ npm ci --no-audit --no-fund
+up to date in 198ms
+exit 0
+
+$ npm run build
+> vite build
+sh: 1: vite: not found
+exit 127
+
+$ npm ci --include=dev --no-audit --no-fund
+added 15 packages in 428ms
+exit 0
+
+$ npm run build
+> vite build
+vite v8.3.8 building client environment for production...
+✓ built in 64ms
+exit 0
+
+### 7. vite typed in the shell, not via npm
+
+$ vite build
+vite-command-not-found/ci.sh: line 15: vite: command not found
+exit 127
+
+$ sh -c 'vite build'
+sh: 1: vite: not found
+exit 127
+
+$ npx vite build
+vite v8.3.8 building client environment for production...
+✓ built in 47ms
+exit 0
+
+$ ./node_modules/.bin/vite build
+vite v8.3.8 building client environment for production...
+✓ built in 53ms
+exit 0
+
+### 8. exec bit lost on the bin target
+
+$ npm run build
+> vite build
+sh: 1: vite: Permission denied
+exit 127
+
+$ npm rebuild vite
+exit 0
+
+$ npm run build
+> vite build
+sh: 1: vite: Permission denied
+exit 127
+
+$ ls -l node_modules/vite/bin/vite.js
+-rw-r--r-- 1 runner runner 2995 Nov 22 16:20 node_modules/vite/bin/vite.js
+exit 0
+
+$ chmod +x node_modules/vite/bin/vite.js
+exit 0
+
+$ npm run build
+> vite build
+vite v8.3.8 building client environment for production...
+✓ built in 49ms
+exit 0
+
+### 8b. exec bit lost, then a clean reinstall
+
+$ npm run build
+> vite build
+sh: 1: vite: Permission denied
+exit 127
+
+$ npm ci --no-audit --no-fund
+added 15 packages in 507ms
+exit 0
+
+$ npm run build
+> vite build
+vite v8.3.8 building client environment for production...
+✓ built in 49ms
+exit 0
+
+### 9. node_modules/.bin missing
+
+$ npm run build
+> vite build
+sh: 1: vite: not found
+exit 127
+
+$ npm rebuild
+exit 0
+
+$ npm run build
+> vite build
+vite v8.3.8 building client environment for production...
+✓ built in 51ms
+exit 0
+
+### 10. Docker: bind mount hides the image's node_modules
+image built
+
+$ docker run --rm vite-cnf
+> vite build
+vite v8.3.8 building client environment for production...
+✓ built in 59ms
+exit 0
+
+$ docker run --rm -v $PWD:/app vite-cnf
+> vite build
+sh: 1: vite: not found
+exit 127
+
+$ docker run --rm -v $PWD:/app -v /app/node_modules vite-cnf
+> vite build
+vite v8.3.8 building client environment for production...
+✓ built in 48ms
+exit 0
+Post job cleanup.
+(node:3554) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Post job cleanup.
+[command]/usr/bin/git version
+git version 2.56.1
+Temporarily overriding HOME='/home/runner/work/_temp/401750a0-8f13-4201-a519-82e9181b998a' before making global git config changes
+Adding repository directory to the temporary git global config as a safe directory
+[command]/usr/bin/git config --global --add safe.directory /home/runner/work/nk-repro/nk-repro
+[command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+[command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+[command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+[command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+[command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+[command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Cleaning up orphan processes
+##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
