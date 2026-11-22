@@ -1,6 +1,6 @@
 # Codex CLI MCP startup errors, by cause
 
-For the post [Codex MCP startup incomplete: what each failure prints](https://nilaykabariya.blog/fixes/codex-mcp-startup-errors).
+For the post [Codex MCP startup incomplete: what each failure prints](https://nilaykabariya.blog/agents/codex-mcp-startup-errors).
 
 The workflow `.github/workflows/codex-mcp-startup.yml` runs `run.sh` on `ubuntu-latest` and `windows-latest` (Node 24,
 `@openai/codex` from npm, 0.171.0 on the day of the run).
