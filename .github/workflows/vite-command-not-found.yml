@@ -1,0 +1,28 @@
+name: vite-command-not-found
+on:
+  workflow_dispatch:
+    inputs:
+      vite:
+        description: 'vite version'
+        default: '8.3.8'
+permissions:
+  contents: read
+
+jobs:
+  run:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - shell: bash
+        env:
+          VITE: ${{ inputs.vite }}
+        run: W=$RUNNER_TEMP/work bash vite-command-not-found/ci.sh
