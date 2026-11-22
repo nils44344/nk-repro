@@ -21,7 +21,8 @@ echo; echo "### 4. npm ci --omit=dev"; fresh; run npm ci --omit=dev --no-audit -
 echo; echo "### 5. NODE_ENV=production npm ci --include=dev"; fresh; run NODE_ENV=production npm ci --include=dev --no-audit --no-fund; run npm run build
 echo; echo "### 6. omit=dev in .npmrc"; fresh; echo "omit=dev" > .npmrc; run npm ci --no-audit --no-fund; run npm run build; run npm ci --include=dev --no-audit --no-fund; run npm run build
 echo; echo "### 7. vite typed in the shell, not via npm"; fresh; npm ci --no-audit --no-fund >/dev/null 2>&1; run vite build; run sh -c "'vite build'"; run npx vite build; run ./node_modules/.bin/vite build
-echo; echo "### 8. exec bit lost on the bin target"; fresh; npm ci --no-audit --no-fund >/dev/null 2>&1; chmod -x node_modules/vite/bin/vite.js; run npm run build; run npm rebuild vite; run npm run build
+echo; echo "### 8. exec bit lost on the bin target"; fresh; npm ci --no-audit --no-fund >/dev/null 2>&1; chmod -x node_modules/vite/bin/vite.js; run npm run build; run npm rebuild vite; run npm run build; run ls -l node_modules/vite/bin/vite.js; run chmod +x node_modules/vite/bin/vite.js; run npm run build
+echo; echo "### 8b. exec bit lost, then a clean reinstall"; fresh; npm ci --no-audit --no-fund >/dev/null 2>&1; chmod -x node_modules/vite/bin/vite.js; run npm run build; run npm ci --no-audit --no-fund; run npm run build
 echo; echo "### 9. node_modules/.bin missing"; fresh; npm ci --no-audit --no-fund >/dev/null 2>&1; rm -rf node_modules/.bin; run npm run build; run npm rebuild; run npm run build
 
 if [ "$(uname -s)" = Linux ] && command -v docker >/dev/null; then
