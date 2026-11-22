@@ -37,10 +37,10 @@ go() {
   ( RUST_LOG=warn timeout 120 codex exec --skip-git-repo-check "say hi" < /dev/null > exec.log 2>&1 ); echo "-- codex exec (exit $?), lines naming MCP or demo:"
   strip < exec.log | grep -aiE "mcp|demo" | grep -av "api.openai.com" | sort -u | head -8 | cut -c1-300
   if [ -n "$TUI" ]; then
-    tmux new-session -d -s cx -x 200 -y 60 "codex --no-alt-screen 'say hi'"   # a real terminal; no keys are sent
+    tmux new-session -d -s cx -x 200 -y 60 "codex --no-alt-screen"   # a real terminal, no prompt: only MCP startup runs; no keys are sent
     sleep "$wait"
     echo "-- TUI screen after ${wait}s (blank lines and the input box removed):"
-    tmux capture-pane -p -t cx -S -200 | grep -avE "^\s*$|^\s*[╭╰│─]|for shortcuts|Ask Codex to do anything" | tail -14 | cut -c1-200
+    tmux capture-pane -p -t cx -S -200 | grep -avE "^\s*$|^\s*[╭╰│─]|for shortcuts|Ask Codex to do anything|OpenAI Codex \(v|^\s+~/|Tip:" | awk '!seen[$0]++' | tail -14 | cut -c1-200
     tmux kill-server 2>/dev/null
   fi
 }
