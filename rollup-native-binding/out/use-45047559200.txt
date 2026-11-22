@@ -1,0 +1,137 @@
+== Linux x86_64 | node v24.22.3 | npm 11.19.1 | ldd (Ubuntu GLIBC 2.43-2ubuntu2.7) 2.43
+
+### A-windows. npm ci on Linux with the lockfile made on windows
+lockfile rollup-* entries: 26; linux-x64-gnu entry: 1
+
+$ npm ci --no-audit --no-fund
+added 3 packages in 794ms
+exit 0
+installed: rollup-linux-x64-gnu 
+created out.js in 22ms
+exit 0
+
+### A-macos. npm ci on Linux with the lockfile made on macos
+lockfile rollup-* entries: 26; linux-x64-gnu entry: 1
+
+$ npm ci --no-audit --no-fund
+added 3 packages in 282ms
+exit 0
+installed: rollup-linux-x64-gnu 
+created out.js in 23ms
+exit 0
+
+### A-ubuntu. npm ci on Linux with the lockfile made on ubuntu
+lockfile rollup-* entries: 26; linux-x64-gnu entry: 1
+
+$ npm ci --no-audit --no-fund
+added 3 packages in 290ms
+exit 0
+installed: rollup-linux-x64-gnu 
+created out.js in 25ms
+exit 0
+
+### B-windows. node_modules copied from windows, run on Linux
+installed: rollup-win32-x64-gnu rollup-win32-x64-msvc 
+		throw new Error(
+Error: Cannot find module @rollup/rollup-linux-x64-gnu. npm has a bug related to optional dependencies (https://github.com/npm/cli/issues/4828). Please try `npm i` again after removing both package-lock.json and node_modules directory.
+    at requireWithFriendlyError (/home/runner/work/_temp/work/c/node_modules/rollup/dist/native.js:126:9)
+exit 1
+-- fix: npm ci (lockfile kept)
+
+$ npm ci --no-audit --no-fund
+added 3 packages in 288ms
+exit 0
+created out.js in 22ms
+exit 0
+
+### B-macos. node_modules copied from macos, run on Linux
+installed: rollup-darwin-arm64 
+		throw new Error(
+Error: Cannot find module @rollup/rollup-linux-x64-gnu. npm has a bug related to optional dependencies (https://github.com/npm/cli/issues/4828). Please try `npm i` again after removing both package-lock.json and node_modules directory.
+    at requireWithFriendlyError (/home/runner/work/_temp/work/c/node_modules/rollup/dist/native.js:126:9)
+exit 1
+-- fix: npm ci (lockfile kept)
+
+$ npm ci --no-audit --no-fund
+added 3 packages in 288ms
+exit 0
+created out.js in 26ms
+exit 0
+
+### C. --omit=optional
+
+$ npm ci --omit=optional --no-audit --no-fund
+added 2 packages in 274ms
+exit 0
+ls: cannot access 'node_modules/@rollup': No such file or directory
+installed: 
+		throw new Error(
+Error: Cannot find module @rollup/rollup-linux-x64-gnu. npm has a bug related to optional dependencies (https://github.com/npm/cli/issues/4828). Please try `npm i` again after removing both package-lock.json and node_modules directory.
+    at requireWithFriendlyError (/home/runner/work/_temp/work/c/node_modules/rollup/dist/native.js:126:9)
+exit 1
+-- fix: npm ci
+
+$ npm ci --no-audit --no-fund
+added 3 packages in 285ms
+exit 0
+created out.js in 26ms
+exit 0
+
+### D. omit=optional in .npmrc
+
+$ npm ci --no-audit --no-fund
+added 2 packages in 271ms
+exit 0
+		throw new Error(
+Error: Cannot find module @rollup/rollup-linux-x64-gnu. npm has a bug related to optional dependencies (https://github.com/npm/cli/issues/4828). Please try `npm i` again after removing both package-lock.json and node_modules directory.
+    at requireWithFriendlyError (/home/runner/work/_temp/work/c/node_modules/rollup/dist/native.js:126:9)
+exit 1
+-- fix: --include=optional
+
+$ npm ci --include=optional --no-audit --no-fund
+added 3 packages in 295ms
+exit 0
+created out.js in 26ms
+exit 0
+
+### E. platform folder deleted, then fixes
+		throw new Error(
+Error: Cannot find module @rollup/rollup-linux-x64-gnu. npm has a bug related to optional dependencies (https://github.com/npm/cli/issues/4828). Please try `npm i` again after removing both package-lock.json and node_modules directory.
+    at requireWithFriendlyError (/home/runner/work/_temp/work/c/node_modules/rollup/dist/native.js:126:9)
+exit 1
+-- npm i (lockfile and node_modules kept)
+
+$ npm i --no-audit --no-fund
+added 1 package in 261ms
+exit 0
+created out.js in 26ms
+exit 0
+-- npm rebuild
+
+$ npm rebuild --no-audit --no-fund
+exit 0
+		throw new Error(
+Error: Cannot find module @rollup/rollup-linux-x64-gnu. npm has a bug related to optional dependencies (https://github.com/npm/cli/issues/4828). Please try `npm i` again after removing both package-lock.json and node_modules directory.
+    at requireWithFriendlyError (/home/runner/work/_temp/work/c/node_modules/rollup/dist/native.js:126:9)
+exit 1
+-- rm -rf node_modules package-lock.json && npm i
+
+$ rm -rf node_modules package-lock.json && npm i --no-audit --no-fund
+added 3 packages in 930ms
+exit 0
+created out.js in 28ms
+exit 0
+
+### F. Alpine (musl) container
+-- F1 npm ci inside Alpine with the Linux (glibc) lockfile
+rollup-linux-x64-musl
+created out.js in 39ms
+-- F2 node_modules installed on the glibc host, run inside Alpine (bind mount)
+host installed: rollup-linux-x64-gnu 
+Error: Cannot find module @rollup/rollup-linux-x64-musl. npm has a bug related to optional dependencies (https://github.com/npm/cli/issues/4828). Please try `npm i` again after removing both package-lock.json and node_modules directory.
+  [cause]: Error: Cannot find module '@rollup/rollup-linux-x64-musl'
+-- F3 same, with an anonymous volume for node_modules and npm ci inside
+rollup-linux-x64-musl
+created out.js in 43ms
+
+== done

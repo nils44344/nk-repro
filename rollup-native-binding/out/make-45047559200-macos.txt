@@ -1,0 +1,10 @@
+hint: 'development'. The just-created branch can be renamed via this command:
+(Use `node --trace-deprecation ...` to show where the warning was created)
+== macos arm64 | node v24.22.3 | npm 11.19.1 | rollup 4.68.8
+added 3 packages in 8s
+native packages installed: rollup-darwin-arm64 
+rollup-* entries in package-lock.json: 26
+created out.js in 33ms
+exit 0
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(Use `node --trace-deprecation ...` to show where the warning was created)

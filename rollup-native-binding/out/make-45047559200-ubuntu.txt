@@ -1,0 +1,10 @@
+hint: 'development'. The just-created branch can be renamed via this command:
+(Use `node --trace-deprecation ...` to show where the warning was created)
+== ubuntu x86_64 | node v24.22.3 | npm 11.19.1 | rollup 4.68.8
+added 3 packages in 1s
+native packages installed: rollup-linux-x64-gnu 
+rollup-* entries in package-lock.json: 26
+created out.js in 23ms
+exit 0
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(Use `node --trace-deprecation ...` to show where the warning was created)
