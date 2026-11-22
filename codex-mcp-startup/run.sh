@@ -37,10 +37,11 @@ go() {
   ( RUST_LOG=warn timeout 120 codex exec --skip-git-repo-check "say hi" < /dev/null > exec.log 2>&1 ); echo "-- codex exec (exit $?), lines naming MCP or demo:"
   strip < exec.log | grep -aiE "mcp|demo" | grep -av "api.openai.com" | sort -u | head -8 | cut -c1-300
   if [ -n "$TUI" ]; then
-    tmux new-session -d -s cx -x 200 -y 60 "codex --no-alt-screen"   # a real terminal, no prompt: only MCP startup runs; no keys are sent
-    sleep "$wait"
-    echo "-- TUI screen after ${wait}s (blank lines and the input box removed):"
-    tmux capture-pane -p -t cx -S -200 | grep -avE "^\s*$|^\s*[╭╰│─]|for shortcuts|Ask Codex to do anything|OpenAI Codex \(v|^\s+~/|Tip:" | awk '!seen[$0]++' | tail -14 | cut -c1-200
+    tmux new-session -d -s cx -x 200 -y 60 "codex --no-alt-screen 'say hi'"   # a real terminal; no keys are sent
+    for s in 2 6; do sleep $s; echo "-- TUI screen at +$s s (status lines):"; tmux capture-pane -p -t cx | grep -aE "MCP|Booting|Starting|Working|demo" | sed -E 's/^\s+//' | cut -c1-200; done
+    sleep $((wait - 8))
+    echo "-- TUI screen after ${wait}s (whole scrollback, blank lines removed):"
+    tmux capture-pane -p -t cx -S -300 | grep -avE "^\s*$" | awk '!seen[$0]++' | tail -30 | cut -c1-200
     tmux kill-server 2>/dev/null
   fi
 }
