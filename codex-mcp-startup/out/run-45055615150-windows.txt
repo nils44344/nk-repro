@@ -1,0 +1,42 @@
+login exit 0
+== MINGW64_NT-10.0-26100 | node v24.22.3 | codex-cli 0.171.0 | sdk 1.32.2
+
+### 1. control: a working server
+-- codex exec (exit 1), lines naming MCP or demo:
+
+### 2. server crashes on start
+-- codex exec (exit 1), lines naming MCP or demo:
+2026-11-22T18:32:55.772243Z  WARN codex_mcp::rmcp_client: MCP server startup failed server_name="demo" error=handshaking with MCP server failed: connection closed: initialize response: connection closed: initialize response
+2026-11-22T18:33:10.146510Z  WARN codex_mcp::rmcp_client: failed to initialize MCP client during shutdown: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response: connection closed: initialize response
+
+### 3. server exits: its API key is not set
+-- codex exec (exit 1), lines naming MCP or demo:
+2026-11-22T18:33:10.925605Z  WARN codex_mcp::rmcp_client: MCP server startup failed server_name="demo" error=handshaking with MCP server failed: connection closed: initialize response: connection closed: initialize response
+2026-11-22T18:33:25.796050Z  WARN codex_mcp::rmcp_client: failed to initialize MCP client during shutdown: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response: connection closed: initialize response
+
+### 3b. same, key set in [mcp_servers.demo.env]
+-- codex exec (exit 1), lines naming MCP or demo:
+
+### 4. command that doesn't exist
+-- codex exec (exit 1), lines naming MCP or demo:
+2026-11-22T18:33:42.073427Z  WARN codex_mcp::rmcp_client: MCP server startup failed server_name="demo" error=program not found
+2026-11-22T18:33:57.336154Z  WARN codex_mcp::rmcp_client: failed to initialize MCP client during shutdown: MCP startup failed: program not found
+
+### 5. server prints a line to stdout before the handshake
+-- codex exec (exit 1), lines naming MCP or demo:
+
+### 6. server takes 45 s to start, no startup_timeout_sec set
+-- codex exec (exit 1), lines naming MCP or demo:
+
+### 6b. same, startup_timeout_sec = 60
+-- codex exec (exit 1), lines naming MCP or demo:
+
+### 7. npx package that doesn't exist
+-- codex exec (exit 1), lines naming MCP or demo:
+2026-11-22T18:34:46.936519Z  WARN codex_mcp::rmcp_client: MCP server startup failed server_name="demo" error=handshaking with MCP server failed: connection closed: initialize response: connection closed: initialize response
+2026-11-22T18:35:01.480114Z  WARN codex_mcp::rmcp_client: failed to initialize MCP client during shutdown: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response: connection closed: initialize response
+
+### 8. npx -y @modelcontextprotocol/server-everything (control, first download)
+-- codex exec (exit 1), lines naming MCP or demo:
+
+== done

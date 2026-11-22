@@ -1,0 +1,141 @@
+login exit 0
+== Linux | node v24.22.3 | codex-cli 0.171.0 | sdk 1.32.2
+tmux 3.6
+
+### 1. control: a working server
+-- codex exec (exit 1), lines naming MCP or demo:
+-- TUI screen at +2 s (status lines):
+-- TUI screen at +6 s (status lines):
+-- TUI after 40s, footer:
+⚠ 1 warning · f2 to view
+-- after F2 (blank lines, the 401 line and the input box removed):
+a5ea04c55dee2909-IAD, request id: req_527d19ed26364f199075eace2a8c199c, auth error: 401, auth error code: invalid_api_key
+  Warnings · 1 of 1 · Warning
+  api.openai.com/v1/responses, cf-ray: a5ea04997bc22909-IAD, request id: req_99ff916a37914b378967ff677c0f0102, auth error: 401, auth error code: invalid_api_key
+  k keep & next · esc dismiss & close · ^o copy · ←/→ warning
+
+### 2. server crashes on start
+-- codex exec (exit 1), lines naming MCP or demo:
+2026-11-22T18:33:13.426901Z  WARN codex_mcp::rmcp_client: MCP server startup failed server_name="demo" error=handshaking with MCP server failed: connection closed: initialize response: connection closed: initialize response
+2026-11-22T18:33:27.534129Z  WARN codex_mcp::rmcp_client: failed to initialize MCP client during shutdown: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response: connection closed: initialize response
+-- TUI screen at +2 s (status lines):
+-- TUI screen at +6 s (status lines):
+-- TUI after 40s, footer:
+⚠ 2 warnings · f2 to view
+-- after F2 (blank lines, the 401 line and the input box removed):
+a5ea062149ecf933-IAD, request id: req_8c761236faef49b0b3b3e30ee902fb2e, auth error: 401, auth error code: invalid_api_key
+  Warnings · 1 of 2 · MCP · demo
+  MCP client for `demo` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response: connection closed: initialize response
+  MCP startup incomplete (failed: demo)
+  k keep & next · esc dismiss & close · ^o copy · ←/→ warning
+
+### 3. server exits: its API key is not set
+-- codex exec (exit 1), lines naming MCP or demo:
+2026-11-22T18:34:11.170018Z  WARN codex_mcp::rmcp_client: MCP server startup failed server_name="demo" error=handshaking with MCP server failed: connection closed: initialize response: connection closed: initialize response
+2026-11-22T18:34:24.008154Z  WARN codex_mcp::rmcp_client: failed to initialize MCP client during shutdown: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response: connection closed: initialize response
+-- TUI screen at +2 s (status lines):
+-- TUI screen at +6 s (status lines):
+-- TUI after 40s, footer:
+⚠ 2 warnings · f2 to view
+-- after F2 (blank lines, the 401 line and the input box removed):
+a5ea07888a680585-IAD, request id: req_8675e69a35e84179ab87326768836320, auth error: 401, auth error code: invalid_api_key
+  Warnings · 1 of 2 · MCP · demo
+  MCP client for `demo` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response: connection closed: initialize response
+  MCP startup incomplete (failed: demo)
+  k keep & next · esc dismiss & close · ^o copy · ←/→ warning
+
+### 3b. same, key set in [mcp_servers.demo.env]
+-- codex exec (exit 1), lines naming MCP or demo:
+-- TUI screen at +2 s (status lines):
+-- TUI screen at +6 s (status lines):
+-- TUI after 40s, footer:
+⚠ 1 warning · f2 to view
+-- after F2 (blank lines, the 401 line and the input box removed):
+a5ea08edb9c51e89-IAD, request id: req_142036cd2421491aa71a4503f6ad75e2, auth error: 401, auth error code: invalid_api_key
+  Warnings · 1 of 1 · Warning
+  api.openai.com/v1/responses, cf-ray: a5ea08c18eac1e89-IAD, request id: req_9137f4ec87c44470b2176fee0fef2113, auth error: 401, auth error code: invalid_api_key
+  k keep & next · esc dismiss & close · ^o copy · ←/→ warning
+
+### 4. command that doesn't exist
+-- codex exec (exit 1), lines naming MCP or demo:
+2026-11-22T18:36:04.323551Z  WARN codex_mcp::rmcp_client: MCP server startup failed server_name="demo" error=No such file or directory (os error 2)
+2026-11-22T18:36:17.935879Z  WARN codex_mcp::rmcp_client: failed to initialize MCP client during shutdown: MCP startup failed: No such file or directory (os error 2)
+-- TUI screen at +2 s (status lines):
+-- TUI screen at +6 s (status lines):
+-- TUI after 40s, footer:
+⚠ 2 warnings · f2 to view
+-- after F2 (blank lines, the 401 line and the input box removed):
+a5ea0a4a2dec3979-IAD, request id: req_074477c22d324ee4945259db61c3cb71, auth error: 401, auth error code: invalid_api_key
+  Warnings · 1 of 2 · MCP · demo
+  MCP client for `demo` failed to start: MCP startup failed: No such file or directory (os error 2)
+  MCP startup incomplete (failed: demo)
+  k keep & next · esc dismiss & close · ^o copy · ←/→ warning
+
+### 5. server prints a line to stdout before the handshake
+-- codex exec (exit 1), lines naming MCP or demo:
+-- TUI screen at +2 s (status lines):
+-- TUI screen at +6 s (status lines):
+-- TUI after 40s, footer:
+⚠ 1 warning · f2 to view
+-- after F2 (blank lines, the 401 line and the input box removed):
+a5ea0baf7ea50585-IAD, request id: req_99db7fd363ff4fe6beb7824b0d84601d, auth error: 401, auth error code: invalid_api_key
+  Warnings · 1 of 1 · Warning
+  api.openai.com/v1/responses, cf-ray: a5ea0b85ee120585-IAD, request id: req_6af3e12a3a434e7cb17b308d3e070b91, auth error: 401, auth error code: invalid_api_key
+  k keep & next · esc dismiss & close · ^o copy · ←/→ warning
+
+### 6. server takes 45 s to start, no startup_timeout_sec set
+-- codex exec (exit 1), lines naming MCP or demo:
+-- TUI screen at +2 s (status lines):
+• Starting MCP servers (1/2): demo (1s • esc to interrupt)
+-- TUI screen at +6 s (status lines):
+-- TUI after 70s, footer:
+⚠ 2 warnings · f2 to view
+-- after F2 (blank lines, the 401 line and the input box removed):
+a5ea0d20bf050585-IAD, request id: req_6389edc981c9496b92f1b7eecc653461, auth error: 401, auth error code: invalid_api_key
+  Warnings · 1 of 2 · MCP · demo
+  MCP client for `demo` timed out after 30 seconds. Add or adjust `startup_timeout_sec` in your config.toml:
+  [mcp_servers.demo]
+  startup_timeout_sec = XX
+  MCP startup incomplete (failed: demo)
+  k keep & next · esc dismiss & close · ^o copy · ←/→ warning
+
+### 6b. same, startup_timeout_sec = 60
+-- codex exec (exit 1), lines naming MCP or demo:
+-- TUI screen at +2 s (status lines):
+-- TUI screen at +6 s (status lines):
+-- TUI after 70s, footer:
+⚠ 1 warning · f2 to view
+-- after F2 (blank lines, the 401 line and the input box removed):
+a5ea0f3a893d0585-IAD, request id: req_17ca0fdc395b433d8eba4a9266b9c2d6, auth error: 401, auth error code: invalid_api_key
+  Warnings · 1 of 1 · Warning
+  api.openai.com/v1/responses, cf-ray: a5ea0f124fc30585-IAD, request id: req_4a6e9ea20fcc4a6cb836a8c7e3c178b9, auth error: 401, auth error code: invalid_api_key
+  k keep & next · esc dismiss & close · ^o copy · ←/→ warning
+
+### 7. npx package that doesn't exist
+-- codex exec (exit 1), lines naming MCP or demo:
+2026-11-22T18:40:53.896183Z  WARN codex_mcp::rmcp_client: MCP server startup failed server_name="demo" error=handshaking with MCP server failed: connection closed: initialize response: connection closed: initialize response
+2026-11-22T18:41:07.152532Z  WARN codex_mcp::rmcp_client: failed to initialize MCP client during shutdown: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response: connection closed: initialize response
+-- TUI screen at +2 s (status lines):
+-- TUI screen at +6 s (status lines):
+-- TUI after 40s, footer:
+⚠ 2 warnings · f2 to view
+-- after F2 (blank lines, the 401 line and the input box removed):
+a5ea11613dbc3928-IAD, request id: req_0ed272661b9b491d82456a03f81cf9b2, auth error: 401, auth error code: invalid_api_key
+  Warnings · 1 of 2 · MCP · demo
+  MCP client for `demo` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response: connection closed: initialize response
+  MCP startup incomplete (failed: demo)
+  k keep & next · esc dismiss & close · ^o copy · ←/→ warning
+
+### 8. npx -y @modelcontextprotocol/server-everything (control, first download)
+-- codex exec (exit 1), lines naming MCP or demo:
+-- TUI screen at +2 s (status lines):
+-- TUI screen at +6 s (status lines):
+-- TUI after 60s, footer:
+⚠ 1 warning · f2 to view
+-- after F2 (blank lines, the 401 line and the input box removed):
+a5ea12caad090585-IAD, request id: req_1589b1083f27485d984817c8c1d4e89b, auth error: 401, auth error code: invalid_api_key
+  Warnings · 1 of 1 · Warning
+  api.openai.com/v1/responses, cf-ray: a5ea12a1dea964aa-IAD, request id: req_32f93ed574284d18a6b38ea32ac41c60, auth error: 401, auth error code: invalid_api_key
+  k keep & next · esc dismiss & close · ^o copy · ←/→ warning
+
+== done
