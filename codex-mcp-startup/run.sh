@@ -27,7 +27,8 @@ S
 cfg() { printf '%s\n' "$@" > "$CODEX_HOME/config.toml"; }
 go() {
   echo; echo "### $1"; shift
-  ( timeout 90 codex exec --skip-git-repo-check "say hi" < /dev/null 2>&1 ) | sed 's/\[[0-9;]*m//g' \n    | grep -avE "^\s*$|^-+$|^(workdir|model|provider|approval|sandbox|reasoning|session id|user|say hi|OpenAI Codex)" | head -14 | cut -c1-260
+  ( timeout 90 codex exec --skip-git-repo-check "say hi" < /dev/null 2>&1 ) | sed 's/\x1b\[[0-9;]*m//g' \
+    | grep -avE "^\s*$|^-+$|^(workdir|model|provider|approval|sandbox|reasoning|session id|user|say hi|OpenAI Codex)" | head -14 | cut -c1-260
   echo "-- codex mcp list"; timeout 60 codex mcp list 2>&1 | sed 's/\x1b\[[0-9;]*m//g' | head -6 | cut -c1-200
 }
 
