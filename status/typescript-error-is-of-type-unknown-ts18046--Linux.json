@@ -1,0 +1,26 @@
+{
+  "post": "typescript-error-is-of-type-unknown-ts18046",
+  "os": "Linux",
+  "date": "2026-11-23",
+  "versions": {
+    "typescript": "7.0.2"
+  },
+  "checks": [
+    {
+      "name": "no strict key: TS18046",
+      "ok": true,
+      "evidence": "a.ts(1,53): error TS18046: 'error' is of type 'unknown'."
+    },
+    {
+      "name": "\"strict\": false: no error",
+      "ok": true,
+      "evidence": "TSC_OK"
+    },
+    {
+      "name": "instanceof Error fix compiles with strict on",
+      "ok": true,
+      "evidence": "TSC_OK"
+    }
+  ],
+  "allHold": true
+}

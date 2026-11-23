@@ -1,0 +1,31 @@
+{
+  "post": "pnpm-12-breaking-changes-tested",
+  "os": "Linux",
+  "date": "2026-11-23",
+  "versions": {
+    "pnpm": "12.21.0"
+  },
+  "checks": [
+    {
+      "name": "npm's latest pnpm (12.21.0) is still major 12",
+      "ok": true,
+      "evidence": "12.21.0"
+    },
+    {
+      "name": "--frozen-lockfile false: \"unexpected argument '--frozen-lockfile' found\"",
+      "ok": true,
+      "evidence": "error: unexpected argument '--frozen-lockfile' found tip: to pass '--frozen-lockfile' as a value, use '-- --frozen-lockfile' Usage: pnpm add [OPTIONS] <PACKAGE_NAMES>... For more information, try '--help'."
+    },
+    {
+      "name": "--no-frozen-lockfile installs",
+      "ok": true,
+      "evidence": "Progress: resolved 0, reused 0, downloaded 1, added 0 Packages are hard linked from the content-addressable store to the virtual store. Content-addressable store is at: /home/runner/.local/share/pnpm/store/v11 Virtual store is at: node_modules/.pnpm Packages: +1 + Progress: resolved 1, reused 0, dow"
+    },
+    {
+      "name": "--resolution-only: \"unexpected argument '--resolution-only' found\"",
+      "ok": true,
+      "evidence": "error: unexpected argument '--resolution-only' found tip: a similar argument exists: '--production' Usage: pnpm install --prod For more information, try '--help'."
+    }
+  ],
+  "allHold": true
+}
