@@ -28,15 +28,15 @@ for v in $V11 $V12; do
   new; npx -y pnpm@$v add is-number@7.0.0 >/dev/null 2>&1; cp package.json pkg.before
   run $v install --frozen-lockfile false
   echo "   package.json changed: $(cmp -s package.json pkg.before && echo no || { echo yes:; diff pkg.before package.json | grep '^>' | tr -s ' '; })"
-  run $v install --frozen-lockfile=false 8
-  run $v install --no-frozen-lockfile 8
+  run $v install --frozen-lockfile=false
+  run $v install --no-frozen-lockfile
 done
 
 echo; echo "### 4. pnpm install --resolution-only"
-for v in $V11 $V12; do new; npx -y pnpm@$v add is-number@7.0.0 >/dev/null 2>&1; run $v install --resolution-only 8; run $v peers check 6; done
+for v in $V11 $V12; do new; npx -y pnpm@$v add is-number@7.0.0 >/dev/null 2>&1; run $v install --resolution-only; run $v peers check; done
 
 echo; echo "### 5. pnpm add yarn"
-for v in $V11 $V12; do new; run $v add yarn 8; echo "   package.json now: $(tr -d '\n' < package.json | tr -s ' ')"; done
+for v in $V11 $V12; do new; run $v add yarn; echo "   package.json now: $(tr -d '\n' < package.json | tr -s ' ')"; done
 
 echo; echo "### 6. engineStrict: an optional dependency whose regular dependency needs node >=99"
 mkdir -p "$W/pk/child" "$W/pk/parent"
@@ -46,12 +46,12 @@ printf '{ "name": "opt-parent", "version": "1.0.0", "dependencies": { "child-nee
 ( cd "$W/pk/parent" && npm pack --silent >/dev/null )
 for v in $V11 $V12; do
   new ", \"optionalDependencies\": { \"opt-parent\": \"file:$W/pk/parent/opt-parent-1.0.0.tgz\" }"
-  printf 'engineStrict: true\n' > pnpm-workspace.yaml; run $v install 10
+  printf 'engineStrict: true\n' > pnpm-workspace.yaml; run $v install
 done
 
 echo; echo "### 7. a git+ssh dependency on a runner with no SSH key"
 for v in $V11 $V12; do
-  new; run $v add git+ssh://git@github.com/sindresorhus/slash.git 10
+  new; run $v add git+ssh://git@github.com/sindresorhus/slash.git
   echo "   lockfile resolution: $(grep -m2 -E 'tarball:|repo:|codeload|git@github|resolution:' pnpm-lock.yaml 2>/dev/null | tr -s ' ' | tr '\n' ' ')"
 done
 
