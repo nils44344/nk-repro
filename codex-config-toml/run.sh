@@ -9,6 +9,13 @@ export CODEX_HOME=$W/codexhome OPENAI_API_KEY=sk-invented-test-key-not-real; mkd
 printf '%s' "$OPENAI_API_KEY" | codex login --with-api-key >/dev/null 2>&1; echo "login exit $?"
 echo "== $(uname -s) | node $(node -v) | $(codex --version 2>&1 | tail -1)"
 C="$CODEX_HOME/config.toml"
+go2() {
+  local n="$1"; shift
+  echo; echo "### $n"
+  ( timeout 90 codex exec --skip-git-repo-check "$@" "say hi" < /dev/null > out.log 2>&1 ); local e=$?
+  sed -E 's/\x1b\[[0-9;]*[A-Za-z]//g' out.log | grep -avE "^\s*$|responses_websocket|Reconnecting|Falling back|^-+$|^workdir:|^session id:|^user$|^say hi$|^OpenAI Codex|^provider:|^approval:|^sandbox:|^reasoning|401 Unauthorized|Reading additional|refresh available models" | head -10 | cut -c1-260
+  echo "   exit $e"
+}
 go() {
   echo; echo "### $1"
   ( timeout 90 codex exec --skip-git-repo-check "say hi" < /dev/null > out.log 2>&1 ); local e=$?
@@ -42,4 +49,7 @@ printf '[mcp_servers.demo]\ncommand = "node"\n[mcp_servers.demo]\ncommand = "npx
 printf 'model = "gpt-5.2"\nmodel = "gpt-5.1"\n' > "$C";                go "11. the same key twice"
 printf '[mcp_servers.demo]\nargs = ["x"]\n' > "$C";                    go "12. MCP server with no command"
 printf 'profile = "work"\n' > "$C";                                    go "13. profile that is not defined"
+printf 'model = "gpt-5.2"\n[profiles.work]\nmodel = "gpt-5.1"\n' > "$C";  go2 "14. [profiles.work] table in config.toml, run with --profile work" --profile work
+printf 'model = "gpt-5.2"\n' > "$C"; printf 'model = "gpt-5.1"\n' > "$CODEX_HOME/work.config.toml"; go2 "15. work.config.toml next to config.toml, run with --profile work" --profile work
+rm -f "$CODEX_HOME/work.config.toml"; printf 'model = "gpt-5.2"\n' > "$C"; go2 "16. --profile work with no work profile anywhere" --profile work
 echo; echo "== done"
