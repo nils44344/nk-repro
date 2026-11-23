@@ -1,0 +1,165 @@
+== Linux | node v24.22.3 | pnpm 11.28.13 and 12.21.0 | npm dist-tags: "latest":"12.21.0" "latest-12":"12.21.0" "latest-11":"11.28.13" 
+
+### 1. a misspelled setting in pnpm-workspace.yaml (minimumReleaseAgee), no packageManager pin
+-- pnpm 11.28.13: pnpm add is-number@7.0.0
+[WARN] The following settings in pnpm-workspace.yaml are not recognized by this version of pnpm and were ignored: "minimumReleaseAgee" (did you mean "minimumReleaseAge"?).
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: /home/runner/work/_temp/work/pnpm-home/store/v11
+  Virtual store is at:             node_modules/.pnpm
+dependencies:
++ is-number 7.0.0
+   exit 0
+-- pnpm 12.21.0: pnpm add is-number@7.0.0
+[WARN] The following settings in pnpm-workspace.yaml are not recognized by this version of pnpm and were ignored: "minimumReleaseAgee" (did you mean "minimumReleaseAge"?).
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: /home/runner/work/_temp/work/pnpm-home/store/v11
+  Virtual store is at:             node_modules/.pnpm
+dependencies:
++ is-number 7.0.0
+   exit 0
+
+### 2. the same, with packageManager pinned to the pnpm that runs
+-- pnpm 11.28.13: pnpm add is-number@7.0.0
+[WARN] The following settings in pnpm-workspace.yaml are not recognized by this version of pnpm and were ignored: "minimumReleaseAgee" (did you mean "minimumReleaseAge"?).
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: /home/runner/work/_temp/work/pnpm-home/store/v11
+  Virtual store is at:             node_modules/.pnpm
+dependencies:
++ is-number 7.0.0
+   exit 0
+-- pnpm 12.21.0: pnpm add is-number@7.0.0
+Error: ERR_PNPM_UNRECOGNIZED_WORKSPACE_SETTINGS
+  × The following settings in pnpm-workspace.yaml are not recognized by this
+  │ version of pnpm: "minimumReleaseAgee" (did you mean "minimumReleaseAge"?).
+  help: The project pins pnpm to a version the running pnpm satisfies, so
+        these settings cannot be meant for a different pnpm version. Remove
+        them from pnpm-workspace.yaml or fix their spelling.
+   exit 1
+
+### 2b. pin satisfied, setting spelled right (minimumReleaseAge)
+-- pnpm 12.21.0: pnpm add is-number@7.0.0
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: /home/runner/work/_temp/work/pnpm-home/store/v11
+  Virtual store is at:             node_modules/.pnpm
+dependencies:
++ is-number 7.0.0
+   exit 0
+
+### 3. pnpm install --frozen-lockfile false (and the other spellings)
+-- pnpm 11.28.13: pnpm install --frozen-lockfile false
+Already up to date
+   exit 0
+   package.json changed: no
+-- pnpm 11.28.13: pnpm install --frozen-lockfile=false
+Already up to date
+   exit 0
+-- pnpm 11.28.13: pnpm install --no-frozen-lockfile
+Already up to date
+   exit 0
+-- pnpm 12.21.0: pnpm install --frozen-lockfile false
+error: unexpected argument '--frozen-lockfile' found
+  tip: to pass '--frozen-lockfile' as a value, use '-- --frozen-lockfile'
+Usage: pnpm add [OPTIONS] <PACKAGE_NAMES>...
+For more information, try '--help'.
+   exit 2
+   package.json changed: no
+-- pnpm 12.21.0: pnpm install --frozen-lockfile=false
+Already up to date
+   exit 0
+-- pnpm 12.21.0: pnpm install --no-frozen-lockfile
+Already up to date
+   exit 0
+
+### 4. pnpm install --resolution-only
+-- pnpm 11.28.13: pnpm install --resolution-only
+Already up to date
+   exit 0
+-- pnpm 11.28.13: pnpm peers check
+No peer dependency issues found
+   exit 0
+-- pnpm 12.21.0: pnpm install --resolution-only
+error: unexpected argument '--resolution-only' found
+  tip: a similar argument exists: '--production'
+Usage: pnpm install --prod
+For more information, try '--help'.
+   exit 2
+-- pnpm 12.21.0: pnpm peers check
+No peer dependency issues found
+   exit 0
+
+### 5. pnpm add yarn
+-- pnpm 11.28.13: pnpm add yarn
+Packages are copied from the content-addressable store to the virtual store.
+  Content-addressable store is at: /home/runner/work/_temp/work/pnpm-home/store/v11
+  Virtual store is at:             node_modules/.pnpm
+dependencies:
++ yarn 1.22.22
+[ERR_PNPM_IGNORED_BUILDS] Ignored build scripts: yarn@1.22.22
+Run "pnpm approve-builds" to pick which dependencies should be allowed to run scripts.
+   exit 1
+   package.json now: {"name":"p","version":"1.0.0","private":true,"dependencies":{"yarn":"^1.22.22"}}
+-- pnpm 12.21.0: pnpm add yarn
+Recorded yarn@4.19.0 as the project's package manager
+   exit 0
+   package.json now: {"name":"p","version":"1.0.0","private":true,"packageManager":"yarn@4.19.0"}
+
+### 6. engineStrict: an optional dependency whose regular dependency needs node >=99
+-- pnpm 11.28.13: pnpm install
+[ERR_PNPM_UNSUPPORTED_ENGINE] Unsupported environment (bad pnpm and/or Node.js version)
+This error happened while installing the dependencies of opt-parent@1.0.0
+Your Node version is incompatible with "file:../pk/child/child-needs-node99-1.0.0.tgz".
+Expected version: >=99
+Got: v24.22.3
+This is happening because the package's manifest has an engines.node field specified.
+To fix this issue, install the required Node version.
+   exit 1
+-- pnpm 12.21.0: pnpm install
+Error: ERR_PNPM_UNSUPPORTED_ENGINE
+  × installing dependencies
+  ╰─▶ Unsupported engine for child-needs-node99@file:../pk/child/child-needs-
+      node99-1.0.0.tgz: wanted: {"node":">=99"} (current: {"node":"24.22.3"})
+   exit 1
+
+### 7. a git+ssh dependency on a runner with no SSH key
+-- pnpm 11.28.13: pnpm add git+ssh://git@github.com/sindresorhus/slash.git
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: /home/runner/work/_temp/work/pnpm-home/store/v11
+  Virtual store is at:             node_modules/.pnpm
+dependencies:
++ slash 5.1.0
+   exit 0
+   lockfile resolution:  version: https://codeload.github.com/sindresorhus/slash/tar.gz/2e8a56bd8b2863be09d4fc85283c0e465131a6d3  slash@https://codeload.github.com/sindresorhus/slash/tar.gz/2e8a56bd8b2863be09d4fc85283c0e465131a6d3: 
+-- pnpm 12.21.0: pnpm add git+ssh://git@github.com/sindresorhus/slash.git
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: /home/runner/work/_temp/work/pnpm-home/store/v11
+  Virtual store is at:             node_modules/.pnpm
+dependencies:
++ slash 5.1.0
+   exit 0
+   lockfile resolution:  version: https://codeload.github.com/sindresorhus/slash/tar.gz/2e8a56bd8b2863be09d4fc85283c0e465131a6d3  slash@https://codeload.github.com/sindresorhus/slash/tar.gz/2e8a56bd8b2863be09d4fc85283c0e465131a6d3: 
+
+### 8. pnpm add --global through sudo
+-- pnpm 11.28.13: sudo pnpm add -g is-number@7.0.0
+[WARN] Running "pnpm add --global" with sudo is not supported and will fail in pnpm v12. pnpm installs global packages and writes global configuration inside your home directory, so they do not require root permissions, and running this com
+Update available! 11.28.13 → 12.21.0.
+Changelog: https://pnpm.io/v/12.21.0
+To update, run: pnpm self-update
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: /home/runner/work/_temp/work/pnpm-home/store/v11
+  Virtual store is at:             pnpm-home/store/v11/links
+global:
++ is-number 7.0.0
+   exit 0
+-- pnpm 12.21.0: sudo pnpm add -g is-number@7.0.0
+Error: ERR_PNPM_SUDO_NOT_SUPPORTED
+  × Running "pnpm add --global" with sudo is not supported
+  help: pnpm installs global packages and writes global configuration inside
+        your home directory, so they do not require root permissions, and
+        running this command as root would target the root user's home
+        directory instead of yours. Rerun the command without sudo. If you
+        really intend to manage the root user's own global packages, run pnpm
+        from a session where the SUDO_USER environment variable is not set
+        (for example: sudo env -u SUDO_USER pnpm ...).
+   exit 1
+
+== done
