@@ -24,7 +24,7 @@ try { JSON.parse("{") } catch (error) { console.log(getErrorMessage(error)) }'
   t "4a. catch (error: any)" 'try { JSON.parse("{") } catch (error: any) { console.log(error.message) }'
   t "4b. catch (error: Error)" 'try { JSON.parse("{") } catch (error: Error) { console.log(error.message) }'
   t "5. useUnknownInCatchVariables: false (strict on)" "$base"; printf '{ "compilerOptions": { "noEmit": true, "strict": true, "useUnknownInCatchVariables": false }, "files": ["a.ts"] }\n' > tsconfig.json; tsc_ -p . | head -4; echo "   exit ${PIPESTATUS[0]} (with useUnknownInCatchVariables false)"
-  printf '{ "compilerOptions": { "noEmit": true, "strict": true, "lib": ["es2022"] }, "files": ["a.ts"] }\n' > tsconfig.json
+  printf '{ "compilerOptions": { "noEmit": true, "strict": true, "lib": ["es2022", "dom"] }, "files": ["a.ts"] }\n' > tsconfig.json
   t "6. promise .catch((e) => e.message)" 'Promise.reject(new Error("x")).catch((e) => console.log(e.message))'
   t "8. error.cause narrowing" 'try { JSON.parse("{") } catch (error) { if (error instanceof Error && error.cause instanceof Error) console.log(error.cause.message) }'
 done
