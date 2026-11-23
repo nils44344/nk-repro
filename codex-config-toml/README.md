@@ -10,3 +10,8 @@ server with no command, an undefined profile), runs `codex exec --skip-git-repo-
 **No real keys or accounts.** `CODEX_HOME` is a throwaway folder in the runner's temp directory and the OpenAI key is the
 invented string `sk-invented-test-key-not-real`, so every model call fails with `401` on purpose; config errors show
 before that.
+
+Cases 14-16 (added in run 45114075760) check profiles: a `[profiles.work]` table with `--profile work`, a
+`work.config.toml` next to config.toml with `--profile work`, and `--profile work` with no profile defined.
+
+Output: `out/run-45113678995-*.txt` (cases 1-13) and `out/run-45114075760-*.txt` (cases 1-16), ubuntu and windows.

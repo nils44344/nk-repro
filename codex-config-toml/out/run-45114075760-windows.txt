@@ -1,0 +1,130 @@
+== MINGW64_NT-10.0-26100 | node v24.22.3 | codex-cli 0.171.0
+
+### 1. control: a valid config.toml
+Reading additional input from stdin...
+2026-11-23T04:49:49.824603Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account
+2026-11-23T04:49:49.835048Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account
+2026-11-23T04:49:49.991491Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account
+warning: Model metadata for `gpt-5.2` not found. Defaulting to fallback metadata; this can degrade performance and cause issues.
+ERROR: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account/api-keys., url: https://api.openai.com/v1/responses, cf-ray: a5ed8d025ccb3126-IAD, request id
+ERROR: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account/api-keys., url: https://api.openai.com/v1/responses, cf-ray: a5ed8d025ccb3126-IAD, request id
+   exit 1
+
+### 2. unclosed string
+Error loading config.toml:
+D:\a\_temp\work\codexhome\config.toml:1:17: invalid basic string, expected `"`
+  |
+1 | model = "gpt-5.2
+  |                 ^
+   exit 1
+
+### 3. Windows path with backslashes in double quotes
+Error loading config.toml:
+D:\a\_temp\work\codexhome\config.toml:2:16: too few unicode value digits, expected unicode hexadecimal value
+  |
+2 | command = "C:\Users\me\server.exe"
+  |                ^
+   exit 1
+
+### 3b. same path in single quotes (literal string)
+Reading additional input from stdin...
+2026-11-23T04:50:04.586715Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account
+2026-11-23T04:50:04.592773Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account
+2026-11-23T04:50:04.662413Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account
+2026-11-23T04:50:04.813409Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account
+ERROR: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account/api-keys., url: https://api.openai.com/v1/responses, cf-ray: a5ed8d5dfde63126-IAD, request id
+ERROR: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account/api-keys., url: https://api.openai.com/v1/responses, cf-ray: a5ed8d5dfde63126-IAD, request id
+   exit 1
+
+### 3c. same path with doubled backslashes
+Reading additional input from stdin...
+2026-11-23T04:50:18.353202Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account
+2026-11-23T04:50:18.359279Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account
+2026-11-23T04:50:18.450746Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account
+2026-11-23T04:50:18.601872Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account
+ERROR: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account/api-keys., url: https://api.openai.com/v1/responses, cf-ray: a5ed8db82f133126-IAD, request id
+ERROR: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account/api-keys., url: https://api.openai.com/v1/responses, cf-ray: a5ed8db82f133126-IAD, request id
+   exit 1
+
+### 4. UTF-8 with BOM (PowerShell 5.1 Out-File -Encoding utf8)
+Reading additional input from stdin...
+2026-11-23T04:50:32.793077Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account
+2026-11-23T04:50:32.797262Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account
+2026-11-23T04:50:32.885772Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account
+warning: Model metadata for `gpt-5.2` not found. Defaulting to fallback metadata; this can degrade performance and cause issues.
+ERROR: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account/api-keys., url: https://api.openai.com/v1/responses, cf-ray: a5ed8e0e29a4825c-IAD, request id
+ERROR: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account/api-keys., url: https://api.openai.com/v1/responses, cf-ray: a5ed8e0e29a4825c-IAD, request id
+   exit 1
+
+### 5. UTF-16 with BOM (PowerShell 5.1 > redirection)
+Error loading config.toml: Failed to read config file D:\a\_temp\work\codexhome\config.toml: invalid utf-8 sequence of 1 bytes from index 0
+   exit 1
+
+### 6. wrong type (number for a string)
+Error loading config.toml: invalid type: integer `5`, expected a string
+in `model`
+   exit 1
+
+### 7. value not in the allowed list (approval_policy)
+Error loading config.toml: unknown variant `sometimes`, expected one of `untrusted`, `on-failure`, `on-request`, `granular`, `never`
+in `approval_policy`
+   exit 1
+
+### 8. value not in the allowed list (sandbox_mode)
+Error loading config.toml: unknown variant `full`, expected one of `read-only`, `workspace-write`, `danger-full-access`
+in `sandbox_mode`
+   exit 1
+
+### 9. misspelled key (modle)
+Reading additional input from stdin...
+2026-11-23T04:50:47.771449Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account
+2026-11-23T04:50:47.774206Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account
+2026-11-23T04:50:47.857468Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account
+2026-11-23T04:50:47.954147Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (D:\a\_temp\work\codexhome\config.toml): `modle` is ignored.
+warning: Codex is ignoring 1 unrecognized configuration setting. Check for typos or deprecated settings.
+  user (D:\a\_temp\work\codexhome\config.toml): `modle` is ignored.
+ERROR: unexpected status 401 Unauthorized: Incorrect API key provided: sk-inven*****************real. You can find your API key at https://platform.openai.com/account/api-keys., url: https://api.openai.com/v1/responses, cf-ray: a5ed8e70fd26825c-IAD, request id
+   exit 1
+
+### 10. the same table twice
+Error loading config.toml:
+D:\a\_temp\work\codexhome\config.toml:3:14: duplicate key
+  |
+3 | [mcp_servers.demo]
+  |              ^^^^
+   exit 1
+
+### 11. the same key twice
+Error loading config.toml:
+D:\a\_temp\work\codexhome\config.toml:2:1: duplicate key
+  |
+2 | model = "gpt-5.1"
+  | ^^^^^
+   exit 1
+
+### 12. MCP server with no command
+Error loading config.toml: invalid transport
+in `mcp_servers.demo`
+   exit 1
+
+### 13. profile that is not defined
+Error: legacy `profile = "work"` config is no longer supported; use `--profile work` with `work.config.toml` instead
+   exit 1
+
+### 14. [profiles.work] table in config.toml, run with --profile work
+Error loading config.toml: --profile `work` cannot be used while D:\a\_temp\work\codexhome\config.toml contains legacy `profile = "work"` or `[profiles.work]` config; move those settings into D:\a\_temp\work\codexhome\work.config.toml and remove the legacy pro
+   exit 1
+
+### 15. work.config.toml next to config.toml, run with --profile work
+model: gpt-5.1
+warning: Model metadata for `gpt-5.1` not found. Defaulting to fallback metadata; this can degrade performance and cause issues.
+   exit 1
+
+### 16. --profile work with no work profile anywhere
+model: gpt-5.2
+warning: Model metadata for `gpt-5.2` not found. Defaulting to fallback metadata; this can degrade performance and cause issues.
+   exit 1
+
+== done
