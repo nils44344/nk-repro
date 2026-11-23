@@ -6,7 +6,7 @@ set +e
 V11=${V11:-11.28.13}; V12=${V12:-12.21.0}
 W=${W:-$(pwd)/work}; mkdir -p "$W"; cd "$W" || exit 1
 export npm_config_update_notifier=false COREPACK_ENABLE_STRICT=0
-export PNPM_HOME="$W/pnpm-home"; export PATH="$PNPM_HOME:$PATH"; mkdir -p "$PNPM_HOME"
+export PNPM_HOME="$W/pnpm-home"; export PATH="$PNPM_HOME/bin:$PNPM_HOME:$PATH"; mkdir -p "$PNPM_HOME/bin"
 for V in $V11 $V12; do npx -y pnpm@$V --version >/dev/null 2>&1; done   # warm the npx cache once
 echo "== $(uname -s) | node $(node -v) | pnpm $(npx -y pnpm@$V11 --version) and $(npx -y pnpm@$V12 --version) | npm dist-tags: $(npm view pnpm dist-tags --json | tr -d '\n ' | grep -oE '"latest":"[^"]+"|"latest-11":"[^"]+"|"latest-12":"[^"]+"' | tr '\n' ' ')"
 
