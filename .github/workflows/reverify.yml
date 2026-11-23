@@ -66,6 +66,12 @@ jobs:
       - id: eslint
         continue-on-error: true
         run: node reverify/eslint10.mjs
+      - id: pnpm12
+        continue-on-error: true
+        run: node reverify/pnpm12.mjs
+      - id: ts18046
+        continue-on-error: true
+        run: node reverify/ts18046.mjs
       - if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -76,7 +82,9 @@ jobs:
             status/prisma-datasource-url-no-longer-supported-p1012--*.json
             status/drizzle-failed-query-error--*.json
             status/eslint-couldnt-find-an-eslint-config-file--*.json
-      - if: steps.prisma.outcome == 'failure' || steps.next.outcome == 'failure' || steps.p1012.outcome == 'failure' || steps.drizzle.outcome == 'failure' || steps.eslint.outcome == 'failure'
+            status/pnpm-12-breaking-changes-tested--*.json
+            status/typescript-error-is-of-type-unknown-ts18046--*.json
+      - if: steps.prisma.outcome == 'failure' || steps.next.outcome == 'failure' || steps.p1012.outcome == 'failure' || steps.drizzle.outcome == 'failure' || steps.eslint.outcome == 'failure' || steps.pnpm12.outcome == 'failure' || steps.ts18046.outcome == 'failure'
         run: exit 1
 
   publish:
