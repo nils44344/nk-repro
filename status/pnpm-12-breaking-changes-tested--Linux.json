@@ -3,13 +3,13 @@
   "os": "Linux",
   "date": "2026-11-23",
   "versions": {
-    "pnpm": "12.21.0"
+    "pnpm": "12.23.0"
   },
   "checks": [
     {
-      "name": "npm's latest pnpm (12.21.0) is still major 12",
+      "name": "npm's latest pnpm (12.23.0) is still major 12",
       "ok": true,
-      "evidence": "12.21.0"
+      "evidence": "12.23.0"
     },
     {
       "name": "--frozen-lockfile false: \"unexpected argument '--frozen-lockfile' found\"",
