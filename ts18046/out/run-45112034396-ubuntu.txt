@@ -1,0 +1,131 @@
+== Linux | node v24.22.3
+
+########## typescript 5.9.3 (Version 5.9.3)
+-- 1a. tsc a.ts (no tsconfig)
+   exit 0
+-- 1b. tsconfig from tsc --init
+"strict": true, 
+##[error]a.ts(1,53): error TS18046: 'error' is of type 'unknown'.
+   exit 2
+-- 1c. tsconfig with no strict key
+   exit 0
+-- 1d. strict: false
+   exit 0
+-- 2. instanceof Error
+   exit 0
+-- 3. helper getErrorMessage(e: unknown)
+   exit 0
+-- 4a. catch (error: any)
+   exit 0
+-- 4b. catch (error: Error)
+##[error]a.ts(1,39): error TS1196: Catch clause variable type annotation must be 'any' or 'unknown' if specified.
+   exit 2
+-- 5. useUnknownInCatchVariables: false (strict on)
+##[error]a.ts(1,53): error TS18046: 'error' is of type 'unknown'.
+   exit 2
+   exit 0 (with useUnknownInCatchVariables false)
+-- 6. promise .catch((e) => e.message)
+   exit 0
+-- 8. error.cause narrowing
+   exit 0
+
+########## typescript 6.0.3 (Version 6.0.3)
+-- 1a. tsc a.ts (no tsconfig)
+##[error]a.ts(1,53): error TS18046: 'error' is of type 'unknown'.
+   exit 2
+-- 1b. tsconfig from tsc --init
+"strict": true, 
+##[error]a.ts(1,53): error TS18046: 'error' is of type 'unknown'.
+   exit 2
+-- 1c. tsconfig with no strict key
+##[error]a.ts(1,53): error TS18046: 'error' is of type 'unknown'.
+   exit 2
+-- 1d. strict: false
+   exit 0
+-- 2. instanceof Error
+   exit 0
+-- 3. helper getErrorMessage(e: unknown)
+   exit 0
+-- 4a. catch (error: any)
+   exit 0
+-- 4b. catch (error: Error)
+##[error]a.ts(1,39): error TS1196: Catch clause variable type annotation must be 'any' or 'unknown' if specified.
+   exit 2
+-- 5. useUnknownInCatchVariables: false (strict on)
+##[error]a.ts(1,53): error TS18046: 'error' is of type 'unknown'.
+   exit 2
+   exit 0 (with useUnknownInCatchVariables false)
+-- 6. promise .catch((e) => e.message)
+   exit 0
+-- 8. error.cause narrowing
+   exit 0
+
+########## typescript 7.0.2 (Version 7.0.2)
+-- 1a. tsc a.ts (no tsconfig)
+##[error]a.ts(1,53): error TS18046: 'error' is of type 'unknown'.
+   exit 1
+-- 1b. tsconfig from tsc --init
+"strict": true, 
+##[error]a.ts(1,53): error TS18046: 'error' is of type 'unknown'.
+   exit 1
+-- 1c. tsconfig with no strict key
+##[error]a.ts(1,53): error TS18046: 'error' is of type 'unknown'.
+   exit 1
+-- 1d. strict: false
+   exit 0
+-- 2. instanceof Error
+   exit 0
+-- 3. helper getErrorMessage(e: unknown)
+   exit 0
+-- 4a. catch (error: any)
+   exit 0
+-- 4b. catch (error: Error)
+##[error]a.ts(1,39): error TS1196: Catch clause variable type annotation must be 'any' or 'unknown' if specified.
+   exit 1
+-- 5. useUnknownInCatchVariables: false (strict on)
+##[error]a.ts(1,53): error TS18046: 'error' is of type 'unknown'.
+   exit 1
+   exit 0 (with useUnknownInCatchVariables false)
+-- 6. promise .catch((e) => e.message)
+   exit 0
+-- 8. error.cause narrowing
+   exit 0
+
+########## typescript 7.1.0-beta (Version 7.1.0-beta)
+-- 1a. tsc a.ts (no tsconfig)
+##[error]a.ts(1,53): error TS18046: 'error' is of type 'unknown'.
+   exit 2
+-- 1b. tsconfig from tsc --init
+"strict": true, 
+##[error]a.ts(1,53): error TS18046: 'error' is of type 'unknown'.
+   exit 2
+-- 1c. tsconfig with no strict key
+##[error]a.ts(1,53): error TS18046: 'error' is of type 'unknown'.
+   exit 2
+-- 1d. strict: false
+   exit 0
+-- 2. instanceof Error
+   exit 0
+-- 3. helper getErrorMessage(e: unknown)
+   exit 0
+-- 4a. catch (error: any)
+   exit 0
+-- 4b. catch (error: Error)
+##[error]a.ts(1,39): error TS1196: Catch clause variable type annotation must be 'any' or 'unknown' if specified.
+   exit 2
+-- 5. useUnknownInCatchVariables: false (strict on)
+##[error]a.ts(1,53): error TS18046: 'error' is of type 'unknown'.
+   exit 2
+   exit 0 (with useUnknownInCatchVariables false)
+-- 6. promise .catch((e) => e.message)
+   exit 0
+-- 8. error.cause narrowing
+   exit 0
+
+########## 7. what instanceof misses at run time (node v24.22.3, type stripping)
+{} | instanceof Error: true | helper: an Error
+"a string" | instanceof Error: false | helper: a string
+{"message":"an object with message"} | instanceof Error: false | helper: [object Object]
+   exit 0
+
+== done
