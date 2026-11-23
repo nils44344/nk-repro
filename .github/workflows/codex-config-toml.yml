@@ -1,0 +1,30 @@
+name: codex-config-toml
+on:
+  workflow_dispatch:
+    inputs:
+      codex:
+        description: 'codex version (empty = latest)'
+        default: ''
+permissions:
+  contents: read
+
+jobs:
+  run:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - env:
+          CODEX: ${{ inputs.codex }}
+        run: W="$RUNNER_TEMP/work" bash codex-config-toml/run.sh
