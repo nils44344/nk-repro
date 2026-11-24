@@ -2,6 +2,12 @@
 
 One line each time a package changes state on an operating system.
 
+## 2026-11-24
+
+- 2026-11-24 Windows: **tree-sitter** builds -> ready (0.27.0)
+- 2026-11-24 Linux: **tree-sitter** builds -> ready (0.27.0)
+- 2026-11-24 macOS: **tree-sitter** builds -> ready (0.27.0)
+
 ## 2026-11-21
 
 - 2026-11-21 Windows: **pyyaml** builds -> ready (6.0.4)

@@ -2,12 +2,12 @@
 
 Plain `pip install <package>` in a fresh venv, then `import`, for 504 PyPI packages on clean GitHub runners. Anything that is not a clean wheel install is repeated on Python 3.14 to show whether the problem is specific to 3.15. Re-run daily by [the workflow](../.github/workflows/py315-board.yml).
 
-Last run: 2026-11-23, [run log](https://github.com/nils44344/nk-repro/actions/runs/45092345957). Interpreters: macOS 3.15.2 (control 3.14.10); Linux 3.15.2 (control 3.14.10); Windows 3.15.2 (control 3.14.10).
+Last run: 2026-11-24, [run log](https://github.com/nils44344/nk-repro/actions/runs/45329637706). Interpreters: macOS 3.15.2 (control 3.14.10); Linux 3.15.2 (control 3.14.10); Windows 3.15.2 (control 3.14.10).
 
 | | Windows | Linux | macOS |
 |---|---:|---:|---:|
-| Ready: a wheel installs and the package imports | 475 | 477 | 475 |
-| Works only by compiling from source on the runner | 11 | 11 | 10 |
+| Ready: a wheel installs and the package imports | 476 | 478 | 476 |
+| Works only by compiling from source on the runner | 10 | 10 | 9 |
 | Fails on 3.15, works on 3.14 | 3 | 3 | 3 |
 | Same failure on 3.14 (not a 3.15 problem) | 15 | 13 | 16 |
 
@@ -37,7 +37,6 @@ pip found no 3.15 wheel for the listed packages and built them from source. The 
 | 436 | `langgraph-sdk` | compiles from source: zstandard | compiles from source: zstandard | compiles from source: zstandard |
 | 441 | `langgraph-checkpoint` | compiles from source: zstandard | compiles from source: zstandard | compiles from source: zstandard |
 | 453 | `pyspark` | compiles from source: pyspark | compiles from source: pyspark | compiles from source: pyspark |
-| 480 | `tree-sitter` | compiles from source: tree-sitter | compiles from source: tree-sitter | compiles from source: tree-sitter |
 | 486 | `ddtrace` | compiles from source: ddtrace | ready (4.17.2) | ready (4.17.2) |
 
 ## Same result on 3.14
