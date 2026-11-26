@@ -1,7 +1,7 @@
 {
   "post": "pnpm-12-breaking-changes-tested",
   "os": "Linux",
-  "date": "2026-11-25",
+  "date": "2026-11-26",
   "versions": {
     "pnpm": "12.23.0"
   },
