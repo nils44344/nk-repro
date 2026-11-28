@@ -1,7 +1,7 @@
 {
   "post": "typescript-error-is-of-type-unknown-ts18046",
   "os": "Linux",
-  "date": "2026-11-27",
+  "date": "2026-11-28",
   "versions": {
     "typescript": "7.0.2"
   },
